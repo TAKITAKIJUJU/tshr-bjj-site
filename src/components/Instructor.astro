@@ -1,44 +1,46 @@
 ---
-// Instructor - ballaholic style: card layout with photo placeholder
+// Instructor - Refined YAWARA style
 ---
 
 <section class="instructor section" id="instructor">
   <div class="container">
     <div class="instructor__inner">
       <div class="instructor__media fade-up">
-        <div class="instructor__photo-card card">
+        <div class="instructor__photo-wrapper">
           <div class="instructor__photo">
-            <span class="instructor__photo-text">PHOTO</span>
+            <img src="https://overlimit-bjj.sakura.ne.jp/fsj41442/wp-content/uploads/2021/08/dummy-profile.jpg" alt="代表インストラクター" onerror="this.onerror=null; this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22500%22%20viewBox%3D%220%200%20400%20500%22%3E%3Crect%20fill%3D%22%23EFEFEF%22%20width%3D%22400%22%20height%3D%22500%22%2F%3E%3Ctext%20fill%3D%22%23999999%22%20font-family%3D%22sans-serif%22%20font-size%3D%2214%22%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%3EPHOTO%3C%2Ftext%3E%3C%2Fsvg%3E';" />
           </div>
-          <div class="instructor__photo-badge tag tag--filled">ASIA CHAMPION</div>
+          <div class="instructor__badge">ASIA CHAMPION</div>
         </div>
       </div>
 
-      <div class="instructor__info fade-up" style="color: #FFF;">
+      <div class="instructor__info fade-up">
         <span class="section-label">Instructor</span>
-        <h2 class="section-title">インストラクター</h2>
+        <h2 class="section-title--jp">インストラクター</h2>
         <p class="section-subtitle">
           アジアチャンピオンが直接指導。最高の環境で学べます。
         </p>
 
-        <div class="instructor__profile card" style="margin-top: 32px;">
-          <div class="instructor__name-row">
-            <h3 class="instructor__name">代表インストラクター</h3>
-            <span class="tag">ASIA CHAMPION</span>
+        <div class="instructor__profile">
+          <h3 class="instructor__name">廣幡 翔大<span class="instructor__title">Yasuhiro Hirohata</span></h3>
+          
+          <div class="instructor__history">
+            <p><strong>柔術歴：</strong> 2011年〜現在</p>
+            <p><strong>帯：</strong> 黒帯</p>
           </div>
+
           <p class="instructor__bio">
-            ブラジリアン柔術アジアチャンピオンの実績を持つインストラクターが、
-            初心者から上級者まで丁寧に指導いたします。
-            長年のテクニックから実践的なポイントをお伝えする、
-            それぞれのレベルに合わせた柔かな指導を心がけています。
+            ブラジリアン柔術アジアチャンピオンの実績を持つインストラクターが、初心者から上級者まで丁寧に指導いたします。<br>
+            長年のテクニックから実践的なポイントをお伝えする、それぞれのレベルに合わせた柔かな指導を心がけています。
           </p>
+
           <div class="instructor__socials">
-            <a href="https://www.instagram.com/tshr_jiujitsu/" target="_blank" rel="noopener" class="instructor__social">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="5" /><circle cx="17.5" cy="6.5" r="1.5" /></svg>
+            <a href="https://www.instagram.com/tshr_jiujitsu/" target="_blank" rel="noopener" class="btn btn--outline" style="padding: 12px 24px; font-size: 0.8rem;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="5" /><circle cx="17.5" cy="6.5" r="1.5" /></svg>
               Instagram
             </a>
-            <a href="https://www.facebook.com/groups/304416070927536" target="_blank" rel="noopener" class="instructor__social">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>
+            <a href="https://www.facebook.com/groups/304416070927536" target="_blank" rel="noopener" class="btn btn--outline" style="padding: 12px 24px; font-size: 0.8rem;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>
               Facebook
             </a>
           </div>
@@ -51,146 +53,120 @@
 <style>
   .instructor {
     padding: 120px 0;
-    background: #1A1A1A;
-    color: #FFF;
+    background: #FFFFFF; /* Clean white bg */
     position: relative;
     overflow: hidden;
-  }
-
-  /* Huge dark background text for extra street vibe */
-  .instructor::before {
-    content: "INSTRUCTOR";
-    position: absolute;
-    bottom: -10%;
-    right: -5%;
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(12rem, 30vw, 28rem);
-    font-weight: 900;
-    line-height: 1;
-    color: transparent;
-    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.03);
-    pointer-events: none;
-    z-index: 0;
   }
 
   .instructor__inner {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    grid-template-columns: 5fr 7fr;
+    gap: 8vh;
     align-items: center;
     position: relative;
-    z-index: 10;
   }
 
-  .instructor__photo-card {
-    padding: 0;
-    overflow: hidden;
+  .instructor__photo-wrapper {
     position: relative;
-    background: #2A2A2A;
-    border-radius: 24px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .instructor__photo-card:hover {
-    transform: translateY(-8px);
+    border-radius: 20px;
+    background: #F8F9FA;
   }
 
   .instructor__photo {
     aspect-ratio: 3 / 4;
-    background: linear-gradient(135deg, #333, #111);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 24px;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .instructor__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     filter: grayscale(100%);
     transition: filter 0.6s ease;
   }
 
-  .instructor__photo-card:hover .instructor__photo {
+  .instructor__photo-wrapper:hover .instructor__photo img {
     filter: grayscale(0%);
   }
 
-  .instructor__photo-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    color: rgba(255, 255, 255, 0.15);
-  }
-
-  .instructor__photo-badge {
+  .instructor__badge {
     position: absolute;
-    bottom: 16px;
-    left: 16px;
+    bottom: -16px;
+    right: 32px;
     display: inline-block;
-    padding: 4px 14px;
+    padding: 8px 24px;
     font-family: 'Inter', sans-serif;
-    font-size: 0.65rem;
-    font-weight: 700;
+    font-size: 0.75rem;
+    font-weight: 600;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
-    border-radius: 60px;
-    background: #FF5E1A;
+    background: #1A1A1A;
     color: #fff;
-    border: 1.5px solid #FF5E1A;
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   }
 
   .instructor__profile {
-    padding: 32px;
-    background: #2A2A2A;
-    border-radius: 24px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-  }
-
-  .instructor__name-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(0,0,0,0.05);
   }
 
   .instructor__name {
     font-family: 'Noto Sans JP', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    color: #FFF;
+    color: #1A1A1A;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+  
+  .instructor__title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #999999;
+    letter-spacing: 0.05em;
+  }
+
+  .instructor__history {
+    font-size: 0.85rem;
+    color: #444;
+    margin-bottom: 24px;
+    background: #F8F9FA;
+    padding: 16px 24px;
+    border-radius: 12px;
+  }
+
+  .instructor__history p {
+    margin: 4px 0;
   }
 
   .instructor__bio {
-    font-size: 0.85rem;
-    color: #BBB;
+    font-size: 0.95rem;
+    color: #666;
     line-height: 2;
-    margin-bottom: 24px;
+    margin-bottom: 40px;
   }
 
   .instructor__socials {
     display: flex;
-    gap: 20px;
+    gap: 16px;
+    flex-wrap: wrap;
   }
 
-  .instructor__social {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #1A1A1A;
-    transition: color 0.3s;
-  }
-
-  .instructor__social:hover {
-    color: #FF5E1A;
-  }
-
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     .instructor__inner {
       grid-template-columns: 1fr;
       gap: 40px;
     }
+  }
+
+  @media (max-width: 768px) {
     .instructor { padding: 80px 0; }
+    .instructor__name { font-size: 1.25rem; }
+    .instructor__badge { bottom: 16px; right: 16px; }
   }
 </style>

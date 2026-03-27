@@ -1,28 +1,25 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap');
 
 @theme {
-  /* ballaholic-inspired palette */
-  --color-primary: #FF5E1A;
-  --color-primary-dark: #E04A0A;
-  --color-bg: #F5F2EE;
+  /* YAWARA-inspired minimalist palette */
+  --color-primary: #1A1A1A;
+  --color-bg: #F8F9FA;
   --color-bg-white: #FFFFFF;
   --color-text: #1A1A1A;
-  --color-text-muted: #888888;
-  --color-text-subtle: #BBBBBB;
-  --color-dark: #1A1A1A;
-  --color-dark-soft: #2A2A2A;
-  --color-border: rgba(0, 0, 0, 0.08);
-  --color-border-accent: rgba(255, 94, 26, 0.3);
-
+  --color-text-muted: #666666;
+  --color-text-subtle: #999999;
+  --color-dark: #1F2022;
+  --color-accent: #FF5E1A; /* Kept very minimal for brand identity */
+  
   --font-heading: 'Inter', sans-serif;
   --font-body: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
 
-  --radius-sm: 12px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 32px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 40px; /* Pill shapes */
 }
 
 /* === Base === */
@@ -42,13 +39,13 @@ html {
 body {
   font-family: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
   color: #1A1A1A;
-  background-color: #F5F2EE;
+  background-color: #F8F9FA;
   line-height: 1.8;
   overflow-x: hidden;
 }
 
 ::selection {
-  background-color: #FF5E1A;
+  background-color: #1A1A1A;
   color: #fff;
 }
 
@@ -59,11 +56,11 @@ img { max-width: 100%; height: auto; display: block; }
 .section {
   padding: 120px 0;
   position: relative;
-  background-color: #F5F2EE;
+  background-color: #F8F9FA;
 }
 
 .section--dark {
-  background-color: #1A1A1A;
+  background-color: #1F2022;
   color: #fff;
 }
 
@@ -77,121 +74,49 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 0 32px;
 }
 
-/* === Typography (ballaholic-style) === */
+/* === Typography (Refined boutique style) === */
 .section-label {
   font-family: 'Inter', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.25em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #FF5E1A;
+  color: #999999;
   display: inline-block;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
+/* Scaled down heading size especially for mobile */
 .section-title {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(2.2rem, 6vw, 4rem);
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  margin-bottom: 20px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin-bottom: 24px;
 }
 
 .section-title--jp {
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: clamp(1.2rem, 3vw, 1.6rem);
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
   line-height: 1.4;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .section-subtitle {
   font-size: 0.95rem;
   font-weight: 400;
-  color: #888888;
+  color: #666666;
   line-height: 2;
-  max-width: 560px;
-}
-
-/* Vertical accent text (ballaholic signature) */
-.vertical-text {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: #BBBBBB;
-  position: absolute;
-}
-
-.text-outline {
-  color: transparent;
-  -webkit-text-stroke: 1.5px rgba(26, 26, 26, 0.1);
-}
-
-.text-outline--orange {
-  color: transparent;
-  -webkit-text-stroke: 2px rgba(255, 94, 26, 0.2);
-}
-
-.text-outline--white {
-  color: transparent;
-  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.15);
-}
-
-/* Large decorative numbers (01, 02...) */
-.feature-number {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(4rem, 10vw, 8rem);
-  font-weight: 900;
-  color: #FF5E1A;
-  opacity: 0.12;
-  line-height: 1;
-  position: absolute;
-  top: -30px;
-  left: -10px;
-  pointer-events: none;
-}
-
-/* === Cards (ballaholic: white cards with rounded corners) === */
-.card {
-  background: #FFFFFF;
-  border-radius: 24px;
-  padding: 40px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-}
-
-.card--bordered {
-  border: 1.5px solid rgba(255, 94, 26, 0.3);
-}
-
-.card--dark {
-  background: #1A1A1A;
-  color: #fff;
-}
-
-.card--featured {
-  background: #FF5E1A;
-  color: #fff;
+  max-width: 600px;
 }
 
 /* === GSAP Anim States === */
 .fade-up {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(30px);
 }
 
 .fade-in {
@@ -200,86 +125,77 @@ img { max-width: 100%; height: auto; display: block; }
 
 .slide-left {
   opacity: 0;
-  transform: translateX(-60px);
+  transform: translateX(-30px);
 }
 
 .slide-right {
   opacity: 0;
-  transform: translateX(60px);
+  transform: translateX(30px);
 }
 
 .scale-in {
   opacity: 0;
-  transform: scale(0.92);
+  transform: scale(0.96);
 }
 
-/* === Buttons (ballaholic: rounded pill buttons) === */
+/* === Buttons (Clean, elegant) === */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 16px 36px;
+  gap: 12px;
+  padding: 16px 40px;
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
   border: none;
-  border-radius: 60px;
+  border-radius: 100px; /* Fully rounded */
   cursor: pointer;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
+  text-decoration: none;
 }
 
 .btn--primary {
-  background-color: #FF5E1A;
+  background-color: #1A1A1A;
   color: #fff;
 }
 
 .btn--primary:hover {
-  background-color: #E04A0A;
+  background-color: #333333;
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(255, 94, 26, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .btn--outline {
   background-color: transparent;
   color: #1A1A1A;
-  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .btn--outline:hover {
-  border-color: #FF5E1A;
-  color: #FF5E1A;
+  border-color: #1A1A1A;
+  background-color: #F8F9FA;
 }
 
 .btn--white {
   background-color: #fff;
   color: #1A1A1A;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .btn--white:hover {
-  background-color: #F5F2EE;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-}
-
-.btn--dark {
-  background-color: #1A1A1A;
-  color: #fff;
-}
-
-.btn--dark:hover {
-  background-color: #333;
+  background-color: #F8F9FA;
   transform: translateY(-2px);
 }
 
 /* Arrow icon in buttons */
 .btn__arrow {
   display: inline-flex;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   transition: transform 0.3s ease;
 }
 
@@ -290,35 +206,34 @@ img { max-width: 100%; height: auto; display: block; }
 /* === Tags / Badges === */
 .tag {
   display: inline-block;
-  padding: 4px 14px;
+  padding: 4px 12px;
   font-family: 'Inter', sans-serif;
   font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  border-radius: 60px;
-  border: 1.5px solid #FF5E1A;
-  color: #FF5E1A;
+  border-radius: 40px;
+  background: rgba(0,0,0,0.05);
+  color: #666;
 }
 
 .tag--filled {
-  background: #FF5E1A;
+  background: #1A1A1A;
   color: #fff;
-  border-color: #FF5E1A;
 }
 
 /* === Scrollbar === */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F5F2EE;
+  background: #F8F9FA;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #FF5E1A;
-  border-radius: 4px;
+  background: #CCCCCC;
+  border-radius: 6px;
 }
 
 /* === Media === */
@@ -328,5 +243,10 @@ img { max-width: 100%; height: auto; display: block; }
   }
   .container {
     padding: 0 20px;
+  }
+  .section-title, .section-title--jp {
+    /* Ensuring mobile headings are strictly small per user request */
+    font-size: 1.5rem !important; 
+    margin-bottom: 20px;
   }
 }
