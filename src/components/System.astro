@@ -1,63 +1,86 @@
 ---
-// System / Pricing - ballaholic style: clean cards
+// System / Pricing - Exact Data from Old Site
 ---
 
 <section class="system section--white" id="system">
   <div class="container">
-    <div class="system__header fade-up" style="text-align: center; margin-bottom: 64px;">
+    <div class="system__header fade-up" style="text-align: center; margin-bottom: 48px;">
       <span class="section-label">Price</span>
       <h2 class="section-title">料金システム</h2>
-      <p class="section-subtitle" style="margin: 0 auto;">
+      <p class="section-subtitle" style="margin: 0 auto; margin-bottom: 24px;">
         あなたのライフスタイルに合わせたプランをご用意しています。
       </p>
+      
+      <!-- Special Campaign / Discounts -->
+      <div class="system__campaign">
+        <span class="campaign-badge">入会金 無料</span>
+        <span class="campaign-text">※年一括払いで<strong>15%OFF!!</strong>　※家族との同時入会で<strong>10%OFF!!</strong></span>
+      </div>
     </div>
 
     <div class="system__grid">
-      <!-- Trial -->
-      <div class="system__card card fade-up">
-        <span class="system__plan-label tag">TRIAL</span>
-        <h3 class="system__plan-name">体験</h3>
-        <div class="system__price">
-          <span class="system__price-value">無料</span>
-        </div>
-        <ul class="system__features">
-          <li>見学・体験ともに無料</li>
-          <li>動きやすい服装で手ぶらOK</li>
-          <li>お気軽にお越しください</li>
-        </ul>
-        <a href="#contact" class="btn btn--outline">体験予約</a>
-      </div>
-
-      <!-- Regular - Featured -->
+      <!-- Full Time (Men) -->
       <div class="system__card card card--featured fade-up">
         <span class="system__plan-label tag tag--filled" style="background:#fff;color:#FF5E1A;border-color:#fff;">RECOMMENDED</span>
-        <h3 class="system__plan-name" style="color:#fff;">一般会員</h3>
+        <h3 class="system__plan-name" style="color:#fff;">フルタイム会員<br><span style="font-size: 0.8rem; font-weight: 500;">(一般男性)</span></h3>
         <div class="system__price">
           <span class="system__price-yen" style="color:rgba(255,255,255,0.7);">¥</span>
-          <span class="system__price-value" style="color:#fff;">8,800</span>
+          <span class="system__price-value" style="color:#fff;">9,800</span>
           <span class="system__price-unit" style="color:rgba(255,255,255,0.7);">/月</span>
         </div>
         <ul class="system__features" style="color:rgba(255,255,255,0.8);">
-          <li>全クラス受講可能</li>
-          <li>フリーマット利用可</li>
-          <li>レンタル道着あり</li>
+          <li>通い放題（全クラス参加可能）</li>
+          <li>スパーリング・フリースパー参加可</li>
+          <li>すべての設備が使い放題</li>
         </ul>
         <a href="#contact" class="btn btn--white">入会お問い合わせ</a>
       </div>
 
-      <!-- Family -->
-      <div class="system__card card fade-up">
-        <span class="system__plan-label tag">FAMILY</span>
-        <h3 class="system__plan-name">家族会員</h3>
+      <!-- Full Time (Women / Students) -->
+      <div class="system__card card fade-up" style="transition-delay: 0.1s;">
+        <span class="system__plan-label tag">WOMEN & STUDENT</span>
+        <h3 class="system__plan-name">フルタイム会員<br><span style="font-size: 0.8rem; font-weight: 500;">(女性・中高生)</span></h3>
         <div class="system__price">
-          <span class="system__price-value">お問い合わせ</span>
+          <span class="system__price-yen">¥</span>
+          <span class="system__price-value">7,800</span>
+          <span class="system__price-unit">/月</span>
         </div>
         <ul class="system__features">
-          <li>ご家族でお得に入会</li>
-          <li>親子で柔術を楽しめます</li>
-          <li>詳細はお問い合わせください</li>
+          <li>通い放題（全クラス参加可能）</li>
+          <li>女性や学生も安心して通える環境</li>
+          <li>すべての設備が使い放題</li>
         </ul>
-        <a href="#contact" class="btn btn--outline">詳細を問い合わせ</a>
+        <a href="#contact" class="btn btn--outline">入会お問い合わせ</a>
+      </div>
+
+      <!-- Kids -->
+      <div class="system__card card fade-up" style="transition-delay: 0.2s;">
+        <span class="system__plan-label tag">KIDS</span>
+        <h3 class="system__plan-name">キッズ会員<br><span style="font-size: 0.8rem; font-weight: 500;">(小学1〜6年生)</span></h3>
+        <div class="system__price">
+          <span class="system__price-yen">¥</span>
+          <span class="system__price-value">5,000</span>
+          <span class="system__price-unit">/月</span>
+        </div>
+        <ul class="system__features">
+          <li>キッズクラス参加可能</li>
+          <li>礼儀作法や基礎体力の向上</li>
+          <li>楽しく安全に柔術を学べます</li>
+        </ul>
+        <a href="#contact" class="btn btn--outline">キッズ体験予約</a>
+      </div>
+    </div>
+
+    <!-- Visitor Plan -->
+    <div class="system__visitor fade-up" style="transition-delay: 0.3s;">
+      <div class="system__visitor-info">
+        <h3 class="system__plan-name" style="margin-bottom: 8px;">ビジター (1回利用)</h3>
+        <p class="system__features" style="margin-bottom: 0; border: none; padding: 0;">出稽古など、1日だけのゲスト参加が可能です。</p>
+      </div>
+      <div class="system__price" style="margin-bottom: 0;">
+        <span class="system__price-yen">¥</span>
+        <span class="system__price-value">2,200</span>
+        <span class="system__price-unit">/回</span>
       </div>
     </div>
   </div>
@@ -68,11 +91,46 @@
     padding: 120px 0;
   }
 
+  .system__campaign {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: rgba(255, 94, 26, 0.05);
+    border: 1px solid rgba(255, 94, 26, 0.2);
+    padding: 16px 32px;
+    border-radius: 12px;
+    margin-top: 24px;
+  }
+
+  .campaign-badge {
+    background: #FF5E1A;
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 6px 16px;
+    border-radius: 60px;
+    letter-spacing: 0.05em;
+  }
+
+  .campaign-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1A1A1A;
+  }
+  
+  .campaign-text strong {
+    color: #FF5E1A;
+    font-size: 1.1em;
+  }
+
   .system__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     align-items: stretch;
+    margin-bottom: 24px;
   }
 
   .system__card {
@@ -150,9 +208,10 @@
 
   .system__plan-name {
     font-family: 'Noto Sans JP', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-weight: 800;
     margin-bottom: 16px;
+    line-height: 1.4;
   }
 
   .system__price {
@@ -164,7 +223,7 @@
 
   .system__price-yen {
     font-family: 'Inter', sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: #888;
   }
@@ -187,12 +246,13 @@
     list-style: none;
     margin-bottom: 32px;
     flex: 1;
+    width: 100%;
   }
 
   .system__features li {
     font-size: 0.85rem;
     color: #666;
-    padding: 8px 0;
+    padding: 12px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     line-height: 1.6;
   }
@@ -201,18 +261,45 @@
     border-bottom: none;
   }
 
-  .system__card .btn {
-    width: 100%;
-    margin-top: auto;
+  .system__card.card--featured .system__features li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Visitor Plan */
+  .system__visitor {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 24px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0,0,0,0.03);
+  }
+
+  @media (max-width: 992px) {
+    .system__visitor {
+      flex-direction: column;
+      text-align: center;
+      gap: 16px;
+      padding: 32px 24px;
+    }
+    .system__visitor .system__price {
+      justify-content: center;
+    }
   }
 
   @media (max-width: 768px) {
     .system__grid {
       grid-template-columns: 1fr;
       max-width: 400px;
-      margin: 0 auto;
+      margin: 0 auto 24px auto;
       gap: 16px;
     }
     .system { padding: 80px 0; }
+    .system__campaign {
+      flex-direction: column;
+      gap: 12px;
+    }
   }
 </style>
