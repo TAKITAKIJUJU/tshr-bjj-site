@@ -1,0 +1,207 @@
+---
+// FAQ - ballaholic style: clean accordion
+---
+
+<section class="faq section" id="faq">
+  <div class="container">
+    <div class="faq__header fade-up" style="text-align: center; margin-bottom: 64px;">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">よくある質問</h2>
+    </div>
+
+    <div class="faq__list fade-up">
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          <span>初心者でも大丈夫ですか？</span>
+          <span class="faq__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </span>
+        </button>
+        <div class="faq__answer">
+          <p>はい、もちろん大丈夫です。会員のほとんどが未経験からスタートしています。初心者クラスでは基本的な動きから丁寧に指導しますので、安心してご参加ください。</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          <span>体験に必要な持ち物はありますか？</span>
+          <span class="faq__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </span>
+        </button>
+        <div class="faq__answer">
+          <p>動きやすい服装（Tシャツ・ハーフパンツなど）でお越しいただければ大丈夫です。道着のレンタルもご用意しています。タオルと飲み物をお持ちください。</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          <span>女性でも参加できますか？</span>
+          <span class="faq__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </span>
+        </button>
+        <div class="faq__answer">
+          <p>はい、女性の会員も多数いらっしゃいます。柔術は打撃がないため安全性が高く、護身術としても非常に有効です。お気軽にご参加ください。</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          <span>何歳から始められますか？</span>
+          <span class="faq__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </span>
+        </button>
+        <div class="faq__answer">
+          <p>お子様から大人まで、年齢を問わず始めていただけます。柔術は生涯スポーツとして、ご自身のペースで長く楽しめるのが大きな魅力です。</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          <span>見学だけでも大丈夫ですか？</span>
+          <span class="faq__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </span>
+        </button>
+        <div class="faq__answer">
+          <p>はい、見学は無料でいつでも歓迎しています。まずは雰囲気を感じてみてください。事前にご連絡いただけるとスムーズです。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const faqItems = document.querySelectorAll('.faq__question');
+
+  faqItems.forEach(button => {
+    button.addEventListener('click', () => {
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+      const answer = button.nextElementSibling as HTMLElement;
+
+      faqItems.forEach(otherBtn => {
+        if (otherBtn !== button) {
+          otherBtn.setAttribute('aria-expanded', 'false');
+          const otherAnswer = otherBtn.nextElementSibling as HTMLElement;
+          if (otherAnswer) {
+            otherAnswer.style.maxHeight = '0';
+            otherAnswer.style.opacity = '0';
+          }
+        }
+      });
+
+      button.setAttribute('aria-expanded', String(!isExpanded));
+      if (answer) {
+        if (!isExpanded) {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          answer.style.opacity = '1';
+        } else {
+          answer.style.maxHeight = '0';
+          answer.style.opacity = '0';
+        }
+      }
+    });
+  });
+</script>
+
+<style>
+  .faq {
+    padding: 120px 0;
+    background: #F5F2EE;
+  }
+
+  .faq__list {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .faq__item {
+    background: #fff;
+    border-radius: 16px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .faq__item:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  }
+
+  .faq__question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 28px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1A1A1A;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.3s ease;
+  }
+
+  .faq__question:hover {
+    color: #FF5E1A;
+  }
+
+  .faq__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #F5F2EE;
+    color: #FF5E1A;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .faq__question[aria-expanded="true"] .faq__icon {
+    transform: rotate(45deg);
+    background: #FF5E1A;
+    color: #fff;
+  }
+
+  .faq__answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.3s ease;
+  }
+
+  .faq__answer p {
+    padding: 0 28px 24px;
+    font-size: 0.85rem;
+    color: #888;
+    line-height: 2;
+  }
+
+  @media (max-width: 768px) {
+    .faq { padding: 80px 0; }
+    .faq__question { padding: 20px 20px; }
+    .faq__answer p { padding: 0 20px 20px; }
+  }
+</style>

@@ -1,0 +1,247 @@
+---
+// Hero - ballaholic style: full-screen video, big bold text, playful energy
+---
+
+<section class="hero" id="hero">
+  <div class="hero__video-wrap">
+    <video
+      class="hero__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      poster=""
+    >
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-man-practicing-martial-arts-in-the-gym-4943-large.mp4" type="video/mp4" />
+    </video>
+    <div class="hero__overlay"></div>
+  </div>
+
+  <div class="hero__content">
+    <div class="hero__label fade-up">
+      <span class="tag tag--filled">BRAZILIAN JIU-JITSU</span>
+    </div>
+    <h1 class="hero__title fade-up">
+      OVER<br />LIMIT
+    </h1>
+    <p class="hero__location fade-up">H O N J O</p>
+    <p class="hero__catch fade-up">
+      あのGoogleの福利厚生にも採用されている<br />
+      ブラジリアン柔術が本庄市についに上陸！
+    </p>
+
+    <div class="hero__actions fade-up">
+      <a href="#contact" class="btn btn--primary">
+        無料体験予約
+        <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M7 17L17 7M17 7H7M17 7V17" />
+        </svg>
+      </a>
+      <a href="#concept" class="btn btn--white">詳しく見る</a>
+    </div>
+  </div>
+
+  <div class="hero__scroll fade-in">
+    <span>SCROLL</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+
+  <!-- Vertical accent text (ballaholic signature) -->
+  <span class="hero__vertical">BRAZILIAN JIU-JITSU × HONJO SAITAMA</span>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero__video-wrap {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(26, 26, 26, 0.3) 0%,
+      rgba(26, 26, 26, 0.6) 60%,
+      rgba(26, 26, 26, 0.85) 100%
+    );
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 32px;
+    padding-top: 60px;
+  }
+
+  .hero__label {
+    margin-bottom: 24px;
+  }
+
+  .hero__title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(4rem, 14vw, 10rem);
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    margin-bottom: 8px;
+  }
+
+  .hero__location {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.9rem, 2vw, 1.4rem);
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    color: #FF5E1A;
+    margin-bottom: 28px;
+  }
+
+  .hero__catch {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 2;
+    margin-bottom: 40px;
+  }
+
+  .hero__actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero__actions .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 18px 40px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
+  }
+
+  .hero__actions .btn--primary {
+    background: #FF5E1A;
+    color: #fff;
+  }
+
+  .hero__actions .btn--primary:hover {
+    background: #E04A0A;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(255, 94, 26, 0.4);
+  }
+
+  .hero__actions .btn--white {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+  }
+
+  .hero__actions .btn--white:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .hero__actions .btn__arrow {
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+  }
+
+  .hero__actions .btn:hover .btn__arrow {
+    transform: translate(2px, -2px);
+  }
+
+  .hero__label .tag {
+    display: inline-block;
+    padding: 6px 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 60px;
+    background: #FF5E1A;
+    color: #fff;
+    border: none;
+  }
+
+  .hero__scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+  }
+
+  .hero__scroll span {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .hero__scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.4), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 1; transform: scaleY(1); }
+    50% { opacity: 0.3; transform: scaleY(0.5); }
+  }
+
+  .hero__vertical {
+    position: absolute;
+    right: 32px;
+    bottom: 120px;
+    writing-mode: vertical-rl;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.15);
+    z-index: 2;
+  }
+
+  @media (max-width: 768px) {
+    .hero__vertical { display: none; }
+    .hero__content { padding: 0 20px; padding-top: 40px; }
+    .hero__actions { flex-direction: column; align-items: center; }
+  }
+</style>

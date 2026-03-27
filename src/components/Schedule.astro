@@ -1,0 +1,491 @@
+---
+// Schedule - ballaholic style: time-based grid timetable
+---
+
+<section class="schedule" id="schedule">
+  <div class="container">
+    <div class="schedule__header fade-up" style="text-align: center; margin-bottom: 64px;">
+      <span class="section-label">Schedule</span>
+      <h2 class="section-title">スケジュール</h2>
+      <p class="section-subtitle" style="margin: 0 auto;">
+        スケジュールをご確認の上、お気軽にお越しください。
+      </p>
+    </div>
+
+    <!-- ===== Desktop: Time-based grid (like ballaholic) ===== -->
+    <div class="schedule__table-wrap fade-up">
+      <table class="schedule__table">
+        <thead>
+          <tr>
+            <th class="schedule__th schedule__th--time"></th>
+            <th class="schedule__th">MON</th>
+            <th class="schedule__th">TUE</th>
+            <th class="schedule__th">WED</th>
+            <th class="schedule__th">THU</th>
+            <th class="schedule__th">FRI</th>
+            <th class="schedule__th schedule__th--accent">SAT</th>
+            <th class="schedule__th schedule__th--accent">SUN</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 10:00 row -->
+          <tr>
+            <td class="schedule__time">10:00</td>
+            <td class="schedule__cell schedule__cell--empty"></td>
+            <td class="schedule__cell schedule__cell--empty"></td>
+            <td class="schedule__cell schedule__cell--empty"></td>
+            <td class="schedule__cell schedule__cell--empty"></td>
+            <td class="schedule__cell schedule__cell--empty"></td>
+            <td class="schedule__cell schedule__cell--beginner">
+              <span class="schedule__class-label">初心者</span>
+            </td>
+            <td class="schedule__cell schedule__cell--all">
+              <span class="schedule__class-label">オールレベル</span>
+            </td>
+          </tr>
+          <!-- 19:00 row -->
+          <tr>
+            <td class="schedule__time">19:00</td>
+            <td class="schedule__cell schedule__cell--beginner">
+              <span class="schedule__class-label">初心者</span>
+            </td>
+            <td class="schedule__cell schedule__cell--rest">
+              <span class="schedule__rest-label">REST</span>
+            </td>
+            <td class="schedule__cell schedule__cell--beginner">
+              <span class="schedule__class-label">初心者</span>
+            </td>
+            <td class="schedule__cell schedule__cell--rest">
+              <span class="schedule__rest-label">REST</span>
+            </td>
+            <td class="schedule__cell schedule__cell--beginner">
+              <span class="schedule__class-label">初心者</span>
+            </td>
+            <td class="schedule__cell schedule__cell--empty"></td>
+            <td class="schedule__cell schedule__cell--empty"></td>
+          </tr>
+          <!-- 20:00 row -->
+          <tr>
+            <td class="schedule__time">20:00</td>
+            <td class="schedule__cell schedule__cell--all">
+              <span class="schedule__class-label">オールレベル</span>
+            </td>
+            <td class="schedule__cell schedule__cell--rest">
+              <span class="schedule__rest-label">REST</span>
+            </td>
+            <td class="schedule__cell schedule__cell--all">
+              <span class="schedule__class-label">オールレベル</span>
+            </td>
+            <td class="schedule__cell schedule__cell--rest">
+              <span class="schedule__rest-label">REST</span>
+            </td>
+            <td class="schedule__cell schedule__cell--all">
+              <span class="schedule__class-label">オールレベル</span>
+            </td>
+            <td class="schedule__cell schedule__cell--empty"></td>
+            <td class="schedule__cell schedule__cell--empty"></td>
+          </tr>
+          <!-- 21:00 row -->
+          <tr>
+            <td class="schedule__time">21:00</td>
+            <td class="schedule__cell schedule__cell--free">
+              <span class="schedule__class-label">フリーマット</span>
+            </td>
+            <td class="schedule__cell schedule__cell--rest">
+              <span class="schedule__rest-label">REST</span>
+            </td>
+            <td class="schedule__cell schedule__cell--free">
+              <span class="schedule__class-label">フリーマット</span>
+            </td>
+            <td class="schedule__cell schedule__cell--rest">
+              <span class="schedule__rest-label">REST</span>
+            </td>
+            <td class="schedule__cell schedule__cell--free">
+              <span class="schedule__class-label">フリーマット</span>
+            </td>
+            <td class="schedule__cell schedule__cell--empty"></td>
+            <td class="schedule__cell schedule__cell--empty"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== Mobile: card list view ===== -->
+    <div class="schedule__mobile fade-up">
+      <!-- Mon -->
+      <div class="schedule__m-day">
+        <div class="schedule__m-day-header">
+          <span class="schedule__m-day-name">MON</span>
+          <span class="schedule__m-day-jp">月曜日</span>
+        </div>
+        <div class="schedule__m-classes">
+          <div class="schedule__m-class schedule__m-class--beginner">
+            <span class="schedule__m-time">19:00</span>
+            <span class="schedule__m-name">初心者クラス</span>
+          </div>
+          <div class="schedule__m-class schedule__m-class--all">
+            <span class="schedule__m-time">20:00</span>
+            <span class="schedule__m-name">オールレベル</span>
+          </div>
+          <div class="schedule__m-class schedule__m-class--free">
+            <span class="schedule__m-time">21:00</span>
+            <span class="schedule__m-name">フリーマット</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tue -->
+      <div class="schedule__m-day schedule__m-day--rest">
+        <div class="schedule__m-day-header">
+          <span class="schedule__m-day-name">TUE</span>
+          <span class="schedule__m-day-jp">火曜日</span>
+        </div>
+        <div class="schedule__m-rest">REST DAY</div>
+      </div>
+
+      <!-- Wed -->
+      <div class="schedule__m-day">
+        <div class="schedule__m-day-header">
+          <span class="schedule__m-day-name">WED</span>
+          <span class="schedule__m-day-jp">水曜日</span>
+        </div>
+        <div class="schedule__m-classes">
+          <div class="schedule__m-class schedule__m-class--beginner">
+            <span class="schedule__m-time">19:00</span>
+            <span class="schedule__m-name">初心者クラス</span>
+          </div>
+          <div class="schedule__m-class schedule__m-class--all">
+            <span class="schedule__m-time">20:00</span>
+            <span class="schedule__m-name">オールレベル</span>
+          </div>
+          <div class="schedule__m-class schedule__m-class--free">
+            <span class="schedule__m-time">21:00</span>
+            <span class="schedule__m-name">フリーマット</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thu -->
+      <div class="schedule__m-day schedule__m-day--rest">
+        <div class="schedule__m-day-header">
+          <span class="schedule__m-day-name">THU</span>
+          <span class="schedule__m-day-jp">木曜日</span>
+        </div>
+        <div class="schedule__m-rest">REST DAY</div>
+      </div>
+
+      <!-- Fri -->
+      <div class="schedule__m-day">
+        <div class="schedule__m-day-header">
+          <span class="schedule__m-day-name">FRI</span>
+          <span class="schedule__m-day-jp">金曜日</span>
+        </div>
+        <div class="schedule__m-classes">
+          <div class="schedule__m-class schedule__m-class--beginner">
+            <span class="schedule__m-time">19:00</span>
+            <span class="schedule__m-name">初心者クラス</span>
+          </div>
+          <div class="schedule__m-class schedule__m-class--all">
+            <span class="schedule__m-time">20:00</span>
+            <span class="schedule__m-name">オールレベル</span>
+          </div>
+          <div class="schedule__m-class schedule__m-class--free">
+            <span class="schedule__m-time">21:00</span>
+            <span class="schedule__m-name">フリーマット</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sat -->
+      <div class="schedule__m-day schedule__m-day--weekend">
+        <div class="schedule__m-day-header">
+          <span class="schedule__m-day-name schedule__m-day-name--accent">SAT</span>
+          <span class="schedule__m-day-jp">土曜日</span>
+        </div>
+        <div class="schedule__m-classes">
+          <div class="schedule__m-class schedule__m-class--beginner">
+            <span class="schedule__m-time">10:00</span>
+            <span class="schedule__m-name">初心者クラス</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sun -->
+      <div class="schedule__m-day schedule__m-day--weekend">
+        <div class="schedule__m-day-header">
+          <span class="schedule__m-day-name schedule__m-day-name--accent">SUN</span>
+          <span class="schedule__m-day-jp">日曜日</span>
+        </div>
+        <div class="schedule__m-classes">
+          <div class="schedule__m-class schedule__m-class--all">
+            <span class="schedule__m-time">10:00</span>
+            <span class="schedule__m-name">オールレベル</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div class="schedule__legend fade-up">
+      <div class="schedule__legend-item">
+        <span class="schedule__legend-dot" style="background:#FF5E1A;"></span>
+        <span>初心者クラス</span>
+      </div>
+      <div class="schedule__legend-item">
+        <span class="schedule__legend-dot" style="background:#1A1A1A;"></span>
+        <span>オールレベル</span>
+      </div>
+      <div class="schedule__legend-item">
+        <span class="schedule__legend-dot" style="background:#94D2A8;"></span>
+        <span>フリーマット</span>
+      </div>
+    </div>
+
+    <p class="schedule__note fade-up">
+      ※ スケジュールは変更になる場合があります。最新の情報は <a href="https://www.instagram.com/tshr_jiujitsu/" target="_blank" rel="noopener" style="color:#FF5E1A;font-weight:600;">Instagram</a> をご確認ください。
+    </p>
+  </div>
+</section>
+
+<style is:global>
+  .schedule {
+    padding: 120px 0;
+    background: #F5F2EE;
+  }
+
+  /* ===== Desktop Table ===== */
+  .schedule__table-wrap {
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+    margin-bottom: 40px;
+    overflow-x: auto;
+  }
+
+  .schedule__table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 6px;
+    table-layout: fixed;
+  }
+
+  .schedule__th {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-align: center;
+    padding: 12px 4px;
+    color: #1A1A1A;
+  }
+
+  .schedule__th--time {
+    width: 60px;
+  }
+
+  .schedule__th--accent {
+    color: #FF5E1A;
+  }
+
+  .schedule__time {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #aaa;
+    text-align: right;
+    padding-right: 12px;
+    vertical-align: middle;
+  }
+
+  .schedule__cell {
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 12px;
+    padding: 14px 6px;
+    height: 56px;
+    transition: transform 0.2s ease;
+  }
+
+  .schedule__cell:hover {
+    transform: scale(1.04);
+  }
+
+  .schedule__cell--beginner {
+    background: #FF5E1A;
+  }
+
+  .schedule__cell--all {
+    background: #1A1A1A;
+  }
+
+  .schedule__cell--free {
+    background: #94D2A8;
+  }
+
+  .schedule__cell--rest {
+    background: #e8e4de;
+  }
+
+  .schedule__cell--empty {
+    background: transparent;
+  }
+
+  .schedule__class-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.02em;
+  }
+
+  .schedule__cell--free .schedule__class-label {
+    color: #1A1A1A;
+  }
+
+  .schedule__rest-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #bbb;
+  }
+
+  /* ===== Mobile card list ===== */
+  .schedule__mobile {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .schedule__m-day {
+    background: #FFFFFF;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+  }
+
+  .schedule__m-day--rest {
+    opacity: 0.55;
+  }
+
+  .schedule__m-day--weekend {
+    border: 1.5px solid rgba(255, 94, 26, 0.25);
+  }
+
+  .schedule__m-day-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  }
+
+  .schedule__m-day-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: #1A1A1A;
+  }
+
+  .schedule__m-day-name--accent {
+    color: #FF5E1A;
+  }
+
+  .schedule__m-day-jp {
+    font-size: 0.7rem;
+    color: #bbb;
+  }
+
+  .schedule__m-classes {
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .schedule__m-class {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    border-radius: 14px;
+  }
+
+  .schedule__m-class--beginner {
+    background: rgba(255, 94, 26, 0.08);
+  }
+
+  .schedule__m-class--all {
+    background: rgba(26, 26, 26, 0.05);
+  }
+
+  .schedule__m-class--free {
+    background: rgba(148, 210, 168, 0.15);
+  }
+
+  .schedule__m-time {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #888;
+    min-width: 44px;
+  }
+
+  .schedule__m-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .schedule__m-class--beginner .schedule__m-name { color: #FF5E1A; }
+  .schedule__m-class--all .schedule__m-name { color: #1A1A1A; }
+  .schedule__m-class--free .schedule__m-name { color: #5CB88A; }
+
+  .schedule__m-rest {
+    padding: 20px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #ccc;
+  }
+
+  /* ===== Legend ===== */
+  .schedule__legend {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .schedule__legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: #888;
+  }
+
+  .schedule__legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .schedule__note {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #bbb;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    .schedule { padding: 80px 0; }
+    .schedule__table-wrap { display: none; }
+    .schedule__mobile { display: flex; }
+  }
+</style>

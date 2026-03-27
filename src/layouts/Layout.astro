@@ -1,23 +1,33 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Over Limit 本庄 | ブラジリアン柔術',
+  description = 'あのGoogleの福利厚生にも採用されているブラジリアン柔術が本庄市についに上陸！アジアチャンピオンが直接指導する最高の環境でブラジリアン柔術を始めませんか？'
+} = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  @import '../styles/global.css';
 </style>

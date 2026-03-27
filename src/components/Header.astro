@@ -1,0 +1,291 @@
+---
+// Header - ballaholic style: minimal, clean, with accent color logo
+---
+
+<header class="header" id="header">
+  <div class="header__inner">
+    <a href="/" class="header__logo">
+      <span class="header__logo-mark">OL</span>
+      <span class="header__logo-text">
+        <span class="header__logo-name">OVER LIMIT</span>
+        <span class="header__logo-sub">H O N J O</span>
+      </span>
+    </a>
+
+    <nav class="header__nav" id="nav-menu">
+      <a href="#concept" class="header__link">Concept</a>
+      <a href="#instructor" class="header__link">Instructor</a>
+      <a href="#system" class="header__link">Price</a>
+      <a href="#schedule" class="header__link">Schedule</a>
+      <a href="#access" class="header__link">Access</a>
+      <a href="#contact" class="header__link header__link--cta">
+        Contact
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M7 17L17 7M17 7H7M17 7V17" />
+        </svg>
+      </a>
+    </nav>
+
+    <button class="header__burger" id="burger-btn" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <nav class="mobile-menu__nav">
+    <a href="#concept" class="mobile-menu__link">Concept</a>
+    <a href="#instructor" class="mobile-menu__link">Instructor</a>
+    <a href="#system" class="mobile-menu__link">Price</a>
+    <a href="#schedule" class="mobile-menu__link">Schedule</a>
+    <a href="#access" class="mobile-menu__link">Access</a>
+    <a href="#contact" class="mobile-menu__link mobile-menu__link--cta">Contact</a>
+  </nav>
+  <div class="mobile-menu__footer">
+    <a href="https://www.instagram.com/tshr_jiujitsu/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.facebook.com/groups/304416070927536" target="_blank" rel="noopener">Facebook</a>
+  </div>
+</div>
+
+<script>
+  const burger = document.getElementById('burger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const header = document.getElementById('header');
+  const mobileLinks = document.querySelectorAll('.mobile-menu__link');
+
+  burger?.addEventListener('click', () => {
+    burger.classList.toggle('active');
+    mobileMenu?.classList.toggle('open');
+    document.body.style.overflow = mobileMenu?.classList.contains('open') ? 'hidden' : '';
+  });
+
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      burger?.classList.remove('active');
+      mobileMenu?.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll > 100) {
+      header?.classList.add('scrolled');
+    } else {
+      header?.classList.remove('scrolled');
+    }
+    lastScroll = currentScroll;
+  });
+</script>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .header.scrolled {
+    padding: 12px 0;
+    background: rgba(245, 242, 238, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+  }
+
+  .header__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header__logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 1001;
+  }
+
+  .header__logo-mark {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #FF5E1A;
+    letter-spacing: -0.03em;
+  }
+
+  .header__logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .header__logo-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: #1A1A1A;
+  }
+
+  .header__logo-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.55rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: #aaa;
+    margin-top: 2px;
+  }
+
+  .header__nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .header__link {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #1A1A1A;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+
+  .header__link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #FF5E1A;
+    border-radius: 1px;
+    transition: width 0.3s ease;
+  }
+
+  .header__link:hover { color: #FF5E1A; }
+  .header__link:hover::after { width: 100%; }
+
+  .header__link--cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 20px;
+    background: #FF5E1A;
+    color: #fff !important;
+    border-radius: 60px;
+    transition: all 0.3s ease;
+  }
+
+  .header__link--cta::after { display: none; }
+  .header__link--cta:hover {
+    background: #E04A0A;
+    transform: translateY(-1px);
+  }
+
+  .header__burger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+  }
+
+  .header__burger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #1A1A1A;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+  }
+
+  .header__burger.active span:first-child {
+    transform: rotate(45deg) translate(3px, 3px);
+  }
+
+  .header__burger.active span:last-child {
+    transform: rotate(-45deg) translate(3px, -3px);
+  }
+
+  /* Mobile Menu */
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: #F5F2EE;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  .mobile-menu.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .mobile-menu__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .mobile-menu__link {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #1A1A1A;
+    transition: color 0.3s;
+  }
+
+  .mobile-menu__link:hover { color: #FF5E1A; }
+
+  .mobile-menu__link--cta {
+    color: #FF5E1A;
+  }
+
+  .mobile-menu__footer {
+    position: absolute;
+    bottom: 48px;
+    display: flex;
+    gap: 24px;
+  }
+
+  .mobile-menu__footer a {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #aaa;
+    transition: color 0.3s;
+  }
+
+  .mobile-menu__footer a:hover { color: #FF5E1A; }
+
+  @media (max-width: 768px) {
+    .header__nav { display: none; }
+    .header__burger { display: flex; }
+    .header__inner { padding: 0 20px; }
+  }
+</style>

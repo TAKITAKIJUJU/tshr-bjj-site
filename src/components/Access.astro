@@ -1,0 +1,149 @@
+---
+// Access - ballaholic style
+---
+
+<section class="access section--white" id="access">
+  <div class="container">
+    <div class="access__grid">
+      <div class="access__info fade-up">
+        <span class="section-label">Access</span>
+        <h2 class="section-title">アクセス</h2>
+
+        <div class="access__details">
+          <div class="access__item">
+            <span class="access__item-icon">📍</span>
+            <div>
+              <span class="access__item-label">Address</span>
+              <p class="access__item-value">〒367-0000 埼玉県本庄市○○○○</p>
+            </div>
+          </div>
+          <div class="access__item">
+            <span class="access__item-icon">🚃</span>
+            <div>
+              <span class="access__item-label">Station</span>
+              <p class="access__item-value">JR高崎線 本庄駅より徒歩○分</p>
+            </div>
+          </div>
+          <div class="access__item">
+            <span class="access__item-icon">🅿️</span>
+            <div>
+              <span class="access__item-label">Parking</span>
+              <p class="access__item-value">あり（無料）</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#" class="btn btn--dark" style="margin-top: 32px;">
+          Google MAP で開く
+          <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M7 17L17 7M17 7H7M17 7V17" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="access__map fade-up">
+        <div class="access__map-card card">
+          <div class="access__map-inner">
+            <span>Google Maps</span>
+            <p>※ 実際の地図は後から埋め込みます</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .access {
+    padding: 120px 0;
+  }
+
+  .access__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .access__details {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .access__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: #F5F2EE;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  .access__item:hover {
+    transform: translateX(4px);
+  }
+
+  .access__item-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .access__item-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #FF5E1A;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .access__item-value {
+    font-size: 0.85rem;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  .access__map-card {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .access__map-inner {
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(135deg, #e8e4de, #d5d0ca);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+  }
+
+  .access__map-inner span {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: rgba(0, 0, 0, 0.15);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .access__map-inner p {
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .access__grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .access { padding: 80px 0; }
+  }
+</style>
