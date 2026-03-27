@@ -69,9 +69,11 @@
         <span class="system__price-value">¥2,200</span>
         <span class="system__price-unit">/回 (税込)</span>
       </div>
-    </div>
+    <p class="system__scroll-hint fade-up">
+      ※スマートフォンではカードを横にスワイプしてご覧いただけます。
+    </p>
     
-    <div class="system__actions fade-up" style="text-align: center; margin-top: 48px;">
+    <div class="system__actions fade-up" style="text-align: center; margin-top: 32px;">
       <a href="#contact" class="btn btn--white" style="min-width: 240px;">体験・入会お申し込み</a>
     </div>
   </div>
@@ -235,16 +237,56 @@
     }
   }
 
+  .system__scroll-hint {
+    display: none;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+
   @media (max-width: 768px) {
-    .system__grid {
-      grid-template-columns: 1fr;
-      margin: 0 auto 24px auto;
-      gap: 16px;
-    }
     .system { padding: 80px 0; }
+    
+    .system__scroll-hint { display: block; }
+
+    /* Swipeable modern card layout */
+    .system__grid {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 16px;
+      padding-bottom: 24px; 
+      /* Breakout of container padding to allow edge-to-edge swipe */
+      margin-left: -20px; 
+      margin-right: -20px;
+      padding-left: 20px; /* Align first card with container */
+      padding-right: 20px;
+      -webkit-overflow-scrolling: touch;
+      /* Hide scrollbar for a native app feel */
+      scrollbar-width: none;
+    }
+    
+    .system__grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .system__card {
+      min-width: 85vw; /* Make card take 85% of screen to hint next card */
+      scroll-snap-align: center; /* Snap cards to center */
+      flex-shrink: 0;
+    }
+
     .system__campaign {
       flex-direction: column;
       gap: 12px;
+    }
+
+    .system__visitor {
+      margin-top: -16px; /* Pull it slightly closer to the swiper */
     }
   }
 </style>
