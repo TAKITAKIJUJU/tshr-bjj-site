@@ -1,11 +1,15 @@
 ---
-// ClassFlow - Refined YAWARA style (Vertical Layout per user request)
+// ClassFlow.astro - Luxury Minimalist Dark Style
 ---
 
-<section class="classflow section--white" id="classflow">
-  <div class="container" style="max-width: 900px;"> <!-- Narrower container for blog-style readability -->
+<section class="classflow section" id="classflow">
+  <div class="container" style="max-width: 900px; position: relative;">
+    
+    <!-- Background thin lettering -->
+    <div class="classflow__bg-text text-outline-thin">F</div>
+
     <div class="classflow__header fade-up">
-      <span class="section-label">FLOW</span>
+      <span class="section-label">03 / FLOW</span>
       <h2 class="section-title--jp">クラスの流れ</h2>
     </div>
 
@@ -13,42 +17,48 @@
       <!-- Step 1 -->
       <div class="classflow__item fade-up">
         <div class="classflow__content">
-          <div class="classflow__step-label">STEP 01</div>
+          <div class="classflow__step-label">
+            <span class="classflow__line"></span> STEP 01
+          </div>
           <h3 class="classflow__title">マット運動</h3>
           <p class="classflow__desc">
             「受け身」「柔術立ち」といった寝技に必要不可欠な基本の動きを全員で反復します。マット運動で三半規管が鍛えられることによってバランス感覚や打たれ強さが向上します。
           </p>
         </div>
         <div class="classflow__image">
-          <img src="/flow-1.png" alt="マット運動の様子" loading="lazy">
+          <img src="/flow-1.png" alt="マット運動の様子" class="img-luxury" loading="lazy">
         </div>
       </div>
 
       <!-- Step 2 -->
       <div class="classflow__item fade-up">
         <div class="classflow__content">
-          <div class="classflow__step-label">STEP 02</div>
+          <div class="classflow__step-label">
+            <span class="classflow__line"></span> STEP 02
+          </div>
           <h3 class="classflow__title">テクニック練習</h3>
           <p class="classflow__desc">
             指導経験が豊富のインストラクターがテクニックをレクチャーし、2人1組になって反復練習します。ペアになった先輩メンバーも親切に教えてくれるのでご安心ください。
           </p>
         </div>
         <div class="classflow__image">
-          <img src="/flow-2.png" alt="テクニック練習の様子" loading="lazy">
+          <img src="/flow-2.png" alt="テクニック練習の様子" class="img-luxury" loading="lazy">
         </div>
       </div>
 
       <!-- Step 3 -->
       <div class="classflow__item fade-up">
         <div class="classflow__content">
-          <div class="classflow__step-label">STEP 03</div>
+          <div class="classflow__step-label">
+            <span class="classflow__line"></span> STEP 03
+          </div>
           <h3 class="classflow__title">スパーリング</h3>
           <p class="classflow__desc">
             最後に実践練習のスパーリングを行います。柔術は体を使ったチェスや将棋とも言われるくらいゲーム性が高く、ストレス発散効果バツグンです。初心者のうちは相手の方が動きを合わせてくれます。習ったテクニックやどこかで見たことがある技をぜひ試してみてください。
           </p>
         </div>
         <div class="classflow__image">
-          <img src="/flow-3.png" alt="スパーリングの様子" loading="lazy">
+          <img src="/flow-3.png" alt="スパーリングの様子" class="img-luxury" loading="lazy">
         </div>
       </div>
     </div>
@@ -57,57 +67,85 @@
 
 <style>
   .classflow {
-    padding: 120px 0;
+    padding: 180px 0;
+    background: #000;
+  }
+
+  .classflow__bg-text {
+    position: absolute;
+    top: 10%; right: -10%;
+    font-family: 'Inter', sans-serif;
+    font-size: 80vw;
+    font-weight: 300;
+    line-height: 1;
+    z-index: 0;
   }
 
   .classflow__header {
-    text-align: center;
-    margin-bottom: 80px;
+    text-align: left;
+    margin-bottom: 120px;
+    position: relative;
+    z-index: 10;
   }
 
   .classflow__list {
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 120px;
+    position: relative;
+    z-index: 10;
   }
 
   .classflow__item {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 32px;
   }
 
   .classflow__content {
     text-align: left;
+    max-width: 600px;
   }
 
   .classflow__step-label {
     font-family: 'Inter', sans-serif;
     font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: #999999;
-    margin-bottom: 8px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    color: #FF5E1A;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .classflow__line {
+    width: 40px;
+    height: 1px;
+    background: #FF5E1A;
+    display: inline-block;
   }
 
   .classflow__title {
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #1A1A1A;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 24px;
+    color: #FFFFFF;
+    letter-spacing: 0.1em;
   }
 
   .classflow__desc {
     font-size: 0.95rem;
-    line-height: 1.8;
-    color: #666666;
+    line-height: 2;
+    color: #AAAAAA;
+    letter-spacing: 0.05em;
   }
 
   .classflow__image {
     width: 100%;
-    border-radius: 20px; /* Clean rounded corners */
+    border-radius: 0; /* Sharp edges */
     overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
   }
 
   .classflow__image img {
@@ -118,9 +156,10 @@
   }
 
   @media (max-width: 768px) {
-    .classflow { padding: 80px 0; }
-    .classflow__title { font-size: 1.4rem; }
+    .classflow { padding: 100px 0; }
+    .classflow__title { font-size: 1.6rem; }
     .classflow__desc { font-size: 0.9rem; }
-    .classflow__list { gap: 60px; }
+    .classflow__list { gap: 80px; }
+    .classflow__header { margin-bottom: 80px; }
   }
 </style>

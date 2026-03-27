@@ -1,21 +1,24 @@
 ---
-// Instructor - Refined YAWARA style with Official Content
+// Instructor.astro - Luxury Minimalist Dark Style
 ---
 
-<section class="instructor section" id="instructor">
-  <div class="container" style="max-width: 1000px;">
+<section class="instructor section--dark" id="instructor">
+  <!-- Minimalist background line -->
+  <div class="instructor__bg-line"></div>
+
+  <div class="container" style="max-width: 1000px; position: relative; z-index: 10;">
     <div class="instructor__inner">
       <div class="instructor__media fade-up">
         <div class="instructor__photo-wrapper">
           <div class="instructor__photo">
-            <!-- Dummy image with fallback since the official one is not in the public folder -->
-            <img src="https://overlimit-bjj.sakura.ne.jp/fsj41442/wp-content/uploads/2021/08/dummy-profile.jpg" alt="田代 セイイチ" onerror="this.onerror=null; this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22500%22%20viewBox%3D%220%200%20400%20500%22%3E%3Crect%20fill%3D%22%23EFEFEF%22%20width%3D%22400%22%20height%3D%22500%22%2F%3E%3Ctext%20fill%3D%22%23999999%22%20font-family%3D%22sans-serif%22%20font-size%3D%2216%22%20font-weight%3D%22bold%22%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%3ESEIICHI%20TASHIRO%3C%2Ftext%3E%3C%2Fsvg%3E';" />
+            <!-- Dummy image with fallback -->
+            <img src="https://overlimit-bjj.sakura.ne.jp/fsj41442/wp-content/uploads/2021/08/dummy-profile.jpg" class="img-luxury" alt="田代 セイイチ" onerror="this.onerror=null; this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22500%22%20viewBox%3D%220%200%20400%20500%22%3E%3Crect%20fill%3D%22%23111%22%20width%3D%22400%22%20height%3D%22500%22%2F%3E%3Ctext%20fill%3D%22%23555%22%20font-family%3D%22sans-serif%22%20font-size%3D%2216%22%20font-weight%3D%22normal%22%20letter-spacing%3D%224%22%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%3ESEIICHI%20TASHIRO%3C%2Ftext%3E%3C%2Fsvg%3E';" />
           </div>
         </div>
       </div>
 
       <div class="instructor__info fade-up">
-        <span class="section-label">Instructor</span>
+        <span class="section-label">02 / INSTRUCTOR</span>
         <h2 class="section-title--jp">インストラクター</h2>
 
         <div class="instructor__profile">
@@ -51,81 +54,83 @@
 
 <style>
   .instructor {
-    padding: 120px 0;
-    background: #FFFFFF;
+    padding: 180px 0;
+    background: #0A0A0A; /* Slightly off-black */
     position: relative;
+    overflow: hidden;
+  }
+
+  .instructor__bg-line {
+    position: absolute;
+    top: 0; left: 50%;
+    width: 1px; height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: 0;
   }
 
   .instructor__inner {
     display: grid;
-    grid-template-columns: 2fr 3fr;
-    gap: 60px;
+    grid-template-columns: 5fr 7fr;
+    gap: 80px;
     align-items: start;
   }
 
   .instructor__photo-wrapper {
     position: relative;
-    border-radius: 20px;
-    background: #F8F9FA;
-    overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+    /* Sharp edge magazine border */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 16px;
+    background: #000;
   }
 
   .instructor__photo {
-    aspect-ratio: 4 / 3; /* Wider aspect ratio matching the screenshot provided by user */
-  }
-
-  @media (min-width: 993px) {
-    .instructor__photo {
-      aspect-ratio: 4 / 5; /* Taller on desktop for elegance */
-    }
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
   }
 
   .instructor__photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(100%);
-    transition: filter 0.6s ease;
-  }
-
-  .instructor__photo-wrapper:hover .instructor__photo img {
-    filter: grayscale(0%);
   }
 
   .instructor__profile {
     margin-top: 16px;
+    max-width: 500px;
   }
 
   .instructor__name {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #1A1A1A;
-    margin-bottom: 32px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin-bottom: 48px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
+    letter-spacing: 0.1em;
   }
   
   .instructor__title {
     font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #666666;
-    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #FF5E1A;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
   }
 
   .instructor__history {
-    margin-bottom: 32px;
+    margin-bottom: 40px;
   }
 
   .instructor__history-title, .instructor__message-title {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #1A1A1A;
-    margin-bottom: 12px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+    letter-spacing: 0.1em;
   }
 
   .instructor__history ul {
@@ -135,31 +140,32 @@
 
   .instructor__history li {
     font-size: 0.9rem;
-    color: #444;
-    padding: 4px 0 4px 16px;
+    color: #AAAAAA;
+    padding: 6px 0 6px 20px;
     position: relative;
-    line-height: 1.6;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
   }
 
   .instructor__history li::before {
-    content: "・";
+    content: "";
     position: absolute;
-    left: 0;
-    color: #1A1A1A;
+    left: 0; top: 14px;
+    width: 6px; height: 1px;
+    background: #FF5E1A;
   }
 
   .instructor__message {
-    background: #F8F9FA;
-    padding: 24px;
-    border-radius: 12px;
-    margin-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 40px;
   }
 
   .instructor__message p {
     font-size: 0.9rem;
-    color: #333;
-    line-height: 2;
-    margin-bottom: 16px;
+    color: #888888;
+    line-height: 2.2;
+    margin-bottom: 24px;
+    letter-spacing: 0.05em;
   }
 
   .instructor__message p:last-child {
@@ -169,13 +175,13 @@
   @media (max-width: 992px) {
     .instructor__inner {
       grid-template-columns: 1fr;
-      gap: 40px;
+      gap: 60px;
     }
   }
 
   @media (max-width: 768px) {
-    .instructor { padding: 80px 0; }
-    .instructor__name { font-size: 1.5rem; }
-    .instructor__message { padding: 16px; }
+    .instructor { padding: 100px 0; }
+    .instructor__name { font-size: 1.8rem; }
+    .instructor__photo-wrapper { padding: 8px; }
   }
 </style>

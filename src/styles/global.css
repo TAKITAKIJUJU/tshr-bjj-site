@@ -1,25 +1,26 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600;700&display=swap');
 
 @theme {
-  /* YAWARA-inspired minimalist palette */
-  --color-primary: #1A1A1A;
-  --color-bg: #F8F9FA;
-  --color-bg-white: #FFFFFF;
-  --color-text: #1A1A1A;
-  --color-text-muted: #666666;
-  --color-text-subtle: #999999;
-  --color-dark: #1F2022;
-  --color-accent: #FF5E1A; /* Kept very minimal for brand identity */
+  /* High-Fashion Luxury Palette: Pure Black, Pure White, and Orange */
+  --color-primary: #FF5E1A; /* Accent Orange */
+  --color-bg: #000000;      /* Pitch Black */
+  --color-bg-alt: #0A0A0A;  /* Very Dark Gray for subtle sections */
+  --color-text: #FFFFFF;    /* Pure White text on black */
+  --color-text-muted: #888888; /* Mid-gray for secondary text */
+  --color-text-subtle: #444444; /* Dark gray for subtle lines/bg text */
+  --color-dark: #000000;
   
-  --font-heading: 'Inter', sans-serif;
-  --font-body: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: 'Noto Serif JP', 'Times New Roman', serif; /* Elegant Serif for high-end feel */
+  --font-sans: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+  --font-en: 'Inter', sans-serif;
 
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 40px; /* Pill shapes */
+  /* Zero border-radius for sharp, magazine-like edges */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
 }
 
 /* === Base === */
@@ -38,15 +39,16 @@ html {
 
 body {
   font-family: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
-  color: #1A1A1A;
-  background-color: #F8F9FA;
+  color: #FFFFFF;
+  background-color: #000000;
   line-height: 1.8;
   overflow-x: hidden;
+  font-weight: 300; /* Lighter body text */
 }
 
 ::selection {
-  background-color: #1A1A1A;
-  color: #fff;
+  background-color: #FF5E1A;
+  color: #000;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -54,18 +56,17 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* === Layout === */
 .section {
-  padding: 120px 0;
+  padding: 160px 0; /* Huge padding for extreme whitespace */
   position: relative;
-  background-color: #F8F9FA;
+  background-color: #000000;
 }
 
 .section--dark {
-  background-color: #1F2022;
-  color: #fff;
+  background-color: #0A0A0A;
 }
 
 .section--white {
-  background-color: #FFFFFF;
+  background-color: #000000; /* Keeping class names but overriding to black for consistency */
 }
 
 .container {
@@ -74,179 +75,162 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 0 32px;
 }
 
-/* === Typography (Refined boutique style) === */
+/* === Typography (Luxury High Fashion) === */
 .section-label {
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
+  font-weight: 400; /* Thinner */
+  letter-spacing: 0.3em; /* Very wide */
   text-transform: uppercase;
-  color: #999999;
+  color: #FF5E1A; /* Accent orange */
   display: inline-block;
-  margin-bottom: 8px;
+  margin-bottom: 24px;
 }
 
-/* Scaled down heading size especially for mobile */
 .section-title {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
-  margin-bottom: 24px;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 300; /* Elegant thin */
+  letter-spacing: 0.1em;
+  line-height: 1.1;
+  margin-bottom: 40px;
+  text-transform: uppercase;
 }
 
 .section-title--jp {
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-family: 'Noto Serif JP', serif; /* Serif for Japanese elegance */
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+  letter-spacing: 0.1em;
   line-height: 1.4;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .section-subtitle {
   font-size: 0.95rem;
-  font-weight: 400;
-  color: #666666;
-  line-height: 2;
+  font-weight: 300;
+  color: #AAAAAA;
+  line-height: 2.2;
   max-width: 600px;
+  letter-spacing: 0.05em;
+}
+
+/* Vertical Text for Japanese Catchphrases */
+.text-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: 'Noto Serif JP', serif;
+  letter-spacing: 0.3em;
+  line-height: 1.5;
+}
+
+/* Outline Text (Hair-thin) for background art */
+.text-outline-thin {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05); /* Barely visible */
+  pointer-events: none;
+}
+
+/* Grayscale Images for monochrome vibe */
+.img-luxury {
+  filter: grayscale(100%) contrast(1.1) brightness(0.9);
+  transition: filter 0.6s ease;
+}
+.img-luxury:hover {
+  filter: grayscale(0%) contrast(1.1) brightness(1);
 }
 
 /* === GSAP Anim States === */
-.fade-up {
-  opacity: 0;
-  transform: translateY(30px);
-}
+.fade-up { opacity: 0; transform: translateY(40px); }
+.fade-in { opacity: 0; }
+.slide-left { opacity: 0; transform: translateX(-40px); }
+.slide-right { opacity: 0; transform: translateX(40px); }
+.scale-in { opacity: 0; transform: scale(0.96); }
 
-.fade-in {
-  opacity: 0;
-}
-
-.slide-left {
-  opacity: 0;
-  transform: translateX(-30px);
-}
-
-.slide-right {
-  opacity: 0;
-  transform: translateX(30px);
-}
-
-.scale-in {
-  opacity: 0;
-  transform: scale(0.96);
-}
-
-/* === Buttons (Clean, elegant) === */
+/* === Buttons (Geometric, thin borders) === */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 16px 40px;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  border: none;
-  border-radius: 100px; /* Fully rounded */
+  gap: 16px;
+  padding: 18px 48px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Thin white border */
+  border-radius: 0; /* Sharp */
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
   text-decoration: none;
+  background: transparent;
+  color: #FFFFFF;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #FFFFFF;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: -1;
+}
+
+.btn:hover {
+  color: #000000;
+  border-color: #FFFFFF;
+}
+
+.btn:hover::before {
+  transform: scaleY(1);
 }
 
 .btn--primary {
-  background-color: #1A1A1A;
-  color: #fff;
+  border-color: #FF5E1A;
+  color: #FF5E1A;
 }
+.btn--primary::before { background: #FF5E1A; }
+.btn--primary:hover { color: #000; border-color: #FF5E1A; }
 
-.btn--primary:hover {
-  background-color: #333333;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.btn--outline {
-  background-color: transparent;
-  color: #1A1A1A;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.btn--outline:hover {
-  border-color: #1A1A1A;
-  background-color: #F8F9FA;
-}
-
-.btn--white {
-  background-color: #fff;
-  color: #1A1A1A;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.btn--white:hover {
-  background-color: #F8F9FA;
-  transform: translateY(-2px);
-}
-
-/* Arrow icon in buttons */
-.btn__arrow {
-  display: inline-flex;
-  width: 16px;
-  height: 16px;
-  transition: transform 0.3s ease;
-}
-
-.btn:hover .btn__arrow {
-  transform: translateX(4px);
-}
+.btn--white { background-color: #fff; color: #000; border-color: #fff; }
+.btn--white::before { background: #FF5E1A; }
+.btn--white:hover { color: #000; border-color: #FF5E1A; }
 
 /* === Tags / Badges === */
 .tag {
   display: inline-block;
-  padding: 4px 12px;
+  padding: 4px 16px;
   font-family: 'Inter', sans-serif;
   font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-weight: 400;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  border-radius: 40px;
-  background: rgba(0,0,0,0.05);
-  color: #666;
+  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #AAAAAA;
 }
 
-.tag--filled {
-  background: #1A1A1A;
-  color: #fff;
-}
+.tag--filled { background: #FF5E1A; color: #FFF; border-color: #FF5E1A; }
 
 /* === Scrollbar === */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: #F8F9FA;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #CCCCCC;
-  border-radius: 6px;
-}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #333; }
 
 /* === Media === */
 @media (max-width: 768px) {
-  .section {
-    padding: 80px 0;
-  }
-  .container {
-    padding: 0 20px;
-  }
-  .section-title, .section-title--jp {
-    /* Ensuring mobile headings are strictly small per user request */
-    font-size: 1.5rem !important; 
-    margin-bottom: 20px;
+  .section { padding: 100px 0; }
+  .container { padding: 0 24px; }
+  .section-title { font-size: 2rem !important; margin-bottom: 24px; }
+  .section-title--jp { font-size: 1.8rem !important; margin-bottom: 24px; }
+  
+  .text-vertical {
+    letter-spacing: 0.15em;
   }
 }

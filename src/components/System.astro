@@ -1,77 +1,86 @@
 ---
-// System / Pricing - Exact Data from Old Site (YAWARA refined style)
+// System / Pricing - Luxury Minimalist Dark Style
 ---
 
-<section class="system section--dark" id="system">
-  <div class="container">
+<section class="system section" id="system">
+  <!-- Minimalist background letter -->
+  <div class="system__bg-text text-outline-thin">S</div>
+
+  <div class="container" style="position: relative; z-index: 10;">
     <div class="system__header fade-up">
-      <span class="section-label" style="color: #666;">Price</span>
-      <h2 class="section-title--jp" style="color: #FFF;">料金システム</h2>
-      <p class="section-subtitle" style="color: #999;">
-        あなたのライフスタイルに合わせたプランをご用意しています。
+      <span class="section-label">05 / PRICE</span>
+      <h2 class="section-title--jp">料金システム</h2>
+      <p class="section-subtitle">
+        あなたのライフスタイルに合わせたプラン。
       </p>
       
-      <!-- Special Campaign / Discounts -->
+      <!-- Special Campaign -->
       <div class="system__campaign">
         <span class="campaign-badge">入会金 無料</span>
-        <span class="campaign-text">年一括払いで<strong>15%OFF</strong> ｜ 家族との同時入会で<strong>10%OFF</strong></span>
+        <span class="campaign-text">年一括払いで<strong style="color:#FFF;">15%OFF</strong> ｜ 家族との同時入会で<strong style="color:#FFF;">10%OFF</strong></span>
       </div>
     </div>
 
     <div class="system__grid">
       <!-- Full Time (Men) -->
       <div class="system__card card fade-up">
-        <h3 class="system__plan-name">フルタイム会員<span class="system__plan-sub">(一般男性)</span></h3>
-        <div class="system__price">
-          <span class="system__price-value">¥9,800</span>
-          <span class="system__price-unit">/月 (税込)</span>
+        <div class="system__card-content">
+          <h3 class="system__plan-name">フルタイム会員<span class="system__plan-sub">一般男性</span></h3>
+          <div class="system__price">
+            <span class="system__price-value">¥9,800</span>
+            <span class="system__price-unit">/月 (税込)</span>
+          </div>
+          <ul class="system__features">
+            <li>通い放題（全クラス参加可能）</li>
+            <li>スパーリング・フリースパー参加可</li>
+            <li>すべての設備が使い放題</li>
+          </ul>
         </div>
-        <ul class="system__features">
-          <li>通い放題（全クラス参加可能）</li>
-          <li>スパーリング・フリースパー参加可</li>
-          <li>すべての設備が使い放題</li>
-        </ul>
       </div>
 
       <!-- Full Time (Women / Students) -->
       <div class="system__card card fade-up" style="transition-delay: 0.1s;">
-        <h3 class="system__plan-name">フルタイム会員<span class="system__plan-sub">(女性・中高生)</span></h3>
-        <div class="system__price">
-          <span class="system__price-value">¥7,800</span>
-          <span class="system__price-unit">/月 (税込)</span>
+        <div class="system__card-content">
+          <h3 class="system__plan-name">フルタイム会員<span class="system__plan-sub">女性・中高生</span></h3>
+          <div class="system__price">
+            <span class="system__price-value" style="color:#FF5E1A;">¥7,800</span>
+            <span class="system__price-unit">/月 (税込)</span>
+          </div>
+          <ul class="system__features">
+            <li>通い放題（全クラス参加可能）</li>
+            <li>女性や学生も安心して通える環境</li>
+            <li>すべての設備が使い放題</li>
+          </ul>
         </div>
-        <ul class="system__features">
-          <li>通い放題（全クラス参加可能）</li>
-          <li>女性や学生も安心して通える環境</li>
-          <li>すべての設備が使い放題</li>
-        </ul>
       </div>
 
       <!-- Kids -->
       <div class="system__card card fade-up" style="transition-delay: 0.2s;">
-        <h3 class="system__plan-name">キッズ会員<span class="system__plan-sub">(小学1〜6年生)</span></h3>
-        <div class="system__price">
-          <span class="system__price-value">¥5,000</span>
-          <span class="system__price-unit">/月 (税込)</span>
+        <div class="system__card-content">
+          <h3 class="system__plan-name">キッズ会員<span class="system__plan-sub">小学1〜6年生</span></h3>
+          <div class="system__price">
+            <span class="system__price-value">¥5,000</span>
+            <span class="system__price-unit">/月 (税込)</span>
+          </div>
+          <ul class="system__features">
+            <li>キッズクラス参加可能</li>
+            <li>礼儀作法や基礎体力の向上</li>
+            <li>楽しく安全に柔術を学べます</li>
+          </ul>
         </div>
-        <ul class="system__features">
-          <li>キッズクラス参加可能</li>
-          <li>礼儀作法や基礎体力の向上</li>
-          <li>楽しく安全に柔術を学べます</li>
-        </ul>
       </div>
     </div>
 
     <!-- Visitor Plan -->
     <div class="system__visitor fade-up" style="transition-delay: 0.3s;">
-      <h3 class="system__plan-name">ビジター <span class="system__plan-sub">(1回利用)</span></h3>
-      <div class="system__price">
+      <h3 class="system__plan-name">ビジター <span class="system__plan-sub" style="margin-left: 12px; border-left: 1px solid #555; padding-left: 12px;">1回利用</span></h3>
+      <div class="system__price" style="margin-bottom: 0; border: none; padding: 0;">
         <span class="system__price-value">¥2,200</span>
         <span class="system__price-unit">/回 (税込)</span>
       </div>
     </div>
     
-    <div class="system__actions fade-up" style="text-align: center; margin-top: 48px;">
+    <div class="system__actions fade-up" style="text-align: center; margin-top: 80px;">
       <a href="#contact" class="btn btn--white" style="min-width: 240px;">体験・入会お申し込み</a>
     </div>
   </div>
@@ -79,14 +88,26 @@
 
 <style>
   .system {
-    padding: 120px 0;
-    background: #111111; /* Deep premium black */
+    padding: 180px 0;
+    background: #000;
     color: #FFF;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .system__bg-text {
+    position: absolute;
+    top: 20%; left: -10%;
+    font-family: 'Inter', sans-serif;
+    font-size: 80vw;
+    font-weight: 300;
+    line-height: 1;
+    z-index: 0;
   }
 
   .system__header {
     text-align: center;
-    margin-bottom: 64px;
+    margin-bottom: 80px;
   }
 
   .system__campaign {
@@ -94,92 +115,100 @@
     align-items: center;
     justify-content: center;
     gap: 16px;
-    margin-top: 32px;
+    margin-top: 40px;
+    padding: 16px 24px;
+    border: 1px solid rgba(255,255,255,0.1);
   }
 
   .campaign-badge {
-    background: #FFF;
-    color: #111;
-    font-weight: 700;
+    background: #FF5E1A;
+    color: #FFF;
+    font-weight: 500;
     font-size: 0.75rem;
-    padding: 4px 12px;
-    border-radius: 4px;
-    letter-spacing: 0.05em;
+    padding: 6px 12px;
+    letter-spacing: 0.1em;
   }
 
   .campaign-text {
     font-size: 0.85rem;
     font-weight: 400;
-    color: #CCC;
-  }
-  
-  .campaign-text strong {
-    color: #FFF;
-    font-weight: 600;
+    color: #AAA;
+    letter-spacing: 0.05em;
   }
 
   .system__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 0; /* Flush grid for elegant table-like layout */
     margin-bottom: 24px;
+    border: 1px solid rgba(255,255,255,0.15);
   }
 
   .system__card {
-    background: #1A1A1A; /* Slightly lighter than the background section */
-    border: 1px solid rgba(255,255,255,0.05); /* Very faint border */
-    border-radius: 12px;
-    padding: 40px 32px;
+    background: transparent;
+    border-right: 1px solid rgba(255,255,255,0.15);
+    padding: 0;
     display: flex;
     flex-direction: column;
     text-align: left;
-    transition: background 0.4s ease, border-color 0.4s ease;
+    transition: background 0.4s ease;
+  }
+
+  .system__card:last-child {
+    border-right: none;
   }
 
   .system__card:hover {
-    background: #222222;
-    border-color: rgba(255,255,255,0.1);
-    transform: none; /* No vertical movement, keep it flat and elegant */
-    box-shadow: none;
+    background: rgba(255,255,255,0.03);
+  }
+
+  .system__card-content {
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   .system__plan-name {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
     color: #FFF;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
+    letter-spacing: 0.05em;
   }
 
   .system__plan-sub {
-    font-size: 0.8rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.75rem;
     font-weight: 400;
     color: #888;
+    letter-spacing: 0.1em;
   }
 
   .system__price {
     display: flex;
     align-items: baseline;
     gap: 8px;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     padding-bottom: 24px;
   }
 
   .system__price-value {
     font-family: 'Inter', sans-serif;
-    font-size: 2rem;
-    font-weight: 500;
-    letter-spacing: 0;
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
     color: #FFF;
   }
 
   .system__price-unit {
     font-size: 0.75rem;
-    color: #888;
+    color: #666;
   }
 
   .system__features {
@@ -188,27 +217,29 @@
   }
 
   .system__features li {
-    font-size: 0.8rem;
-    color: #AAA;
+    font-size: 0.85rem;
+    color: #AAAAAA;
     padding: 8px 0;
-    line-height: 1.6;
+    line-height: 1.8;
     position: relative;
     padding-left: 20px;
+    letter-spacing: 0.05em;
   }
 
   .system__features li::before {
-    content: "・";
+    content: "";
     position: absolute;
-    left: 0;
-    color: #666;
+    left: 0; top: 16px;
+    width: 6px; height: 1px;
+    background: #FF5E1A;
   }
 
   /* Visitor Plan */
   .system__visitor {
-    background: #1A1A1A;
-    border: 1px solid rgba(255,255,255,0.05);
-    border-radius: 12px;
-    padding: 24px 32px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-top: none; /* Connects smoothly to the grid above */
+    padding: 32px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -217,34 +248,45 @@
   .system__visitor .system__plan-name {
     flex-direction: row;
     align-items: center;
-    gap: 12px;
     margin-bottom: 0;
-  }
-
-  .system__visitor .system__price {
-    margin-bottom: 0;
-    border-bottom: none;
-    padding-bottom: 0;
   }
 
   @media (max-width: 992px) {
+    .system__grid {
+      grid-template-columns: 1fr;
+      border-right: none; border-bottom: none;
+    }
+    .system__card {
+      border-right: none;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
     .system__visitor {
+      border-top: 1px solid rgba(255,255,255,0.15);
       flex-direction: column;
       align-items: flex-start;
       gap: 16px;
     }
+    .system__visitor .system__plan-name {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .system__visitor .system__plan-sub {
+      margin-left: 0 !important;
+      border-left: none !important;
+      padding-left: 0 !important;
+    }
   }
 
   @media (max-width: 768px) {
-    .system__grid {
-      grid-template-columns: 1fr;
-      margin: 0 auto 24px auto;
-      gap: 16px;
-    }
-    .system { padding: 80px 0; }
+    .system { padding: 100px 0; }
     .system__campaign {
       flex-direction: column;
       gap: 12px;
+      padding: 16px;
     }
+    .system__card-content {
+      padding: 40px 24px;
+    }
+    .system__visitor { padding: 24px; }
   }
 </style>

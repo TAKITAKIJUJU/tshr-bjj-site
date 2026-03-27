@@ -1,30 +1,30 @@
 ---
-// Schedule - Minimal YAWARA/Hacomono inspired timetable
+// Schedule.astro - Luxury Minimalist Dark Style
 ---
 
-<section class="schedule section--white" id="schedule">
+<section class="schedule section--dark" id="schedule">
   <div class="container">
     <div class="schedule__header fade-up">
-      <span class="section-label">Schedule</span>
+      <span class="section-label">04 / SCHEDULE</span>
       <h2 class="section-title--jp">スケジュール</h2>
     </div>
 
     <!-- ===== Legend ===== -->
     <div class="schedule__legend fade-up">
       <div class="schedule__legend-item">
-        <span class="schedule__legend-dot" style="background:#1A1A1A;"></span>
+        <span class="schedule__legend-dot" style="background:#FFFFFF;"></span>
         <span>オールレベル</span>
       </div>
       <div class="schedule__legend-item">
-        <span class="schedule__legend-dot" style="background:#5CB88A;"></span>
+        <span class="schedule__legend-dot" style="background:transparent; border: 1px solid #FFF;"></span>
         <span>ビギナー</span>
       </div>
       <div class="schedule__legend-item">
-        <span class="schedule__legend-dot" style="background:#F89B5B;"></span>
+        <span class="schedule__legend-dot" style="background:#FF5E1A;"></span>
         <span>キッズ</span>
       </div>
       <div class="schedule__legend-item">
-        <span class="schedule__legend-dot" style="background:#D94848;"></span>
+        <span class="schedule__legend-dot" style="background:transparent; border: 1px solid #FF5E1A;"></span>
         <span>NOGI</span>
       </div>
     </div>
@@ -157,20 +157,21 @@
     </div>
 
     <p class="schedule__note fade-up">
-      ※ スケジュールは予告なく変更になる場合がございます。最新の休館日などは <a href="https://www.instagram.com/tshr_jiujitsu/" target="_blank" rel="noopener" style="text-decoration: underline;">Instagram</a> をご確認ください。<br>
-      <span class="schedule__scroll-hint">※スマートフォンでは表を横にスクロールしてご覧いただけます。</span>
+      ※ スケジュールは予告なく変更になる場合がございます。休館日は <a href="https://www.instagram.com/tshr_jiujitsu/" target="_blank" rel="noopener" style="text-decoration: underline; color: #FFF;">Instagram</a> をご確認ください。<br>
+      <span class="schedule__scroll-hint">※スマートフォンでは表を横にスワイプしてご覧いただけます。</span>
     </p>
   </div>
 </section>
 
 <style is:global>
   .schedule {
-    padding: 120px 0;
+    padding: 180px 0;
+    background: #000;
   }
   
   .schedule__header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
   }
 
   /* ===== Horizontal Scrollable Table ===== */
@@ -178,88 +179,102 @@
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    background: #FFFFFF;
-    border-radius: 8px; /* Clean, tight radius */
+    background: transparent;
     padding: 0 0 24px 0;
     margin-bottom: 24px;
     
-    /* Scrollbar styling for better UX */
-    scrollbar-color: #CCCCCC transparent;
+    scrollbar-color: #333 transparent;
     scrollbar-width: thin;
   }
 
-  .schedule__desktop::-webkit-scrollbar {
-    height: 6px;
-  }
-  .schedule__desktop::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  .schedule__desktop::-webkit-scrollbar-thumb {
-    background-color: #CCCCCC;
-    border-radius: 6px;
-  }
+  .schedule__desktop::-webkit-scrollbar { height: 4px; }
+  .schedule__desktop::-webkit-scrollbar-track { background: transparent; }
+  .schedule__desktop::-webkit-scrollbar-thumb { background-color: #333; }
 
   .schedule__t {
     width: 100%;
-    min-width: 860px; /* Ensure it stays wide enough to force scroll on mobile */
+    min-width: 860px;
     border-collapse: collapse;
     table-layout: fixed;
+    border: 1px solid rgba(255,255,255,0.15); /* Outer sharp border */
   }
 
   .schedule__t th {
-    font-family: 'Inter', 'Noto Sans JP', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #666666;
-    padding: 16px 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    padding: 24px 8px;
     text-align: center;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-    background: #F8F9FA;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    border-right: 1px solid rgba(255,255,255,0.05);
+    background: #0A0A0A;
   }
 
   .schedule__t td {
     vertical-align: top;
-    height: 80px; 
-    border: 1px solid rgba(0,0,0,0.03);
-    padding: 8px;
+    height: 90px; 
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-right: 1px solid rgba(255,255,255,0.05);
+    padding: 4px;
+    background: #000;
   }
 
-  /* Specific Card Styling (Flat, clean) */
+  /* Specific Card Styling (Sharp, minimalist, B/W/Orange) */
   .s-card {
-    border-radius: 6px;
+    border-radius: 0; /* No rounding */
     padding: 12px 6px;
     text-align: center;
-    color: #FFF;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 4px;
-    min-height: 64px;
-    transition: opacity 0.2s ease;
+    min-height: 72px;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
   }
 
   .s-card:hover {
-    opacity: 0.85;
+    background: #111;
   }
 
-  .s-card--all { background-color: #1A1A1A; } /* Sleek black */
-  .s-card--beginner { background-color: #5CB88A; } /* Yawara style Green */
-  .s-card--kids { background-color: #F89B5B; } /* Orange */
-  .s-card--nogi { background-color: #D94848; } /* Red */
+  /* Using purely Black, White, and Orange */
+  .s-card--all { 
+    background-color: #FFFFFF;
+    color: #000;
+  }
+  
+  .s-card--beginner { 
+    background-color: transparent;
+    border-color: #FFFFFF;
+    color: #FFF;
+  }
+  
+  .s-card--kids { 
+    background-color: #FF5E1A; 
+    color: #FFF;
+  }
+  
+  .s-card--nogi { 
+    background-color: transparent;
+    border-color: #FF5E1A;
+    color: #FF5E1A;
+  }
 
   .s-name {
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.3;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.05em;
   }
 
   .s-time {
     font-family: 'Inter', sans-serif;
     font-size: 0.7rem;
-    font-weight: 500;
-    opacity: 0.8;
+    font-weight: 400;
+    opacity: 0.9;
   }
 
   /* ===== Legend ===== */
@@ -267,68 +282,63 @@
     display: flex;
     justify-content: center;
     gap: 24px;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     flex-wrap: wrap;
   }
 
   .schedule__legend-item {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: #666;
+    gap: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #AAAAAA;
+    letter-spacing: 0.1em;
   }
 
   .schedule__legend-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
+    width: 12px;
+    height: 12px;
     flex-shrink: 0;
   }
 
   .schedule__note {
     text-align: center;
     font-size: 0.8rem;
-    color: #888;
+    color: #666;
     line-height: 1.8;
   }
 
   .schedule__scroll-hint {
     display: none;
-    font-weight: 600;
-    color: #444;
+    font-weight: 400;
+    color: #888;
   }
 
   @media (max-width: 768px) {
-    .schedule { padding: 80px 0; }
+    .schedule { padding: 100px 0; }
     
     .schedule__scroll-hint {
       display: inline-block;
-      margin-top: 8px;
+      margin-top: 16px;
     }
     
-    /* Extra shrinking for mobile to make it look elegant and not squished */
     .s-card {
       padding: 8px 4px;
-      min-height: 56px;
+      min-height: 64px;
     }
     
-    .s-name {
-      font-size: 0.7rem; /* Significantly smaller */
-    }
-    
-    .s-time {
-      font-size: 0.65rem; /* Significantly smaller */
-    }
+    .s-name { font-size: 0.7rem; }
+    .s-time { font-size: 0.65rem; }
     
     .schedule__t th {
       font-size: 0.8rem;
-      padding: 12px 4px;
+      padding: 16px 4px;
     }
     
     .schedule__t td {
-      padding: 4px;
+      padding: 2px;
       height: 64px;
     }
   }
