@@ -1,0 +1,107 @@
+---
+// Marquee.astro - Infinite scrolling text ticker
+---
+<div class="marquee-container">
+  <div class="marquee">
+    <div class="marquee__inner">
+      <span>OVER LIMIT HONJO</span>
+      <span class="marquee__dot"></span>
+      <span>BRAZILIAN JIU-JITSU</span>
+      <span class="marquee__dot"></span>
+      <span>ALL LEVELS WELCOME</span>
+      <span class="marquee__dot"></span>
+      <span>BEGINNER FRIENDLY</span>
+      <span class="marquee__dot"></span>
+      <span>OVER LIMIT HONJO</span>
+      <span class="marquee__dot"></span>
+      <span>BRAZILIAN JIU-JITSU</span>
+      <span class="marquee__dot"></span>
+      <span>ALL LEVELS WELCOME</span>
+      <span class="marquee__dot"></span>
+      <span>BEGINNER FRIENDLY</span>
+      <span class="marquee__dot"></span>
+    </div>
+    <!-- Duplicate for infinite scroll loop seamlessly -->
+    <div class="marquee__inner" aria-hidden="true">
+      <span>OVER LIMIT HONJO</span>
+      <span class="marquee__dot"></span>
+      <span>BRAZILIAN JIU-JITSU</span>
+      <span class="marquee__dot"></span>
+      <span>ALL LEVELS WELCOME</span>
+      <span class="marquee__dot"></span>
+      <span>BEGINNER FRIENDLY</span>
+      <span class="marquee__dot"></span>
+      <span>OVER LIMIT HONJO</span>
+      <span class="marquee__dot"></span>
+      <span>BRAZILIAN JIU-JITSU</span>
+      <span class="marquee__dot"></span>
+      <span>ALL LEVELS WELCOME</span>
+      <span class="marquee__dot"></span>
+      <span>BEGINNER FRIENDLY</span>
+      <span class="marquee__dot"></span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .marquee-container {
+    background: #1A1A1A;
+    border-top: 1px solid rgba(255, 94, 26, 0.4);
+    border-bottom: 1px solid rgba(255, 94, 26, 0.4);
+    overflow: hidden;
+    padding: 16px 0;
+    position: relative;
+    z-index: 10;
+  }
+
+  .marquee {
+    display: flex;
+    white-space: nowrap;
+  }
+
+  .marquee__inner {
+    display: flex;
+    align-items: center;
+    animation: marquee-scroll 25s linear infinite;
+    padding-left: 20px;
+  }
+
+  .marquee__inner span {
+    font-family: 'Inter', monospace;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: #FF5E1A;
+    text-transform: uppercase;
+  }
+
+  .marquee__dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #FF5E1A;
+    border-radius: 50%;
+    margin: 0 40px;
+  }
+
+  @keyframes marquee-scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .marquee-container {
+      padding: 12px 0;
+    }
+    .marquee__inner span {
+      font-size: 1rem;
+    }
+    .marquee__dot {
+      margin: 0 24px;
+    }
+  }
+</style>

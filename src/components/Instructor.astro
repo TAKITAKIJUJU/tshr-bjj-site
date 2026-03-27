@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <div class="instructor__info fade-up">
+      <div class="instructor__info fade-up" style="color: #FFF;">
         <span class="section-label">Instructor</span>
         <h2 class="section-title">インストラクター</h2>
         <p class="section-subtitle">
@@ -51,7 +51,26 @@
 <style>
   .instructor {
     padding: 120px 0;
-    background: #F5F2EE;
+    background: #1A1A1A;
+    color: #FFF;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Huge dark background text for extra street vibe */
+  .instructor::before {
+    content: "INSTRUCTOR";
+    position: absolute;
+    bottom: -10%;
+    right: -5%;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(12rem, 30vw, 28rem);
+    font-weight: 900;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.03);
+    pointer-events: none;
+    z-index: 0;
   }
 
   .instructor__inner {
@@ -59,24 +78,37 @@
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
+    position: relative;
+    z-index: 10;
   }
 
   .instructor__photo-card {
     padding: 0;
     overflow: hidden;
     position: relative;
-    background: #FFFFFF;
+    background: #2A2A2A;
     border-radius: 24px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .instructor__photo-card:hover {
+    transform: translateY(-8px);
   }
 
   .instructor__photo {
     aspect-ratio: 3 / 4;
-    background: linear-gradient(135deg, #e8e4de, #d5d0ca);
+    background: linear-gradient(135deg, #333, #111);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 24px;
+    filter: grayscale(100%);
+    transition: filter 0.6s ease;
+  }
+
+  .instructor__photo-card:hover .instructor__photo {
+    filter: grayscale(0%);
   }
 
   .instructor__photo-text {
@@ -84,7 +116,7 @@
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.2em;
-    color: rgba(0, 0, 0, 0.15);
+    color: rgba(255, 255, 255, 0.15);
   }
 
   .instructor__photo-badge {
@@ -106,9 +138,10 @@
 
   .instructor__profile {
     padding: 32px;
-    background: #FFFFFF;
+    background: #2A2A2A;
     border-radius: 24px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   .instructor__name-row {
@@ -123,11 +156,12 @@
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 1.1rem;
     font-weight: 700;
+    color: #FFF;
   }
 
   .instructor__bio {
     font-size: 0.85rem;
-    color: #888;
+    color: #BBB;
     line-height: 2;
     margin-bottom: 24px;
   }
