@@ -21,23 +21,24 @@
 
 
   <div class="hero__content container">
-    <div class="hero__text-box">
-      <h1 class="hero__title fade-up">OVER<br>LIMIT<br><span style="color:#FF5E1A">HONJO</span></h1>
-      <p class="hero__subtitle fade-up" style="transition-delay: 0.2s;">
+    <!-- Vertical Japanese Copy moved to the left side -->
+    <div class="hero__vert-text fade-up text-vertical" style="transition-delay: 0.2s;">
+      柔 術 で 、<br>人 生 を 豊 か に 。
+    </div>
+
+    <!-- Subtitle and Call to Action moved to the right side -->
+    <div class="hero__text-box" style="display: flex; flex-direction: column; align-items: flex-start;">
+      <p class="hero__subtitle fade-up" style="transition-delay: 0.4s;">
         BRAZILIAN JIU-JITSU ACADEMY
       </p>
       
-      <div class="hero__action fade-up" style="transition-delay: 0.4s;">
+      <div class="hero__action fade-up" style="transition-delay: 0.6s;">
         <a href="#contact" class="btn btn--white">
           <span>FREE TRIAL</span>
           <svg class="btn__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
+      </div>
     </div>
-  </div>
-
-  <!-- Vertical Japanese Copy -->
-  <div class="hero__vert-text fade-up text-vertical" style="transition-delay: 0.6s;">
-    柔 術 で 、<br>人 生 を 豊 か に 。
   </div>
 </section>
 
@@ -97,16 +98,7 @@
     max-width: 600px;
   }
 
-  .hero__title {
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(3rem, 8vw, 6.5rem);
-    font-weight: 200; /* Ultra thin luxury */
-    letter-spacing: 0.15em;
-    line-height: 1;
-    color: #FFFFFF;
-    margin-bottom: 24px;
-    margin-left: -5px; /* Visual optical alignment */
-  }
+
 
   .hero__subtitle {
     font-family: 'Inter', sans-serif;
@@ -150,11 +142,13 @@
       align-items: flex-start;
       gap: 40px;
     }
+    .hero__text-box {
+      align-items: flex-start;
+    }
     .hero__vert-text {
-      position: absolute;
-      top: 100px; /* Higher up */
-      right: 20px;
-      font-size: 1.8rem;
+      /* Reset absolute positioning to join normal flex flow */
+      position: static;
+      margin-bottom: 24px;
     }
     .hero__subtitle { margin-bottom: 32px; }
   }
