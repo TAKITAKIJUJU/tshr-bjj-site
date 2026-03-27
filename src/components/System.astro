@@ -16,6 +16,15 @@
         <span class="campaign-badge">入会金 無料</span>
         <span class="campaign-text">年一括払いで<strong>15%OFF</strong> ｜ 家族との同時入会で<strong>10%OFF</strong></span>
       </div>
+
+      <!-- Scroll hint for mobile (Enhanced visibility) -->
+      <div class="system__scroll-hint fade-up" style="transition-delay: 0.1s;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="scroll-icon">
+          <!-- Double arrow pointing right to indicate swiping/scrolling -->
+          <path d="M13 17l5-5-5-5M6 17l5-5-5-5"/>
+        </svg>
+        <span>横にスワイプしてすべてのプランを表示</span>
+      </div>
     </div>
 
     <div class="system__grid">
@@ -69,9 +78,7 @@
         <span class="system__price-value">¥2,200</span>
         <span class="system__price-unit">/回 (税込)</span>
       </div>
-    <p class="system__scroll-hint fade-up">
-      ※スマートフォンではカードを横にスワイプしてご覧いただけます。
-    </p>
+    </div>
     
     <div class="system__actions fade-up" style="text-align: center; margin-top: 32px;">
       <a href="#contact" class="btn btn--white" style="min-width: 240px;">体験・入会お申し込み</a>
@@ -239,18 +246,29 @@
 
   .system__scroll-hint {
     display: none;
-    text-align: center;
-    font-size: 0.8rem;
-    color: #888;
-    margin-top: 16px;
-    margin-bottom: 24px;
-    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #FF5E1A; /* Accent orange for visibility */
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .scroll-icon {
+    animation: swipeAnim 1.5s infinite ease-in-out;
+  }
+
+  @keyframes swipeAnim {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(6px); }
   }
 
   @media (max-width: 768px) {
     .system { padding: 80px 0; }
     
-    .system__scroll-hint { display: block; }
+    .system__scroll-hint { display: flex; }
 
     /* Swipeable modern card layout */
     .system__grid {
