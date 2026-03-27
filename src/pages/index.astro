@@ -59,36 +59,51 @@ import FloatingCta from '../components/FloatingCta.astro';
 
   // Fade up animations
   gsap.utils.toArray('.fade-up').forEach((el: any) => {
+    let delayVal = 0;
+    if (el.style.transitionDelay) {
+      delayVal = parseFloat(el.style.transitionDelay);
+    }
     gsap.to(el, {
       scrollTrigger: {
         trigger: el,
         start: 'top 85%',
-        end: 'top 50%',
         toggleActions: 'play none none none',
       },
       opacity: 1,
       y: 0,
-      duration: 0.8,
-      ease: 'power3.out',
+      filter: 'blur(0px)',
+      duration: 1.4,
+      delay: delayVal,
+      ease: 'expo.out',
     });
   });
 
   // Fade in animations
   gsap.utils.toArray('.fade-in').forEach((el: any) => {
+    let delayVal = 0;
+    if (el.style.transitionDelay) {
+      delayVal = parseFloat(el.style.transitionDelay);
+    }
     gsap.to(el, {
       scrollTrigger: {
         trigger: el,
-        start: 'top 85%',
+        start: 'top 90%', /* Trigger slightly earlier for fade-in */
         toggleActions: 'play none none none',
       },
       opacity: 1,
-      duration: 1,
+      filter: 'blur(0px)',
+      duration: 1.6,
+      delay: delayVal,
       ease: 'power2.out',
     });
   });
 
   // Slide left animations
   gsap.utils.toArray('.slide-left').forEach((el: any) => {
+    let delayVal = 0;
+    if (el.style.transitionDelay) {
+      delayVal = parseFloat(el.style.transitionDelay);
+    }
     gsap.to(el, {
       scrollTrigger: {
         trigger: el,
@@ -97,13 +112,19 @@ import FloatingCta from '../components/FloatingCta.astro';
       },
       opacity: 1,
       x: 0,
-      duration: 0.8,
-      ease: 'power3.out',
+      filter: 'blur(0px)',
+      duration: 1.4,
+      delay: delayVal,
+      ease: 'expo.out',
     });
   });
 
   // Slide right animations
   gsap.utils.toArray('.slide-right').forEach((el: any) => {
+    let delayVal = 0;
+    if (el.style.transitionDelay) {
+      delayVal = parseFloat(el.style.transitionDelay);
+    }
     gsap.to(el, {
       scrollTrigger: {
         trigger: el,
@@ -112,8 +133,10 @@ import FloatingCta from '../components/FloatingCta.astro';
       },
       opacity: 1,
       x: 0,
-      duration: 0.8,
-      ease: 'power3.out',
+      filter: 'blur(0px)',
+      duration: 1.4,
+      delay: delayVal,
+      ease: 'expo.out',
     });
   });
 </script>

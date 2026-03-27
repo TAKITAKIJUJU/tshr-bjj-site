@@ -116,26 +116,31 @@ img { max-width: 100%; height: auto; display: block; }
 /* === GSAP Anim States === */
 .fade-up {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(40px); /* Increased from 30px for a more dramatic sweep */
+  filter: blur(10px); /* Apple-like blur reveal */
 }
 
 .fade-in {
   opacity: 0;
+  filter: blur(10px);
 }
 
 .slide-left {
   opacity: 0;
-  transform: translateX(-30px);
+  transform: translateX(-40px);
+  filter: blur(10px);
 }
 
 .slide-right {
   opacity: 0;
-  transform: translateX(30px);
+  transform: translateX(40px);
+  filter: blur(10px);
 }
 
 .scale-in {
   opacity: 0;
   transform: scale(0.96);
+  filter: blur(10px);
 }
 
 /* === Buttons (Clean, elegant) === */
