@@ -116,8 +116,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* === GSAP Anim States === */
 .fade-up {
   opacity: 0;
-  transform: translateY(40px); /* Increased from 30px for a more dramatic sweep */
-  filter: blur(10px); /* Apple-like blur reveal */
+  transform: translateY(30px);
 }
 
 .fade-in {
