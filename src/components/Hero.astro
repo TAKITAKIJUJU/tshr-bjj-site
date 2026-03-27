@@ -131,7 +131,12 @@
   .hero__vert-text {
     font-size: clamp(2rem, 4vw, 3rem);
     color: #FFFFFF;
-    /* Use Noto Serif JP - styling is in global CSS .text-vertical */
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-family: 'Noto Serif JP', serif;
+    letter-spacing: 0.3em;
+    line-height: 1.5;
+    z-index: 10;
   }
 
   @media (max-width: 992px) {
@@ -139,7 +144,7 @@
       align-items: flex-end;
     }
     .hero__overlay {
-      background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.2) 100%);
+      background: linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);
     }
     .hero__content {
       flex-direction: column;
@@ -148,8 +153,9 @@
     }
     .hero__vert-text {
       position: absolute;
-      top: 120px; right: 16px;
-      font-size: 1.5rem;
+      top: 100px; /* Higher up */
+      right: 20px;
+      font-size: 1.8rem;
     }
     .hero__subtitle { margin-bottom: 32px; }
   }
