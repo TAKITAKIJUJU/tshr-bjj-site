@@ -1,110 +1,136 @@
 ---
-// Schedule - ballaholic style: time-based grid timetable
+// Schedule - customized timetable with floating cards
 ---
 
-<section class="schedule" id="schedule">
+<section class="schedule section--white" id="schedule">
   <div class="container">
     <div class="schedule__header fade-up" style="text-align: center; margin-bottom: 64px;">
       <span class="section-label">Schedule</span>
       <h2 class="section-title">スケジュール</h2>
-      <p class="section-subtitle" style="margin: 0 auto;">
-        スケジュールをご確認の上、お気軽にお越しください。
-      </p>
     </div>
 
-    <!-- ===== Desktop: Time-based grid (like ballaholic) ===== -->
-    <div class="schedule__table-wrap fade-up">
-      <table class="schedule__table">
+    <!-- ===== Desktop: Floating Card Timetable ===== -->
+    <div class="schedule__desktop fade-up">
+      <table class="schedule__t">
         <thead>
           <tr>
-            <th class="schedule__th schedule__th--time"></th>
-            <th class="schedule__th">MON</th>
-            <th class="schedule__th">TUE</th>
-            <th class="schedule__th">WED</th>
-            <th class="schedule__th">THU</th>
-            <th class="schedule__th">FRI</th>
-            <th class="schedule__th schedule__th--accent">SAT</th>
-            <th class="schedule__th schedule__th--accent">SUN</th>
+            <th>月</th>
+            <th>火</th>
+            <th>水</th>
+            <th>木</th>
+            <th>金</th>
+            <th>土</th>
+            <th>日</th>
           </tr>
         </thead>
         <tbody>
-          <!-- 10:00 row -->
+          <!-- Row 1: 10:00 - 11:30 -->
           <tr>
-            <td class="schedule__time">10:00</td>
-            <td class="schedule__cell schedule__cell--empty"></td>
-            <td class="schedule__cell schedule__cell--empty"></td>
-            <td class="schedule__cell schedule__cell--empty"></td>
-            <td class="schedule__cell schedule__cell--empty"></td>
-            <td class="schedule__cell schedule__cell--empty"></td>
-            <td class="schedule__cell schedule__cell--beginner">
-              <span class="schedule__class-label">初心者</span>
+            <td>
+              <div class="s-card s-card--all">
+                <div class="s-name">オールレベル柔術</div>
+                <div class="s-time">10:00-11:30</div>
+              </div>
             </td>
-            <td class="schedule__cell schedule__cell--all">
-              <span class="schedule__class-label">オールレベル</span>
+            <td></td>
+            <td>
+              <div class="s-card s-card--all">
+                <div class="s-name">オールレベル柔術</div>
+                <div class="s-time">10:00-11:30</div>
+              </div>
             </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
-          <!-- 19:00 row -->
+
+          <!-- Row 2: 18:00 - 19:00 -->
           <tr>
-            <td class="schedule__time">19:00</td>
-            <td class="schedule__cell schedule__cell--beginner">
-              <span class="schedule__class-label">初心者</span>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              <div class="s-card s-card--beginner">
+                <div class="s-name">ビギナー柔術</div>
+                <div class="s-time">18:00-19:00</div>
+              </div>
             </td>
-            <td class="schedule__cell schedule__cell--rest">
-              <span class="schedule__rest-label">REST</span>
-            </td>
-            <td class="schedule__cell schedule__cell--beginner">
-              <span class="schedule__class-label">初心者</span>
-            </td>
-            <td class="schedule__cell schedule__cell--rest">
-              <span class="schedule__rest-label">REST</span>
-            </td>
-            <td class="schedule__cell schedule__cell--beginner">
-              <span class="schedule__class-label">初心者</span>
-            </td>
-            <td class="schedule__cell schedule__cell--empty"></td>
-            <td class="schedule__cell schedule__cell--empty"></td>
+            <td></td>
+            <td></td>
           </tr>
-          <!-- 20:00 row -->
+
+          <!-- Row 3: 19:00 - 20:00 -->
           <tr>
-            <td class="schedule__time">20:00</td>
-            <td class="schedule__cell schedule__cell--all">
-              <span class="schedule__class-label">オールレベル</span>
+            <td>
+              <div class="s-card s-card--kids">
+                <div class="s-name">キッズ柔術</div>
+                <div class="s-time">19:00-20:00</div>
+              </div>
             </td>
-            <td class="schedule__cell schedule__cell--rest">
-              <span class="schedule__rest-label">REST</span>
+            <td></td>
+            <td>
+              <div class="s-card s-card--beginner">
+                <div class="s-name">ビギナー柔術</div>
+                <div class="s-time">19:00-20:00</div>
+              </div>
             </td>
-            <td class="schedule__cell schedule__cell--all">
-              <span class="schedule__class-label">オールレベル</span>
+            <td>
+              <div class="s-card s-card--beginner">
+                <div class="s-name">ビギナー柔術</div>
+                <div class="s-time">19:00-20:00</div>
+              </div>
             </td>
-            <td class="schedule__cell schedule__cell--rest">
-              <span class="schedule__rest-label">REST</span>
+            <td>
+              <div class="s-card s-card--kids">
+                <div class="s-name">キッズ柔術</div>
+                <div class="s-time">19:00-20:00</div>
+              </div>
             </td>
-            <td class="schedule__cell schedule__cell--all">
-              <span class="schedule__class-label">オールレベル</span>
+            <td>
+              <div class="s-card s-card--kids">
+                <div class="s-name">キッズ柔術</div>
+                <div class="s-time">19:00-20:00</div>
+              </div>
             </td>
-            <td class="schedule__cell schedule__cell--empty"></td>
-            <td class="schedule__cell schedule__cell--empty"></td>
+            <td></td>
           </tr>
-          <!-- 21:00 row -->
+
+          <!-- Row 4: 20:30 - 22:00 -->
           <tr>
-            <td class="schedule__time">21:00</td>
-            <td class="schedule__cell schedule__cell--free">
-              <span class="schedule__class-label">フリーマット</span>
+            <td>
+              <div class="s-card s-card--all">
+                <div class="s-name">オールレベル柔術</div>
+                <div class="s-time">20:30-22:00</div>
+              </div>
             </td>
-            <td class="schedule__cell schedule__cell--rest">
-              <span class="schedule__rest-label">REST</span>
+            <td></td>
+            <td>
+              <div class="s-card s-card--all">
+                <div class="s-name">オールレベル柔術</div>
+                <div class="s-time">20:30-22:00</div>
+              </div>
             </td>
-            <td class="schedule__cell schedule__cell--free">
-              <span class="schedule__class-label">フリーマット</span>
+            <td>
+              <div class="s-card s-card--nogi">
+                <div class="s-name">NOGI</div>
+                <div class="s-time">20:30-22:00</div>
+              </div>
             </td>
-            <td class="schedule__cell schedule__cell--rest">
-              <span class="schedule__rest-label">REST</span>
+            <td>
+              <div class="s-card s-card--all">
+                <div class="s-name">オールレベル柔術</div>
+                <div class="s-time">20:30-22:00</div>
+              </div>
             </td>
-            <td class="schedule__cell schedule__cell--free">
-              <span class="schedule__class-label">フリーマット</span>
+            <td>
+              <div class="s-card s-card--all">
+                <div class="s-name">オールレベル柔術</div>
+                <div class="s-time">20:30-22:00</div>
+              </div>
             </td>
-            <td class="schedule__cell schedule__cell--empty"></td>
-            <td class="schedule__cell schedule__cell--empty"></td>
+            <td></td>
           </tr>
         </tbody>
       </table>
@@ -119,17 +145,17 @@
           <span class="schedule__m-day-jp">月曜日</span>
         </div>
         <div class="schedule__m-classes">
-          <div class="schedule__m-class schedule__m-class--beginner">
-            <span class="schedule__m-time">19:00</span>
-            <span class="schedule__m-name">初心者クラス</span>
+          <div class="s-card s-card--all s-card--mobile">
+            <span class="s-name">オールレベル柔術</span>
+            <span class="s-time">10:00-11:30</span>
           </div>
-          <div class="schedule__m-class schedule__m-class--all">
-            <span class="schedule__m-time">20:00</span>
-            <span class="schedule__m-name">オールレベル</span>
+          <div class="s-card s-card--kids s-card--mobile">
+            <span class="s-name">キッズ柔術</span>
+            <span class="s-time">19:00-20:00</span>
           </div>
-          <div class="schedule__m-class schedule__m-class--free">
-            <span class="schedule__m-time">21:00</span>
-            <span class="schedule__m-name">フリーマット</span>
+          <div class="s-card s-card--all s-card--mobile">
+            <span class="s-name">オールレベル柔術</span>
+            <span class="s-time">20:30-22:00</span>
           </div>
         </div>
       </div>
@@ -150,28 +176,37 @@
           <span class="schedule__m-day-jp">水曜日</span>
         </div>
         <div class="schedule__m-classes">
-          <div class="schedule__m-class schedule__m-class--beginner">
-            <span class="schedule__m-time">19:00</span>
-            <span class="schedule__m-name">初心者クラス</span>
+          <div class="s-card s-card--all s-card--mobile">
+            <span class="s-name">オールレベル柔術</span>
+            <span class="s-time">10:00-11:30</span>
           </div>
-          <div class="schedule__m-class schedule__m-class--all">
-            <span class="schedule__m-time">20:00</span>
-            <span class="schedule__m-name">オールレベル</span>
+          <div class="s-card s-card--beginner s-card--mobile">
+            <span class="s-name">ビギナー柔術</span>
+            <span class="s-time">19:00-20:00</span>
           </div>
-          <div class="schedule__m-class schedule__m-class--free">
-            <span class="schedule__m-time">21:00</span>
-            <span class="schedule__m-name">フリーマット</span>
+          <div class="s-card s-card--all s-card--mobile">
+            <span class="s-name">オールレベル柔術</span>
+            <span class="s-time">20:30-22:00</span>
           </div>
         </div>
       </div>
 
       <!-- Thu -->
-      <div class="schedule__m-day schedule__m-day--rest">
+      <div class="schedule__m-day">
         <div class="schedule__m-day-header">
           <span class="schedule__m-day-name">THU</span>
           <span class="schedule__m-day-jp">木曜日</span>
         </div>
-        <div class="schedule__m-rest">REST DAY</div>
+        <div class="schedule__m-classes">
+          <div class="s-card s-card--beginner s-card--mobile">
+            <span class="s-name">ビギナー柔術</span>
+            <span class="s-time">19:00-20:00</span>
+          </div>
+          <div class="s-card s-card--nogi s-card--mobile">
+            <span class="s-name">NOGI</span>
+            <span class="s-time">20:30-22:00</span>
+          </div>
+        </div>
       </div>
 
       <!-- Fri -->
@@ -181,17 +216,17 @@
           <span class="schedule__m-day-jp">金曜日</span>
         </div>
         <div class="schedule__m-classes">
-          <div class="schedule__m-class schedule__m-class--beginner">
-            <span class="schedule__m-time">19:00</span>
-            <span class="schedule__m-name">初心者クラス</span>
+          <div class="s-card s-card--beginner s-card--mobile">
+            <span class="s-name">ビギナー柔術</span>
+            <span class="s-time">18:00-19:00</span>
           </div>
-          <div class="schedule__m-class schedule__m-class--all">
-            <span class="schedule__m-time">20:00</span>
-            <span class="schedule__m-name">オールレベル</span>
+          <div class="s-card s-card--kids s-card--mobile">
+            <span class="s-name">キッズ柔術</span>
+            <span class="s-time">19:00-20:00</span>
           </div>
-          <div class="schedule__m-class schedule__m-class--free">
-            <span class="schedule__m-time">21:00</span>
-            <span class="schedule__m-name">フリーマット</span>
+          <div class="s-card s-card--all s-card--mobile">
+            <span class="s-name">オールレベル柔術</span>
+            <span class="s-time">20:30-22:00</span>
           </div>
         </div>
       </div>
@@ -203,41 +238,44 @@
           <span class="schedule__m-day-jp">土曜日</span>
         </div>
         <div class="schedule__m-classes">
-          <div class="schedule__m-class schedule__m-class--beginner">
-            <span class="schedule__m-time">10:00</span>
-            <span class="schedule__m-name">初心者クラス</span>
+          <div class="s-card s-card--kids s-card--mobile">
+            <span class="s-name">キッズ柔術</span>
+            <span class="s-time">19:00-20:00</span>
+          </div>
+          <div class="s-card s-card--all s-card--mobile">
+            <span class="s-name">オールレベル柔術</span>
+            <span class="s-time">20:30-22:00</span>
           </div>
         </div>
       </div>
 
       <!-- Sun -->
-      <div class="schedule__m-day schedule__m-day--weekend">
+      <div class="schedule__m-day schedule__m-day--weekend schedule__m-day--rest">
         <div class="schedule__m-day-header">
           <span class="schedule__m-day-name schedule__m-day-name--accent">SUN</span>
           <span class="schedule__m-day-jp">日曜日</span>
         </div>
-        <div class="schedule__m-classes">
-          <div class="schedule__m-class schedule__m-class--all">
-            <span class="schedule__m-time">10:00</span>
-            <span class="schedule__m-name">オールレベル</span>
-          </div>
-        </div>
+        <div class="schedule__m-rest">REST DAY</div>
       </div>
     </div>
 
-    <!-- Legend -->
+    <!-- ===== Legend ===== -->
     <div class="schedule__legend fade-up">
       <div class="schedule__legend-item">
-        <span class="schedule__legend-dot" style="background:#FF5E1A;"></span>
-        <span>初心者クラス</span>
+        <span class="schedule__legend-dot" style="background:#005043;"></span>
+        <span>オールレベル柔術</span>
       </div>
       <div class="schedule__legend-item">
-        <span class="schedule__legend-dot" style="background:#1A1A1A;"></span>
-        <span>オールレベル</span>
+        <span class="schedule__legend-dot" style="background:#5CB88A;"></span>
+        <span>ビギナー柔術</span>
       </div>
       <div class="schedule__legend-item">
-        <span class="schedule__legend-dot" style="background:#94D2A8;"></span>
-        <span>フリーマット</span>
+        <span class="schedule__legend-dot" style="background:#F89B5B;"></span>
+        <span>キッズ柔術</span>
+      </div>
+      <div class="schedule__legend-item">
+        <span class="schedule__legend-dot" style="background:#D94848;"></span>
+        <span>NOGI</span>
       </div>
     </div>
 
@@ -250,111 +288,86 @@
 <style is:global>
   .schedule {
     padding: 120px 0;
-    background: #F5F2EE;
   }
 
-  /* ===== Desktop Table ===== */
-  .schedule__table-wrap {
-    background: #FFFFFF;
-    border-radius: 24px;
-    padding: 32px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
-    margin-bottom: 40px;
-    overflow-x: auto;
-  }
-
-  .schedule__table {
+  /* ===== Desktop Floating Cards Table ===== */
+  .schedule__desktop {
     width: 100%;
+    overflow-x: auto;
+    background: #F5F2EE;
+    border-radius: 24px;
+    padding: 40px;
+    border: 1px solid rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+  }
+
+  .schedule__t {
+    width: 100%;
+    min-width: 800px;
     border-collapse: separate;
-    border-spacing: 6px;
+    border-spacing: 12px;
     table-layout: fixed;
   }
 
-  .schedule__th {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.75rem;
+  .schedule__t th {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.1rem;
     font-weight: 800;
-    letter-spacing: 0.08em;
-    text-align: center;
-    padding: 12px 4px;
     color: #1A1A1A;
-  }
-
-  .schedule__th--time {
-    width: 60px;
-  }
-
-  .schedule__th--accent {
-    color: #FF5E1A;
-  }
-
-  .schedule__time {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: #aaa;
-    text-align: right;
-    padding-right: 12px;
-    vertical-align: middle;
-  }
-
-  .schedule__cell {
+    padding-bottom: 16px;
     text-align: center;
-    vertical-align: middle;
+    border-bottom: 2px solid rgba(0,0,0,0.05);
+  }
+
+  .schedule__t td {
+    vertical-align: top;
+    height: 96px; /* Ensure empty cells have same height ratio */
+  }
+
+  /* Specific Card Styling */
+  .s-card {
     border-radius: 12px;
-    padding: 14px 6px;
-    height: 56px;
-    transition: transform 0.2s ease;
+    padding: 16px 8px;
+    text-align: center;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    min-height: 80px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   }
 
-  .schedule__cell:hover {
-    transform: scale(1.04);
+  .s-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
   }
 
-  .schedule__cell--beginner {
-    background: #FF5E1A;
-  }
+  .s-card--all { background-color: #005043; } /* Dark Teal matching image */
+  .s-card--beginner { background-color: #5CB88A; } /* Green matching image */
+  .s-card--kids { background-color: #F89B5B; } /* Orange/Yellow matching image */
+  .s-card--nogi { background-color: #D94848; } /* Red matching image */
 
-  .schedule__cell--all {
-    background: #1A1A1A;
-  }
-
-  .schedule__cell--free {
-    background: #94D2A8;
-  }
-
-  .schedule__cell--rest {
-    background: #e8e4de;
-  }
-
-  .schedule__cell--empty {
-    background: transparent;
-  }
-
-  .schedule__class-label {
-    font-size: 0.6rem;
-    font-weight: 700;
-    color: #fff;
+  .s-name {
+    font-size: 0.85rem;
+    font-weight: 800;
+    line-height: 1.3;
     letter-spacing: 0.02em;
   }
 
-  .schedule__cell--free .schedule__class-label {
-    color: #1A1A1A;
-  }
-
-  .schedule__rest-label {
+  .s-time {
     font-family: 'Inter', sans-serif;
-    font-size: 0.55rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    color: #bbb;
+    font-size: 0.75rem;
+    font-weight: 600;
+    opacity: 0.9;
   }
 
-  /* ===== Mobile card list ===== */
+  /* ===== Mobile styling overrides ===== */
   .schedule__mobile {
     display: none;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
     margin-bottom: 40px;
   }
 
@@ -366,11 +379,11 @@
   }
 
   .schedule__m-day--rest {
-    opacity: 0.55;
+    opacity: 0.5;
   }
 
   .schedule__m-day--weekend {
-    border: 1.5px solid rgba(255, 94, 26, 0.25);
+    border: 1.5px solid rgba(255, 94, 26, 0.3);
   }
 
   .schedule__m-day-header {
@@ -378,14 +391,14 @@
     align-items: center;
     gap: 12px;
     padding: 16px 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    background: #FFFFFF;
   }
 
   .schedule__m-day-name {
     font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 800;
-    letter-spacing: 0.05em;
     color: #1A1A1A;
   }
 
@@ -394,62 +407,46 @@
   }
 
   .schedule__m-day-jp {
-    font-size: 0.7rem;
-    color: #bbb;
-  }
-
-  .schedule__m-classes {
-    padding: 12px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .schedule__m-class {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 12px 16px;
-    border-radius: 14px;
-  }
-
-  .schedule__m-class--beginner {
-    background: rgba(255, 94, 26, 0.08);
-  }
-
-  .schedule__m-class--all {
-    background: rgba(26, 26, 26, 0.05);
-  }
-
-  .schedule__m-class--free {
-    background: rgba(148, 210, 168, 0.15);
-  }
-
-  .schedule__m-time {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 800;
+    font-size: 0.75rem;
     color: #888;
-    min-width: 44px;
-  }
-
-  .schedule__m-name {
-    font-size: 0.8rem;
     font-weight: 600;
   }
 
-  .schedule__m-class--beginner .schedule__m-name { color: #FF5E1A; }
-  .schedule__m-class--all .schedule__m-name { color: #1A1A1A; }
-  .schedule__m-class--free .schedule__m-name { color: #5CB88A; }
+  .schedule__m-classes {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Mobile card orientation */
+  .s-card--mobile {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    min-height: auto;
+    text-align: left;
+    box-shadow: none;
+  }
+
+  .s-card--mobile .s-name {
+    font-size: 0.95rem;
+  }
+
+  .s-card--mobile .s-time {
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
 
   .schedule__m-rest {
-    padding: 20px;
+    padding: 24px;
     text-align: center;
     font-family: 'Inter', sans-serif;
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    color: #ccc;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: #AAA;
   }
 
   /* ===== Legend ===== */
@@ -482,10 +479,9 @@
     color: #bbb;
   }
 
-  /* ===== Responsive ===== */
   @media (max-width: 768px) {
     .schedule { padding: 80px 0; }
-    .schedule__table-wrap { display: none; }
+    .schedule__desktop { display: none; }
     .schedule__mobile { display: flex; }
   }
 </style>
