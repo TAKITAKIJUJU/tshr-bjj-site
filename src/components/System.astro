@@ -69,18 +69,23 @@
           <li>楽しく安全に柔術を学べます</li>
         </ul>
       </div>
-    </div>
 
-    <!-- Visitor Plan -->
-    <div class="system__visitor fade-up" style="transition-delay: 0.3s;">
-      <h3 class="system__plan-name">ビジター <span class="system__plan-sub">(1回利用)</span></h3>
-      <div class="system__price">
-        <span class="system__price-value">¥2,200</span>
-        <span class="system__price-unit">/回 (税込)</span>
+      <!-- Visitor moved inside the grid -->
+      <div class="system__card card fade-up" style="transition-delay: 0.3s;">
+        <h3 class="system__plan-name">ビジター <span class="system__plan-sub">(1回利用)</span></h3>
+        <div class="system__price">
+          <span class="system__price-value">¥2,200</span>
+          <span class="system__price-unit">/回 (税込)</span>
+        </div>
+        <ul class="system__features">
+          <li>1回のみのスポット利用</li>
+          <li>出張や旅行中の練習に</li>
+          <li>当日お支払い</li>
+        </ul>
       </div>
     </div>
     
-    <div class="system__actions fade-up" style="text-align: center; margin-top: 32px;">
+    <div class="system__actions fade-up" style="text-align: center; margin-top: 48px;">
       <a href="#contact" class="btn btn--white" style="min-width: 240px;">体験・入会お申し込み</a>
     </div>
   </div>
@@ -129,16 +134,22 @@
 
   .system__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2x2 on smaller tablets */
     gap: 24px;
     margin-bottom: 24px;
+  }
+
+  @media (min-width: 1024px) {
+    .system__grid {
+      grid-template-columns: repeat(4, 1fr); /* 4 in a row on desktop */
+    }
   }
 
   .system__card {
     background: #1A1A1A; /* Slightly lighter than the background section */
     border: 1px solid rgba(255,255,255,0.05); /* Very faint border */
     border-radius: 12px;
-    padding: 40px 32px;
+    padding: 40px 24px; /* Reduced horizontal padding to fit 4 cards */
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -212,37 +223,7 @@
     color: #666;
   }
 
-  /* Visitor Plan */
-  .system__visitor {
-    background: #1A1A1A;
-    border: 1px solid rgba(255,255,255,0.05);
-    border-radius: 12px;
-    padding: 24px 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
 
-  .system__visitor .system__plan-name {
-    flex-direction: row;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 0;
-  }
-
-  .system__visitor .system__price {
-    margin-bottom: 0;
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-
-  @media (max-width: 992px) {
-    .system__visitor {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
-    }
-  }
 
   .system__scroll-hint {
     display: none;
@@ -304,7 +285,7 @@
     }
 
     .system__visitor {
-      margin-top: -16px; /* Pull it slightly closer to the swiper */
+      display: none; /* Already removed from HTML, keeping safety */
     }
   }
 </style>
