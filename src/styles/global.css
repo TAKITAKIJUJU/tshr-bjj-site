@@ -121,45 +121,21 @@ img { max-width: 100%; height: auto; display: block; }
 
 .fade-in {
   opacity: 0;
-  filter: blur(10px);
 }
 
 .slide-left {
   opacity: 0;
-  transform: translateX(-40px);
-  filter: blur(10px);
+  transform: translateX(-30px);
 }
 
 .slide-right {
   opacity: 0;
-  transform: translateX(40px);
-  filter: blur(10px);
+  transform: translateX(30px);
 }
 
 .scale-in {
   opacity: 0;
   transform: scale(0.96);
-  filter: blur(10px);
-}
-
-/* === Custom Apple-style Reveals === */
-.reveal-image {
-  overflow: hidden;
-  position: relative;
-  border-radius: inherit; /* inherit roundness if parent has it */
-}
-
-/* Image starts zoomed and blurred */
-.reveal-image img, .reveal-image video {
-  transform: scale(1.15);
-  filter: blur(15px);
-  opacity: 0.2;
-}
-
-/* Text reveal starts hidden and pushed down inside its bounding box */
-.reveal-text {
-  clip-path: inset(100% 0% 0% 0%);
-  transform: translateY(30px);
 }
 
 /* === Buttons (Clean, elegant) === */
