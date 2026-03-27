@@ -1,5 +1,5 @@
 ---
-// Schedule - customized timetable with floating cards
+// Schedule - customized timetable with floating cards (Scrollable on Mobile)
 ---
 
 <section class="schedule section--white" id="schedule">
@@ -9,7 +9,7 @@
       <h2 class="section-title">スケジュール</h2>
     </div>
 
-    <!-- ===== Desktop: Floating Card Timetable ===== -->
+    <!-- ===== Timetable (Scrollable on Mobile) ===== -->
     <div class="schedule__desktop fade-up">
       <table class="schedule__t">
         <thead>
@@ -136,129 +136,6 @@
       </table>
     </div>
 
-    <!-- ===== Mobile: card list view ===== -->
-    <div class="schedule__mobile fade-up">
-      <!-- Mon -->
-      <div class="schedule__m-day">
-        <div class="schedule__m-day-header">
-          <span class="schedule__m-day-name">MON</span>
-          <span class="schedule__m-day-jp">月曜日</span>
-        </div>
-        <div class="schedule__m-classes">
-          <div class="s-card s-card--all s-card--mobile">
-            <span class="s-name">オールレベル柔術</span>
-            <span class="s-time">10:00-11:30</span>
-          </div>
-          <div class="s-card s-card--kids s-card--mobile">
-            <span class="s-name">キッズ柔術</span>
-            <span class="s-time">19:00-20:00</span>
-          </div>
-          <div class="s-card s-card--all s-card--mobile">
-            <span class="s-name">オールレベル柔術</span>
-            <span class="s-time">20:30-22:00</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tue -->
-      <div class="schedule__m-day schedule__m-day--rest">
-        <div class="schedule__m-day-header">
-          <span class="schedule__m-day-name">TUE</span>
-          <span class="schedule__m-day-jp">火曜日</span>
-        </div>
-        <div class="schedule__m-rest">REST DAY</div>
-      </div>
-
-      <!-- Wed -->
-      <div class="schedule__m-day">
-        <div class="schedule__m-day-header">
-          <span class="schedule__m-day-name">WED</span>
-          <span class="schedule__m-day-jp">水曜日</span>
-        </div>
-        <div class="schedule__m-classes">
-          <div class="s-card s-card--all s-card--mobile">
-            <span class="s-name">オールレベル柔術</span>
-            <span class="s-time">10:00-11:30</span>
-          </div>
-          <div class="s-card s-card--beginner s-card--mobile">
-            <span class="s-name">ビギナー柔術</span>
-            <span class="s-time">19:00-20:00</span>
-          </div>
-          <div class="s-card s-card--all s-card--mobile">
-            <span class="s-name">オールレベル柔術</span>
-            <span class="s-time">20:30-22:00</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Thu -->
-      <div class="schedule__m-day">
-        <div class="schedule__m-day-header">
-          <span class="schedule__m-day-name">THU</span>
-          <span class="schedule__m-day-jp">木曜日</span>
-        </div>
-        <div class="schedule__m-classes">
-          <div class="s-card s-card--beginner s-card--mobile">
-            <span class="s-name">ビギナー柔術</span>
-            <span class="s-time">19:00-20:00</span>
-          </div>
-          <div class="s-card s-card--nogi s-card--mobile">
-            <span class="s-name">NOGI</span>
-            <span class="s-time">20:30-22:00</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Fri -->
-      <div class="schedule__m-day">
-        <div class="schedule__m-day-header">
-          <span class="schedule__m-day-name">FRI</span>
-          <span class="schedule__m-day-jp">金曜日</span>
-        </div>
-        <div class="schedule__m-classes">
-          <div class="s-card s-card--beginner s-card--mobile">
-            <span class="s-name">ビギナー柔術</span>
-            <span class="s-time">18:00-19:00</span>
-          </div>
-          <div class="s-card s-card--kids s-card--mobile">
-            <span class="s-name">キッズ柔術</span>
-            <span class="s-time">19:00-20:00</span>
-          </div>
-          <div class="s-card s-card--all s-card--mobile">
-            <span class="s-name">オールレベル柔術</span>
-            <span class="s-time">20:30-22:00</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sat -->
-      <div class="schedule__m-day schedule__m-day--weekend">
-        <div class="schedule__m-day-header">
-          <span class="schedule__m-day-name schedule__m-day-name--accent">SAT</span>
-          <span class="schedule__m-day-jp">土曜日</span>
-        </div>
-        <div class="schedule__m-classes">
-          <div class="s-card s-card--kids s-card--mobile">
-            <span class="s-name">キッズ柔術</span>
-            <span class="s-time">19:00-20:00</span>
-          </div>
-          <div class="s-card s-card--all s-card--mobile">
-            <span class="s-name">オールレベル柔術</span>
-            <span class="s-time">20:30-22:00</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sun -->
-      <div class="schedule__m-day schedule__m-day--weekend schedule__m-day--rest">
-        <div class="schedule__m-day-header">
-          <span class="schedule__m-day-name schedule__m-day-name--accent">SUN</span>
-          <span class="schedule__m-day-jp">日曜日</span>
-        </div>
-        <div class="schedule__m-rest">REST DAY</div>
-      </div>
-    </div>
-
     <!-- ===== Legend ===== -->
     <div class="schedule__legend fade-up">
       <div class="schedule__legend-item">
@@ -280,7 +157,8 @@
     </div>
 
     <p class="schedule__note fade-up">
-      ※ スケジュールは変更になる場合があります。最新の情報は <a href="https://www.instagram.com/tshr_jiujitsu/" target="_blank" rel="noopener" style="color:#FF5E1A;font-weight:600;">Instagram</a> をご確認ください。
+      ※ スケジュールは変更になる場合があります。最新の情報は <a href="https://www.instagram.com/tshr_jiujitsu/" target="_blank" rel="noopener" style="color:#FF5E1A;font-weight:600;">Instagram</a> をご確認ください。<br>
+      <span class="schedule__scroll-hint">※スマートフォンでは表を横にスクロールしてご覧いただけます。</span>
     </p>
   </div>
 </section>
@@ -290,20 +168,36 @@
     padding: 120px 0;
   }
 
-  /* ===== Desktop Floating Cards Table ===== */
+  /* ===== Horizontal Scrollable Table ===== */
   .schedule__desktop {
     width: 100%;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     background: #F5F2EE;
     border-radius: 24px;
     padding: 40px;
     border: 1px solid rgba(0,0,0,0.05);
     margin-bottom: 40px;
+    
+    /* Scrollbar styling for better UX on desktop */
+    scrollbar-color: #FF5E1A transparent;
+    scrollbar-width: thin;
+  }
+
+  .schedule__desktop::-webkit-scrollbar {
+    height: 8px;
+  }
+  .schedule__desktop::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .schedule__desktop::-webkit-scrollbar-thumb {
+    background-color: #FF5E1A;
+    border-radius: 10px;
   }
 
   .schedule__t {
     width: 100%;
-    min-width: 800px;
+    min-width: 860px; /* Ensure it stays wide enough to force scroll on mobile */
     border-collapse: separate;
     border-spacing: 12px;
     table-layout: fixed;
@@ -363,92 +257,6 @@
     opacity: 0.9;
   }
 
-  /* ===== Mobile styling overrides ===== */
-  .schedule__mobile {
-    display: none;
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom: 40px;
-  }
-
-  .schedule__m-day {
-    background: #FFFFFF;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
-  }
-
-  .schedule__m-day--rest {
-    opacity: 0.5;
-  }
-
-  .schedule__m-day--weekend {
-    border: 1.5px solid rgba(255, 94, 26, 0.3);
-  }
-
-  .schedule__m-day-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 20px;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    background: #FFFFFF;
-  }
-
-  .schedule__m-day-name {
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    font-weight: 800;
-    color: #1A1A1A;
-  }
-
-  .schedule__m-day-name--accent {
-    color: #FF5E1A;
-  }
-
-  .schedule__m-day-jp {
-    font-size: 0.75rem;
-    color: #888;
-    font-weight: 600;
-  }
-
-  .schedule__m-classes {
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  /* Mobile card orientation */
-  .s-card--mobile {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 20px;
-    min-height: auto;
-    text-align: left;
-    box-shadow: none;
-  }
-
-  .s-card--mobile .s-name {
-    font-size: 0.95rem;
-  }
-
-  .s-card--mobile .s-time {
-    font-size: 0.9rem;
-    white-space: nowrap;
-  }
-
-  .schedule__m-rest {
-    padding: 24px;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 800;
-    letter-spacing: 0.2em;
-    color: #AAA;
-  }
-
   /* ===== Legend ===== */
   .schedule__legend {
     display: flex;
@@ -477,11 +285,24 @@
     text-align: center;
     font-size: 0.75rem;
     color: #bbb;
+    line-height: 1.8;
+  }
+
+  .schedule__scroll-hint {
+    display: none;
+    font-weight: 700;
+    color: #1a1a1a;
   }
 
   @media (max-width: 768px) {
     .schedule { padding: 80px 0; }
-    .schedule__desktop { display: none !important; }
-    .schedule__mobile { display: flex !important; }
+    .schedule__desktop {
+      padding: 24px 16px;
+      border-radius: 16px;
+    }
+    .schedule__scroll-hint {
+      display: inline-block;
+      margin-top: 8px;
+    }
   }
 </style>
