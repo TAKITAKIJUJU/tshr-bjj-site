@@ -1,107 +1,97 @@
 ---
-// Marquee.astro - Infinite scrolling text ticker
+// Marquee.astro - Infinite scrolling text with split color
 ---
-<div class="marquee-container">
-  <div class="marquee">
-    <div class="marquee__inner">
-      <span>OVER LIMIT HONJO</span>
-      <span class="marquee__dot"></span>
-      <span>BRAZILIAN JIU-JITSU</span>
-      <span class="marquee__dot"></span>
-      <span>ALL LEVELS WELCOME</span>
-      <span class="marquee__dot"></span>
-      <span>BEGINNER FRIENDLY</span>
-      <span class="marquee__dot"></span>
-      <span>OVER LIMIT HONJO</span>
-      <span class="marquee__dot"></span>
-      <span>BRAZILIAN JIU-JITSU</span>
-      <span class="marquee__dot"></span>
-      <span>ALL LEVELS WELCOME</span>
-      <span class="marquee__dot"></span>
-      <span>BEGINNER FRIENDLY</span>
-      <span class="marquee__dot"></span>
+
+<div class="marquee-split">
+  <!-- Top half: white text -->
+  <div class="marquee-half marquee-half--top">
+    <div class="marquee-track">
+      <span class="marquee-item">BRAZILIAN JIU-JITSU ACADEMY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span class="marquee-item">BRAZILIAN JIU-JITSU ACADEMY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span class="marquee-item">BRAZILIAN JIU-JITSU ACADEMY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span class="marquee-item">BRAZILIAN JIU-JITSU ACADEMY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
     </div>
-    <!-- Duplicate for infinite scroll loop seamlessly -->
-    <div class="marquee__inner" aria-hidden="true">
-      <span>OVER LIMIT HONJO</span>
-      <span class="marquee__dot"></span>
-      <span>BRAZILIAN JIU-JITSU</span>
-      <span class="marquee__dot"></span>
-      <span>ALL LEVELS WELCOME</span>
-      <span class="marquee__dot"></span>
-      <span>BEGINNER FRIENDLY</span>
-      <span class="marquee__dot"></span>
-      <span>OVER LIMIT HONJO</span>
-      <span class="marquee__dot"></span>
-      <span>BRAZILIAN JIU-JITSU</span>
-      <span class="marquee__dot"></span>
-      <span>ALL LEVELS WELCOME</span>
-      <span class="marquee__dot"></span>
-      <span>BEGINNER FRIENDLY</span>
-      <span class="marquee__dot"></span>
+  </div>
+  <!-- Bottom half: black text -->
+  <div class="marquee-half marquee-half--bottom">
+    <div class="marquee-track">
+      <span class="marquee-item">BRAZILIAN JIU-JITSU ACADEMY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span class="marquee-item">BRAZILIAN JIU-JITSU ACADEMY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span class="marquee-item">BRAZILIAN JIU-JITSU ACADEMY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span class="marquee-item">BRAZILIAN JIU-JITSU ACADEMY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
     </div>
   </div>
 </div>
 
 <style>
-  .marquee-container {
-    background: #1A1A1A;
-    border-top: 1px solid rgba(255, 94, 26, 0.4);
-    border-bottom: 1px solid rgba(255, 94, 26, 0.4);
-    overflow: hidden;
-    padding: 16px 0;
+  .marquee-split {
     position: relative;
-    z-index: 10;
+    width: 100%;
+    height: clamp(5rem, 14vw, 12rem);
+    overflow: hidden;
+    user-select: none;
+    pointer-events: none;
+    z-index: 15;
   }
 
-  .marquee {
-    display: flex;
-    white-space: nowrap;
+  .marquee-half {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
 
-  .marquee__inner {
+  /* Top half: dark bg, white text, clip to top 50% */
+  .marquee-half--top {
+    top: 0;
+    clip-path: inset(0 0 calc(50% - 1px) 0);
+    background: #0A0A0A;
+  }
+
+  /* Bottom half: transparent bg (site gradient shows), black text, clip to bottom 50% */
+  .marquee-half--bottom {
+    top: 0;
+    clip-path: inset(50% 0 0 0);
+    background: transparent;
+  }
+
+  .marquee-track {
     display: flex;
     align-items: center;
-    animation: marquee-scroll 25s linear infinite;
-    padding-left: 20px;
+    height: 100%;
+    width: max-content;
+    animation: marquee-scroll 30s linear infinite;
   }
 
-  .marquee__inner span {
-    font-family: 'Inter', monospace;
-    font-size: 1.25rem;
-    font-weight: 800;
-    letter-spacing: 0.15em;
-    color: #FF5E1A;
-    text-transform: uppercase;
+  .marquee-item {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(4rem, 12vw, 10rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    line-height: 1;
   }
 
-  .marquee__dot {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background-color: #FF5E1A;
-    border-radius: 50%;
-    margin: 0 40px;
+  .marquee-half--top .marquee-item {
+    color: #FFFFFF;
+  }
+
+  .marquee-half--bottom .marquee-item {
+    color: #0A0A0A;
   }
 
   @keyframes marquee-scroll {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
 
   @media (max-width: 768px) {
-    .marquee-container {
-      padding: 12px 0;
+    .marquee-split {
+      height: clamp(3.5rem, 16vw, 6rem);
     }
-    .marquee__inner span {
-      font-size: 1rem;
-    }
-    .marquee__dot {
-      margin: 0 24px;
+    .marquee-item {
+      font-size: clamp(3rem, 14vw, 5rem);
     }
   }
 </style>

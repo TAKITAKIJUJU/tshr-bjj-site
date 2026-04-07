@@ -15,12 +15,19 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="google-site-verification" content="6Any9gIf8bYIO0x-BakavTduY23JcXYOblQO8mmCRIc" />
+    <link rel="icon" type="image/png" href="/LOGO.png" />
+    <link rel="apple-touch-icon" href="/LOGO.png" />
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <script is:inline>
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('js-motion');
+      }
+    </script>
     <title>{title}</title>
   </head>
   <body>

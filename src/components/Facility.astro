@@ -1,0 +1,247 @@
+---
+// Facility - Static grid on desktop, scroll-driven infinite marquee on mobile
+const images = [
+  '/processed-16A4994D-E073-48E0-A49C-89AF5897EAE1.webp',
+  '/processed-3BFA741D-A026-4EB4-B9BF-1992C5195C35.webp',
+  '/processed-8E9EA17C-03F5-4922-8835-CA5BCC9157A0.webp',
+  '/processed-99EE1602-384F-4E8E-967D-BECE71CB9431.webp',
+  '/processed-9EB7D774-131B-4FB1-8FCC-D00036F7257A.webp',
+  '/processed-AA442933-C10A-41AE-81AB-B86057D3678A.webp',
+  '/processed-C46A2648-B6DD-4D42-9573-D11E32E9083D.webp',
+  '/processed-E1AC7486-1624-4F7D-ACF8-536A9FC6F0DA.webp',
+];
+
+const row1 = images.slice(0, 4);
+const row2 = images.slice(4, 8);
+---
+
+<section class="facility section" id="facility">
+  <div class="facility__heading motion-up">
+    <span class="section-label">Facility</span>
+    <h2 class="section-title--jp">施設</h2>
+  </div>
+
+  <!-- Desktop: static 4×2 grid -->
+  <div class="facility__grid motion-up">
+    {images.map((src) => (
+      <div class="facility__grid-item">
+        <img src={src} alt="施設写真" loading="lazy" />
+      </div>
+    ))}
+  </div>
+
+  <!-- Mobile only: scroll-driven marquee rows -->
+  <div class="facility__marquee">
+    <div class="facility__row facility__row--top">
+      <div class="facility__track" data-facility-row="top">
+        {[...row1, ...row1, ...row1, ...row1].map((src) => (
+          <div class="facility__item">
+            <img src={src} alt="施設写真" loading="eager" />
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="facility__row facility__row--bottom">
+      <div class="facility__track" data-facility-row="bottom">
+        {[...row2, ...row2, ...row2, ...row2].map((src) => (
+          <div class="facility__item">
+            <img src={src} alt="施設写真" loading="eager" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .facility {
+    padding: clamp(82px, 9vw, 104px) 0 clamp(60px, 7vw, 80px);
+    background: transparent;
+    overflow: hidden;
+  }
+
+  .facility__heading {
+    text-align: center;
+    margin-bottom: clamp(36px, 5vw, 52px);
+    padding: 0 clamp(20px, 3vw, 32px);
+  }
+
+  /* ── Desktop: static grid ── */
+  .facility__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(10px, 1.6vw, 16px);
+    padding: 0 clamp(20px, 3vw, 32px);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .facility__grid-item {
+    aspect-ratio: 1 / 1;
+    border-radius: clamp(12px, 1.5vw, 20px);
+    overflow: hidden;
+  }
+
+  .facility__grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .facility__grid-item:hover img {
+    transform: scale(1.06);
+  }
+
+  /* Mobile marquee hidden on desktop */
+  .facility__marquee {
+    display: none;
+  }
+
+  /* ── Mobile only: marquee ── */
+  @media (max-width: 768px) {
+    .facility {
+      padding: 58px 0 40px;
+    }
+
+    /* Hide static grid on mobile */
+    .facility__grid {
+      display: none;
+    }
+
+    /* Show marquee on mobile */
+    .facility__marquee {
+      display: block;
+    }
+
+    .facility__row {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .facility__row--top {
+      margin-bottom: 10px;
+    }
+
+    .facility__track {
+      display: flex;
+      gap: 10px;
+      width: max-content;
+      will-change: transform;
+    }
+
+    .facility__item {
+      flex-shrink: 0;
+      width: 44vw;
+      aspect-ratio: 1 / 1;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .facility__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const isMobile = () => window.innerWidth <= 768;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!reduceMotion && isMobile()) {
+    const topTrack = document.querySelector('[data-facility-row="top"]') as HTMLElement;
+    const bottomTrack = document.querySelector('[data-facility-row="bottom"]') as HTMLElement;
+
+    if (topTrack && bottomTrack) {
+      const getOneSetWidth = (track: HTMLElement) => {
+        const items = track.querySelectorAll('.facility__item');
+        const itemCount = items.length / 4; // 4 copies
+        let width = 0;
+        for (let i = 0; i < itemCount; i++) {
+          width += (items[i] as HTMLElement).offsetWidth;
+        }
+        const gap = parseFloat(getComputedStyle(track).gap) || 10;
+        width += gap * (itemCount - 1);
+        return width;
+      };
+
+      // Wait for all images inside the marquee to be fully loaded
+      const waitForImages = (): Promise<void> => {
+        const imgs = document.querySelectorAll('.facility__marquee img') as NodeListOf<HTMLImageElement>;
+        const promises = Array.from(imgs).map((img) => {
+          if (img.complete && img.naturalWidth > 0) return Promise.resolve();
+          return new Promise<void>((resolve) => {
+            img.onload = () => resolve();
+            img.onerror = () => resolve();
+          });
+        });
+        return Promise.all(promises).then(() => {});
+      };
+
+      const setupAnimation = () => {
+        // Double-check widths with rAF to ensure layout is committed
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            const topSetWidth = getOneSetWidth(topTrack);
+            const bottomSetWidth = getOneSetWidth(bottomTrack);
+
+            // Shift amount: larger = faster
+            const moveRatio = 1.2;
+
+            // Bottom row starts shifted left
+            gsap.set(bottomTrack, { x: -bottomSetWidth * moveRatio });
+
+            // Top row: scrolls right → left
+            gsap.to(topTrack, {
+              x: -topSetWidth * moveRatio,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: '#facility',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 0.8,
+                invalidateOnRefresh: true,
+              },
+            });
+
+            // Bottom row: scrolls left → right
+            gsap.to(bottomTrack, {
+              x: 0,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: '#facility',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 0.8,
+                invalidateOnRefresh: true,
+              },
+            });
+
+            ScrollTrigger.refresh();
+          });
+        });
+      };
+
+      const init = async () => {
+        await waitForImages();
+        setupAnimation();
+      };
+
+      if (document.readyState === 'complete') {
+        init();
+      } else {
+        window.addEventListener('load', () => init());
+      }
+    }
+  }
+</script>

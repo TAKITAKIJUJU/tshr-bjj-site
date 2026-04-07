@@ -1,13 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
+import Marquee from '../components/Marquee.astro';
 import Concept from '../components/Concept.astro';
 import Instructor from '../components/Instructor.astro';
 import ClassFlow from '../components/ClassFlow.astro';
 import System from '../components/System.astro';
 import Schedule from '../components/Schedule.astro';
 import Access from '../components/Access.astro';
+import Facility from '../components/Facility.astro';
 import Faq from '../components/Faq.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
@@ -15,15 +16,16 @@ import FloatingCta from '../components/FloatingCta.astro';
 ---
 
 <Layout>
-  <Header />
   <main>
     <Hero />
+    <Marquee />
     <Concept />
     <Instructor />
     <ClassFlow />
     <System />
     <Schedule />
     <Access />
+    <Facility />
     <Faq />
     <Contact />
   </main>
@@ -34,85 +36,195 @@ import FloatingCta from '../components/FloatingCta.astro';
 <script>
   import { gsap } from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import Lenis from 'lenis';
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // Fade up animations
-  gsap.utils.toArray('.fade-up').forEach((el: any) => {
-    let delayVal = 0;
-    if (el.style.transitionDelay) {
-      delayVal = parseFloat(el.style.transitionDelay);
-    }
-    gsap.to(el, {
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 85%',
-        toggleActions: 'play none none none',
-      },
+  const MOTION_SELECTORS = '.motion-up, .motion-fade, .motion-left, .motion-right, .motion-scale';
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reduceMotion) {
+    gsap.set(`${MOTION_SELECTORS}`, {
       opacity: 1,
+      x: 0,
       y: 0,
-      duration: 0.8,
-      delay: delayVal,
-      ease: 'power3.out',
+      scale: 1,
+      filter: 'blur(0px)',
+      clearProps: 'transform,filter,opacity',
     });
-  });
+  } else {
+    const lenis = new Lenis({
+      duration: 1.2,
+      smoothWheel: true,
+      smoothTouch: false,
+      touchMultiplier: 1.1,
+      easing: (t) => 1 - Math.pow(1 - t, 3.4),
+    });
 
-  // Fade in animations
-  gsap.utils.toArray('.fade-in').forEach((el: any) => {
-    let delayVal = 0;
-    if (el.style.transitionDelay) {
-      delayVal = parseFloat(el.style.transitionDelay);
-    }
-    gsap.to(el, {
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 85%',
-        toggleActions: 'play none none none',
-      },
-      opacity: 1,
-      duration: 1,
-      delay: delayVal,
-      ease: 'power2.out',
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
     });
-  });
+    gsap.ticker.lagSmoothing(0);
 
-  // Slide left animations
-  gsap.utils.toArray('.slide-left').forEach((el: any) => {
-    let delayVal = 0;
-    if (el.style.transitionDelay) {
-      delayVal = parseFloat(el.style.transitionDelay);
-    }
-    gsap.to(el, {
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 85%',
-        toggleActions: 'play none none none',
-      },
-      opacity: 1,
-      x: 0,
-      duration: 0.8,
-      delay: delayVal,
-      ease: 'power3.out',
-    });
-  });
+    const revealPreset = (el) => {
+      if (el.classList.contains('motion-fade')) {
+        return { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.75, ease: 'power2.out' };
+      }
+      if (el.classList.contains('motion-left')) {
+        return { opacity: 1, x: 0, y: 0, filter: 'blur(0px)', duration: 0.92, ease: 'power3.out' };
+      }
+      if (el.classList.contains('motion-right')) {
+        return { opacity: 1, x: 0, y: 0, filter: 'blur(0px)', duration: 0.92, ease: 'power3.out' };
+      }
+      if (el.classList.contains('motion-scale')) {
+        return { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 0.95, ease: 'power3.out' };
+      }
+      return { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.9, ease: 'power3.out' };
+    };
 
-  // Slide right animations
-  gsap.utils.toArray('.slide-right').forEach((el: any) => {
-    let delayVal = 0;
-    if (el.style.transitionDelay) {
-      delayVal = parseFloat(el.style.transitionDelay);
-    }
-    gsap.to(el, {
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 85%',
-        toggleActions: 'play none none none',
-      },
-      opacity: 1,
-      x: 0,
-      duration: 0.8,
-      delay: delayVal,
-      ease: 'power3.out',
+    gsap.utils.toArray('main section:not(#hero)').forEach((section) => {
+      const motionNodes = Array.from(section.querySelectorAll(MOTION_SELECTORS));
+      if (!motionNodes.length) return;
+
+      const scrubIntensity = Number.parseFloat(section.getAttribute('data-motion-scrub') || '0.9') || 0.9;
+
+      motionNodes.forEach((el) => {
+        const delay = Number.parseFloat(el.getAttribute('data-motion-delay') || '0') || 0;
+        const reveal = revealPreset(el);
+        const isLegacyTableReveal =
+          el.classList.contains('system__card') || el.classList.contains('schedule__desktop');
+
+        if (isLegacyTableReveal) {
+          gsap.to(el, {
+            ...reveal,
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 84%',
+              once: true,
+              invalidateOnRefresh: true,
+            },
+            delay,
+          });
+          return;
+        }
+
+        const delayInfluence = el.classList.contains('motion-scale') ? 24 : 35;
+        const startPoint = Math.max(76, 96 - delay * delayInfluence);
+        const endPoint = Math.max(56, 72 - delay * delayInfluence);
+
+        gsap.to(el, {
+          ...reveal,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: el,
+            start: `top ${startPoint}%`,
+            end: `top ${endPoint}%`,
+            scrub: scrubIntensity,
+            invalidateOnRefresh: true,
+          },
+        });
+      });
     });
-  });
+
+    gsap.set('.hero__char', { opacity: 0, y: 40, filter: 'blur(12px)' });
+    gsap.set('.hero__action', { y: 48, opacity: 0, filter: 'blur(6px)' });
+
+    gsap
+      .timeline({ defaults: { ease: 'power3.out' } })
+      .fromTo(
+        '.hero__video',
+        { scale: 1.05, filter: 'saturate(0.8) contrast(1.08) brightness(0.76)' },
+        { scale: 1, filter: 'saturate(0.9) contrast(1.06) brightness(0.86)', duration: 3.0 },
+        0,
+      )
+      .to(
+        '.hero__image-wrapper',
+        { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.1 },
+        0.28,
+      )
+      .to(
+        '.hero__char',
+        { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.6, stagger: 0.08, ease: 'power2.out' },
+        0.6,
+      )
+      .to(
+        '.hero__action',
+        { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.9 },
+        1.6,
+      );
+
+    gsap.fromTo(
+      '.hero__image-wrapper',
+      { clipPath: 'inset(0% 0% 0% 0% round 0px)' },
+      {
+        clipPath: 'inset(7% 3% 9% 3% round 36px)',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '#hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 1.25,
+        },
+      },
+    );
+
+
+
+    const parallaxTargets = [
+      { selector: '.hero__bg', y: 9, trigger: '#hero' },
+      { selector: '.instructor__photo-wrapper', y: 6 },
+      { selector: '.classflow__image', y: 7 },
+      { selector: '.access__map-card', y: 5 },
+    ];
+
+    parallaxTargets.forEach(({ selector, y, trigger }) => {
+      gsap.utils.toArray(selector).forEach((el) => {
+        gsap.fromTo(
+          el,
+          { yPercent: -y },
+          {
+            yPercent: y,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: trigger || el,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 1.2,
+            },
+          },
+        );
+      });
+    });
+
+    gsap.utils.toArray('.section-title, .section-title--jp').forEach((heading) => {
+      gsap.fromTo(
+        heading,
+        { y: 30, opacity: 0.72, letterSpacing: '0.03em' },
+        {
+          y: 0,
+          opacity: 1,
+          letterSpacing: '0em',
+          ease: 'none',
+          scrollTrigger: {
+            trigger: heading,
+            start: 'top 86%',
+            end: 'top 52%',
+            scrub: 1.0,
+          },
+        },
+      );
+    });
+
+    ScrollTrigger.refresh();
+
+    window.addEventListener(
+      'beforeunload',
+      () => {
+        lenis.destroy();
+      },
+      { once: true },
+    );
+  }
 </script>
+

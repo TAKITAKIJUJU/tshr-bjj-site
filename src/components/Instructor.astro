@@ -4,22 +4,23 @@
 
 <section class="instructor section" id="instructor">
   <div class="container" style="max-width: 1000px;">
+    <div class="instructor__heading motion-up">
+      <span class="section-label">Instructor</span>
+      <h2 class="section-title--jp">インストラクター</h2>
+    </div>
+
     <div class="instructor__inner">
-      <div class="instructor__media fade-up">
-        <h3 class="instructor__name">田代 セイイチ<span class="instructor__title">Instructor / Black Belt</span></h3>
-        
+      <div class="instructor__media motion-left">
         <div class="instructor__photo-wrapper">
           <div class="instructor__photo">
-            <!-- Dummy image with fallback since the official one is not in the public folder -->
-            <img src="https://overlimit-bjj.sakura.ne.jp/fsj41442/wp-content/uploads/2021/08/dummy-profile.jpg" alt="田代 セイイチ" onerror="this.onerror=null; this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22500%22%20viewBox%3D%220%200%20400%20500%22%3E%3Crect%20fill%3D%22%23EFEFEF%22%20width%3D%22400%22%20height%3D%22500%22%2F%3E%3Ctext%20fill%3D%22%23999999%22%20font-family%3D%22sans-serif%22%20font-size%3D%2216%22%20font-weight%3D%22bold%22%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%3ESEIICHI%20TASHIRO%3C%2Ftext%3E%3C%2Fsvg%3E';" />
+            <img src="/new-ins.webp" alt="田代 セイイチ" />
           </div>
         </div>
+
+        <h3 class="instructor__name">田代 セイイチ<span class="instructor__title">Instructor / Black Belt</span></h3>
       </div>
 
-      <div class="instructor__info fade-up" style="transition-delay: 0.3s;">
-        <span class="section-label">Instructor</span>
-        <h2 class="section-title--jp">インストラクター</h2>
-
+      <div class="instructor__info motion-right" data-motion-delay="0.12">
         <div class="instructor__profile">
           <div class="instructor__history">
             <h4 class="instructor__history-title">主な経歴</h4>
@@ -51,46 +52,71 @@
 
 <style>
   .instructor {
-    padding: 120px 0;
-    background: #FFFFFF;
+    padding: clamp(82px, 9vw, 104px) 0;
+    background: linear-gradient(180deg, #09090A 0%, #111114 100%);
     position: relative;
+    overflow: hidden;
+  }
+
+  .instructor::before {
+    content: none !important;
+    display: none !important;
+  }
+
+  .instructor .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .instructor__heading {
+    text-align: center;
+    margin-bottom: clamp(44px, 6vw, 56px);
+  }
+
+  .instructor__heading .section-label,
+  .instructor__heading .section-title--jp {
+    color: #FFFFFF;
   }
 
   .instructor__inner {
     display: grid;
     grid-template-columns: 2fr 3fr;
-    gap: 60px;
+    gap: clamp(30px, 5vw, 52px);
     align-items: start;
   }
 
   .instructor__photo-wrapper {
     position: relative;
     border-radius: 20px;
-    background: #F8F9FA;
+    background: #F7F8FA !important;
     overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(15, 23, 42, 0.08) !important;
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.06),
+      0 10px 24px rgba(15, 23, 42, 0.08) !important;
   }
 
   .instructor__photo {
-    aspect-ratio: 4 / 3; /* Wider aspect ratio matching the screenshot provided by user */
+    /* Auto aspect ratio on mobile to prevent cropping */
   }
 
   @media (min-width: 993px) {
     .instructor__photo {
-      aspect-ratio: 4 / 5; /* Taller on desktop for elegance */
+      /* Remove aspect-ratio here as well if we just want the original ratio */
     }
   }
 
   .instructor__photo img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(100%);
-    transition: filter 0.6s ease;
+    height: auto;
+    object-fit: contain; /* Or simply omit an explicit height and let it flow */
+    display: block;
+    border-radius: 20px;
+    transition: transform 0.45s ease;
   }
 
   .instructor__photo-wrapper:hover .instructor__photo img {
-    filter: grayscale(0%);
+    transform: scale(1.02);
   }
 
   .instructor__profile {
@@ -101,8 +127,9 @@
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
-    color: #1A1A1A;
-    margin-bottom: 24px; /* Reduced to sit closer to photo */
+    color: #FFFFFF;
+    margin-top: 16px;
+    margin-bottom: 0;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -112,19 +139,19 @@
     font-family: 'Inter', sans-serif;
     font-size: 0.95rem;
     font-weight: 600;
-    color: #666666;
+    color: rgba(255, 255, 255, 0.86);
     letter-spacing: 0.05em;
   }
 
   .instructor__history {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
 
   .instructor__history-title, .instructor__message-title {
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 1rem;
     font-weight: 700;
-    color: #1A1A1A;
+    color: #FFFFFF;
     margin-bottom: 12px;
   }
 
@@ -135,7 +162,7 @@
 
   .instructor__history li {
     font-size: 0.9rem;
-    color: #444;
+    color: rgba(255, 255, 255, 0.95);
     padding: 4px 0 4px 16px;
     position: relative;
     line-height: 1.6;
@@ -145,19 +172,27 @@
     content: "・";
     position: absolute;
     left: 0;
-    color: #1A1A1A;
+    color: rgba(255, 255, 255, 0.9);
   }
 
   .instructor__message {
-    background: #F8F9FA;
-    padding: 24px;
-    border-radius: 12px;
-    margin-top: 16px;
+    background: #F7F8FA !important;
+    border: 1px solid rgba(15, 23, 42, 0.08) !important;
+    padding: 22px;
+    border-radius: 24px;
+    margin-top: 14px;
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.06),
+      0 10px 24px rgba(15, 23, 42, 0.08) !important;
+  }
+
+  .instructor__message .instructor__message-title {
+    color: #0A0A0A;
   }
 
   .instructor__message p {
     font-size: 0.9rem;
-    color: #333;
+    color: #111111;
     line-height: 2;
     margin-bottom: 16px;
   }
@@ -169,13 +204,15 @@
   @media (max-width: 992px) {
     .instructor__inner {
       grid-template-columns: 1fr;
-      gap: 40px;
+      gap: 32px;
     }
   }
 
   @media (max-width: 768px) {
-    .instructor { padding: 80px 0; }
+    .instructor { padding: 58px 0; }
     .instructor__name { font-size: 1.5rem; }
-    .instructor__message { padding: 16px; }
+    .instructor__message { padding: 18px; }
   }
 </style>
+
+

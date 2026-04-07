@@ -1,29 +1,33 @@
 ---
-// Contact CTA - ballaholic style: bold CTA card
+// Contact CTA - YAWARA-style horizontal visual
 ---
 
 <section class="contact section" id="contact">
   <div class="container">
-    <div class="contact__card card card--dark fade-up">
+    <div class="contact__card motion-scale">
       <div class="contact__inner">
-        <span class="section-label" style="color: #FF5E1A;">Contact</span>
-        <h2 class="contact__title">
-          まずは無料体験から<br />
-          始めてみませんか？
-        </h2>
-        <p class="contact__text">
-          見学・体験ともに無料です。お気軽にお問い合わせください。<br />
-          動きやすい服装でお越しいただければ手ぶらで参加いただけます。
-        </p>
+        <div class="contact__copy">
+          <h2 class="contact__title">
+            まずは無料体験から<br />
+            始めてみませんか？
+          </h2>
+          <p class="contact__text">
+            見学・体験ともに無料です。お気軽にお問い合わせください。<br />
+            動きやすい服装でお越しいただければ手ぶらで参加いただけます。
+          </p>
+        </div>
         <div class="contact__actions">
-          <a href="https://www.instagram.com/tshr_jiujitsu/" target="_blank" rel="noopener" class="btn btn--primary">
-            Instagram でお問い合わせ
-            <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M7 17L17 7M17 7H7M17 7V17" />
+          <a href="https://www.instagram.com/tshr_jiujitsu/" target="_blank" rel="noopener" class="contact__btn contact__btn--trial">
+            <span>無料体験レッスンに参加する</span>
+            <svg class="contact__btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8">
+              <path d="M9 6L15 12L9 18" />
             </svg>
           </a>
-          <a href="https://www.facebook.com/groups/304416070927536" target="_blank" rel="noopener" class="btn btn--outline" style="color:#fff;border-color:rgba(255,255,255,0.2);">
-            Facebook グループ
+          <a href="https://line.me/" target="_blank" rel="noopener" class="contact__btn contact__btn--line">
+            <span>LINEで相談する</span>
+            <svg class="contact__btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8">
+              <path d="M9 6L15 12L9 18" />
+            </svg>
           </a>
         </div>
       </div>
@@ -33,85 +37,167 @@
 
 <style>
   .contact {
-    padding: 80px 0;
-    background: #F5F2EE;
+    padding: 0;
+    background: #FFFFFF;
+  }
+
+  .contact .container {
+    max-width: none;
+    padding: 0;
   }
 
   .contact__card {
-    padding: 80px 60px;
-    text-align: center;
-    background: #1A1A1A;
-    border-radius: 24px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-  }
-
-  .contact__card .btn--primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 16px 36px;
-    font-size: 0.875rem;
-    font-weight: 700;
-    border-radius: 60px;
-    background: #FF5E1A;
-    color: #fff;
+    width: 100%;
+    min-height: clamp(300px, 36vw, 430px);
+    padding: clamp(42px, 5vw, 72px) clamp(26px, 4vw, 56px);
+      background:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.52) 0%, rgba(0, 0, 0, 0.34) 45%, rgba(0, 0, 0, 0.42) 100%),
+      url('/last.webp') center / cover no-repeat;
     border: none;
-    cursor: pointer;
-    transition: all 0.35s ease;
-  }
-
-  .contact__card .btn--primary:hover {
-    background: #E04A0A;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(255, 94, 26, 0.3);
-  }
-
-  .contact__card .btn--outline {
-    display: inline-flex;
-    align-items: center;
-    padding: 16px 36px;
-    font-size: 0.875rem;
-    font-weight: 700;
-    border-radius: 60px;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.35s ease;
+    border-radius: 0 !important;
+    box-shadow: none !important;
   }
 
   .contact__inner {
-    max-width: 600px;
+    max-width: 1180px;
     margin: 0 auto;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(26px, 4vw, 54px);
+  }
+
+  .contact__copy {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 730px;
   }
 
   .contact__title {
     font-family: 'Noto Sans JP', sans-serif;
-    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-size: clamp(1.75rem, 4vw, 4.1rem);
     font-weight: 800;
     color: #ffffff;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    line-height: 1.38;
+    margin-bottom: clamp(16px, 2vw, 24px);
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.36);
   }
 
   .contact__text {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.5);
-    line-height: 2;
-    margin-bottom: 36px;
+    font-size: clamp(1.02rem, 1.3vw, 1.9rem);
+    color: rgba(255, 255, 255, 0.96);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.34);
   }
 
   .contact__actions {
     display: flex;
-    gap: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    width: min(100%, 360px);
+    flex: 0 0 min(100%, 360px);
+  }
+
+  .contact__btn {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    min-height: 76px;
+    padding: 18px 22px;
+    border-radius: 12px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(1rem, 1.1vw, 1.25rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    transition:
+      transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+      background-color 0.4s ease;
+  }
+
+  .contact__btn-arrow {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .contact__btn--trial {
+    background: #FFFFFF;
+    color: #000000;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+  }
+
+  .contact__btn--line {
+    background: #82BE6A;
+    color: #FFFFFF;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
+  }
+
+  .contact__btn:hover {
+    transform: translate(10px, 10px);
+  }
+
+  .contact__btn:hover .contact__btn-arrow {
+    transform: translateX(4px);
   }
 
   @media (max-width: 768px) {
-    .contact__card { padding: 48px 24px; }
-    .contact__actions {
+    .contact { padding: 0; }
+
+    .contact__card {
+      min-height: auto;
+      padding: 34px 22px 32px;
+      border-radius: 0;
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.5) 100%),
+        url('/last.webp') center / cover no-repeat;
+    }
+
+    .contact__inner {
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    .contact__copy {
+      max-width: none;
+      width: 100%;
+    }
+
+    .contact__title {
+      font-size: clamp(1.35rem, 7vw, 2rem);
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    .contact__text {
+      font-size: 1rem;
+    }
+
+    .contact__actions {
+      width: 100%;
+      flex: 1 1 auto;
+      gap: 14px;
+    }
+
+    .contact__btn {
+      min-height: 64px;
+      font-size: 1rem;
+      padding: 14px 18px;
+    }
+
+    .contact__btn:hover {
+      transform: translate(6px, 6px);
     }
   }
 </style>
+
+

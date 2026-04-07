@@ -6,14 +6,13 @@
   <div class="hero__bg">
     <!-- Overlay dark gradient for extreme contrast -->
     <div class="hero__overlay"></div>
-    <div class="hero__image-wrapper fade-in">
+    <div class="hero__image-wrapper motion-fade">
       <video 
         class="hero__video img-luxury"
         autoplay 
         loop 
         muted 
-        playsinline 
-        poster="https://overlimit-bjj.sakura.ne.jp/fsj41442/wp-content/uploads/2021/08/dummy-hero.jpg"
+        playsinline>
         <source src="https://pub-93c307c324e24da1b9f9b2fe140eee78.r2.dev/hero.mp4" type="video/mp4">
       </video>
     </div>
@@ -21,20 +20,15 @@
 
 
   <div class="hero__content container">
-    <!-- Vertical Japanese Copy moved to the left side -->
-    <div class="hero__vert-text fade-up text-vertical" style="transition-delay: 0.2s;">
-      柔 術 で 、<br>人 生 を 豊 か に 。
+    <div class="hero__vert-text text-vertical" data-motion-delay="0.2">
+      <span class="hero__char">柔</span><span class="hero__char">術</span><span class="hero__char">で</span><span class="hero__char">、</span><br><span class="hero__char">人</span><span class="hero__char">生</span><span class="hero__char">を</span><span class="hero__char">豊</span><span class="hero__char">か</span><span class="hero__char">に</span><span class="hero__char">。</span>
     </div>
 
     <!-- Subtitle and Call to Action moved to the right side -->
     <div class="hero__text-box" style="display: flex; flex-direction: column; align-items: flex-start;">
-      <p class="hero__subtitle fade-up" style="transition-delay: 0.4s;">
-        BRAZILIAN JIU-JITSU ACADEMY
-      </p>
-      
-      <div class="hero__action fade-up" style="transition-delay: 0.6s;">
+      <div class="hero__action motion-up" data-motion-delay="0.6">
         <a href="#contact" class="btn btn--white">
-          <span>FREE TRIAL</span>
+          <span style="font-family: 'Noto Sans JP', sans-serif; font-weight: bold;">無料体験はこちら</span>
           <svg class="btn__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
@@ -49,7 +43,7 @@
     display: flex;
     align-items: center;
     background: #000;
-    overflow: hidden;
+    overflow: clip;
     padding-top: 80px; /* Offset for header */
   }
 
@@ -59,6 +53,7 @@
     position: absolute;
     inset: 0;
     z-index: 0;
+    overflow: clip;
   }
 
   .hero__image-wrapper {
@@ -80,9 +75,13 @@
   .hero__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%);
+    background:
+      linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.15) 65%, rgba(0,0,0,0.6) 85%, #0A0A0A 100%),
+      linear-gradient(96deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.46) 54%, rgba(0,0,0,0.7) 100%);
     z-index: 1;
   }
+
+
 
   .hero__content {
     position: relative;
@@ -95,10 +94,18 @@
   }
 
   .hero__text-box {
-    max-width: 600px;
+    max-width: 640px;
   }
 
-
+  .hero__headline {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(3rem, 8vw, 7.2rem);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    margin: 0 0 24px;
+    text-wrap: balance;
+  }
 
   .hero__subtitle {
     font-family: 'Inter', sans-serif;
@@ -116,18 +123,20 @@
     position: absolute;
     left: 0; top: 50%;
     width: 24px; height: 1px;
-    background: #FF5E1A;
+    background: #FF6A00;
   }
 
   .hero__vert-text {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2.5rem, 6.5vw, 4.5rem);
+    font-weight: 900;
     color: #FFFFFF;
     writing-mode: vertical-rl;
     text-orientation: mixed;
     font-family: 'Noto Serif JP', serif;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.25em;
     line-height: 1.5;
     z-index: 10;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.6);
   }
 
   @media (max-width: 992px) {
@@ -135,7 +144,9 @@
       align-items: flex-end;
     }
     .hero__overlay {
-      background: linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);
+      background:
+        linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.15) 65%, rgba(0,0,0,0.6) 85%, #0A0A0A 100%),
+        linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.38) 48%, rgba(0,0,0,0.16) 100%);
     }
     .hero__content {
       flex-direction: column;
@@ -151,5 +162,12 @@
       margin-bottom: 24px;
     }
     .hero__subtitle { margin-bottom: 32px; }
+    .hero__headline {
+      margin-bottom: 22px;
+      font-size: clamp(2.4rem, 13vw, 4.2rem);
+    }
   }
 </style>
+
+
+

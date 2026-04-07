@@ -4,7 +4,7 @@
 
 <section class="concept section--white" id="concept">
   <div class="container">
-    <div class="concept__header fade-up">
+    <div class="concept__header motion-up">
       <span class="section-label">What's BJJ?</span>
       <h2 class="section-title--jp">ブラジリアン柔術とは</h2>
       <p class="section-subtitle">
@@ -14,28 +14,31 @@
     </div>
 
     <div class="concept__grid">
-      <div class="concept__card fade-up">
-        <div class="concept__card-icon">01</div>
-        <h3 class="concept__card-title">高い安全性</h3>
-        <p class="concept__card-text">
-          パンチやキックといった打撃が一切ないため、顔や身体へのダメージリスクが極めて低く、あらゆる格闘技の中でも最も安全に楽しむことができます。
-        </p>
+      <div class="concept__card motion-scale" style="background-image: url('/what1.webp');">
+        <div class="concept__card-content">
+          <h3 class="concept__card-title">高い安全性</h3>
+          <p class="concept__card-text">
+            パンチやキックといった打撃が一切ないため、顔や身体へのダメージリスクが極めて低く、あらゆる格闘技の中でも最も安全に楽しむことができます。
+          </p>
+        </div>
       </div>
 
-      <div class="concept__card fade-up" style="transition-delay: 0.1s;">
-        <div class="concept__card-icon">02</div>
-        <h3 class="concept__card-title">生涯スポーツ</h3>
-        <p class="concept__card-text">
-          年齢や体格に関係なく、自分の筋力や体力に合わせた力加減で練習できます。何歳からでも始められ、長く続けられるスポーツです。
-        </p>
+      <div class="concept__card motion-scale" data-motion-delay="0.08" style="background-image: url('/what2.webp');">
+        <div class="concept__card-content">
+          <h3 class="concept__card-title">生涯スポーツ</h3>
+          <p class="concept__card-text">
+            年齢や体格に関係なく、自分の筋力や体力に合わせた力加減で練習できます。何歳からでも始められ、長く続けられるスポーツです。
+          </p>
+        </div>
       </div>
 
-      <div class="concept__card fade-up" style="transition-delay: 0.2s;">
-        <div class="concept__card-icon">03</div>
-        <h3 class="concept__card-title">世界基準の競技</h3>
-        <p class="concept__card-text">
-          「体を使ったチェス」と呼ばれるほど戦略的で知的。Googleの福利厚生にも採用されるなど、世界中のビジネスパーソンに愛されています。
-        </p>
+      <div class="concept__card motion-scale" data-motion-delay="0.16" style="background-image: url('/what3.webp');">
+        <div class="concept__card-content">
+          <h3 class="concept__card-title">世界基準の競技</h3>
+          <p class="concept__card-text">
+            「体を使ったチェス」と呼ばれるほど戦略的で知的。Googleの福利厚生にも採用されるなど、世界中のビジネスパーソンに愛されています。
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -43,67 +46,77 @@
 
 <style>
   .concept {
-    padding: 120px 0;
+    padding: clamp(82px, 9vw, 104px) 0;
+    background: transparent;
   }
 
   .concept__header {
     text-align: center;
     max-width: 600px;
-    margin: 0 auto 64px auto;
+    margin: 0 auto clamp(42px, 6vw, 56px) auto;
   }
 
   .concept__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: clamp(18px, 2.8vw, 28px);
   }
 
   .concept__card {
-    background: #F8F9FA;
-    border-radius: 20px;
-    padding: 40px 32px;
+    position: relative;
+    border-radius: 24px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    min-height: 480px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    transition: transform 0.4s ease;
+    justify-content: flex-end; /* Align content to bottom */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
   }
 
-  .concept__card-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Inter', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #1A1A1A;
-    margin-bottom: 24px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  .concept__card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .concept__card-content {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+    padding: clamp(40px, 6vw, 60px) clamp(20px, 3vw, 28px) clamp(24px, 4vw, 32px);
+    width: 100%;
+    text-align: left;
   }
 
   .concept__card-title {
     font-family: 'Noto Sans JP', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 16px;
-    color: #1A1A1A;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #FFFFFF; /* White text */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
   }
 
   .concept__card-text {
-    font-size: 0.9rem;
-    color: #666666;
-    line-height: 1.8;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.95); /* Mostly white text */
+    line-height: 1.7;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+  }
+
+  @media (max-width: 900px) {
+    .concept__grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .concept__card {
+      min-height: 400px; /* Adjust height for mobile */
+    }
   }
 
   @media (max-width: 768px) {
-    .concept__grid {
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-    .concept { padding: 80px 0; }
+    .concept { padding: 58px 0; }
   }
 </style>

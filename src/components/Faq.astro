@@ -4,12 +4,12 @@
 
 <section class="faq section" id="faq">
   <div class="container">
-    <div class="faq__header fade-up" style="text-align: center; margin-bottom: 64px;">
+    <div class="faq__header motion-up" style="text-align: center; margin-bottom: 56px;">
       <span class="section-label">FAQ</span>
       <h2 class="section-title">よくある質問</h2>
     </div>
 
-    <div class="faq__list fade-up">
+    <div class="faq__list motion-up">
       <div class="faq__item">
         <button class="faq__question" aria-expanded="false">
           <span>初心者でも大丈夫ですか？</span>
@@ -123,8 +123,8 @@
 
 <style>
   .faq {
-    padding: 120px 0;
-    background: #F5F2EE;
+    padding: clamp(82px, 9vw, 104px) 0;
+    background: transparent;
   }
 
   .faq__list {
@@ -133,15 +133,21 @@
   }
 
   .faq__item {
-    background: #fff;
-    border-radius: 16px;
-    margin-bottom: 8px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(248,248,250,0.9));
+    border: none;
+    border-radius: 18px;
+    margin-bottom: 12px;
     overflow: hidden;
+    box-shadow:
+      14px 14px 26px rgba(156, 166, 189, 0.28),
+      -12px -12px 24px rgba(255, 255, 255, 0.92);
     transition: box-shadow 0.3s ease;
   }
 
   .faq__item:hover {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    box-shadow:
+      18px 18px 34px rgba(143, 154, 179, 0.32),
+      -14px -14px 28px rgba(255, 255, 255, 0.95);
   }
 
   .faq__question {
@@ -149,7 +155,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 28px;
+    padding: 22px 26px;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
@@ -162,7 +168,7 @@
   }
 
   .faq__question:hover {
-    color: #FF5E1A;
+    color: #FF6A00;
   }
 
   .faq__icon {
@@ -173,14 +179,14 @@
     height: 32px;
     flex-shrink: 0;
     border-radius: 50%;
-    background: #F5F2EE;
-    color: #FF5E1A;
+    background: #F4F4F7;
+    color: #FF6A00;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .faq__question[aria-expanded="true"] .faq__icon {
     transform: rotate(45deg);
-    background: #FF5E1A;
+    background: #FF6A00;
     color: #fff;
   }
 
@@ -200,8 +206,10 @@
   }
 
   @media (max-width: 768px) {
-    .faq { padding: 80px 0; }
+    .faq { padding: 58px 0; }
     .faq__question { padding: 20px 20px; }
     .faq__answer p { padding: 0 20px 20px; }
   }
 </style>
+
+

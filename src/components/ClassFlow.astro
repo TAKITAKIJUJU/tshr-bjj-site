@@ -2,53 +2,53 @@
 // ClassFlow - Refined YAWARA style (Vertical Layout per user request)
 ---
 
-<section class="classflow section--white" id="classflow">
+<section class="classflow section" id="classflow">
   <div class="container" style="max-width: 900px;"> <!-- Narrower container for blog-style readability -->
-    <div class="classflow__header fade-up">
+    <div class="classflow__header motion-up">
       <span class="section-label">FLOW</span>
       <h2 class="section-title--jp">クラスの流れ</h2>
     </div>
 
     <div class="classflow__list">
       <!-- Step 1 -->
-      <div class="classflow__item fade-up">
-        <div class="classflow__content fade-up">
+      <div class="classflow__item motion-up">
+        <div class="classflow__content motion-up">
           <div class="classflow__step-label">STEP 01</div>
           <h3 class="classflow__title">マット運動</h3>
           <p class="classflow__desc">
             「受け身」「柔術立ち」といった寝技に必要不可欠な基本の動きを全員で反復します。マット運動で三半規管が鍛えられることによってバランス感覚や打たれ強さが向上します。
           </p>
         </div>
-        <div class="classflow__image" style="transition-delay: 0.2s;">
-          <img src="/flow-1.png" alt="マット運動の様子" loading="lazy">
+        <div class="classflow__image motion-scale" data-motion-delay="0.18">
+          <img src="/flow1.webp" alt="マット運動の様子" loading="lazy">
         </div>
       </div>
 
       <!-- Step 2 -->
-      <div class="classflow__item fade-up">
-        <div class="classflow__content fade-up">
+      <div class="classflow__item motion-up">
+        <div class="classflow__content motion-up">
           <div class="classflow__step-label">STEP 02</div>
           <h3 class="classflow__title">テクニック練習</h3>
           <p class="classflow__desc">
             指導経験が豊富のインストラクターがテクニックをレクチャーし、2人1組になって反復練習します。ペアになった先輩メンバーも親切に教えてくれるのでご安心ください。
           </p>
         </div>
-        <div class="classflow__image" style="transition-delay: 0.2s;">
-          <img src="/flow-2.png" alt="テクニック練習の様子" loading="lazy">
+        <div class="classflow__image motion-scale" data-motion-delay="0.18">
+          <img src="/flow2.webp" alt="テクニック練習の様子" loading="lazy">
         </div>
       </div>
 
       <!-- Step 3 -->
-      <div class="classflow__item fade-up">
-        <div class="classflow__content fade-up">
+      <div class="classflow__item motion-up">
+        <div class="classflow__content motion-up">
           <div class="classflow__step-label">STEP 03</div>
           <h3 class="classflow__title">スパーリング</h3>
           <p class="classflow__desc">
             最後に実践練習のスパーリングを行います。柔術は体を使ったチェスや将棋とも言われるくらいゲーム性が高く、ストレス発散効果バツグンです。初心者のうちは相手の方が動きを合わせてくれます。習ったテクニックやどこかで見たことがある技をぜひ試してみてください。
           </p>
         </div>
-        <div class="classflow__image" style="transition-delay: 0.2s;">
-          <img src="/flow-3.png" alt="スパーリングの様子" loading="lazy">
+        <div class="classflow__image motion-scale" data-motion-delay="0.18">
+          <img src="/flow3.webp" alt="スパーリングの様子" loading="lazy">
         </div>
       </div>
     </div>
@@ -57,24 +57,31 @@
 
 <style>
   .classflow {
-    padding: 120px 0;
+    padding: clamp(82px, 9vw, 104px) 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .classflow .container {
+    position: relative;
+    z-index: 1;
   }
 
   .classflow__header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: clamp(48px, 7vw, 68px);
   }
 
   .classflow__list {
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: clamp(48px, 7vw, 68px);
   }
 
   .classflow__item {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
   }
 
   .classflow__content {
@@ -93,7 +100,7 @@
   .classflow__title {
     font-size: 1.6rem;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
     color: #1A1A1A;
   }
 
@@ -107,7 +114,11 @@
     width: 100%;
     border-radius: 20px; /* Clean rounded corners */
     overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    background: transparent;
+    box-shadow:
+      12px 12px 24px rgba(133, 144, 169, 0.26),
+      inset 4px 4px 10px rgba(255, 255, 255, 0.76),
+      inset -4px -4px 10px rgba(192, 201, 220, 0.46);
   }
 
   .classflow__image img {
@@ -118,9 +129,9 @@
   }
 
   @media (max-width: 768px) {
-    .classflow { padding: 80px 0; }
+    .classflow { padding: 58px 0; }
     .classflow__title { font-size: 1.4rem; }
     .classflow__desc { font-size: 0.9rem; }
-    .classflow__list { gap: 60px; }
+    .classflow__list { gap: 44px; }
   }
 </style>

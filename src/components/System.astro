@@ -4,10 +4,10 @@
 
 <section class="system section--dark" id="system">
   <div class="container">
-    <div class="system__header fade-up">
-      <span class="section-label" style="color: #666;">Price</span>
+    <div class="system__header motion-up">
+      <span class="section-label" style="color: rgba(255,255,255,0.86);">Price</span>
       <h2 class="section-title--jp" style="color: #FFF;">料金システム</h2>
-      <p class="section-subtitle" style="color: #999;">
+      <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">
         あなたのライフスタイルに合わせたプランをご用意しています。
       </p>
       
@@ -18,7 +18,7 @@
       </div>
 
       <!-- Scroll hint for mobile (Enhanced visibility) -->
-      <div class="system__scroll-hint fade-up" style="transition-delay: 0.1s;">
+      <div class="system__scroll-hint motion-up" data-motion-delay="0.1">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="scroll-icon">
           <!-- Double arrow pointing right to indicate swiping/scrolling -->
           <path d="M13 17l5-5-5-5M6 17l5-5-5-5"/>
@@ -29,7 +29,7 @@
 
     <div class="system__grid">
       <!-- Full Time (Men) -->
-      <div class="system__card card fade-up">
+      <div class="system__card card motion-scale">
         <h3 class="system__plan-name">フルタイム会員<span class="system__plan-sub">(一般男性)</span></h3>
         <div class="system__price">
           <span class="system__price-value">¥9,800</span>
@@ -43,7 +43,7 @@
       </div>
 
       <!-- Full Time (Women / Students) -->
-      <div class="system__card card fade-up" style="transition-delay: 0.1s;">
+      <div class="system__card card motion-scale" data-motion-delay="0.08">
         <h3 class="system__plan-name">フルタイム会員<span class="system__plan-sub">(女性・中高生)</span></h3>
         <div class="system__price">
           <span class="system__price-value">¥7,800</span>
@@ -57,7 +57,7 @@
       </div>
 
       <!-- Kids -->
-      <div class="system__card card fade-up" style="transition-delay: 0.2s;">
+      <div class="system__card card motion-scale" data-motion-delay="0.16">
         <h3 class="system__plan-name">キッズ会員<span class="system__plan-sub">(小学1〜6年生)</span></h3>
         <div class="system__price">
           <span class="system__price-value">¥5,000</span>
@@ -71,7 +71,7 @@
       </div>
 
       <!-- Visitor moved inside the grid -->
-      <div class="system__card card fade-up" style="transition-delay: 0.3s;">
+      <div class="system__card card motion-scale" data-motion-delay="0.24">
         <h3 class="system__plan-name">ビジター <span class="system__plan-sub">(1回利用)</span></h3>
         <div class="system__price">
           <span class="system__price-value">¥2,200</span>
@@ -85,22 +85,24 @@
       </div>
     </div>
     
-    <div class="system__actions fade-up" style="text-align: center; margin-top: 48px;">
-      <a href="#contact" class="btn btn--white" style="min-width: 240px;">体験・入会お申し込み</a>
-    </div>
   </div>
 </section>
 
 <style>
   .system {
-    padding: 120px 0;
-    background: #111111; /* Deep premium black */
-    color: #FFF;
+    padding: clamp(82px, 9vw, 104px) 0;
+    background: linear-gradient(135deg, #ff7a18 0%, #e52d27 100%);
+    color: #FFFFFF;
+  }
+
+  .system::before {
+    content: none !important;
+    display: none !important;
   }
 
   .system__header {
     text-align: center;
-    margin-bottom: 64px;
+    margin-bottom: clamp(44px, 6vw, 56px);
   }
 
   .system__campaign {
@@ -108,7 +110,7 @@
     align-items: center;
     justify-content: center;
     gap: 16px;
-    margin-top: 32px;
+    margin-top: 24px;
   }
 
   .campaign-badge {
@@ -124,19 +126,19 @@
   .campaign-text {
     font-size: 0.85rem;
     font-weight: 400;
-    color: #CCC;
+    color: rgba(255, 255, 255, 0.92);
   }
   
   .campaign-text strong {
-    color: #FFF;
+    color: #FFFFFF;
     font-weight: 600;
   }
 
   .system__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2x2 on smaller tablets */
-    gap: 24px;
-    margin-bottom: 24px;
+    gap: 20px;
+    margin-bottom: 20px;
   }
 
   @media (min-width: 1024px) {
@@ -146,29 +148,33 @@
   }
 
   .system__card {
-    background: #1A1A1A; /* Slightly lighter than the background section */
-    border: 1px solid rgba(255,255,255,0.05); /* Very faint border */
-    border-radius: 12px;
-    padding: 40px 24px; /* Reduced horizontal padding to fit 4 cards */
+    background: #F7F8FA !important;
+    border: 1px solid rgba(15, 23, 42, 0.08) !important;
+    border-radius: 24px;
+    padding: 34px 22px;
     display: flex;
     flex-direction: column;
     text-align: left;
-    transition: background 0.4s ease, border-color 0.4s ease;
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.06),
+      0 10px 24px rgba(15, 23, 42, 0.08) !important;
+    transition: background 0.4s ease, box-shadow 0.45s ease;
   }
 
   .system__card:hover {
-    background: #222222;
-    border-color: rgba(255,255,255,0.1);
-    transform: none; /* No vertical movement, keep it flat and elegant */
-    box-shadow: none;
+    background: #F7F8FA !important;
+    transform: translateY(-3px);
+    box-shadow:
+      0 2px 4px rgba(15, 23, 42, 0.08),
+      0 14px 28px rgba(15, 23, 42, 0.1) !important;
   }
 
   .system__plan-name {
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
-    color: #FFF;
-    margin-bottom: 16px;
+    color: #111111;
+    margin-bottom: 14px;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -177,16 +183,16 @@
   .system__plan-sub {
     font-size: 0.8rem;
     font-weight: 400;
-    color: #888;
+    color: #666666;
   }
 
   .system__price {
     display: flex;
     align-items: baseline;
     gap: 8px;
-    margin-bottom: 32px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding-bottom: 24px;
+    margin-bottom: 26px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-bottom: 20px;
   }
 
   .system__price-value {
@@ -194,12 +200,12 @@
     font-size: 2rem;
     font-weight: 500;
     letter-spacing: 0;
-    color: #FFF;
+    color: #111111;
   }
 
   .system__price-unit {
     font-size: 0.75rem;
-    color: #888;
+    color: #666666;
   }
 
   .system__features {
@@ -209,7 +215,7 @@
 
   .system__features li {
     font-size: 0.8rem;
-    color: #AAA;
+    color: #333333;
     padding: 8px 0;
     line-height: 1.6;
     position: relative;
@@ -220,7 +226,7 @@
     content: "・";
     position: absolute;
     left: 0;
-    color: #666;
+    color: #666666;
   }
 
 
@@ -230,24 +236,19 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    margin-top: 40px;
+    margin-top: 28px;
     font-size: 0.9rem;
-    color: #FF5E1A; /* Accent orange for visibility */
+    color: #FFFFFF;
     font-weight: 600;
     letter-spacing: 0.05em;
   }
 
   .scroll-icon {
-    animation: swipeAnim 1.5s infinite ease-in-out;
-  }
-
-  @keyframes swipeAnim {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(6px); }
+    opacity: 0.85;
   }
 
   @media (max-width: 768px) {
-    .system { padding: 80px 0; }
+    .system { padding: 58px 0; }
     
     .system__scroll-hint { display: flex; }
 
@@ -258,12 +259,9 @@
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       gap: 16px;
-      padding-bottom: 24px; 
-      /* Breakout of container padding to allow edge-to-edge swipe */
-      margin-left: -20px; 
-      margin-right: -20px;
-      padding-left: 20px; /* Align first card with container */
-      padding-right: 20px;
+      padding-bottom: 24px;
+      padding-left: 2px;
+      padding-right: 18px;
       -webkit-overflow-scrolling: touch;
       /* Hide scrollbar for a native app feel */
       scrollbar-width: none;
@@ -274,8 +272,9 @@
     }
 
     .system__card {
-      min-width: 85vw; /* Make card take 85% of screen to hint next card */
-      scroll-snap-align: center; /* Snap cards to center */
+      min-width: calc(100vw - 92px);
+      max-width: calc(100vw - 92px);
+      scroll-snap-align: start;
       flex-shrink: 0;
     }
 
@@ -289,3 +288,6 @@
     }
   }
 </style>
+
+
+
