@@ -5,8 +5,8 @@ interface Props {
 }
 
 const {
-  title = 'Over Limit 本庄 | ブラジリアン柔術',
-  description = 'あのGoogleの福利厚生にも採用されているブラジリアン柔術が本庄市についに上陸！アジアチャンピオンが直接指導する最高の環境でブラジリアン柔術を始めませんか？'
+  title = '本庄市のブラジリアン柔術ジム｜Over Limit 本庄',
+  description = '本庄駅徒歩6分・無料駐車場あり。本庄市のブラジリアン柔術ジム「Over Limit 本庄」。初心者・女性・キッズ歓迎。世界大会王者が直接指導。見学・無料体験受付中。'
 } = Astro.props;
 ---
 
@@ -15,12 +15,312 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="google-site-verification" content="6Any9gIf8bYIO0x-BakavTduY23JcXYOblQO8mmCRIc" />
+    <link rel="icon" type="image/png" href="/LOGO.png" />
+    <link rel="apple-touch-icon" href="/LOGO.png" />
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://tshr-bjj.com/" />
+    <script is:inline type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@graph": [
+    {
+    "@type": "WebSite",
+    "@id": "https://tshr-bjj.com/#website",
+    "name": "Over Limit 本庄",
+    "url": "https://tshr-bjj.com/",
+    "inLanguage": "ja",
+    "publisher": {
+    "@id": "https://tshr-bjj.com/#sportsactivitylocation"
+    }
+    },
+    {
+    "@type": "WebPage",
+    "@id": "https://tshr-bjj.com/#webpage",
+    "url": "https://tshr-bjj.com/",
+    "name": "本庄市のブラジリアン柔術ジム｜Over Limit 本庄",
+    "description": "本庄駅徒歩6分・無料駐車場あり。本庄市のブラジリアン柔術ジム「Over Limit 本庄」。初心者・女性・キッズ歓迎。世界大会王者が直接指導。見学・無料体験受付中。",
+    "isPartOf": {
+    "@id": "https://tshr-bjj.com/#website"
+    },
+    "about": {
+    "@id": "https://tshr-bjj.com/#sportsactivitylocation"
+    },
+    "mainEntity": {
+    "@id": "https://tshr-bjj.com/#sportsactivitylocation"
+    },
+    "breadcrumb": {
+    "@id": "https://tshr-bjj.com/#breadcrumb"
+    },
+    "inLanguage": "ja"
+    },
+    {
+    "@type": "SportsActivityLocation",
+    "@id": "https://tshr-bjj.com/#sportsactivitylocation",
+    "name": "Over Limit 本庄",
+    "url": "https://tshr-bjj.com/",
+    "description": "本庄駅徒歩6分・無料駐車場あり。本庄市のブラジリアン柔術ジム「Over Limit 本庄」。初心者・女性・キッズ歓迎。世界大会王者が直接指導。見学・無料体験受付中。",
+    "sport": "Brazilian Jiu-Jitsu",
+    "address": {
+    "@type": "PostalAddress",
+    "postalCode": "367-0042",
+    "addressRegion": "埼玉県",
+    "addressLocality": "本庄市",
+    "streetAddress": "けや木1丁目1-16",
+    "addressCountry": "JP"
+    },
+    "areaServed": [
+    "本庄市",
+    "上里町",
+    "児玉町",
+    "神川町",
+    "美里町",
+    "深谷市",
+    "伊勢崎市"
+    ],
+    "sameAs": [
+    "https://www.instagram.com/tshr_jiujitsu/",
+    "https://www.facebook.com/groups/304416070927536"
+    ],
+    "amenityFeature": [
+    {
+    "@type": "LocationFeatureSpecification",
+    "name": "無料駐車場あり",
+    "value": true
+    },
+    {
+    "@type": "LocationFeatureSpecification",
+    "name": "JR高崎線「本庄」駅北口より徒歩6分",
+    "value": true
+    }
+    ],
+    "openingHoursSpecification": [
+    {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": "Monday",
+    "opens": "10:00",
+    "closes": "11:30"
+    },
+    {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": "Monday",
+    "opens": "19:00",
+    "closes": "22:00"
+    },
+    {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": "Wednesday",
+    "opens": "10:00",
+    "closes": "11:30"
+    },
+    {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": "Wednesday",
+    "opens": "19:00",
+    "closes": "22:00"
+    },
+    {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": "Thursday",
+    "opens": "19:00",
+    "closes": "22:00"
+    },
+    {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": "Friday",
+    "opens": "18:00",
+    "closes": "22:30"
+    },
+    {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": "Saturday",
+    "opens": "19:00",
+    "closes": "22:00"
+    }
+    ],
+    "employee": {
+    "@id": "https://tshr-bjj.com/#instructor-seiichi-tashiro"
+    },
+    "hasOfferCatalog": {
+    "@id": "https://tshr-bjj.com/#offer-catalog"
+    }
+    },
+    {
+    "@type": "Person",
+    "@id": "https://tshr-bjj.com/#instructor-seiichi-tashiro",
+    "name": "田代 セイイチ",
+    "jobTitle": "代表・ヘッドインストラクター",
+    "worksFor": {
+    "@id": "https://tshr-bjj.com/#sportsactivitylocation"
+    },
+    "description": "Over Limit 本庄の代表・ヘッドインストラクター。ブラジリアン柔術 Black Belt。2025 SJJF WORLD championship 優勝、JBJJF ALL Japan Master 2回優勝、IBJJF Asian Championship 3回優勝。"
+    },
+    {
+    "@type": "OfferCatalog",
+    "@id": "https://tshr-bjj.com/#offer-catalog",
+    "name": "Over Limit 本庄 料金プラン",
+    "itemListElement": [
+    {
+    "@type": "Offer",
+    "name": "入会金",
+    "price": "0",
+    "priceCurrency": "JPY",
+    "description": "入会金無料"
+    },
+    {
+    "@type": "Offer",
+    "name": "キッズクラス",
+    "price": "5000",
+    "priceCurrency": "JPY",
+    "description": "小学1〜6年生対象の月額プラン"
+    },
+    {
+    "@type": "Offer",
+    "name": "大人一般クラス 女性・中高生",
+    "price": "7800",
+    "priceCurrency": "JPY",
+    "description": "女性・中高生向けの月額プラン"
+    },
+    {
+    "@type": "Offer",
+    "name": "大人一般クラス フルタイム男性",
+    "price": "9800",
+    "priceCurrency": "JPY",
+    "description": "一般男性向けの月額フルタイムプラン"
+    },
+    {
+    "@type": "Offer",
+    "name": "ビジター",
+    "price": "2200",
+    "priceCurrency": "JPY",
+    "description": "1回利用のビジター料金"
+    }
+    ]
+    },
+    {
+    "@type": "Course",
+    "@id": "https://tshr-bjj.com/#course-kids",
+    "name": "キッズ柔術クラス",
+    "description": "小学1〜6年生を対象としたブラジリアン柔術クラス。礼儀作法、基礎体力、運動神経を楽しく養います。",
+    "provider": {
+    "@id": "https://tshr-bjj.com/#sportsactivitylocation"
+    }
+    },
+    {
+    "@type": "Course",
+    "@id": "https://tshr-bjj.com/#course-beginner",
+    "name": "ビギナー柔術クラス",
+    "description": "柔術初心者向けのクラス。基本の動きやテクニックを丁寧に学べます。",
+    "provider": {
+    "@id": "https://tshr-bjj.com/#sportsactivitylocation"
+    }
+    },
+    {
+    "@type": "Course",
+    "@id": "https://tshr-bjj.com/#course-all-level",
+    "name": "オールレベル柔術クラス",
+    "description": "初心者から経験者まで参加できるブラジリアン柔術クラスです。",
+    "provider": {
+    "@id": "https://tshr-bjj.com/#sportsactivitylocation"
+    }
+    },
+    {
+    "@type": "Course",
+    "@id": "https://tshr-bjj.com/#course-nogi",
+    "name": "NOGIクラス",
+    "description": "道着を使わないグラップリング形式のクラスです。",
+    "provider": {
+    "@id": "https://tshr-bjj.com/#sportsactivitylocation"
+    }
+    },
+    {
+    "@type": "FAQPage",
+    "@id": "https://tshr-bjj.com/#faq",
+    "mainEntity": [
+    {
+    "@type": "Question",
+    "name": "ブラジリアン柔術や格闘技が全くの未経験の初心者でも大丈夫ですか？",
+    "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "はい、もちろんです。当道場に通う方の多くが未経験からスタートされています。柔術は打撃が一切ないため安全性が高く、基礎から楽しく学べます。"
+    }
+    },
+    {
+    "@type": "Question",
+    "name": "30代・40代の運動不足解消やダイエット目的で始めても遅くないでしょうか？",
+    "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "全く遅くありません。当道場では20代〜50代の大人の習い事として通われる方も多くいらっしゃいます。全身運動なので、ダイエットやストレス発散にもおすすめです。"
+    }
+    },
+    {
+    "@type": "Question",
+    "name": "子供・小学生の習い事として、礼儀作法や運動神経を身につけられますか？",
+    "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "はい、キッズクラスでは柔術の技術だけでなく、挨拶や礼儀作法も大切に指導しています。マット運動を通じて、あらゆるスポーツの土台となる基礎体力も自然と身につきます。"
+    }
+    },
+    {
+    "@type": "Question",
+    "name": "柔術を始めるには、最初に道着代など結構なお金がかかりますか？",
+    "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "通常は道着が必要になりますが、体験時は動きやすい服装でご参加いただけます。道着の購入タイミングや選び方についても、入会時にわかりやすくご案内します。"
+    }
+    },
+    {
+    "@type": "Question",
+    "name": "女性でも安全に参加できますか？護身術としての効果はありますか？",
+    "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "はい、女性の方も安心してご参加いただけます。柔術は力だけに頼らず、テコの原理や体の使い方で相手をコントロールする技術が中心のため、護身術としてもおすすめです。"
+    }
+    },
+    {
+    "@type": "Question",
+    "name": "本庄市外から車で通えますか？駐車場はありますか？",
+    "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "はい、無料駐車場を完備しております。本庄市内はもちろん、上里町、児玉町、神川町、美里町、深谷市、群馬県伊勢崎市などの近隣エリアからも通いやすい立地です。"
+    }
+    },
+    {
+    "@type": "Question",
+    "name": "見学や無料体験は、本当に手ぶらで行っても平気ですか？",
+    "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "はい、見学・無料体験ともにお気軽にお越しください。無料体験の方は、動きやすいTシャツや短パン、タオル、飲み物をお持ちいただければ安心です。"
+    }
+    }
+    ]
+    },
+    {
+    "@type": "BreadcrumbList",
+    "@id": "https://tshr-bjj.com/#breadcrumb",
+    "itemListElement": [
+    {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "ホーム",
+    "item": "https://tshr-bjj.com/"
+    }
+    ]
+    }
+    ]
+    }
+    </script>
+    <script is:inline>
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('js-motion');
+      }
+    </script>
     <title>{title}</title>
   </head>
   <body>
