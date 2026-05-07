@@ -151,9 +151,6 @@ const row2 = images.slice(4, 8);
 
 <script>
   import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-  gsap.registerPlugin(ScrollTrigger);
 
   const isMobile = () => window.innerWidth <= 768;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -195,40 +192,29 @@ const row2 = images.slice(4, 8);
             const topSetWidth = getOneSetWidth(topTrack);
             const bottomSetWidth = getOneSetWidth(bottomTrack);
 
-            // Move exactly one full set so it loops seamlessly
-            const topMove = topSetWidth;
-            const bottomMove = bottomSetWidth;
+            // Slow constant speed: ~30px/sec → duration = distance / speed
+            const speed = 30;
+            const topDuration = topSetWidth / speed;
+            const bottomDuration = bottomSetWidth / speed;
 
             // Bottom row starts shifted left by one set
-            gsap.set(bottomTrack, { x: -bottomMove });
+            gsap.set(bottomTrack, { x: -bottomSetWidth });
 
-            // Top row: scrolls right → left by one full set
+            // Top row: auto-scrolls right → left continuously
             gsap.to(topTrack, {
-              x: -topMove,
+              x: -topSetWidth,
               ease: 'none',
-              scrollTrigger: {
-                trigger: '#facility',
-                start: 'top 120%',
-                end: 'bottom -120%',
-                scrub: 0.6,
-                invalidateOnRefresh: true,
-              },
+              duration: topDuration,
+              repeat: -1,
             });
 
-            // Bottom row: scrolls left → right by one full set
+            // Bottom row: auto-scrolls left → right continuously
             gsap.to(bottomTrack, {
               x: 0,
               ease: 'none',
-              scrollTrigger: {
-                trigger: '#facility',
-                start: 'top 120%',
-                end: 'bottom -120%',
-                scrub: 0.6,
-                invalidateOnRefresh: true,
-              },
+              duration: bottomDuration,
+              repeat: -1,
             });
-
-            ScrollTrigger.refresh();
           });
         });
       };
