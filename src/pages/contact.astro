@@ -1,0 +1,330 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "お問い合わせ | Over Limit 本庄";
+const description = "本庄市のブラジリアン柔術ジム「Over Limit 本庄」へのお問い合わせフォームです。見学・無料体験のご予約や、入会に関するご相談など、お気軽にお問い合わせください。";
+---
+
+<Layout title={title} description={description}>
+  <main class="contact-page">
+    <section class="contact-hero section--dark">
+      <div class="container">
+        <div class="contact-hero__inner motion-up">
+          <span class="section-label">Contact</span>
+          <h1 class="section-title">お問い合わせ</h1>
+          <p class="section-subtitle" style="color: #ffffff;">
+            見学・無料体験のご予約、入会に関するご質問など、<br class="pc-only" />
+            お気軽にお問い合わせください。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-form section">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Form Side -->
+          <div class="form-wrapper motion-up" data-motion-delay="0.2">
+            <form action="https://formsubmit.co/tashas.natura@hotmail.com" method="POST" class="form">
+              <div class="form__group">
+                <label for="name" class="form__label">お名前 <span class="form__required">必須</span></label>
+                <input type="text" id="name" name="name" class="form__input" placeholder="例：山田 太郎" required />
+              </div>
+
+              <div class="form__group">
+                <label for="email" class="form__label">メールアドレス <span class="form__required">必須</span></label>
+                <input type="email" id="email" name="email" class="form__input" placeholder="example@mail.com" required />
+              </div>
+
+              <div class="form__group">
+                <label for="tel" class="form__label">電話番号</label>
+                <input type="tel" id="tel" name="tel" class="form__input" placeholder="090-0000-0000" />
+              </div>
+
+              <div class="form__group">
+                <label for="type" class="form__label">お問い合わせ項目 <span class="form__required">必須</span></label>
+                <select id="type" name="type" class="form__select" required>
+                  <option value="" disabled selected>選択してください</option>
+                  <option value="trial">無料体験の予約</option>
+                  <option value="visit">見学の予約</option>
+                  <option value="join">入会に関する相談</option>
+                  <option value="other">その他</option>
+                </select>
+              </div>
+
+              <div class="form__group">
+                <label for="message" class="form__label">メッセージ <span class="form__required">必須</span></label>
+                <textarea id="message" name="message" class="form__textarea" rows="6" placeholder="お問い合わせ内容をご記入ください" required></textarea>
+              </div>
+
+              <div class="form__footer">
+                <button type="submit" class="btn btn--primary w-full">
+                  <span>内容を確認して送信する</span>
+                  <svg class="btn__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </button>
+                <p class="form__privacy">
+                  ※送信いただいた内容はプライバシーポリシーに基づき適切に管理いたします。
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <!-- Info Side -->
+          <div class="info-wrapper motion-up" data-motion-delay="0.4">
+            <div class="info-card">
+              <h2 class="info-card__title">LINEでのお問い合わせ</h2>
+              <p class="info-card__text">
+                LINEでも見学・体験のご予約を受け付けております。<br />
+                友達追加後、メッセージをお送りください。
+              </p>
+              <a href="https://line.me/ti/p/edZnSmCFIj" target="_blank" rel="noopener" class="line-btn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE" width="24" height="24" />
+                <span>LINEで相談する</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .contact-hero {
+    position: relative;
+    padding-top: 140px;
+    padding-bottom: 80px;
+    text-align: center;
+    background: url('/flow3.jpeg') center/cover no-repeat;
+  }
+  
+  .contact-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+
+  .contact-hero__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 64px;
+    align-items: start;
+    margin-top: -40px;
+  }
+
+  /* Form Styles */
+  .form-wrapper {
+    background: #FFFFFF;
+    padding: clamp(32px, 5vw, 56px);
+    border-radius: 28px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.06),
+      0 10px 24px rgba(15, 23, 42, 0.08);
+  }
+
+  .form__group {
+    margin-bottom: 24px;
+  }
+
+  .form__label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1A1A1A;
+  }
+
+  .form__required {
+    font-size: 0.7rem;
+    background: #FF6A00;
+    color: #FFFFFF;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  .form__input,
+  .form__select,
+  .form__textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #F8F9FA;
+  }
+
+  .form__input:focus,
+  .form__select:focus,
+  .form__textarea:focus {
+    outline: none;
+    border-color: #FF6A00;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(255, 106, 0, 0.1);
+  }
+
+  .form__select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234A4A4A'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 18px;
+  }
+
+  .form__textarea {
+    resize: vertical;
+  }
+
+  .form__footer {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .form__privacy {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 16px;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  /* Info Side Styles */
+  .info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .info-card {
+    background: #F8F9FA;
+    padding: 32px;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+  }
+
+  .info-card__title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .info-card__text {
+    font-size: 0.9rem;
+    color: #4A4A4A;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .info-card__item {
+    margin-bottom: 16px;
+  }
+
+  .info-card__label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #FF6A00;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .info-card__val {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1A1A1A;
+  }
+
+  .line-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #06C755;
+    color: #FFFFFF;
+    padding: 16px;
+    border-radius: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+
+  .line-btn:hover {
+    transform: translateY(-2px);
+    background: #05b34c;
+  }
+
+  @media (max-width: 992px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    .info-wrapper {
+      order: -1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-hero {
+      padding-top: 110px;
+      padding-bottom: 60px;
+    }
+    .form-wrapper {
+      padding: 24px;
+    }
+    .pc-only { display: none; }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const MOTION_SELECTORS = '.motion-up';
+  
+  gsap.utils.toArray(MOTION_SELECTORS).forEach((el: any) => {
+    const delay = parseFloat(el.getAttribute('data-motion-delay') || '0');
+    
+    gsap.fromTo(el, 
+      { opacity: 0, y: 40, filter: 'blur(6px)' },
+      { 
+        opacity: 1, 
+        y: 0, 
+        filter: 'blur(0px)',
+        duration: 0.8,
+        ease: 'power3.out',
+        delay: delay,
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 90%',
+          once: true
+        }
+      }
+    );
+  });
+</script>

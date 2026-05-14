@@ -4,6 +4,8 @@ interface Props {
   description?: string;
 }
 
+import Header from '../components/Header.astro';
+
 const {
   title = '本庄市のブラジリアン柔術ジム｜Over Limit 本庄',
   description = '本庄駅徒歩6分・無料駐車場あり。本庄市のブラジリアン柔術ジム「Over Limit 本庄」。初心者・女性・キッズ歓迎。世界大会王者が直接指導。見学・無料体験受付中。'
@@ -324,6 +326,7 @@ const {
     <title>{title}</title>
   </head>
   <body>
+    <Header />
     <slot />
   </body>
 </html>
