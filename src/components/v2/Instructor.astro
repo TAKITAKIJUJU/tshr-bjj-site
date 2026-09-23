@@ -1,0 +1,274 @@
+---
+// Instructor.astro - Redesigned based on fuckfuck.html with Orange theme & 3-stripe Black Belt
+---
+
+<section class="section dark instructor" id="instructor">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">02 / Instructor</p>
+        <h2>インストラクター紹介</h2>
+      </div>
+      <span class="section-index" aria-hidden="true">02</span>
+    </div>
+
+    <div class="instructor-layout">
+      <figure class="instructor-portrait">
+        <img src="/new-ins.webp" alt="田代 セイイチ" loading="lazy" />
+        <figcaption class="belt">
+          <span>INSTRUCTOR / BLACK BELT</span>
+          <div class="belt-graphic" aria-label="3段黒帯 (3本のストライプ)">
+            <span class="belt-black"></span>
+            <span class="belt-red">
+              <span class="belt-stripe"></span>
+              <span class="belt-stripe"></span>
+              <span class="belt-stripe"></span>
+            </span>
+          </div>
+        </figcaption>
+      </figure>
+
+      <div class="instructor-profile">
+        <div class="instructor-name">
+          <h3>田代 セイイチ</h3>
+          <p>HEAD INSTRUCTOR / BLACK BELT</p>
+        </div>
+
+        <h4 class="history-title">主な経歴・実績</h4>
+        <ul class="history">
+          <li>2026, 2025 SJJF WORLD Championship 優勝</li>
+          <li>JBJJF ALL Japan Master 2回優勝</li>
+          <li>IBJJF Asian Championship 3回優勝</li>
+          <li>2015 IBJJF WORLD MASTER 3位</li>
+        </ul>
+
+        <div class="message">
+          <h4>代表メッセージ</h4>
+          <p>私はブラジリアン柔術を始める前までは特に目標や趣味もなく、仕事を終えた後は毎日だらだらと過ごしていました。しかし柔術と出会ってから人生が大きく変わりました。今では立派な生徒たちに囲まれながら柔術を指導しています。</p>
+          <p>柔術を始めてダイエットに成功したり、自信がついて日々の生活が前向きになったりします。格闘技は人生を豊かにすることができます。この素晴らしい体験を地域の皆さんにも共有したいです。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .instructor {
+    padding-block: 108px;
+    background: #141613;
+    color: #f4f4ee;
+    font-family: 'Noto Sans JP', sans-serif;
+    overflow: hidden;
+  }
+
+  .wrap {
+    width: min(1220px, calc(100% - 48px));
+    margin-inline: auto;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #ff6b00;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    background: currentColor;
+    flex-shrink: 0;
+  }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 44px;
+    border-bottom: 2px solid #33382f;
+    padding-bottom: 20px;
+  }
+
+  .section-head h2 {
+    margin: 8px 0 0;
+    font-size: clamp(28px, 3.8vw, 44px);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1.25;
+    color: #ffffff;
+  }
+
+  .section-index {
+    color: #3b4236;
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    font-size: clamp(48px, 6vw, 76px);
+    font-weight: 700;
+    line-height: 0.85;
+  }
+
+  .instructor-layout {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .instructor-portrait {
+    position: relative;
+    align-self: start;
+    margin: 0;
+  }
+
+  .instructor-portrait > img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    object-position: center top;
+    background: #30372a;
+    display: block;
+  }
+
+  .belt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 22px;
+    background: #ff6b00;
+    color: #141613;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.9;
+  }
+
+  .belt-graphic {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    height: 16px;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+
+  .belt-black {
+    width: 44px;
+    height: 16px;
+    background: #141613;
+  }
+
+  .belt-red {
+    width: 32px;
+    height: 16px;
+    background: #b43732;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 3px;
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+  }
+
+  .belt-stripe {
+    width: 3.5px;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .instructor-name {
+    margin-bottom: 24px;
+  }
+
+  .instructor-name h3 {
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin: 0 0 4px;
+  }
+
+  .instructor-name p {
+    color: #ff6b00;
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin: 0;
+  }
+
+  .history-title,
+  .message h4 {
+    color: #ff6b00;
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin: 0 0 12px;
+    text-transform: uppercase;
+  }
+
+  .history {
+    margin: 0 0 32px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .history li {
+    border-bottom: 1px solid #33382f;
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #f4f4ee;
+  }
+
+  .history li::before {
+    content: "↗";
+    color: #ff6b00;
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+  }
+
+  .message p {
+    color: #c4c9bd;
+    font-size: 13px;
+    line-height: 1.95;
+    margin: 12px 0 0;
+  }
+
+  @media (max-width: 1024px) {
+    .instructor-layout {
+      gap: 40px;
+    }
+  }
+
+  @media (max-width: 860px) {
+    .instructor {
+      padding-block: 72px;
+    }
+    .wrap {
+      width: calc(100% - 32px);
+    }
+    .instructor-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .instructor-portrait {
+      max-width: 460px;
+      width: 100%;
+    }
+  }
+</style>

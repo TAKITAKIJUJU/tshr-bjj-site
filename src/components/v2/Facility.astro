@@ -1,0 +1,247 @@
+---
+// Facility.astro - Redesigned based on fuckfuck.html with Orange theme & Lightbox
+---
+
+<section class="section facility" id="facility">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">06 / Facility</p>
+        <h2>施設案内</h2>
+      </div>
+      <span class="section-index" aria-hidden="true">06</span>
+    </div>
+
+    <div class="gallery">
+      <button type="button" aria-label="施設写真1を拡大">
+        <img src="/processed-16A4994D-E073-48E0-A49C-89AF5897EAE1.webp" alt="施設写真1" loading="lazy" />
+      </button>
+      <button type="button" aria-label="施設写真2を拡大">
+        <img src="/processed-3BFA741D-A026-4EB4-B9BF-1992C5195C35.webp" alt="施設写真2" loading="lazy" />
+      </button>
+      <button type="button" aria-label="施設写真3を拡大">
+        <img src="/processed-8E9EA17C-03F5-4922-8835-CA5BCC9157A0.webp" alt="施設写真3" loading="lazy" />
+      </button>
+      <button type="button" aria-label="施設写真4を拡大">
+        <img src="/processed-99EE1602-384F-4E8E-967D-BECE71CB9431.webp" alt="施設写真4" loading="lazy" />
+      </button>
+      <button type="button" aria-label="施設写真5を拡大">
+        <img src="/processed-9EB7D774-131B-4FB1-8FCC-D00036F7257A.webp" alt="施設写真5" loading="lazy" />
+      </button>
+      <button type="button" aria-label="施設写真6を拡大">
+        <img src="/processed-AA442933-C10A-41AE-81AB-B86057D3678A.webp" alt="施設写真6" loading="lazy" />
+      </button>
+      <button type="button" aria-label="施設写真7を拡大">
+        <img src="/processed-C46A2648-B6DD-4D42-9573-D11E32E9083D.webp" alt="施設写真7" loading="lazy" />
+      </button>
+      <button type="button" aria-label="施設写真8を拡大">
+        <img src="/processed-E1AC7486-1624-4F7D-ACF8-536A9FC6F0DA.webp" alt="施設写真8" loading="lazy" />
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- 施設写真拡大ダイアログ -->
+<dialog class="lightbox" id="lightbox" aria-label="施設写真の拡大表示">
+  <button id="lightbox-close" type="button" aria-label="拡大写真を閉じる">
+    閉じる ×
+  </button>
+  <img id="lightbox-image" alt="拡大写真" />
+</dialog>
+
+<script>
+  const lightbox = document.getElementById("lightbox") as HTMLDialogElement | null;
+  const lightboxImage = document.getElementById("lightbox-image") as HTMLImageElement | null;
+  const lightboxClose = document.getElementById("lightbox-close");
+  let lastGalleryButton: HTMLButtonElement | null = null;
+
+  document.querySelectorAll<HTMLButtonElement>(".gallery button").forEach((button) => {
+    button.addEventListener("click", () => {
+      const image = button.querySelector("img");
+      if (!image || !lightbox || !lightboxImage) return;
+
+      if (typeof lightbox.showModal !== "function") {
+        window.open(image.src, "_blank", "noopener");
+        return;
+      }
+
+      lastGalleryButton = button;
+      lightboxImage.src = image.currentSrc || image.src;
+      lightboxImage.alt = image.alt;
+      lightbox.showModal();
+      document.body.classList.add("lightbox-open");
+    });
+  });
+
+  lightboxClose?.addEventListener("click", () => {
+    lightbox?.close();
+  });
+
+  lightbox?.addEventListener("click", (event) => {
+    if (event.target !== lightbox) return;
+    const rect = lightbox.getBoundingClientRect();
+    const outside =
+      event.clientX < rect.left ||
+      event.clientX > rect.right ||
+      event.clientY < rect.top ||
+      event.clientY > rect.bottom;
+    if (outside) lightbox.close();
+  });
+
+  lightbox?.addEventListener("close", () => {
+    document.body.classList.remove("lightbox-open");
+    lastGalleryButton?.focus({ preventScroll: true });
+  });
+</script>
+
+<style>
+  .facility {
+    padding-block: 108px;
+    background: #f4f4ee;
+    color: #141613;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .wrap {
+    width: min(1220px, calc(100% - 48px));
+    margin-inline: auto;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #ff6b00;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    background: currentColor;
+    flex-shrink: 0;
+  }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 44px;
+    border-bottom: 2px solid #141613;
+    padding-bottom: 20px;
+  }
+
+  .section-head h2 {
+    margin: 8px 0 0;
+    font-size: clamp(28px, 3.8vw, 44px);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1.25;
+  }
+
+  .section-index {
+    color: #a2a799;
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    font-size: clamp(48px, 6vw, 76px);
+    font-weight: 700;
+    line-height: 0.85;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .gallery button {
+    position: relative;
+    display: block;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+    background: #d8ddce;
+    cursor: pointer;
+  }
+
+  .gallery img {
+    width: 100%;
+    aspect-ratio: 1.35;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+  }
+
+  .gallery button:hover img {
+    transform: scale(1.05);
+    filter: brightness(0.9);
+  }
+
+  .gallery button::after {
+    content: "+";
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    background: #f4f4ee;
+    color: #141613;
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .lightbox {
+    border: 0;
+    padding: 44px 16px 16px;
+    background: #141613;
+    color: white;
+    width: min(960px, 92vw);
+    max-height: 90svh;
+    margin: auto;
+    border-radius: 4px;
+  }
+
+  .lightbox::backdrop {
+    background: rgba(0, 0, 0, 0.85);
+  }
+
+  .lightbox img {
+    max-height: 75svh;
+    width: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .lightbox button {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  @media (max-width: 860px) {
+    .facility {
+      padding-block: 72px;
+    }
+    .wrap {
+      width: calc(100% - 32px);
+    }
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

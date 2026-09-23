@@ -1,0 +1,169 @@
+---
+// ClassFlow.astro - Redesigned based on fuckfuck.html with Orange theme
+---
+
+<section class="section classflow" id="classflow">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">03 / Step Flow</p>
+        <h2>クラスの流れ</h2>
+      </div>
+      <span class="section-index" aria-hidden="true">03</span>
+    </div>
+
+    <div class="flow-grid">
+      <article class="flow-card">
+        <div class="flow-image">
+          <img src="/flow1.webp" alt="マット運動の様子" loading="lazy" />
+          <span class="flow-step">STEP 01</span>
+        </div>
+        <h3>準備・マット運動</h3>
+        <p>「受け身」「エビ」など怪我を予防し、寝技に直結する基本動作を練習。未経験でも無理なく身体のバランス感覚を養えます。</p>
+      </article>
+
+      <article class="flow-card">
+        <div class="flow-image">
+          <img src="/flow2.webp" alt="テクニック練習の様子" loading="lazy" />
+          <span class="flow-step">STEP 02</span>
+        </div>
+        <h3>テクニック練習</h3>
+        <p>インストラクターの解説を見た後、2人1組で反復。先輩メンバーも優しくフォローするので初心者も安心して学べます。</p>
+      </article>
+
+      <article class="flow-card">
+        <div class="flow-image">
+          <img src="/flow3.webp" alt="スパーリングの様子" loading="lazy" />
+          <span class="flow-step">STEP 03</span>
+        </div>
+        <h3>実践スパーリング</h3>
+        <p>学んだ技を試す実践練習。力任せではなく技の駆け引きが楽しく、初心者のうちは相手が手加減して動きを合わせてくれます。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .classflow {
+    padding-block: 108px;
+    background: #f4f4ee;
+    color: #141613;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .wrap {
+    width: min(1220px, calc(100% - 48px));
+    margin-inline: auto;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #ff6b00;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    background: currentColor;
+    flex-shrink: 0;
+  }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 44px;
+    border-bottom: 2px solid #141613;
+    padding-bottom: 20px;
+  }
+
+  .section-head h2 {
+    margin: 8px 0 0;
+    font-size: clamp(28px, 3.8vw, 44px);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1.25;
+  }
+
+  .section-index {
+    color: #a2a799;
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    font-size: clamp(48px, 6vw, 76px);
+    font-weight: 700;
+    line-height: 0.85;
+  }
+
+  .flow-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .flow-card {
+    background: #ffffff;
+    border: 1px solid #dbded3;
+    padding: 20px;
+  }
+
+  .flow-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1.4;
+    background: #e2e5dc;
+  }
+
+  .flow-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .flow-step {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ff6b00;
+    color: #141613;
+    padding: 6px 14px;
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+  }
+
+  .flow-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 18px 0 10px;
+    color: #141613;
+  }
+
+  .flow-card p {
+    color: #666a61;
+    font-size: 13px;
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  @media (max-width: 860px) {
+    .classflow {
+      padding-block: 72px;
+    }
+    .wrap {
+      width: calc(100% - 32px);
+    }
+    .flow-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
