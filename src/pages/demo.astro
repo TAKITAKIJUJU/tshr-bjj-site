@@ -7,8 +7,8 @@ import Instructor from '../components/v2/Instructor.astro';
 import ClassFlow from '../components/v2/ClassFlow.astro';
 import System from '../components/v2/System.astro';
 import Schedule from '../components/v2/Schedule.astro';
-import Access from '../components/v2/Access.astro';
 import Facility from '../components/v2/Facility.astro';
+import Access from '../components/v2/Access.astro';
 import Faq from '../components/v2/Faq.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
@@ -16,13 +16,11 @@ import FloatingCta from '../components/FloatingCta.astro';
 ---
 
 <Layout title="【デモ確認用】Over Limit 本庄｜ブラジリアン柔術道場">
-  <!-- デモ用バナー（確認用URLであることを明示） -->
-  <div class="demo-banner">
-    <div class="demo-banner__inner">
-      <span class="demo-badge">DEMO PREVIEW</span>
-      <span>デザインリニューアル案（オレンジテーマ＆3本ストライプ黒帯）の確認用デモページです</span>
-    </div>
-  </div>
+  <!-- デモ用フローティングバッジ（画面下部に控えめに固定、ヘッダーに干渉しない） -->
+  <aside class="demo-pill" aria-label="デモ画面の案内">
+    <span class="demo-pill__badge">DEMO PREVIEW</span>
+    <span class="demo-pill__text">デザインリニューアル案（オレンジ×3本ストライプ帯）</span>
+  </aside>
 
   <main>
     <!-- ファーストビュー（現行維持） -->
@@ -47,58 +45,79 @@ import FloatingCta from '../components/FloatingCta.astro';
 </Layout>
 
 <style>
-  .demo-banner {
+  .demo-pill {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
+    bottom: 92px;
+    right: 20px;
+    z-index: 999;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(20, 22, 19, 0.94);
+    color: #ffffff;
+    border: 1px solid rgba(255, 107, 0, 0.6);
+    padding: 8px 16px;
+    border-radius: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .demo-pill__badge {
     background: #ff6b00;
     color: #141613;
-    font-size: 12px;
-    font-weight: 700;
-    padding: 8px 16px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    font-family: 'Noto Sans JP', sans-serif;
-  }
-
-  .demo-banner__inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .demo-badge {
-    background: #141613;
-    color: #ffffff;
     font-family: 'Barlow Condensed', Impact, sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 800;
     letter-spacing: 0.08em;
-    padding: 2px 8px;
-    border-radius: 2px;
+    padding: 2px 7px;
+    border-radius: 3px;
+  }
+
+  .demo-pill__text {
+    font-weight: 600;
+    letter-spacing: 0.02em;
   }
 
   @media (max-width: 768px) {
-    .demo-banner {
-      font-size: 10px;
+    .demo-pill {
+      bottom: 84px;
+      right: 12px;
       padding: 6px 12px;
+      font-size: 10px;
+      gap: 6px;
     }
-    .demo-badge {
-      font-size: 11px;
+    .demo-pill__text {
+      display: none;
     }
   }
 </style>
 
 <script>
   import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
   import Lenis from 'lenis';
 
+  gsap.registerPlugin(ScrollTrigger);
+
+  const MOTION_SELECTORS = '.motion-up, .motion-fade, .motion-left, .motion-right, .motion-scale';
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  if (!reduceMotion) {
+  if (reduceMotion) {
+    gsap.set(`${MOTION_SELECTORS}`, {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      scale: 1,
+      filter: 'blur(0px)',
+      clearProps: 'transform,filter,opacity',
+    });
+  } else {
+    // Smooth Scrolling with Lenis
     const lenis = new Lenis({
       duration: 1.2,
       smoothWheel: true,
@@ -107,11 +126,46 @@ import FloatingCta from '../components/FloatingCta.astro';
       easing: (t) => 1 - Math.pow(1 - t, 3.4),
     });
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+    gsap.ticker.lagSmoothing(0);
+
+    // Preset animation definitions
+    const revealPreset = (el: HTMLElement) => {
+      if (el.classList.contains('motion-fade')) {
+        return { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.75, ease: 'power2.out' };
+      }
+      if (el.classList.contains('motion-left')) {
+        return { opacity: 1, x: 0, y: 0, filter: 'blur(0px)', duration: 0.92, ease: 'power3.out' };
+      }
+      if (el.classList.contains('motion-right')) {
+        return { opacity: 1, x: 0, y: 0, filter: 'blur(0px)', duration: 0.92, ease: 'power3.out' };
+      }
+      if (el.classList.contains('motion-scale')) {
+        return { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 0.95, ease: 'power3.out' };
+      }
+      return { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.9, ease: 'power3.out' };
+    };
+
+    // Trigger animations for all motion elements across the page
+    const motionNodes = document.querySelectorAll<HTMLElement>(MOTION_SELECTORS);
+    motionNodes.forEach((el) => {
+      const delay = Number.parseFloat(el.getAttribute('data-motion-delay') || '0') || 0;
+      const reveal = revealPreset(el);
+
+      gsap.to(el, {
+        ...reveal,
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          once: true,
+          invalidateOnRefresh: true,
+        },
+        delay,
+      });
+    });
 
     // Hero Entry Animation
     gsap.set('.hero__char', { opacity: 0, y: 40, filter: 'blur(12px)' });
@@ -122,23 +176,113 @@ import FloatingCta from '../components/FloatingCta.astro';
       .fromTo(
         '.hero__video',
         { scale: 1.05, filter: 'saturate(0.8) contrast(1.08) brightness(0.76)' },
-        { scale: 1, filter: 'saturate(0.9) contrast(1.06) brightness(0.86)', duration: 2.5 },
+        { scale: 1, filter: 'saturate(0.9) contrast(1.06) brightness(0.86)', duration: 3.0 },
         0,
       )
       .to(
         '.hero__image-wrapper',
-        { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.0 },
-        0.2,
+        { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.1 },
+        0.28,
       )
       .to(
         '.hero__char',
-        { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.6, stagger: 0.06, ease: 'power2.out' },
-        0.5,
+        { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.6, stagger: 0.08, ease: 'power2.out' },
+        0.6,
       )
       .to(
         '.hero__action',
-        { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.8 },
-        1.2,
+        { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.9 },
+        1.6,
       );
+
+    // Hero Video ClipPath on scroll
+    gsap.fromTo(
+      '.hero__image-wrapper',
+      { clipPath: 'inset(0% 0% 0% 0% round 0px)' },
+      {
+        clipPath: 'inset(7% 3% 9% 3% round 36px)',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '#hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 1.25,
+        },
+      },
+    );
+
+    // Parallax Effects on Photos & Map
+    const parallaxTargets = [
+      { selector: '.hero__bg', y: 9, trigger: '#hero' },
+      { selector: '.instructor-portrait img', y: 6 },
+      { selector: '.flow-image img', y: 6 },
+      { selector: '.map', y: 5 },
+    ];
+
+    parallaxTargets.forEach(({ selector, y, trigger }) => {
+      gsap.utils.toArray<HTMLElement>(selector).forEach((el) => {
+        gsap.fromTo(
+          el,
+          { yPercent: -y },
+          {
+            yPercent: y,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: trigger || el,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 1.2,
+            },
+          },
+        );
+      });
+    });
+
+    // Parallax floating on section numbers (01, 02, 03, 04, 05, 06)
+    gsap.utils.toArray<HTMLElement>('.section-index').forEach((el) => {
+      gsap.fromTo(
+        el,
+        { y: -15, opacity: 0.6 },
+        {
+          y: 15,
+          opacity: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1.0,
+          },
+        },
+      );
+    });
+
+    // Section Titles scroll animation
+    gsap.utils.toArray<HTMLElement>('.section-head h2').forEach((heading) => {
+      gsap.fromTo(
+        heading,
+        { y: 26, opacity: 0.75 },
+        {
+          y: 0,
+          opacity: 1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: heading,
+            start: 'top 88%',
+            once: true,
+          },
+        },
+      );
+    });
+
+    ScrollTrigger.refresh();
+
+    window.addEventListener(
+      'beforeunload',
+      () => {
+        lenis.destroy();
+      },
+      { once: true },
+    );
   }
 </script>
