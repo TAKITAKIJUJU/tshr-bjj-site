@@ -1,0 +1,85 @@
+---
+// BottomFixedCta.astro - fuckfuck.html bottom fixed bar with LINE & Trial buttons in Orange theme
+---
+
+<aside class="bottom-fixed-cta" aria-label="予約・お問い合わせ固定バー">
+  <div class="bottom-fixed-cta__inner">
+    <a class="cta-btn cta-btn--line" href="https://line.me/ti/p/edZnSmCFIj" target="_blank" rel="noopener">
+      <span>LINE相談</span>
+    </a>
+    <a class="cta-btn cta-btn--trial" href="/contact">
+      <span>無料体験予約</span>
+      <span class="cta-arrow" aria-hidden="true">↗</span>
+    </a>
+  </div>
+</aside>
+
+<style>
+  .bottom-fixed-cta {
+    position: fixed;
+    z-index: 990;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+    background: rgba(244, 244, 238, 0.97);
+    border-top: 1px solid #dbded3;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .bottom-fixed-cta__inner {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 12px;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 48px;
+    padding: 10px 16px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .cta-btn--line {
+    background: #ffffff;
+    color: #141613;
+    border: 1.5px solid #141613;
+  }
+
+  .cta-btn--line:hover {
+    background: #141613;
+    color: #ffffff;
+  }
+
+  .cta-btn--trial {
+    background: #ff6b00; /* ORANGE THEME */
+    color: #141613;
+    border: 1.5px solid #ff6b00;
+  }
+
+  .cta-btn--trial:hover {
+    background: #ff8533;
+    border-color: #ff8533;
+    transform: translateY(-1px);
+  }
+
+  .cta-arrow {
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1;
+  }
+</style>

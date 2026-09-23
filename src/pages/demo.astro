@@ -10,18 +10,12 @@ import Schedule from '../components/v2/Schedule.astro';
 import Facility from '../components/v2/Facility.astro';
 import Access from '../components/v2/Access.astro';
 import Faq from '../components/v2/Faq.astro';
-import Contact from '../components/Contact.astro';
+import Contact from '../components/v2/Contact.astro';
 import Footer from '../components/Footer.astro';
-import FloatingCta from '../components/FloatingCta.astro';
+import BottomFixedCta from '../components/v2/BottomFixedCta.astro';
 ---
 
 <Layout title="【デモ確認用】Over Limit 本庄｜ブラジリアン柔術道場">
-  <!-- デモ用フローティングバッジ（画面下部に控えめに固定、ヘッダーに干渉しない） -->
-  <aside class="demo-pill" aria-label="デモ画面の案内">
-    <span class="demo-pill__badge">DEMO PREVIEW</span>
-    <span class="demo-pill__text">デザインリニューアル案（オレンジ×3本ストライプ帯）</span>
-  </aside>
-
   <main>
     <!-- ファーストビュー（現行維持） -->
     <Hero />
@@ -35,65 +29,19 @@ import FloatingCta from '../components/FloatingCta.astro';
     <Facility />
     <Access />
     <Faq />
-    <!-- 最後のまずは無料体験から始めてみませんか？（現行維持） -->
+    <!-- 最後のまずは無料体験から始めてみませんか？（現行tshr-bjjの背景に人いるやつ） -->
     <Contact />
   </main>
 
   <!-- フッター（現行維持） -->
   <Footer />
-  <FloatingCta />
+  <!-- fuckfuck.htmlの画面下部固定バー（LINE相談・無料体験予約） -->
+  <BottomFixedCta />
 </Layout>
 
 <style>
-  .demo-pill {
-    position: fixed;
-    bottom: 92px;
-    right: 20px;
-    z-index: 999;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(20, 22, 19, 0.94);
-    color: #ffffff;
-    border: 1px solid rgba(255, 107, 0, 0.6);
-    padding: 8px 16px;
-    border-radius: 40px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 11px;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-
-  .demo-pill__badge {
-    background: #ff6b00;
-    color: #141613;
-    font-family: 'Barlow Condensed', Impact, sans-serif;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    padding: 2px 7px;
-    border-radius: 3px;
-  }
-
-  .demo-pill__text {
-    font-weight: 600;
-    letter-spacing: 0.02em;
-  }
-
-  @media (max-width: 768px) {
-    .demo-pill {
-      bottom: 84px;
-      right: 12px;
-      padding: 6px 12px;
-      font-size: 10px;
-      gap: 6px;
-    }
-    .demo-pill__text {
-      display: none;
-    }
+  :global(body) {
+    padding-bottom: 68px;
   }
 </style>
 
