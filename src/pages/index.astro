@@ -1,37 +1,43 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import Marquee from '../components/Marquee.astro';
-import Concept from '../components/Concept.astro';
-import Instructor from '../components/Instructor.astro';
-import ClassFlow from '../components/ClassFlow.astro';
-import System from '../components/System.astro';
-import Schedule from '../components/Schedule.astro';
-import Access from '../components/Access.astro';
-import Facility from '../components/Facility.astro';
-import Faq from '../components/Faq.astro';
-import Contact from '../components/Contact.astro';
+import InfoStrip from '../components/v2/InfoStrip.astro';
+import Concept from '../components/v2/Concept.astro';
+import Instructor from '../components/v2/Instructor.astro';
+import ClassFlow from '../components/v2/ClassFlow.astro';
+import System from '../components/v2/System.astro';
+import Schedule from '../components/v2/Schedule.astro';
+import Facility from '../components/v2/Facility.astro';
+import Access from '../components/v2/Access.astro';
+import Faq from '../components/v2/Faq.astro';
+import Contact from '../components/v2/Contact.astro';
 import Footer from '../components/Footer.astro';
-import FloatingCta from '../components/FloatingCta.astro';
+import BottomFixedCta from '../components/v2/BottomFixedCta.astro';
 ---
 
 <Layout>
   <main>
     <Hero />
-    <Marquee />
+    <InfoStrip />
     <Concept />
     <Instructor />
     <ClassFlow />
     <System />
     <Schedule />
-    <Access />
     <Facility />
+    <Access />
     <Faq />
     <Contact />
   </main>
   <Footer />
-  <FloatingCta />
+  <BottomFixedCta />
 </Layout>
+
+<style>
+  :global(body) {
+    padding-bottom: 68px;
+  }
+</style>
 
 <script>
   import { gsap } from 'gsap';
@@ -83,50 +89,25 @@ import FloatingCta from '../components/FloatingCta.astro';
       return { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.9, ease: 'power3.out' };
     };
 
-    gsap.utils.toArray('main section:not(#hero)').forEach((section) => {
-      const motionNodes = Array.from(section.querySelectorAll(MOTION_SELECTORS));
-      if (!motionNodes.length) return;
+    // Trigger animations for all motion elements across the page
+    const motionNodes = document.querySelectorAll<HTMLElement>(MOTION_SELECTORS);
+    motionNodes.forEach((el) => {
+      const delay = Number.parseFloat(el.getAttribute('data-motion-delay') || '0') || 0;
+      const reveal = revealPreset(el);
 
-      const scrubIntensity = Number.parseFloat(section.getAttribute('data-motion-scrub') || '0.9') || 0.9;
-
-      motionNodes.forEach((el) => {
-        const delay = Number.parseFloat(el.getAttribute('data-motion-delay') || '0') || 0;
-        const reveal = revealPreset(el);
-        const isLegacyTableReveal =
-          el.classList.contains('system__card') || el.classList.contains('schedule__desktop');
-
-        if (isLegacyTableReveal) {
-          gsap.to(el, {
-            ...reveal,
-            scrollTrigger: {
-              trigger: el,
-              start: 'top 84%',
-              once: true,
-              invalidateOnRefresh: true,
-            },
-            delay,
-          });
-          return;
-        }
-
-        const delayInfluence = el.classList.contains('motion-scale') ? 24 : 35;
-        const startPoint = Math.max(76, 96 - delay * delayInfluence);
-        const endPoint = Math.max(56, 72 - delay * delayInfluence);
-
-        gsap.to(el, {
-          ...reveal,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: el,
-            start: `top ${startPoint}%`,
-            end: `top ${endPoint}%`,
-            scrub: scrubIntensity,
-            invalidateOnRefresh: true,
-          },
-        });
+      gsap.to(el, {
+        ...reveal,
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          once: true,
+          invalidateOnRefresh: true,
+        },
+        delay,
       });
     });
 
+    // Hero Entry Animation
     gsap.set('.hero__char', { opacity: 0, y: 40, filter: 'blur(12px)' });
     gsap.set('.hero__action', { y: 48, opacity: 0, filter: 'blur(6px)' });
 
@@ -154,6 +135,7 @@ import FloatingCta from '../components/FloatingCta.astro';
         1.6,
       );
 
+    // Hero Video ClipPath on scroll
     gsap.fromTo(
       '.hero__image-wrapper',
       { clipPath: 'inset(0% 0% 0% 0% round 0px)' },
@@ -169,17 +151,15 @@ import FloatingCta from '../components/FloatingCta.astro';
       },
     );
 
-
-
+    // Parallax Effects on Photos & Map (excluding sticky instructor portrait)
     const parallaxTargets = [
       { selector: '.hero__bg', y: 9, trigger: '#hero' },
-      { selector: '.instructor__photo-wrapper', y: 6 },
-      { selector: '.classflow__image', y: 7 },
-      { selector: '.access__map-card', y: 5 },
+      { selector: '.flow-image img', y: 6 },
+      { selector: '.map', y: 5 },
     ];
 
     parallaxTargets.forEach(({ selector, y, trigger }) => {
-      gsap.utils.toArray(selector).forEach((el) => {
+      gsap.utils.toArray<HTMLElement>(selector).forEach((el) => {
         gsap.fromTo(
           el,
           { yPercent: -y },
@@ -197,20 +177,38 @@ import FloatingCta from '../components/FloatingCta.astro';
       });
     });
 
-    gsap.utils.toArray('.section-title, .section-title--jp').forEach((heading) => {
+    // Parallax floating on section numbers (01, 02, 03, 04, 05, 06)
+    gsap.utils.toArray<HTMLElement>('.section-index').forEach((el) => {
+      gsap.fromTo(
+        el,
+        { y: -15, opacity: 0.6 },
+        {
+          y: 15,
+          opacity: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1.0,
+          },
+        },
+      );
+    });
+
+    // Section Titles scroll animation
+    gsap.utils.toArray<HTMLElement>('.section-head h2').forEach((heading) => {
       gsap.fromTo(
         heading,
-        { y: 30, opacity: 0.72, letterSpacing: '0.03em' },
+        { y: 26, opacity: 0.75 },
         {
           y: 0,
           opacity: 1,
-          letterSpacing: '0em',
-          ease: 'none',
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: heading,
-            start: 'top 86%',
-            end: 'top 52%',
-            scrub: 1.0,
+            start: 'top 88%',
+            once: true,
           },
         },
       );
