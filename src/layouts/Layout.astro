@@ -2,13 +2,17 @@
 interface Props {
   title?: string;
   description?: string;
+  canonical?: string;
+  noindex?: boolean;
 }
 
 import Header from '../components/Header.astro';
 
 const {
-  title = '本庄市のブラジリアン柔術ジム｜Over Limit 本庄',
-  description = '本庄駅徒歩6分・無料駐車場あり。本庄市のブラジリアン柔術ジム「Over Limit 本庄」。初心者・女性・キッズ歓迎。世界大会王者が直接指導。見学・無料体験受付中。'
+  title = '本庄市のブラジリアン柔術ジム｜Over Limit 本庄【本庄駅徒歩6分】',
+  description = '本庄駅徒歩6分・無料駐車場完備。本庄市のブラジリアン柔術道場「Over Limit 本庄」。初心者・女性・キッズ大歓迎。世界大会王者（黒帯3段）が直接指導。見学・無料体験随時受付中！',
+  canonical = Astro.url.pathname === '/' ? 'https://tshr-bjj.com/' : `https://tshr-bjj.com${Astro.url.pathname.replace(/\/$/, '')}`,
+  noindex = false,
 } = Astro.props;
 ---
 
@@ -18,16 +22,39 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="6Any9gIf8bYIO0x-BakavTduY23JcXYOblQO8mmCRIc" />
+    <meta name="format-detection" content="telephone=no" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="本庄市, 柔術, ブラジリアン柔術, 本庄 格闘技, 本庄 ジム, 本庄市 習い事, Over Limit 本庄, 埼玉県, 上里町, 児玉町, 深谷市, 伊勢崎市, キッズ柔術, ダイエット, 護身術" />
+    <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/png" href="/LOGO.png" />
     <link rel="apple-touch-icon" href="/LOGO.png" />
-    <meta name="description" content={description} />
+
+    <!-- Open Graph / SNS -->
+    <meta property="og:site_name" content="Over Limit 本庄" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content={Astro.url.pathname === '/' ? 'website' : 'article'} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="https://tshr-bjj.com/LOGO.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Over Limit 本庄 ブラジリアン柔術道場" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="canonical" href="https://tshr-bjj.com/" />
+    <meta name="twitter:image" content="https://tshr-bjj.com/LOGO.png" />
+
+    <!-- Local / Geo SEO -->
+    <meta name="geo.region" content="JP-11" />
+    <meta name="geo.placename" content="本庄市" />
+    <meta name="geo.position" content="36.23234;139.186255" />
+    <meta name="ICBM" content="36.23234, 139.186255" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,800&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -70,8 +97,20 @@ const {
     "@id": "https://tshr-bjj.com/#sportsactivitylocation",
     "name": "Over Limit 本庄",
     "url": "https://tshr-bjj.com/",
-    "description": "本庄駅徒歩6分・無料駐車場あり。本庄市のブラジリアン柔術ジム「Over Limit 本庄」。初心者・女性・キッズ歓迎。世界大会王者が直接指導。見学・無料体験受付中。",
+    "image": [
+      "https://tshr-bjj.com/LOGO.png",
+      "https://tshr-bjj.com/new-ins.webp",
+      "https://tshr-bjj.com/flow1.webp"
+    ],
+    "description": "本庄駅徒歩6分・無料駐車場完備。本庄市のブラジリアン柔術道場「Over Limit 本庄」。初心者・女性・キッズ大歓迎。世界大会王者（黒帯3段）が直接指導。見学・無料体験受付中。",
     "sport": "Brazilian Jiu-Jitsu",
+    "priceRange": "¥5,000 - ¥9,800",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 36.2323399,
+      "longitude": 139.1862549
+    },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=Over+Limit+%E6%9C%AC%E5%BA%84+%E5%9F%BC%E7%8E%89%E7%9C%8C%E6%9C%AC%E5%BA%84%E5%B8%82%E3%81%91%E3%82%84%E6%9C%A81%E4%B8%81%E7%9B%AE1-16",
     "address": {
     "@type": "PostalAddress",
     "postalCode": "367-0042",
@@ -161,10 +200,18 @@ const {
     "@id": "https://tshr-bjj.com/#instructor-seiichi-tashiro",
     "name": "田代 セイイチ",
     "jobTitle": "代表・ヘッドインストラクター",
+    "image": "https://tshr-bjj.com/new-ins.webp",
     "worksFor": {
     "@id": "https://tshr-bjj.com/#sportsactivitylocation"
     },
-    "description": "Over Limit 本庄の代表・ヘッドインストラクター。ブラジリアン柔術 Black Belt。2026,2025 SJJF WORLD Championship 優勝、JBJJF ALL Japan Master 2回優勝、IBJJF Asian Championship 3回優勝。"
+    "description": "Over Limit 本庄の代表・ヘッドインストラクター。ブラジリアン柔術 Black Belt（黒帯3段）。2026, 2025 SJJF WORLD Championship 優勝、JBJJF ALL Japan Master 2回優勝、IBJJF Asian Championship 3回優勝、2015 IBJJF WORLD MASTER 3位。",
+    "award": [
+      "2026 SJJF WORLD Championship 優勝",
+      "2025 SJJF WORLD Championship 優勝",
+      "JBJJF ALL Japan Master 2回優勝",
+      "IBJJF Asian Championship 3回優勝",
+      "2015 IBJJF WORLD MASTER 3位"
+    ]
     },
     {
     "@type": "OfferCatalog",
