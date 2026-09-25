@@ -14,7 +14,7 @@
     </div>
 
     <div class="price-grid">
-      <article class="price-card motion-up" data-motion-delay="0.0">
+      <article class="price-card price-card--dark motion-up" data-motion-delay="0.0">
         <span class="plan-en">MEN</span>
         <h3>男性会員</h3>
         <p class="price-value">¥9,800</p>
@@ -38,7 +38,7 @@
         </ul>
       </article>
 
-      <article class="price-card motion-up" data-motion-delay="0.2">
+      <article class="price-card price-card--dark motion-up" data-motion-delay="0.2">
         <span class="plan-en">KIDS</span>
         <h3>キッズ会員<small>(小学1〜6年生)</small></h3>
         <p class="price-value">¥5,000</p>
@@ -153,41 +153,47 @@
     flex-direction: column;
   }
 
-  .price-card:first-child {
-    background: #ff6b00;
-    color: #141613;
-    border-color: #ff6b00;
-    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.22);
+  .price-card--dark {
+    background: #141613;
+    color: #ffffff;
+    border-color: #141613;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
   }
 
-  .price-card:first-child .plan-en {
-    color: #141613;
+  .price-card--dark .plan-en {
+    color: #ff6b00;
+    font-weight: 700;
+  }
+
+  .price-card--dark h3 {
+    color: #ff6b00;
     font-weight: 800;
-    opacity: 0.9;
   }
 
-  .price-card:first-child h3,
-  .price-card:first-child .price-value {
-    color: #141613;
-    font-weight: 900;
+  .price-card--dark h3 small {
+    color: rgba(255, 255, 255, 0.75);
   }
 
-  .price-card:first-child .price-unit {
-    color: rgba(20, 22, 19, 0.85);
+  .price-card--dark .price-value {
+    color: #ff6b00;
     font-weight: 700;
   }
 
-  .price-card:first-child ul {
-    border-top: 1px solid rgba(20, 22, 19, 0.25);
+  .price-card--dark .price-unit {
+    color: #a2a799;
   }
 
-  .price-card:first-child li {
-    color: #141613;
-    font-weight: 700;
+  .price-card--dark ul {
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
   }
 
-  .price-card:first-child li::before {
-    color: #141613;
+  .price-card--dark li {
+    color: #f4f4ee;
+    font-weight: 500;
+  }
+
+  .price-card--dark li::before {
+    color: #ff6b00;
     font-weight: 900;
   }
 
