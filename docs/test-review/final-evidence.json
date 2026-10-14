@@ -1,0 +1,39 @@
+{
+  "unchanged": [
+    {
+      "path": "/",
+      "unchanged": true
+    },
+    {
+      "path": "/contact/",
+      "unchanged": true
+    },
+    {
+      "path": "/demo/",
+      "unchanged": true
+    },
+    {
+      "path": "/robots.txt",
+      "unchanged": true
+    },
+    {
+      "path": "/sitemap.xml",
+      "unchanged": true
+    }
+  ],
+  "originalFilesUnchanged": 88,
+  "referenceFilesEquivalent": 18,
+  "facilityCopyIdentical": true,
+  "productionDeploymentUnchanged": true,
+  "productionVersion": "677cdf87-b20a-4043-a291-a548c627811f",
+  "addedRoutes": [
+    {
+      "pattern": "tshr-bjj.com/test/*",
+      "script": "tshr-bjj-test-preview"
+    },
+    {
+      "pattern": "tshr-bjj.com/test",
+      "script": "tshr-bjj-test-preview"
+    }
+  ]
+}

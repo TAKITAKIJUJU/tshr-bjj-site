@@ -1,0 +1,248 @@
+---
+// Hero.astro - Luxury Minimalist Dark Style
+---
+
+<section class="hero" id="hero">
+  <div class="hero__bg">
+    <!-- Overlay dark gradient for extreme contrast -->
+    <div class="hero__overlay"></div>
+    <div class="hero__image-wrapper motion-fade">
+      <video 
+        class="hero__video img-luxury" aria-label="道場での練習映像"
+        preload="metadata" poster="/test/hero-poster.webp" 
+        loop 
+        muted 
+        playsinline>
+        <source src="/hero_video.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+
+  <div class="hero__content container">
+    <h1 class="hero__vert-text text-vertical" data-motion-delay="0.2">
+      <span class="hero__char">本</span><span class="hero__char">庄</span><span class="hero__char">の</span><span class="hero__char">柔</span><span class="hero__char">術</span><span class="hero__char">で</span><span class="hero__char">、</span><br><span class="hero__char">人</span><span class="hero__char">生</span><span class="hero__char">を</span><span class="hero__char">豊</span><span class="hero__char">か</span><span class="hero__char">に</span><span class="hero__char">。</span>
+    </h1>
+
+    <!-- Subtitle and Call to Action moved to the right side -->
+    <div class="hero__text-box" style="display: flex; flex-direction: column; align-items: flex-start;">
+      <p class="hero__badge">本庄駅徒歩6分｜ブラジリアン柔術ジム Over Limit 本庄</p>
+      <div class="hero__action motion-up" data-motion-delay="0.6">
+        <a href="/test/contact/" class="btn btn--white">
+          <span style="font-family: 'Noto Sans JP', sans-serif; font-weight: bold;">無料体験を予約する</span>
+          <svg class="btn__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+<button type="button" class="video-toggle" aria-label="映像を再生" title="映像を再生" data-playing="false" hidden>
+  <svg class="video-toggle__play" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+  <svg class="video-toggle__pause" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z" /></svg>
+</button>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #000;
+    overflow: clip;
+    padding-top: 80px; /* Offset for header */
+  }
+
+
+
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: clip;
+  }
+
+  .hero__image-wrapper {
+    width: 100%; height: 100%;
+    /* Keep sharp edges. For hero, full bleed or inset */
+    position: absolute;
+    inset: 0;
+  }
+
+
+
+  .hero__video {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* Already has .img-luxury grayscale filter */
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.15) 65%, rgba(0,0,0,0.6) 85%, #0A0A0A 100%),
+      linear-gradient(96deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.46) 54%, rgba(0,0,0,0.7) 100%);
+    z-index: 1;
+  }
+
+
+
+  .hero__content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 80px;
+  }
+
+  .hero__text-box {
+    max-width: 640px;
+  }
+
+  .hero__headline {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(3rem, 8vw, 7.2rem);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    margin: 0 0 24px;
+    text-wrap: balance;
+  }
+
+  .hero__subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    color: #AAAAAA;
+    margin-bottom: 48px;
+    position: relative;
+    padding-left: 40px;
+  }
+
+  .hero__subtitle::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 50%;
+    width: 24px; height: 1px;
+    background: #FF6A00;
+  }
+
+  .hero__vert-text {
+    margin: 0;
+    font-size: clamp(2.5rem, 6.5vw, 4.5rem);
+    font-weight: 900;
+    color: #FFFFFF;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.25em;
+    line-height: 1.5;
+    z-index: 10;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.6);
+  }
+  .hero__char { display:inline-block; }
+  .hero__vert-text.hero__translated {
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+    max-width: min(58vw, 680px);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(2.5rem, 5.4vw, 4.8rem);
+    line-height: 1.12;
+    letter-spacing: -.04em;
+  }
+
+  .hero__badge {
+    margin: 0 0 16px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.92);
+    background: rgba(20, 22, 19, 0.65);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 14px;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 992px) {
+    .hero {
+      align-items: flex-end;
+    }
+    .hero__overlay {
+      background:
+        linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.15) 65%, rgba(0,0,0,0.6) 85%, #0A0A0A 100%),
+        linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.38) 48%, rgba(0,0,0,0.16) 100%);
+    }
+    .hero__content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 40px;
+    }
+    .hero__text-box {
+      align-items: flex-start;
+    }
+    .hero__vert-text {
+      /* Reset absolute positioning to join normal flex flow */
+      position: static;
+      margin-bottom: 24px;
+    }
+    .hero__vert-text.hero__translated {
+      max-width: 100%;
+      font-size: clamp(2.6rem, 10vw, 4.5rem);
+    }
+    .hero__subtitle { margin-bottom: 32px; }
+    .hero__headline {
+      margin-bottom: 22px;
+      font-size: clamp(2.4rem, 13vw, 4.2rem);
+    }
+  }
+</style>
+
+
+
+
+<script>
+ import { translations } from '../../data/test/translations.js';
+ const locale = location.pathname.startsWith('/test/english/') ? 'en' : location.pathname.startsWith('/test/portugues/') ? 'pt' : location.pathname.startsWith('/test/gunma/') ? 'gunma' : 'ja';
+ const t = (value: string) => (translations as Record<string, Record<string, string>>)[value]?.[locale] ?? value;
+ const video = document.querySelector<HTMLVideoElement>('.hero__video');
+ const toggle = document.querySelector<HTMLButtonElement>('.video-toggle');
+ if (video && toggle) {
+  const preference = matchMedia('(prefers-reduced-motion: reduce)');
+  let requestedPlay = !preference.matches;
+  let inView = true;
+  const renderState = () => {
+   const label = t(video.paused ? '映像を再生' : '映像を停止');
+   toggle.dataset.playing = String(!video.paused);
+   toggle.setAttribute('aria-label', label);
+   toggle.title = label;
+  };
+  const update = () => {
+   if (requestedPlay && inView && !document.hidden) video.play().catch(() => { requestedPlay=false; renderState(); });
+   else video.pause();
+  };
+  toggle.hidden=false;
+  video.addEventListener('play', renderState);
+  video.addEventListener('pause', renderState);
+  toggle.addEventListener('click',()=>{ requestedPlay=video.paused; update(); });
+  const observer = new IntersectionObserver(([entry])=>{inView=entry.isIntersecting;update();});
+  observer.observe(video);
+  const change = () => { requestedPlay=!preference.matches; update(); };
+  preference.addEventListener('change',change);
+  document.addEventListener('visibilitychange',update);
+  renderState();
+  update();
+  window.addEventListener('pagehide',()=>{ observer.disconnect(); video.pause(); preference.removeEventListener('change',change); document.removeEventListener('visibilitychange',update); },{once:true});
+ }
+</script>
+<style>
+ .video-toggle { position:absolute; top:80px; right:24px; z-index:11; display:grid; place-items:center; width:44px; height:44px; background:#141613cc; border:1px solid #fff8; border-radius:4px; color:white; cursor:pointer; }
+ .video-toggle__pause { display:none; }
+ .video-toggle[data-playing="true"] .video-toggle__play { display:none; }
+ .video-toggle[data-playing="true"] .video-toggle__pause { display:block; }
+</style>

@@ -1,0 +1,165 @@
+---
+import { faq } from '../../../data/test/faq';
+---
+
+<section class="section faq" id="faq">
+  <div class="wrap faq-layout">
+    <div class="section-head motion-up">
+      <div>
+        <p class="eyebrow">08 / FAQ</p>
+        <h2>よくある質問</h2>
+      </div>
+    </div>
+
+    <div class="faq-list motion-up" data-motion-delay="0.1">
+      {faq.map((item, index) => <details class="faq-item" open={index === 0}>
+        <summary><span class="q-number">Q{index + 1}</span><span>{item.question}</span></summary>
+        <p>{item.answer}</p>
+      </details>)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq {
+    background: #f4f4ee;
+    padding-block: 108px;
+    color: #141613;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .wrap {
+    width: min(1220px, calc(100% - 48px));
+    margin-inline: auto;
+  }
+
+  .faq-layout {
+    display: grid;
+    grid-template-columns: 0.6fr 1.4fr;
+    gap: 72px;
+  }
+
+  .faq-layout > .section-head {
+    align-self: start;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #ff6b00;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    background: currentColor;
+    flex-shrink: 0;
+  }
+
+  .section-head h2 {
+    margin: 8px 0 0;
+    font-size: clamp(28px, 3.8vw, 44px);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1.25;
+  }
+
+  .faq-list {
+    border-top: 1px solid #dbded3;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid #dbded3;
+  }
+
+  .faq-item summary {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 32px 1fr 24px;
+    align-items: start;
+    gap: 12px;
+    padding: 25px 0;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    color: #141613;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .q-number {
+    color: #ff6b00;
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .faq-item summary::after {
+    content: "+";
+    font-size: 23px;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: 400;
+    color: #ff6b00;
+  }
+
+  .faq-item[open] summary::after {
+    content: "−";
+  }
+
+  .faq-item[open] summary {
+    padding-bottom: 14px;
+  }
+
+  .faq-item p {
+    color: #666a61;
+    padding: 0 34px 26px 44px;
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  @media (max-width: 1150px) {
+    .faq-layout {
+      gap: 40px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .faq {
+      padding-block: 72px;
+    }
+    .wrap {
+      width: calc(100% - 32px);
+    }
+    .faq-layout {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .faq-item summary {
+      font-size: 13px;
+      gap: 8px;
+      grid-template-columns: 28px 1fr 20px;
+      padding: 18px 0;
+    }
+    .faq-item p {
+      padding-left: 36px;
+      padding-right: 12px;
+      padding-bottom: 20px;
+      font-size: 12px;
+    }
+  }
+</style>

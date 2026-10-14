@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/TestLayout.astro';
+import Hero from '../../components/test/Hero.astro';
+import InfoStrip from '../../components/test/v2/InfoStrip.astro';
+import Concept from '../../components/test/v2/Concept.astro';
+import Instructor from '../../components/test/v2/Instructor.astro';
+import ClassFlow from '../../components/test/v2/ClassFlow.astro';
+import System from '../../components/test/v2/System.astro';
+import Schedule from '../../components/test/v2/Schedule.astro';
+import Facility from '../../components/test/v2/Facility.astro';
+import Access from '../../components/test/v2/Access.astro';
+import Faq from '../../components/test/v2/Faq.astro';
+import Contact from '../../components/test/v2/Contact.astro';
+import Footer from '../../components/test/Footer.astro';
+import BottomFixedCta from '../../components/test/v2/BottomFixedCta.astro';
+---
+
+<Layout>
+  <main id="main-content" tabindex="-1">
+    <Hero />
+    <InfoStrip />
+    <Concept />
+    <Instructor />
+    <ClassFlow />
+    <System />
+    <Schedule />
+    <Facility />
+    <Access />
+    <Faq />
+    <Contact />
+  </main>
+  <Footer />
+  <BottomFixedCta />
+</Layout>
+
+<style>
+  :global(body) {
+    padding-bottom: var(--test-cta-height, calc(76px + env(safe-area-inset-bottom, 0px)));
+  }
+</style>
+
+<script>
+ import { initHomeMotion } from '../../scripts/test/motion';
+ initHomeMotion();
+ const bar = document.querySelector<HTMLElement>('.bottom-fixed-cta');
+ if (bar) {
+  const observer = new ResizeObserver(() => document.body.style.setProperty('--test-cta-height', bar.getBoundingClientRect().height + 'px'));
+  observer.observe(bar);
+  window.addEventListener('pagehide', () => observer.disconnect(), {once:true});
+ }
+</script>
+

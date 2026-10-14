@@ -1,0 +1,23 @@
+21:07:09 [types] Generated 151ms
+21:07:09 [build] output: "static"
+21:07:09 [build] mode: "static"
+21:07:09 [build] directory: C:\Users\tone-\AppData\Local\Temp\over-limit-test-build-1791979629458\
+21:07:09 [build] Collecting build info...
+21:07:09 [build] ✓ Completed in 178ms.
+21:07:09 [build] Building static entrypoints...
+21:07:11 [vite] ✓ built in 1.90s
+21:07:12 [vite] ✓ built in 508ms
+21:07:12 [build] Rearranging server assets...
+
+ generating static routes 
+21:07:12   ├─ /contact/index.html (+22ms) 
+21:07:12   ├─ /demo/index.html (+11ms) 
+21:07:12   ├─ /test/contact/index.html (+10ms) 
+21:07:12   ├─ /test/index.html (+8ms) 
+21:07:12   ├─ /index.html (+6ms) 
+21:07:12 ✓ Completed in 85ms.
+
+21:07:12 [build] ✓ Completed in 2.57s.
+21:07:12 [build] 5 page(s) built in 2.75s
+21:07:12 [build] Complete!
+Isolated build complete: file:///C:/Users/tone-/AppData/Local/Temp/over-limit-test-build-1791979629458/client/

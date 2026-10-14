@@ -1,0 +1,28 @@
+{
+  pages: [
+    {
+      path: '/test/',
+      status: 200,
+      title: '本庄市のブラジリアン柔術ジム｜Over Limit 本庄【テスト版】',
+      noindex: 'noindex, nofollow',
+      csp: "form-action 'none'; connect-src 'self'",
+      types: [Array],
+      bytes: 53330
+    },
+    {
+      path: '/test/contact/',
+      status: 200,
+      title: '無料体験・見学の相談｜Over Limit 本庄【テスト版】',
+      noindex: 'noindex, nofollow',
+      csp: "form-action 'none'; connect-src 'self'",
+      types: [Array],
+      bytes: 19251
+    }
+  ],
+  assetCount: 39,
+  scriptSources: [
+    '/test/_astro/index.astro_astro_type_script_index_0_lang.Shcj2DWl.js',
+    '/test/_astro/contact.astro_astro_type_script_index_0_lang.DhiMUOLg.js'
+  ],
+  barePath: { status: 308, location: 'https://tshr-bjj.com/test/' }
+}

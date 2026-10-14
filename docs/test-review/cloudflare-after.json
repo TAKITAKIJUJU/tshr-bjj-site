@@ -1,0 +1,215 @@
+{
+  "zone": {
+    "id": "128cbac94a9815c58e4bb125f15ea5e3",
+    "name": "tshr-bjj.com",
+    "account": "24d6acf78c6c6777059c626c699a6ab9"
+  },
+  "routes": [
+    {
+      "id": "762f85ac00124518a91480ab38263a3f",
+      "pattern": "tshr-bjj.com/test/*",
+      "script": "tshr-bjj-test-preview",
+      "request_limit_fail_open": false
+    },
+    {
+      "id": "86cddd49f4b3459d8424ca16548ccfb6",
+      "pattern": "tshr-bjj.com/test",
+      "script": "tshr-bjj-test-preview",
+      "request_limit_fail_open": false
+    },
+    {
+      "id": "619b0a2d8511406ebcdd1a3bfa882871",
+      "pattern": "tshr-bjj.com/*",
+      "script": "local-gym-site",
+      "request_limit_fail_open": false
+    },
+    {
+      "id": "d76db73d1e5e4df7a3bc6cb87f6d5bd2",
+      "pattern": "tshr-bjj.com/demo*",
+      "script": "tshr-bjj-demo",
+      "request_limit_fail_open": false
+    }
+  ],
+  "workers": [
+    {
+      "id": "local-gym-site",
+      "modified_on": "2026-09-25T07:10:28.115304Z"
+    },
+    {
+      "id": "tshr-bjj-demo",
+      "modified_on": "2026-10-05T13:50:49.266845Z"
+    },
+    {
+      "id": "tshr-bjj-site",
+      "modified_on": "2026-10-14T07:29:36.822562Z"
+    },
+    {
+      "id": "tshr-bjj-test-preview",
+      "modified_on": "2026-10-14T11:34:18.447154Z"
+    }
+  ],
+  "productionDeployments": {
+    "deployments": [
+      {
+        "id": "292daa4a-7444-4eb1-9414-aa8523a8d6ce",
+        "source": "wrangler",
+        "strategy": "percentage",
+        "author_email": "jurianobaba@gmail.com",
+        "annotations": {
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "677cdf87-b20a-4043-a291-a548c627811f",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-09-25T07:10:26.167904Z"
+      },
+      {
+        "id": "8317a9e6-54ca-4192-92c2-796c96440dcf",
+        "source": "wrangler",
+        "strategy": "percentage",
+        "author_email": "jurianobaba@gmail.com",
+        "annotations": {
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "51382c14-656d-49e5-a6eb-7a44e45948a2",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-09-25T06:55:43.851408Z"
+      },
+      {
+        "id": "5da7ed3e-9822-4bd2-8bdd-3fcd3975fafb",
+        "source": "wrangler",
+        "strategy": "percentage",
+        "author_email": "jurianobaba@gmail.com",
+        "annotations": {
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "a6e8f816-85cf-4817-8db8-b76164cb36a7",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-09-25T06:41:41.539502Z"
+      },
+      {
+        "id": "76289564-aa2d-411d-a549-2ee34ec49ea3",
+        "source": "wrangler",
+        "strategy": "percentage",
+        "author_email": "jurianobaba@gmail.com",
+        "annotations": {
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "0b60721f-e27f-45ef-ac5d-3892fea61b90",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-09-23T07:57:37.46351Z"
+      },
+      {
+        "id": "bd775500-83b9-4c8a-b81a-806db1f670a8",
+        "source": "wrangler",
+        "strategy": "percentage",
+        "author_email": "jurianobaba@gmail.com",
+        "annotations": {
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "a40c91d0-6c8b-4250-93a8-67d306223e57",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-09-23T07:40:08.771722Z"
+      },
+      {
+        "id": "8b3a6229-35bd-42cb-ad23-347718e98bfe",
+        "source": "wrangler",
+        "strategy": "percentage",
+        "author_email": "jurianobaba@gmail.com",
+        "annotations": {
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "f98818a9-94a6-4907-8450-6aa4c109d703",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-09-23T07:32:52.722163Z"
+      },
+      {
+        "id": "501c5db7-63aa-49fe-9e38-3d8a50a274bd",
+        "source": "wrangler",
+        "strategy": "percentage",
+        "author_email": "jurianobaba@gmail.com",
+        "annotations": {
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "9d1a027e-feff-40fc-82c3-806ce65b952d",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-09-23T07:31:51.919074Z"
+      },
+      {
+        "id": "a06a687e-814e-4cb3-b84c-da045be1d8b0",
+        "source": "wrangler",
+        "strategy": "percentage",
+        "author_email": "jurianobaba@gmail.com",
+        "annotations": {
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "faca5d4f-69d0-4382-9072-4013a77f2ab0",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-09-16T07:26:53.147044Z"
+      },
+      {
+        "id": "b29aa415-93ba-4808-8de7-1a568b241d23",
+        "source": "wrangler",
+        "strategy": "percentage",
+        "author_email": "jurianobaba@gmail.com",
+        "annotations": {
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "b8725de2-4b52-413c-a5c7-11ad53cbdc3c",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-05-14T07:53:34.991904Z"
+      },
+      {
+        "id": "b12906c5-1457-4a3f-b86b-e9e2854e928e",
+        "source": "wrangler",
+        "strategy": "percentage",
+        "author_email": "jurianobaba@gmail.com",
+        "annotations": {
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "406f3e92-0f6d-49a9-9a46-c5c72ca2b9ce",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-05-14T07:48:06.80108Z"
+      }
+    ]
+  }
+}

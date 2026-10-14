@@ -1,0 +1,207 @@
+{
+  "pages": [
+    {
+      "path": "/test/",
+      "status": 200,
+      "title": "本庄市のブラジリアン柔術ジム｜Over Limit 本庄【テスト版】",
+      "noindex": "noindex, nofollow",
+      "csp": "form-action 'none'; connect-src 'self'",
+      "types": [
+        "WebSite",
+        "SportsActivityLocation",
+        "Person",
+        "OfferCatalog",
+        "Course",
+        "Course",
+        "Course",
+        "Course",
+        "WebPage",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "bytes": 53330
+    },
+    {
+      "path": "/test/contact/",
+      "status": 200,
+      "title": "無料体験・見学の相談｜Over Limit 本庄【テスト版】",
+      "noindex": "noindex, nofollow",
+      "csp": "form-action 'none'; connect-src 'self'",
+      "types": [
+        "WebSite",
+        "SportsActivityLocation",
+        "Person",
+        "ContactPage",
+        "BreadcrumbList"
+      ],
+      "bytes": 19251
+    }
+  ],
+  "assets": [
+    {
+      "path": "test/contact/index.html",
+      "status": 200
+    },
+    {
+      "path": "test/hero-poster.webp",
+      "status": 200
+    },
+    {
+      "path": "test/index.html",
+      "status": 200
+    },
+    {
+      "path": "test/kids-new-1200.webp",
+      "status": 200
+    },
+    {
+      "path": "test/kids-new-480.webp",
+      "status": 200
+    },
+    {
+      "path": "test/kids-new-800.webp",
+      "status": 200
+    },
+    {
+      "path": "test/mulheres-new-1200.webp",
+      "status": 200
+    },
+    {
+      "path": "test/mulheres-new-480.webp",
+      "status": 200
+    },
+    {
+      "path": "test/mulheres-new-800.webp",
+      "status": 200
+    },
+    {
+      "path": "test/shared/flow1.webp",
+      "status": 200
+    },
+    {
+      "path": "test/shared/flow2.webp",
+      "status": 200
+    },
+    {
+      "path": "test/shared/flow3.jpeg",
+      "status": 200
+    },
+    {
+      "path": "test/shared/flow3.webp",
+      "status": 200
+    },
+    {
+      "path": "test/shared/hero_video.mp4",
+      "status": 200
+    },
+    {
+      "path": "test/shared/last.webp",
+      "status": 200
+    },
+    {
+      "path": "test/shared/LOGO.png",
+      "status": 200
+    },
+    {
+      "path": "test/shared/LOGO.webp",
+      "status": 200
+    },
+    {
+      "path": "test/shared/LOGO2.webp",
+      "status": 200
+    },
+    {
+      "path": "test/shared/new-ins.webp",
+      "status": 200
+    },
+    {
+      "path": "test/shared/processed-16A4994D-E073-48E0-A49C-89AF5897EAE1.webp",
+      "status": 200
+    },
+    {
+      "path": "test/shared/processed-3BFA741D-A026-4EB4-B9BF-1992C5195C35.webp",
+      "status": 200
+    },
+    {
+      "path": "test/shared/processed-8E9EA17C-03F5-4922-8835-CA5BCC9157A0.webp",
+      "status": 200
+    },
+    {
+      "path": "test/shared/processed-99EE1602-384F-4E8E-967D-BECE71CB9431.webp",
+      "status": 200
+    },
+    {
+      "path": "test/shared/processed-9EB7D774-131B-4FB1-8FCC-D00036F7257A.webp",
+      "status": 200
+    },
+    {
+      "path": "test/shared/processed-AA442933-C10A-41AE-81AB-B86057D3678A.webp",
+      "status": 200
+    },
+    {
+      "path": "test/shared/processed-C46A2648-B6DD-4D42-9573-D11E32E9083D.webp",
+      "status": 200
+    },
+    {
+      "path": "test/shared/processed-E1AC7486-1624-4F7D-ACF8-536A9FC6F0DA.webp",
+      "status": 200
+    },
+    {
+      "path": "test/shared/what1.webp",
+      "status": 200
+    },
+    {
+      "path": "test/shared/what2.webp",
+      "status": 200
+    },
+    {
+      "path": "test/shared/what3.webp",
+      "status": 200
+    },
+    {
+      "path": "test/_astro/contact.astro_astro_type_script_index_0_lang.DhiMUOLg.js",
+      "status": 200
+    },
+    {
+      "path": "test/_astro/contact@_@astro.34qkkl_F.css",
+      "status": 200
+    },
+    {
+      "path": "test/_astro/Footer.WO8N357g.css",
+      "status": 200
+    },
+    {
+      "path": "test/_astro/index.astro_astro_type_script_index_0_lang.Shcj2DWl.js",
+      "status": 200
+    },
+    {
+      "path": "test/_astro/index.DDlvirwQ.js",
+      "status": 200
+    },
+    {
+      "path": "test/_astro/index@_@astro.CthTSoLK.css",
+      "status": 200
+    },
+    {
+      "path": "test/_astro/lenis.CBlNbkdS.js",
+      "status": 200
+    },
+    {
+      "path": "test/_astro/motion.Blb2VEB9.js",
+      "status": 200
+    },
+    {
+      "path": "test/_astro/ScrollTrigger.CB6UHAJl.js",
+      "status": 200
+    }
+  ],
+  "scriptSources": [
+    "/test/_astro/index.astro_astro_type_script_index_0_lang.Shcj2DWl.js",
+    "/test/_astro/contact.astro_astro_type_script_index_0_lang.DhiMUOLg.js"
+  ],
+  "barePath": {
+    "status": 308,
+    "location": "https://tshr-bjj.com/test/"
+  },
+  "checkedAt": "2026-10-14T12:09:37.778Z"
+}

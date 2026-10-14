@@ -1,0 +1,190 @@
+---
+// Hero.astro - Luxury Minimalist Dark Style
+---
+
+<section class="hero" id="hero">
+  <div class="hero__bg">
+    <!-- Overlay dark gradient for extreme contrast -->
+    <div class="hero__overlay"></div>
+    <div class="hero__image-wrapper motion-fade">
+      <video 
+        class="hero__video img-luxury"
+        autoplay 
+        loop 
+        muted 
+        playsinline>
+        <source src="/hero_video.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+
+  <div class="hero__content container">
+    <h1 class="hero__vert-text text-vertical" data-motion-delay="0.2">
+      <span class="hero__char">本</span><span class="hero__char">庄</span><span class="hero__char">の</span><span class="hero__char">柔</span><span class="hero__char">術</span><span class="hero__char">で</span><span class="hero__char">、</span><br><span class="hero__char">人</span><span class="hero__char">生</span><span class="hero__char">を</span><span class="hero__char">豊</span><span class="hero__char">か</span><span class="hero__char">に</span><span class="hero__char">。</span>
+    </h1>
+
+    <!-- Subtitle and Call to Action moved to the right side -->
+    <div class="hero__text-box" style="display: flex; flex-direction: column; align-items: flex-start;">
+      <p class="hero__badge">本庄駅徒歩6分｜ブラジリアン柔術ジム Over Limit 本庄</p>
+      <div class="hero__action motion-up" data-motion-delay="0.6">
+        <a href="/contact" class="btn btn--white">
+          <span style="font-family: 'Noto Sans JP', sans-serif; font-weight: bold;">無料体験を予約する</span>
+          <svg class="btn__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #000;
+    overflow: clip;
+    padding-top: 80px; /* Offset for header */
+  }
+
+
+
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: clip;
+  }
+
+  .hero__image-wrapper {
+    width: 100%; height: 100%;
+    /* Keep sharp edges. For hero, full bleed or inset */
+    position: absolute;
+    inset: 0;
+  }
+
+
+
+  .hero__video {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* Already has .img-luxury grayscale filter */
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.15) 65%, rgba(0,0,0,0.6) 85%, #0A0A0A 100%),
+      linear-gradient(96deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.46) 54%, rgba(0,0,0,0.7) 100%);
+    z-index: 1;
+  }
+
+
+
+  .hero__content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 80px;
+  }
+
+  .hero__text-box {
+    max-width: 640px;
+  }
+
+  .hero__headline {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(3rem, 8vw, 7.2rem);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    margin: 0 0 24px;
+    text-wrap: balance;
+  }
+
+  .hero__subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    color: #AAAAAA;
+    margin-bottom: 48px;
+    position: relative;
+    padding-left: 40px;
+  }
+
+  .hero__subtitle::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 50%;
+    width: 24px; height: 1px;
+    background: #FF6A00;
+  }
+
+  .hero__vert-text {
+    margin: 0;
+    font-size: clamp(2.5rem, 6.5vw, 4.5rem);
+    font-weight: 900;
+    color: #FFFFFF;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-family: 'Noto Serif JP', serif;
+    letter-spacing: 0.25em;
+    line-height: 1.5;
+    z-index: 10;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.6);
+  }
+
+  .hero__badge {
+    margin: 0 0 16px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.92);
+    background: rgba(20, 22, 19, 0.65);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 14px;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 992px) {
+    .hero {
+      align-items: flex-end;
+    }
+    .hero__overlay {
+      background:
+        linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.15) 65%, rgba(0,0,0,0.6) 85%, #0A0A0A 100%),
+        linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.38) 48%, rgba(0,0,0,0.16) 100%);
+    }
+    .hero__content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 40px;
+    }
+    .hero__text-box {
+      align-items: flex-start;
+    }
+    .hero__vert-text {
+      /* Reset absolute positioning to join normal flex flow */
+      position: static;
+      margin-bottom: 24px;
+    }
+    .hero__subtitle { margin-bottom: 32px; }
+    .hero__headline {
+      margin-bottom: 22px;
+      font-size: clamp(2.4rem, 13vw, 4.2rem);
+    }
+  }
+</style>
+
+
+
+

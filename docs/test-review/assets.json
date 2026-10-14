@@ -1,0 +1,160 @@
+[
+  {
+    "file": "public/test/mulheres-new-480.webp",
+    "bytes": 20652,
+    "format": "webp",
+    "width": 480,
+    "height": 320,
+    "space": "srgb",
+    "channels": 3,
+    "depth": "uchar",
+    "isProgressive": false,
+    "isPalette": false,
+    "hasProfile": false,
+    "hasAlpha": false,
+    "autoOrient": {
+      "width": 480,
+      "height": 320
+    }
+  },
+  {
+    "file": "public/test/mulheres-new-800.webp",
+    "bytes": 41844,
+    "format": "webp",
+    "width": 800,
+    "height": 533,
+    "space": "srgb",
+    "channels": 3,
+    "depth": "uchar",
+    "isProgressive": false,
+    "isPalette": false,
+    "hasProfile": false,
+    "hasAlpha": false,
+    "autoOrient": {
+      "width": 800,
+      "height": 533
+    }
+  },
+  {
+    "file": "public/test/mulheres-new-1200.webp",
+    "bytes": 70568,
+    "format": "webp",
+    "width": 1200,
+    "height": 800,
+    "space": "srgb",
+    "channels": 3,
+    "depth": "uchar",
+    "isProgressive": false,
+    "isPalette": false,
+    "hasProfile": false,
+    "hasAlpha": false,
+    "autoOrient": {
+      "width": 1200,
+      "height": 800
+    }
+  },
+  {
+    "file": "public/mulheres-new.jpg",
+    "bytes": 1414715,
+    "width": 3000,
+    "height": 2000
+  },
+  {
+    "file": "public/test/kids-new-480.webp",
+    "bytes": 18776,
+    "format": "webp",
+    "width": 480,
+    "height": 360,
+    "space": "srgb",
+    "channels": 3,
+    "depth": "uchar",
+    "isProgressive": false,
+    "isPalette": false,
+    "hasProfile": false,
+    "hasAlpha": false,
+    "autoOrient": {
+      "width": 480,
+      "height": 360
+    }
+  },
+  {
+    "file": "public/test/kids-new-800.webp",
+    "bytes": 40366,
+    "format": "webp",
+    "width": 800,
+    "height": 600,
+    "space": "srgb",
+    "channels": 3,
+    "depth": "uchar",
+    "isProgressive": false,
+    "isPalette": false,
+    "hasProfile": false,
+    "hasAlpha": false,
+    "autoOrient": {
+      "width": 800,
+      "height": 600
+    }
+  },
+  {
+    "file": "public/test/kids-new-1200.webp",
+    "bytes": 74388,
+    "format": "webp",
+    "width": 1200,
+    "height": 900,
+    "space": "srgb",
+    "channels": 3,
+    "depth": "uchar",
+    "isProgressive": false,
+    "isPalette": false,
+    "hasProfile": false,
+    "hasAlpha": false,
+    "autoOrient": {
+      "width": 1200,
+      "height": 900
+    }
+  },
+  {
+    "file": "public/kids-new.jpg",
+    "bytes": 695765,
+    "width": 2016,
+    "height": 1512
+  },
+  {
+    "file": "public/test/hero-poster.webp",
+    "bytes": 39584,
+    "format": "webp",
+    "width": 1440,
+    "height": 2560,
+    "space": "srgb",
+    "channels": 3,
+    "depth": "uchar",
+    "isProgressive": false,
+    "isPalette": false,
+    "hasProfile": false,
+    "hasAlpha": false,
+    "autoOrient": {
+      "width": 1440,
+      "height": 2560
+    }
+  },
+  {
+    "file": "public/LOGO.png",
+    "format": "png",
+    "width": 1200,
+    "height": 1200,
+    "space": "srgb",
+    "channels": 4,
+    "depth": "uchar",
+    "density": 300,
+    "isProgressive": false,
+    "isPalette": true,
+    "bitsPerSample": 8,
+    "paletteBitDepth": 8,
+    "hasProfile": false,
+    "hasAlpha": true,
+    "autoOrient": {
+      "width": 1200,
+      "height": 1200
+    }
+  }
+]

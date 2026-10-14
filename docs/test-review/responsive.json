@@ -1,0 +1,122 @@
+[
+  {
+    "client": 354,
+    "ctaHeight": 69,
+    "overflowElements": [
+      "VIDEO.hero__video img-luxury"
+    ],
+    "padding": "69px",
+    "page": "home",
+    "pageWidth": 354,
+    "prices": 4,
+    "scheduleClient": 320,
+    "scheduleWidth": 900,
+    "viewport": 360
+  },
+  {
+    "client": 384,
+    "ctaHeight": 69,
+    "overflowElements": [
+      "VIDEO.hero__video img-luxury"
+    ],
+    "padding": "69px",
+    "page": "home",
+    "pageWidth": 384,
+    "prices": 4,
+    "scheduleClient": 350,
+    "scheduleWidth": 900,
+    "viewport": 390
+  },
+  {
+    "client": 424,
+    "ctaHeight": 69,
+    "overflowElements": [
+      "VIDEO.hero__video img-luxury"
+    ],
+    "padding": "69px",
+    "page": "home",
+    "pageWidth": 424,
+    "prices": 4,
+    "scheduleClient": 390,
+    "scheduleWidth": 900,
+    "viewport": 430
+  },
+  {
+    "client": 762,
+    "ctaHeight": 69,
+    "overflowElements": [
+      "VIDEO.hero__video img-luxury"
+    ],
+    "padding": "69px",
+    "page": "home",
+    "pageWidth": 762,
+    "prices": 4,
+    "scheduleClient": 728,
+    "scheduleWidth": 900,
+    "viewport": 768
+  },
+  {
+    "client": 1434,
+    "ctaHeight": 69,
+    "overflowElements": [
+      "VIDEO.hero__video img-luxury"
+    ],
+    "padding": "69px",
+    "page": "home",
+    "pageWidth": 1434,
+    "prices": 4,
+    "scheduleClient": 1218,
+    "scheduleWidth": 1218,
+    "viewport": 1440
+  },
+  {
+    "buttonType": "button",
+    "client": 354,
+    "formMethod": "dialog",
+    "overflowElements": [],
+    "page": "contact",
+    "pageWidth": 354,
+    "required": 3,
+    "viewport": 360
+  },
+  {
+    "buttonType": "button",
+    "client": 384,
+    "formMethod": "dialog",
+    "overflowElements": [],
+    "page": "contact",
+    "pageWidth": 384,
+    "required": 3,
+    "viewport": 390
+  },
+  {
+    "buttonType": "button",
+    "client": 424,
+    "formMethod": "dialog",
+    "overflowElements": [],
+    "page": "contact",
+    "pageWidth": 424,
+    "required": 3,
+    "viewport": 430
+  },
+  {
+    "buttonType": "button",
+    "client": 762,
+    "formMethod": "dialog",
+    "overflowElements": [],
+    "page": "contact",
+    "pageWidth": 762,
+    "required": 3,
+    "viewport": 768
+  },
+  {
+    "buttonType": "button",
+    "client": 1434,
+    "formMethod": "dialog",
+    "overflowElements": [],
+    "page": "contact",
+    "pageWidth": 1434,
+    "required": 3,
+    "viewport": 1440
+  }
+]

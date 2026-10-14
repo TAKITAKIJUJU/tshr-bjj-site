@@ -1,0 +1,48 @@
+import { createRequire } from 'module';const require = createRequire(import.meta.url);
+import {
+  astro_island_prebuilt_dev_default
+} from "./chunk-OIPFE3EH.js";
+import {
+  astro_island_prebuilt_default
+} from "./chunk-F3TIPEJZ.js";
+import {
+  ISLAND_STYLES
+} from "./chunk-Y6EWT2OD.js";
+
+// node_modules/astro/dist/runtime/server/scripts.js
+function determineIfNeedsHydrationScript(result) {
+  if (result._metadata.hasHydrationScript) {
+    return false;
+  }
+  return result._metadata.hasHydrationScript = true;
+}
+function determinesIfNeedsDirectiveScript(result, directive) {
+  if (result._metadata.hasDirectives.has(directive)) {
+    return false;
+  }
+  result._metadata.hasDirectives.add(directive);
+  return true;
+}
+function getDirectiveScriptText(result, directive) {
+  const clientDirectives = result.clientDirectives;
+  const clientDirective = clientDirectives.get(directive);
+  if (!clientDirective) {
+    throw new Error(`Unknown directive: ${directive}`);
+  }
+  return clientDirective;
+}
+function getPrescripts(result, type, directive) {
+  switch (type) {
+    case "both":
+      return `<style>${ISLAND_STYLES}</style><script>${getDirectiveScriptText(result, directive)}</script><script>${process.env.NODE_ENV === "development" ? astro_island_prebuilt_dev_default : astro_island_prebuilt_default}</script>`;
+    case "directive":
+      return `<script>${getDirectiveScriptText(result, directive)}</script>`;
+  }
+}
+
+export {
+  determineIfNeedsHydrationScript,
+  determinesIfNeedsDirectiveScript,
+  getPrescripts
+};
+//# sourceMappingURL=chunk-V27M4QV7.js.map

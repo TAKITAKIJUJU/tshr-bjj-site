@@ -1,0 +1,168 @@
+---
+// Contact.astro v2 - Current tshr-bjj.com style with person (last.webp) in background & Orange accents
+---
+
+<section class="contact-section" id="contact">
+  <div class="contact-card motion-scale">
+    <div class="contact-inner">
+      <div class="contact-copy">
+        <h2 class="contact-title">
+          まずは無料体験から<br />
+          始めてみませんか？
+        </h2>
+        <p class="contact-text">
+          見学・体験ともに無料です。お気軽にお問い合わせください。<br />
+          体験には動きやすい服装・タオル・飲み物をご用意ください。日程未定でもご相談いただけます。
+        </p>
+      </div>
+      <div class="contact-actions">
+        <a href="/test/contact/" class="contact-btn contact-btn--trial">
+          <span>無料体験を予約する</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8">
+            <path d="M9 6L15 12L9 18" />
+          </svg>
+        </a>
+        <a href="https://line.me/ti/p/edZnSmCFIj" target="_blank" rel="noopener" class="contact-btn contact-btn--line">
+          <span>LINEで相談する</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8">
+            <path d="M9 6L15 12L9 18" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-section {
+    padding: 0;
+    background: #141613;
+    overflow: hidden;
+  }
+
+  .contact-card {
+    width: 100%;
+    min-height: clamp(340px, 40vw, 460px);
+    padding: clamp(48px, 6vw, 84px) clamp(24px, 5vw, 64px);
+    background:
+      linear-gradient(90deg, rgba(14, 16, 13, 0.88) 0%, rgba(14, 16, 13, 0.72) 48%, rgba(14, 16, 13, 0.35) 100%),
+      url('/last.webp') right center / cover no-repeat;
+    display: flex;
+    align-items: center;
+  }
+
+  .contact-inner {
+    max-width: 1220px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(28px, 5vw, 60px);
+  }
+
+  .contact-copy {
+    flex: 1 1 auto;
+    max-width: 740px;
+  }
+
+  .contact-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(2rem, 4.2vw, 3.8rem);
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1.32;
+    letter-spacing: -0.02em;
+    margin: 0 0 clamp(16px, 2vw, 24px);
+    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.6);
+  }
+
+  .contact-text {
+    font-size: clamp(1rem, 1.25vw, 1.15rem);
+    color: rgba(255, 255, 255, 0.94);
+    font-weight: 500;
+    line-height: 1.75;
+    margin: 0;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+  }
+
+  .contact-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: min(100%, 340px);
+    flex: 0 0 min(100%, 340px);
+  }
+
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 64px;
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .contact-btn--trial {
+    background: #ff6b00;
+    color: #141613;
+    box-shadow: none;
+  }
+
+  .contact-btn--trial:hover {
+    background: #ff8533;
+    transform: translateY(-2px);
+  }
+
+  .contact-btn--line {
+    background: #06c755;
+    color: #ffffff;
+    box-shadow: none;
+  }
+
+  .contact-btn--line:hover {
+    background: #05b34c;
+    transform: translateY(-2px);
+  }
+
+  .btn-arrow {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.25s ease;
+  }
+
+  .contact-btn:hover .btn-arrow {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 860px) {
+    .contact-card {
+      padding: 44px 20px 48px;
+      min-height: auto;
+      background:
+        linear-gradient(180deg, rgba(14, 16, 13, 0.92) 0%, rgba(14, 16, 13, 0.75) 60%, rgba(14, 16, 13, 0.85) 100%),
+        url('/last.webp') center 20% / cover no-repeat;
+    }
+
+    .contact-inner {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 28px;
+    }
+
+    .contact-actions {
+      width: 100%;
+      flex: auto;
+    }
+
+    .contact-title {
+      font-size: clamp(1.6rem, 7vw, 2.2rem);
+    }
+  }
+</style>

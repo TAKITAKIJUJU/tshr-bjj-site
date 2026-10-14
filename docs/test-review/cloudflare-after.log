@@ -1,0 +1,62 @@
+{
+  "routes": [
+    {
+      "id": "762f85ac00124518a91480ab38263a3f",
+      "pattern": "tshr-bjj.com/test/*",
+      "script": "tshr-bjj-test-preview",
+      "request_limit_fail_open": false
+    },
+    {
+      "id": "86cddd49f4b3459d8424ca16548ccfb6",
+      "pattern": "tshr-bjj.com/test",
+      "script": "tshr-bjj-test-preview",
+      "request_limit_fail_open": false
+    },
+    {
+      "id": "619b0a2d8511406ebcdd1a3bfa882871",
+      "pattern": "tshr-bjj.com/*",
+      "script": "local-gym-site",
+      "request_limit_fail_open": false
+    },
+    {
+      "id": "d76db73d1e5e4df7a3bc6cb87f6d5bd2",
+      "pattern": "tshr-bjj.com/demo*",
+      "script": "tshr-bjj-demo",
+      "request_limit_fail_open": false
+    }
+  ],
+  "workers": [
+    {
+      "id": "local-gym-site",
+      "modified_on": "2026-09-25T07:10:28.115304Z"
+    },
+    {
+      "id": "tshr-bjj-demo",
+      "modified_on": "2026-10-05T13:50:49.266845Z"
+    },
+    {
+      "id": "tshr-bjj-site",
+      "modified_on": "2026-10-14T07:29:36.822562Z"
+    },
+    {
+      "id": "tshr-bjj-test-preview",
+      "modified_on": "2026-10-14T11:34:18.447154Z"
+    }
+  ],
+  "productionCurrent": {
+    "id": "292daa4a-7444-4eb1-9414-aa8523a8d6ce",
+    "source": "wrangler",
+    "strategy": "percentage",
+    "author_email": "jurianobaba@gmail.com",
+    "annotations": {
+      "workers/triggered_by": "deployment"
+    },
+    "versions": [
+      {
+        "version_id": "677cdf87-b20a-4043-a291-a548c627811f",
+        "percentage": 100
+      }
+    ],
+    "created_on": "2026-09-25T07:10:26.167904Z"
+  }
+}

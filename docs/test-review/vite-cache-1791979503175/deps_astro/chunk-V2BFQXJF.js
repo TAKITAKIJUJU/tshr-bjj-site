@@ -1,0 +1,29 @@
+import { createRequire } from 'module';const require = createRequire(import.meta.url);
+
+// node_modules/astro/dist/core/head-propagation/resolver.js
+function resolvePropagationHint(input) {
+  const explicitHint = input.factoryHint ?? "none";
+  if (explicitHint !== "none") {
+    return explicitHint;
+  }
+  if (!input.moduleId) {
+    return "none";
+  }
+  return input.metadataLookup(input.moduleId) ?? "none";
+}
+function isPropagatingHint(hint) {
+  return hint === "self" || hint === "in-tree";
+}
+function getPropagationHint(result, factory) {
+  return resolvePropagationHint({
+    factoryHint: factory.propagation,
+    moduleId: factory.moduleId,
+    metadataLookup: (moduleId) => result.componentMetadata.get(moduleId)?.propagation
+  });
+}
+
+export {
+  isPropagatingHint,
+  getPropagationHint
+};
+//# sourceMappingURL=chunk-V2BFQXJF.js.map

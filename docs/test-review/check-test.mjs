@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {createRequire} from 'node:module';
+import {AstroCheck} from './tooling/node_modules/@astrojs/language-server/dist/index.js';
+const require=createRequire(new URL('./tooling/node_modules/@astrojs/check/package.json',import.meta.url));
+const checker=new AstroCheck(process.cwd(),require.resolve('typescript'),path.resolve('docs/test-review/tsconfig.test.json'));
+const walk=p=>fs.readdirSync(p,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(p,e.name)):[path.join(p,e.name)]);
+const files=[...walk('src/pages/test'),...walk('src/components/test'),...walk('src/scripts/test'),...walk('src/data/test'),'src/layouts/TestLayout.astro'].map(p=>path.resolve(p));
+const result=await checker.lint({fileNames:files,logErrors:{level:'warning'}});
+fs.writeFileSync('docs/test-review/typecheck-test.json',JSON.stringify({checked:result.fileChecked,errors:result.errors,warnings:result.warnings,files:result.fileResult.map(f=>({file:f.fileUrl.href,text:f.text}))},null,2));
+console.log({checked:result.fileChecked,errors:result.errors,warnings:result.warnings});
+if(result.errors)process.exitCode=1;

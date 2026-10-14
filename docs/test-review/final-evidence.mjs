@@ -1,0 +1,16 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const read=p=>JSON.parse(fs.readFileSync('docs/test-review/'+p,'utf8'));
+const before=read('live-before.json'),after=read('live-after.json');
+const unchanged=before.map(b=>({path:b.path,unchanged:after.some(a=>a.path===b.path&&a.sha256===b.sha256&&a.status===b.status)}));
+assert.ok(unchanged.every(x=>x.unchanged));
+const cfBefore=read('cloudflare-before.json'),cfAfter=read('cloudflare-after.json');
+assert.equal(cfBefore.productionDeployments.deployments[0].id,cfAfter.productionDeployments.deployments[0].id);
+for(const route of cfBefore.routes)assert.ok(cfAfter.routes.some(r=>r.id===route.id&&r.pattern===route.pattern&&r.script===route.script));
+const source=read('source-verification.json');
+assert.equal(source.changed.length,0);
+assert.ok(source.comparison.every(c=>c.equivalentIgnoringLineEndingsAndEndWhitespace));
+assert.equal(source.facilityCopyIdentical,true);
+const result={unchanged,originalFilesUnchanged:source.originalFileCount,referenceFilesEquivalent:source.comparison.length,facilityCopyIdentical:true,productionDeploymentUnchanged:true,productionVersion:cfAfter.productionDeployments.deployments[0].versions[0].version_id,addedRoutes:cfAfter.routes.filter(r=>!cfBefore.routes.some(b=>b.id===r.id)).map(r=>({pattern:r.pattern,script:r.script}))};
+fs.writeFileSync('docs/test-review/final-evidence.json',JSON.stringify(result,null,2));
+console.log(result);

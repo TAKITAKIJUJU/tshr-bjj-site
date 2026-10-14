@@ -1,0 +1,238 @@
+---
+// Concept.astro - Redesigned based on fuckfuck.html with Orange theme
+---
+
+<section class="section concept" id="concept">
+  <div class="wrap">
+    <div class="section-head motion-up">
+      <div>
+        <p class="eyebrow">01 / Concept</p>
+        <h2>ブラジリアン柔術とは</h2>
+      </div>
+      <span class="section-index" aria-hidden="true">01</span>
+    </div>
+
+    <p class="concept-intro-text motion-up" data-motion-delay="0.1">
+      ブラジリアン柔術は、パンチやキックなどの打撃を使わず、組み技を学ぶスポーツです。年齢や運動経験に合わせて、自分のペースで取り組めます。
+    </p>
+
+    <div class="concept-grid">
+      <article class="concept-card motion-up" data-motion-delay="0.05">
+        <div class="concept-image">
+          <img width="1200" height="800" decoding="async" src="/what1.webp" alt="本庄市のブラジリアン柔術 組み技を学ぶ練習風景" loading="lazy" />
+        </div>
+        <div class="concept-body">
+          <span class="card-number">01 / SAFETY</span>
+          <h3>打撃のない組み技</h3>
+          <p>パンチやキックなどの打撃が一切ないため、怪我のリスクが低く、翌日の仕事や学業にも支障なく楽しめます。</p>
+        </div>
+      </article>
+
+      <article class="concept-card motion-up" data-motion-delay="0.15">
+        <div class="concept-image">
+          <img width="1200" height="800" decoding="async" src="/what2.webp" alt="20代から50代まで何歳からでも始められる生涯スポーツ" loading="lazy" />
+        </div>
+        <div class="concept-body">
+          <span class="card-number">02 / LIFELONG</span>
+          <h3>生涯スポーツ</h3>
+          <p>年齢や体格に関係なく、力加減を調整しながら練習可能。20代〜50代以降の大人の習い事として長く続けられます。</p>
+        </div>
+      </article>
+
+      <article class="concept-card motion-up" data-motion-delay="0.25">
+        <div class="concept-image">
+          <img width="1200" height="800" decoding="async" src="/what3.webp" alt="体を使ったチェスと呼ばれる知的な格闘技ブラジリアン柔術" loading="lazy" />
+        </div>
+        <div class="concept-body">
+          <span class="card-number">03 / WORLDWIDE</span>
+          <h3>体を使ったチェス</h3>
+          <p>戦略的で知的な格闘技。力任せではなく技のロジックで競うため、世界中のビジネスパーソンにも愛好者が広がっています。</p>
+        </div>
+      </article>
+
+      <article class="concept-card motion-up" data-motion-delay="0.1">
+        <div class="concept-image">
+          <img src="/test/mulheres-new-800.webp" srcset="/test/mulheres-new-480.webp 480w, /test/mulheres-new-800.webp 800w, /test/mulheres-new-1200.webp 1200w" sizes="(max-width:700px) calc(100vw - 32px), (max-width:1150px) 46vw, 380px" width="3000" height="2000" alt="女性の護身術・ダイエット・運動不足解消に最適な柔術" loading="lazy" />
+        </div>
+        <div class="concept-body">
+          <span class="card-number">04 / WOMEN</span>
+          <h3>女性も安心して始めやすい</h3>
+          <p>力だけに頼らず、体の使い方を学びます。運動不足解消を目的に始めたい方も、参加するクラスや練習についてフォームやLINEでご相談ください。</p>
+        </div>
+      </article>
+
+      <article class="concept-card motion-up" data-motion-delay="0.2">
+        <div class="concept-image">
+          <img src="/test/kids-new-800.webp" srcset="/test/kids-new-480.webp 480w, /test/kids-new-800.webp 800w, /test/kids-new-1200.webp 1200w" sizes="(max-width:700px) calc(100vw - 32px), (max-width:1150px) 46vw, 380px" width="2016" height="1512" alt="礼儀作法と運動神経を養う本庄市のキッズ柔術クラス" loading="lazy" />
+        </div>
+        <div class="concept-body">
+          <span class="card-number">05 / KIDS</span>
+          <h3>子供の習い事に最適</h3>
+          <p>礼儀作法や挨拶を身につけながら、基礎体力と運動神経を自然に養います。本庄市で子供の習い事をお探しの方にもおすすめです。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .concept {
+    padding-block: 108px;
+    background: #f4f4ee;
+    color: #141613;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .wrap {
+    width: min(1220px, calc(100% - 48px));
+    margin-inline: auto;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #ff6b00;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    background: currentColor;
+    flex-shrink: 0;
+  }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 44px;
+    border-bottom: 2px solid #141613;
+    padding-bottom: 20px;
+  }
+
+  .section-head h2 {
+    margin: 8px 0 0;
+    font-size: clamp(28px, 3.8vw, 44px);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1.25;
+  }
+
+  .section-index {
+    color: #a2a799;
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: clamp(48px, 6vw, 76px);
+    font-weight: 700;
+    line-height: 0.85;
+  }
+
+  .concept-intro-text {
+    max-width: 680px;
+    font-size: 15px;
+    color: #666a61;
+    margin-bottom: 40px;
+    line-height: 1.85;
+  }
+
+  .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+  }
+
+  .concept-card {
+    grid-column: span 2;
+    background: #ffffff;
+    border: 1px solid #dbded3;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .concept-card:nth-child(n+4) {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+
+  .concept-image {
+    overflow: hidden;
+    background: #e2e5dc;
+  }
+
+  .concept-image img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1.6;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .concept-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .concept-body {
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-number {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #ff6b00;
+  }
+
+  .concept-body h3 {
+    margin: 10px 0 12px;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.35;
+    color: #141613;
+  }
+
+  .concept-body p {
+    font-size: 13px;
+    color: #666a61;
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .concept-card:nth-child(n+4) {
+      display: flex;
+      flex-direction: column;
+    }
+    .concept-card:nth-child(n+4) img {
+      aspect-ratio: 1.6;
+    }
+  }
+
+  @media (max-width: 860px) {
+    .concept {
+      padding-block: 72px;
+    }
+    .wrap {
+      width: calc(100% - 32px);
+    }
+    .concept-grid {
+      grid-template-columns: 1fr;
+    }
+    .concept-card,
+    .concept-card:nth-child(n+4) {
+      grid-column: auto;
+    }
+  }
+</style>

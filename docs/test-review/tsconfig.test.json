@@ -1,0 +1,5 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["../../.astro/types.d.ts", "../../src/pages/test/**/*", "../../src/components/test/**/*", "../../src/layouts/TestLayout.astro", "../../src/scripts/test/**/*", "../../src/data/test/**/*"],
+  "exclude": ["../../node_modules", "./tooling", "./baseline", "../../dist"]
+}

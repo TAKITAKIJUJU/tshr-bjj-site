@@ -1,0 +1,28 @@
+import { createRequire } from 'module';const require = createRequire(import.meta.url);
+import {
+  renderElement
+} from "./chunk-5FUOLBI2.js";
+
+// node_modules/astro/dist/runtime/server/render/tags.js
+function renderScriptElement({ props, children }) {
+  return renderElement("script", {
+    props,
+    children
+  });
+}
+function renderUniqueStylesheet(result, sheet) {
+  if (sheet.type === "external") {
+    if (Array.from(result.styles).some((s) => s.props.href === sheet.src)) return "";
+    return renderElement("link", { props: { rel: "stylesheet", href: sheet.src }, children: "" });
+  }
+  if (sheet.type === "inline") {
+    if (Array.from(result.styles).some((s) => s.children.includes(sheet.content))) return "";
+    return renderElement("style", { props: {}, children: sheet.content });
+  }
+}
+
+export {
+  renderScriptElement,
+  renderUniqueStylesheet
+};
+//# sourceMappingURL=chunk-L472YQS2.js.map

@@ -1,0 +1,18 @@
+{
+  "checks": [
+    {
+      "page": "test/index.html",
+      "title": "本庄市のブラジリアン柔術ジム｜Over Limit 本庄【テスト版】",
+      "faqCount": 8,
+      "brokenLocalReferences": []
+    },
+    {
+      "page": "test/contact/index.html",
+      "title": "無料体験・見学の相談｜Over Limit 本庄【テスト版】",
+      "faqCount": 0,
+      "brokenLocalReferences": []
+    }
+  ],
+  "menuContrast": 6.338105137950143,
+  "productionSitemapHasTest": false
+}

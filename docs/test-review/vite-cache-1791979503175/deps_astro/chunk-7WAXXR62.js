@@ -1,0 +1,23 @@
+import { createRequire } from 'module';const require = createRequire(import.meta.url);
+
+// node_modules/astro/dist/assets/utils/imageKind.js
+function isESMImportedImage(src) {
+  return typeof src === "object" || typeof src === "function" && "src" in src;
+}
+function isRemoteImage(src) {
+  return typeof src === "string";
+}
+async function resolveSrc(src) {
+  if (typeof src === "object" && "then" in src) {
+    const resource = await src;
+    return resource.default ?? resource;
+  }
+  return src;
+}
+
+export {
+  isESMImportedImage,
+  isRemoteImage,
+  resolveSrc
+};
+//# sourceMappingURL=chunk-7WAXXR62.js.map
