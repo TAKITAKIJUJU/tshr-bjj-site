@@ -3,27 +3,27 @@
     {
       "path": "test/contact/index.html",
       "bytes": 22845,
-      "sha256": "e0c0835369a35db7d365ee28262a262df7291298f340e482afa71101e661d323"
+      "sha256": "281cd0cacbae9eaa7f6057f2a6705326324c342e238097c34b2bc5b7fee3616a"
     },
     {
       "path": "test/english/contact/index.html",
       "bytes": 19187,
-      "sha256": "6be13ae4097cfc39a4e0c588071ae079bd8f8cbe06e21905768e81d5cbf0ea5a"
+      "sha256": "c5addf42e6acf6955598986aaa30a37e9c052f696c932417eb981383eb0ddc48"
     },
     {
       "path": "test/english/index.html",
-      "bytes": 55576,
-      "sha256": "039f1723c4828473833dcd5c181efa3a1acec2c7ab2216ff8012e6838cfdf6d7"
+      "bytes": 58109,
+      "sha256": "37c349b1dfd157ad192697d9fa43391ab49bf9a1e58176011bbc94e3655adadf"
     },
     {
       "path": "test/gunma/contact/index.html",
       "bytes": 19566,
-      "sha256": "f9e5c4699109eca37d226622d03368d8e293d311ce865ebcdfa2405e29951467"
+      "sha256": "8b7ed7c55c9f124a15f675c6ecfd777a2bab3e9bc15d4d9ea8d6517196461e93"
     },
     {
       "path": "test/gunma/index.html",
-      "bytes": 56443,
-      "sha256": "c9c524b0aaf4d54cb29146fb61b0adba954c37492786be533de389d831eae0cd"
+      "bytes": 58931,
+      "sha256": "280d2f2075fffecde4b98f65cab18edd60e9a985ed97be9ef4460f4697083d23"
     },
     {
       "path": "test/hero-poster.webp",
@@ -32,8 +32,8 @@
     },
     {
       "path": "test/index.html",
-      "bytes": 62911,
-      "sha256": "aab5d48a0b7c844f042ebec3acfe365dd451538aeb35812ac4da315c02ab4188"
+      "bytes": 65369,
+      "sha256": "c106b573b3de034058016cccdc8666cd92416e6bc95a418c908f813874dd9abd"
     },
     {
       "path": "test/kids-new-1200.webp",
@@ -68,12 +68,12 @@
     {
       "path": "test/portugues/contact/index.html",
       "bytes": 19542,
-      "sha256": "59474b867880bea0defa28bc4298e5d7a1930846410727ef01ce052f4f93563e"
+      "sha256": "2f18274f6e32df95be93ee1233a5a7743d426c145fc37f346ecd0ccbe96ce64b"
     },
     {
       "path": "test/portugues/index.html",
-      "bytes": 56729,
-      "sha256": "abf4d64cf1039b13895548a02d14223d48db5ab8153cd5fbd7096ed4eac2c74f"
+      "bytes": 59238,
+      "sha256": "e143113ccfa16fca4aa59d97001bb83bb6e96234637199b19d058e582d4fca22"
     },
     {
       "path": "test/shared/flow1.webp",
@@ -191,9 +191,9 @@
       "sha256": "f2253e791c7a1202e1eeacea3ac7e7b65a8bb2a906dd73d2bb45e100a45f1ed2"
     },
     {
-      "path": "test/_astro/Footer.D0dJNdJk.css",
-      "bytes": 28006,
-      "sha256": "bba245721f08bdc0c5af852a8abc40456bb522fbecaf3807f562aac03157bb54"
+      "path": "test/_astro/Footer.ByErD40X.css",
+      "bytes": 27995,
+      "sha256": "790051483a7efad500b36aa9bc3045f191bd600c1831221f5a28e130d518203b"
     },
     {
       "path": "test/_astro/Hero.astro_astro_type_script_index_0_lang.Bx42GJmA.js",
@@ -211,9 +211,9 @@
       "sha256": "c2cb5634c9569170678d4d6d823fa1564236e63246b4098fad2a563014927dc7"
     },
     {
-      "path": "test/_astro/index@_@astro.esloJcGC.css",
-      "bytes": 38685,
-      "sha256": "cbf2da25e9659b654ebad1111207f455541f5b67807f9bef3764bb48cd760ef2"
+      "path": "test/_astro/index@_@astro.Dzyyi5fm.css",
+      "bytes": 36772,
+      "sha256": "b0a3258ce3161b3f473c7dbf28a57b186f1749042a7fe8e1f74c5a86b95d4e0b"
     },
     {
       "path": "test/_astro/lenis.CK_K_E8Z.js",
@@ -237,8 +237,8 @@
     }
   ],
   "bundles": [
-    "Footer.D0dJNdJk.css",
-    "index@_@astro.esloJcGC.css",
+    "Footer.ByErD40X.css",
+    "index@_@astro.Dzyyi5fm.css",
     "Hero.astro_astro_type_script_index_0_lang.Bx42GJmA.js",
     "index.astro_astro_type_script_index_0_lang.CNpaBx1B.js",
     "contact@_@astro.34qkkl_F.css",
