@@ -1428,10 +1428,10 @@ const rows = [
     "Googleマップのクチコミ"
   ],
   [
-    "Googleマップに寄せられたクチコミから掲載しています。出稽古・見学で来られた方や、以前通われていた方の投稿も含みます。",
-    "Selected from reviews posted on Google Maps, including visiting practitioners, trial visitors, and former students.",
-    "Selecionadas entre as avaliações do Google Maps, incluindo praticantes visitantes, pessoas que fizeram aula experimental e ex-alunos.",
-    "Googleマップに書いてもらったクチコミから載せてるんさ。出稽古や見学で来てくれた人、前に通ってた人の声も入ってるよ。"
+    "Googleマップに寄せられたクチコミから掲載しています。",
+    "Selected from reviews posted on Google Maps.",
+    "Selecionadas entre as avaliações do Google Maps.",
+    "Googleマップに書いてもらったクチコミから載せてるんさ。"
   ],
   [
     "前のクチコミ",
