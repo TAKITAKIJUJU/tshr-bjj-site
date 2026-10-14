@@ -32,8 +32,7 @@
         <article class="review-card">
           <div class="card-header">
             <div class="avatar-wrap">
-              <div class="avatar" style="background: #795548;" aria-hidden="true">I</div>
-              <span class="guide-badge" title="Local Guide" aria-hidden="true">★</span>
+              <img src="/test/reviews/ichiro-matsumoto.png" alt="Ichiro Matsumoto" width="38" height="38" class="avatar-img" loading="lazy" />
             </div>
             <div class="user-meta">
               <span class="user-name">Ichiro Matsumoto</span>
@@ -59,8 +58,7 @@
         <article class="review-card">
           <div class="card-header">
             <div class="avatar-wrap">
-              <div class="avatar" style="background: #3949ab;" aria-hidden="true">1</div>
-              <span class="guide-badge" title="Local Guide" aria-hidden="true">★</span>
+              <img src="/test/reviews/100-mendou.png" alt="100 mendou" width="38" height="38" class="avatar-img" loading="lazy" />
             </div>
             <div class="user-meta">
               <span class="user-name">100 mendou</span>
@@ -84,8 +82,7 @@
         <article class="review-card">
           <div class="card-header">
             <div class="avatar-wrap">
-              <div class="avatar" style="background: #e65100;" aria-hidden="true">E</div>
-              <span class="guide-badge" title="Local Guide" aria-hidden="true">★</span>
+              <img src="/test/reviews/eduardo-pereira.png" alt="Eduardo Pereira" width="38" height="38" class="avatar-img" loading="lazy" />
             </div>
             <div class="user-meta">
               <span class="user-name">Eduardo Pereira</span>
@@ -267,35 +264,18 @@
     width: 38px;
     height: 38px;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .avatar {
+  .avatar-img {
     width: 38px;
     height: 38px;
-    border-radius: 50%;
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    object-fit: contain;
     user-select: none;
-  }
-
-  .guide-badge {
-    position: absolute;
-    bottom: -2px;
-    right: -2px;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: #ff6d00;
-    color: #ffffff;
-    font-size: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1.5px solid #ffffff;
+    -webkit-user-drag: none;
   }
 
   .user-meta {

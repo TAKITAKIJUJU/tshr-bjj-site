@@ -12,8 +12,8 @@
     },
     {
       "path": "test/english/index.html",
-      "bytes": 58038,
-      "sha256": "e9d4641c5691c393cbc3739340e10bd0fd99979be0a394746a29b592468f0f35"
+      "bytes": 57868,
+      "sha256": "bf729b0eb21b30318dc9824e6f937c1ca6f2c04dda38fbc979e511c9204790ea"
     },
     {
       "path": "test/gunma/contact/index.html",
@@ -22,8 +22,8 @@
     },
     {
       "path": "test/gunma/index.html",
-      "bytes": 58841,
-      "sha256": "d2637f4ce6bf557cf3bc9f14a00502502b6466058628755a1ef28bd3731c140b"
+      "bytes": 58671,
+      "sha256": "f57046aeede9c91b9f609eeb469896fe156eb9adae8d73b1ea5f986576398d41"
     },
     {
       "path": "test/hero-poster.webp",
@@ -32,8 +32,8 @@
     },
     {
       "path": "test/index.html",
-      "bytes": 65273,
-      "sha256": "e47e4a80053a98a9278d08ee2c92de2a5f986c3ab71b65f94460dc09bb471030"
+      "bytes": 65112,
+      "sha256": "1f435bd0e546ff688bb36f324120b0ff7ba487ef24fe9bb88bb41f772c22ac51"
     },
     {
       "path": "test/kids-new-1200.webp",
@@ -72,8 +72,23 @@
     },
     {
       "path": "test/portugues/index.html",
-      "bytes": 59153,
-      "sha256": "ac6d016f0ddb03af2811004f6aadb1cf063e8e8cabb9468dc6391a21e1cab616"
+      "bytes": 58983,
+      "sha256": "301821e8de77802527dedfe950ae3f223e66bf28dd63ed597cb65f0299a2dbbc"
+    },
+    {
+      "path": "test/reviews/100-mendou.png",
+      "bytes": 8865,
+      "sha256": "a52a19cd8bf572f16f964d4ed4e51b81846deb396ca03466589d7d446fc95ec7"
+    },
+    {
+      "path": "test/reviews/eduardo-pereira.png",
+      "bytes": 13487,
+      "sha256": "2d4cee87c306dba96f5ce5b14ea036378e7cef003e2347efe3a278a4c38ed2a4"
+    },
+    {
+      "path": "test/reviews/ichiro-matsumoto.png",
+      "bytes": 9794,
+      "sha256": "1722ea530fdb4bf35ab059670e8c1c3e6cbb2c7e3c07d28ae220e4f72e90c7d2"
     },
     {
       "path": "test/shared/flow1.webp",
@@ -211,9 +226,9 @@
       "sha256": "c2cb5634c9569170678d4d6d823fa1564236e63246b4098fad2a563014927dc7"
     },
     {
-      "path": "test/_astro/index@_@astro.Dzyyi5fm.css",
-      "bytes": 36772,
-      "sha256": "b0a3258ce3161b3f473c7dbf28a57b186f1749042a7fe8e1f74c5a86b95d4e0b"
+      "path": "test/_astro/index@_@astro.B-OY09SW.css",
+      "bytes": 36526,
+      "sha256": "c1471d3889c29a5e73a7cc63f86128e3860d0a4f8bfb1b13d008259f4f690bf9"
     },
     {
       "path": "test/_astro/lenis.CK_K_E8Z.js",
@@ -238,7 +253,7 @@
   ],
   "bundles": [
     "Footer.ByErD40X.css",
-    "index@_@astro.Dzyyi5fm.css",
+    "index@_@astro.B-OY09SW.css",
     "Hero.astro_astro_type_script_index_0_lang.CEX5DFGo.js",
     "index.astro_astro_type_script_index_0_lang.CxSBd87W.js",
     "contact@_@astro.34qkkl_F.css",
