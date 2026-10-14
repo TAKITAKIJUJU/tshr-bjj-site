@@ -2,6 +2,13 @@
 // Hero.astro - Luxury Minimalist Dark Style
 ---
 
+<script is:inline>
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('hero-reveal-pending');
+    // Restore readable copy if the animation module cannot load.
+    window.setTimeout(() => document.documentElement.classList.remove('hero-reveal-pending'), 4000);
+  }
+</script>
 <section class="hero" id="hero">
   <div class="hero__bg">
     <!-- Overlay dark gradient for extreme contrast -->
@@ -146,6 +153,10 @@
   }
   .hero__vert-text:not(.hero__translated) { transform:translateY(1.25em); }
   .hero__char { display:inline-block; }
+  :global(html.hero-reveal-pending) .hero__char { opacity:0; }
+  @media (prefers-reduced-motion: reduce) {
+    :global(html.hero-reveal-pending) .hero__char { opacity:1; }
+  }
   .hero__vert-text:not(.hero__translated) br + .hero__char { margin-inline-start:1.25em; }
   .hero__vert-text.hero__translated {
     transform:none;

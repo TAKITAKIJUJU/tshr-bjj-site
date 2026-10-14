@@ -19,7 +19,7 @@
         "FAQPage",
         "BreadcrumbList"
       ],
-      "bytes": 63562
+      "bytes": 63891
     },
     {
       "path": "/test/contact/",
@@ -195,7 +195,7 @@
       "status": 200
     },
     {
-      "path": "test/_astro/contact.astro_astro_type_script_index_0_lang.BTupjyc6.js",
+      "path": "test/_astro/contact.astro_astro_type_script_index_0_lang.BObT8gjV.js",
       "status": 200
     },
     {
@@ -211,7 +211,7 @@
       "status": 200
     },
     {
-      "path": "test/_astro/index.astro_astro_type_script_index_0_lang.Ce5joQlZ.js",
+      "path": "test/_astro/index.astro_astro_type_script_index_0_lang.DF5zYU_6.js",
       "status": 200
     },
     {
@@ -219,7 +219,7 @@
       "status": 200
     },
     {
-      "path": "test/_astro/index@_@astro.DsZkyY61.css",
+      "path": "test/_astro/index@_@astro.CiT3F1yz.css",
       "status": 200
     },
     {
@@ -227,7 +227,7 @@
       "status": 200
     },
     {
-      "path": "test/_astro/motion.CFcl5YcR.js",
+      "path": "test/_astro/motion.gavrckah.js",
       "status": 200
     },
     {
@@ -241,12 +241,12 @@
   ],
   "scriptSources": [
     "/test/_astro/Hero.astro_astro_type_script_index_0_lang.DisckP-n.js",
-    "/test/_astro/index.astro_astro_type_script_index_0_lang.Ce5joQlZ.js",
-    "/test/_astro/contact.astro_astro_type_script_index_0_lang.BTupjyc6.js"
+    "/test/_astro/index.astro_astro_type_script_index_0_lang.DF5zYU_6.js",
+    "/test/_astro/contact.astro_astro_type_script_index_0_lang.BObT8gjV.js"
   ],
   "barePath": {
     "status": 308,
     "location": "https://tshr-bjj.com/test/"
   },
-  "checkedAt": "2026-10-14T17:42:02.786Z"
+  "checkedAt": "2026-10-14T17:46:59.360Z"
 }

@@ -14,6 +14,7 @@ function initMotion(home: boolean) {
   const tick = (time: number) => lenis?.raf(time * 1000);
   const menuState = (event: Event) => (event as CustomEvent<boolean>).detail ? lenis?.stop() : lenis?.start();
   const cleanup = () => {
+    document.documentElement.classList.remove('hero-reveal-pending');
     gsap.ticker.remove(tick);
     lenis?.off('scroll', ScrollTrigger.update);
     lenis?.destroy();
@@ -50,8 +51,11 @@ function initMotion(home: boolean) {
         const actionStart = translatedHero ? .3 + Math.max(0, heroChars - 1) * heroStagger + .7 : 1.3;
         gsap.timeline({defaults:{ease:'power3.out'}})
           .from('.hero__video',{scale:1.05,duration:3,immediateRender:false},0)
-          .from('.hero__char',{opacity:0,y:40,filter:'blur(12px)',duration:.6,stagger:heroStagger,immediateRender:false},.3)
+          .fromTo('.hero__char',
+            {opacity:0,y:40,filter:'blur(12px)'},
+            {opacity:1,y:0,filter:'blur(0px)',duration:.6,stagger:heroStagger,immediateRender:true},.3)
           .from('.hero__action',{opacity:0,y:48,duration:.9,immediateRender:false},actionStart);
+        document.documentElement.classList.remove('hero-reveal-pending');
         gsap.fromTo('.hero__image-wrapper',{clipPath:'inset(0% 0% 0% 0% round 0px)'},{clipPath:'inset(7% 3% 9% 3% round 36px)',ease:'none',scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:1.25}});
         for (const {selector,y} of [{selector:'.hero__bg',y:9},{selector:'.flow-image img',y:6},{selector:'.map',y:5}]) {
           gsap.utils.toArray<HTMLElement>(selector).forEach(el=>gsap.fromTo(el,{yPercent:-y},{yPercent:y,ease:'none',scrollTrigger:{trigger:el,start:'top bottom',end:'bottom top',scrub:1.2}}));
