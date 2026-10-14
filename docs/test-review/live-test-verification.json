@@ -19,7 +19,7 @@
         "FAQPage",
         "BreadcrumbList"
       ],
-      "bytes": 53330
+      "bytes": 62905
     },
     {
       "path": "/test/contact/",
@@ -34,12 +34,28 @@
         "ContactPage",
         "BreadcrumbList"
       ],
-      "bytes": 19251
+      "bytes": 22793
     }
   ],
   "assets": [
     {
       "path": "test/contact/index.html",
+      "status": 200
+    },
+    {
+      "path": "test/english/contact/index.html",
+      "status": 200
+    },
+    {
+      "path": "test/english/index.html",
+      "status": 200
+    },
+    {
+      "path": "test/gunma/contact/index.html",
+      "status": 200
+    },
+    {
+      "path": "test/gunma/index.html",
       "status": 200
     },
     {
@@ -72,6 +88,26 @@
     },
     {
       "path": "test/mulheres-new-800.webp",
+      "status": 200
+    },
+    {
+      "path": "test/portugues/contact/index.html",
+      "status": 200
+    },
+    {
+      "path": "test/portugues/index.html",
+      "status": 200
+    },
+    {
+      "path": "test/reviews/100-mendou.png",
+      "status": 200
+    },
+    {
+      "path": "test/reviews/eduardo-pereira.png",
+      "status": 200
+    },
+    {
+      "path": "test/reviews/ichiro-matsumoto.png",
       "status": 200
     },
     {
@@ -159,7 +195,7 @@
       "status": 200
     },
     {
-      "path": "test/_astro/contact.astro_astro_type_script_index_0_lang.DhiMUOLg.js",
+      "path": "test/_astro/contact.astro_astro_type_script_index_0_lang.D5c05JJf.js",
       "status": 200
     },
     {
@@ -167,11 +203,15 @@
       "status": 200
     },
     {
-      "path": "test/_astro/Footer.WO8N357g.css",
+      "path": "test/_astro/Footer.ByErD40X.css",
       "status": 200
     },
     {
-      "path": "test/_astro/index.astro_astro_type_script_index_0_lang.Shcj2DWl.js",
+      "path": "test/_astro/Hero.astro_astro_type_script_index_0_lang.BDgN6lj-.js",
+      "status": 200
+    },
+    {
+      "path": "test/_astro/index.astro_astro_type_script_index_0_lang.Ce5joQlZ.js",
       "status": 200
     },
     {
@@ -179,7 +219,7 @@
       "status": 200
     },
     {
-      "path": "test/_astro/index@_@astro.CthTSoLK.css",
+      "path": "test/_astro/index@_@astro.FT3evqYr.css",
       "status": 200
     },
     {
@@ -187,21 +227,26 @@
       "status": 200
     },
     {
-      "path": "test/_astro/motion.Blb2VEB9.js",
+      "path": "test/_astro/motion.CFcl5YcR.js",
       "status": 200
     },
     {
       "path": "test/_astro/ScrollTrigger.CB6UHAJl.js",
       "status": 200
+    },
+    {
+      "path": "test/_astro/translations.CSBta0rf.js",
+      "status": 200
     }
   ],
   "scriptSources": [
-    "/test/_astro/index.astro_astro_type_script_index_0_lang.Shcj2DWl.js",
-    "/test/_astro/contact.astro_astro_type_script_index_0_lang.DhiMUOLg.js"
+    "/test/_astro/Hero.astro_astro_type_script_index_0_lang.BDgN6lj-.js",
+    "/test/_astro/index.astro_astro_type_script_index_0_lang.Ce5joQlZ.js",
+    "/test/_astro/contact.astro_astro_type_script_index_0_lang.D5c05JJf.js"
   ],
   "barePath": {
     "status": 308,
     "location": "https://tshr-bjj.com/test/"
   },
-  "checkedAt": "2026-10-14T12:09:37.778Z"
+  "checkedAt": "2026-10-14T17:20:26.657Z"
 }

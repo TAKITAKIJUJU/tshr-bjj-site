@@ -2,28 +2,28 @@
   "files": [
     {
       "path": "test/contact/index.html",
-      "bytes": 22845,
-      "sha256": "1d52c823d7442c2542c9763e3b532d7a6d66ec4d35e4893f09cf93872fbc2092"
+      "bytes": 22793,
+      "sha256": "24d633e947d379f74637bbdc430c73a047374d7c1be5f60b92b2ebd810189290"
     },
     {
       "path": "test/english/contact/index.html",
-      "bytes": 19187,
-      "sha256": "a97a2013a13fbacee58d3455e97c8dc41004a93a9fbd4c7d7f61a72a2998af04"
+      "bytes": 19135,
+      "sha256": "8d9880978a189f16bc68b8c19c0c9e4ca0aaa9dbe9d6c5ad61f23d76ab9a682e"
     },
     {
       "path": "test/english/index.html",
-      "bytes": 57868,
-      "sha256": "bf729b0eb21b30318dc9824e6f937c1ca6f2c04dda38fbc979e511c9204790ea"
+      "bytes": 55619,
+      "sha256": "4987b7d8fc4c6cdbb2ad1124073a765d07095c1777b4804bde6abd5c565e4122"
     },
     {
       "path": "test/gunma/contact/index.html",
-      "bytes": 19566,
-      "sha256": "dee2c8fc63ebd6ecd50999e66847d3eab96781fd368f2c05238c61e5fe54db65"
+      "bytes": 19514,
+      "sha256": "44274410ba0678120e18c33e5e37d10e95a7bb427af485ab9cc90ef261949dc7"
     },
     {
       "path": "test/gunma/index.html",
-      "bytes": 58671,
-      "sha256": "f57046aeede9c91b9f609eeb469896fe156eb9adae8d73b1ea5f986576398d41"
+      "bytes": 56422,
+      "sha256": "aa78cc384f16030d1f47e72286ee1b821129ca0efebeeebcee6dd51c490d698a"
     },
     {
       "path": "test/hero-poster.webp",
@@ -32,8 +32,8 @@
     },
     {
       "path": "test/index.html",
-      "bytes": 65112,
-      "sha256": "1f435bd0e546ff688bb36f324120b0ff7ba487ef24fe9bb88bb41f772c22ac51"
+      "bytes": 62905,
+      "sha256": "2950fe3885feeb5b49a79ff6ea3f872015c49cbb8a1c1e6c746297fadbeaf6f8"
     },
     {
       "path": "test/kids-new-1200.webp",
@@ -67,13 +67,13 @@
     },
     {
       "path": "test/portugues/contact/index.html",
-      "bytes": 19542,
-      "sha256": "ca46833c8aeba9725c2dad8214aaf382794c8206e602bc3f7ce7e34facbef5e5"
+      "bytes": 19490,
+      "sha256": "3e389881292db062ba1b6a453c07fab484559c89b6e2873a84ede68d736ff378"
     },
     {
       "path": "test/portugues/index.html",
-      "bytes": 58983,
-      "sha256": "301821e8de77802527dedfe950ae3f223e66bf28dd63ed597cb65f0299a2dbbc"
+      "bytes": 56734,
+      "sha256": "2ca2ac6b5300b6a0691979c08f734860acc9b91a39160589cf02f37ebdf9e5fb"
     },
     {
       "path": "test/reviews/100-mendou.png",
@@ -196,9 +196,9 @@
       "sha256": "6c69d75f4e218d08bcb478446016da63c4272f8eabeb70201dee8adcc6673a65"
     },
     {
-      "path": "test/_astro/contact.astro_astro_type_script_index_0_lang.CY45HP32.js",
-      "bytes": 1929,
-      "sha256": "16077cb108f9932ba7710879a034940f7ddf4371d29d617d3d94ec89ff708461"
+      "path": "test/_astro/contact.astro_astro_type_script_index_0_lang.D5c05JJf.js",
+      "bytes": 1877,
+      "sha256": "d621faba8dd5d1e365c5ef1655c8f6c00e6305e9d8a4747b329bf12f706448f5"
     },
     {
       "path": "test/_astro/contact@_@astro.34qkkl_F.css",
@@ -211,57 +211,57 @@
       "sha256": "790051483a7efad500b36aa9bc3045f191bd600c1831221f5a28e130d518203b"
     },
     {
-      "path": "test/_astro/Hero.astro_astro_type_script_index_0_lang.CEX5DFGo.js",
-      "bytes": 1157,
-      "sha256": "f5a3932cdc0ad5d83129838112a9d3b39ce7772db84f6d2634d642dde2c8e7af"
+      "path": "test/_astro/Hero.astro_astro_type_script_index_0_lang.BDgN6lj-.js",
+      "bytes": 1105,
+      "sha256": "9fefd4b780e24c62e574c22d620e7500c0a54f7d57286d8038cf0a089b8336da"
     },
     {
-      "path": "test/_astro/index.astro_astro_type_script_index_0_lang.CxSBd87W.js",
-      "bytes": 357,
-      "sha256": "572bfa54381be02f1e294ab406c7bd471f6e983314c427c8aa169ec111bff589"
+      "path": "test/_astro/index.astro_astro_type_script_index_0_lang.Ce5joQlZ.js",
+      "bytes": 305,
+      "sha256": "1be4c1a80b2ecf06513c782c30022d4b80ca6a520ba86397c6b000d2383578a4"
     },
     {
-      "path": "test/_astro/index.DEuOKImm.js",
-      "bytes": 69945,
-      "sha256": "c2cb5634c9569170678d4d6d823fa1564236e63246b4098fad2a563014927dc7"
+      "path": "test/_astro/index.DDlvirwQ.js",
+      "bytes": 69893,
+      "sha256": "acd41da38c0790cfe5d385e19a835c71d0ab9df841b4934adebd97ed17dd2542"
     },
     {
-      "path": "test/_astro/index@_@astro.B-OY09SW.css",
-      "bytes": 36526,
-      "sha256": "c1471d3889c29a5e73a7cc63f86128e3860d0a4f8bfb1b13d008259f4f690bf9"
+      "path": "test/_astro/index@_@astro.FT3evqYr.css",
+      "bytes": 36452,
+      "sha256": "91bc12b9b1adeaebee00718d3a24ca2db38220b9d52f34ca7275f5961750188e"
     },
     {
-      "path": "test/_astro/lenis.CK_K_E8Z.js",
-      "bytes": 17734,
-      "sha256": "e864b860796bbbd5a6b640a0892d6672331783b72b00bb2beccc59fc1548be3b"
+      "path": "test/_astro/lenis.CBlNbkdS.js",
+      "bytes": 17682,
+      "sha256": "085de21d1b52b5e2781546641665a2b0f118509abb3a0358d11f03ca867f05a2"
     },
     {
-      "path": "test/_astro/motion.hUF_mfTR.js",
-      "bytes": 2961,
-      "sha256": "bd7c3cd6ac53d6e9ed5288887642cbf403eada05da97a20f9fe0026c2688df60"
+      "path": "test/_astro/motion.CFcl5YcR.js",
+      "bytes": 2909,
+      "sha256": "5987976314e3e3b61761018213d07b96d9187514d8c82444a6f40fa32a1d38a0"
     },
     {
-      "path": "test/_astro/ScrollTrigger.COm6oySp.js",
-      "bytes": 43245,
-      "sha256": "6487bdec0a3c9bb4dd1217af5d0c7aaebaa992be1b952e9d876f4c352364b83d"
+      "path": "test/_astro/ScrollTrigger.CB6UHAJl.js",
+      "bytes": 43193,
+      "sha256": "971443a37de5c1a75b49f19f2df0c4d67ebfe3215bc438fbd52cfc0dc9f13df3"
     },
     {
-      "path": "test/_astro/translations.BaWrWFOY.js",
-      "bytes": 54733,
-      "sha256": "d3a609a5a7de4856cb1f775282dca56089f112f962a6613cb51bbe0e22b2cc79"
+      "path": "test/_astro/translations.CSBta0rf.js",
+      "bytes": 54681,
+      "sha256": "76174d1da0782aa22a1340a18706c29b5cff56612ba28a0700da637b757e7f54"
     }
   ],
   "bundles": [
     "Footer.ByErD40X.css",
-    "index@_@astro.B-OY09SW.css",
-    "Hero.astro_astro_type_script_index_0_lang.CEX5DFGo.js",
-    "index.astro_astro_type_script_index_0_lang.CxSBd87W.js",
+    "index@_@astro.FT3evqYr.css",
+    "Hero.astro_astro_type_script_index_0_lang.BDgN6lj-.js",
+    "index.astro_astro_type_script_index_0_lang.Ce5joQlZ.js",
     "contact@_@astro.34qkkl_F.css",
-    "contact.astro_astro_type_script_index_0_lang.CY45HP32.js",
-    "translations.BaWrWFOY.js",
-    "motion.hUF_mfTR.js",
-    "index.DEuOKImm.js",
-    "ScrollTrigger.COm6oySp.js",
-    "lenis.CK_K_E8Z.js"
+    "contact.astro_astro_type_script_index_0_lang.D5c05JJf.js",
+    "translations.CSBta0rf.js",
+    "motion.CFcl5YcR.js",
+    "index.DDlvirwQ.js",
+    "ScrollTrigger.CB6UHAJl.js",
+    "lenis.CBlNbkdS.js"
   ]
 }

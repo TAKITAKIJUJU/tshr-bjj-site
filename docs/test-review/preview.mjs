@@ -2,10 +2,11 @@
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
-const root=path.resolve('dist/client');
+const root=path.resolve(process.argv[2] || 'dist/client');
+const basePort=Number(process.argv[3] || 4322);
 const types={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.webp':'image/webp','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.mp4':'video/mp4','.svg':'image/svg+xml','.json':'application/json'};
 const requests=[];
-for(const [port,mode] of [[4322,'normal'],[4323,'scripts-blocked'],[4324,'reduced-motion-simulation']]) {
+for(const [port,mode] of [[basePort,'normal'],[basePort+1,'scripts-blocked'],[basePort+2,'reduced-motion-simulation']]) {
  http.createServer((req,res)=>{
   const url=new URL(req.url,`http://127.0.0.1:${port}`);
   requests.push({mode,method:req.method,path:url.pathname});
