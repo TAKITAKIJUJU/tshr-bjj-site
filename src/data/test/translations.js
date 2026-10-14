@@ -159,7 +159,7 @@ const rows = [
     "ブラジリアン柔術は、パンチやキックなどの打撃を使わず、組み技を学ぶスポーツです。年齢や運動経験に合わせて、自分のペースで取り組めます。",
     "Brazilian Jiu-Jitsu is a grappling martial art focusing on ground techniques without punches or kicks. Anyone can learn safely at their own pace, regardless of age or athletic background.",
     "O Jiu-Jitsu Brasileiro é uma arte marcial focada em técnicas de alavanca e luta de chão, sem socos nem chutes. Qualquer pessoa pode treinar no seu próprio ritmo, independentemente da idade ou experiência prévia.",
-    "ブラジリアン柔術は、パンチやキックを使わずに組み技を学ぶスポーツなんさ。何歳からでも、運動が得意じゃなくても、自分のペースで楽しく始められるよ。"
+    "ブラジリアン柔術は、パンチやキックを使わねぇで組み技を学ぶスポーツなんさ。何歳からでも、運動が得意じゃなくても、自分のペースでちっとっつ楽しく始められるんさね。"
   ],
   [
     "打撃のない組み技",
@@ -171,7 +171,7 @@ const rows = [
     "パンチやキックなどの打撃が一切ないため、怪我のリスクが低く、翌日の仕事や学業にも支障なく楽しめます。",
     "Because there are no strikes such as punches or kicks, the risk of injury is minimal, allowing you to train safely without affecting your work or studies the next day.",
     "Sem socos nem chutes, o risco de lesões é muito reduzido. Você treina com total segurança e vai trabalhar ou estudar no dia seguinte com disposição renovada.",
-    "パンチやキックは一切ねえから、怪我の心配も少なくて、次の日の仕事や学校にも全然響かねえよ。"
+    "パンチやキックは一切ねぇから、怪我の心配もなっから少なくて、次の日の仕事や学校にも全然響かねぇよ。"
   ],
   [
     "生涯スポーツ",
@@ -183,19 +183,19 @@ const rows = [
     "年齢や体格に関係なく、力加減を調整しながら練習可能。20代〜50代以降の大人の習い事として長く続けられます。",
     "Training intensity can be customized to your age, build, and goals. Adults in their 20s, 50s, and beyond can safely enjoy Jiu-Jitsu as a rewarding lifelong hobby.",
     "A intensidade do treino é adaptada à sua idade e condicionamento físico. Homens e mulheres dos 20 aos 50 anos ou mais treinam e evoluem de forma prazerosa e contínua.",
-    "年齢や体格に合わせて力加減ができるから、20代から50代、60代の大人の習い事としてずっと長く楽しめるんさね。"
+    "年齢や体格に合わせて力加減ができるから、20代から50代、60代の大人の習い事としてなっから長く楽しめるんさね。"
   ],
   [
     "体を使ったチェス",
     "Human Chess (Intellectual Martial Art)",
     "Xadrez Humano (Arte Suave Inteligente)",
-    "体を使うチェスみてえなもんさ"
+    "体を使うチェスみてぇなもんさ"
   ],
   [
     "戦略的で知的な格闘技。力任せではなく技のロジックで競うため、世界中のビジネスパーソンにも愛好者が広がっています。",
     "A cerebral martial art often called human chess. Because leverage and technical logic triumph over brute force, it has become deeply popular among professionals and entrepreneurs worldwide.",
     "Mais técnica que força bruta. Conhecido como o xadrez humano, vence quem usa a inteligência e a mecânica das alavancas, atraindo executivos e profissionais no mundo inteiro.",
-    "力任せじゃなくて技の理屈で勝負するんさ。頭脳戦が面白いから、世界中のビジネスマンにもすごく人気があるんだよ。"
+    "力任せじゃなくて技の理屈で勝負するんさ。頭脳戦が面白いから、世界中のビジネスマンにもなっから人気があるんだいね。"
   ],
   [
     "女性も安心して始めやすい",
@@ -219,7 +219,7 @@ const rows = [
     "礼儀作法や挨拶を身につけながら、基礎体力と運動神経を自然に養います。本庄市で子供の習い事をお探しの方にもおすすめです。",
     "Children learn proper etiquette and respect while naturally developing motor skills and confidence. Highly recommended for parents seeking quality youth activities in Honjo.",
     "Desenvolve respeito, disciplina e postura enquanto aprimora a coordenação motora e a saúde. Uma das melhores atividades extracurriculares infantis em Honjo.",
-    "あいさつや礼儀作法も身につくし、基礎体力や運動神経も自然と育つよ。本庄や近所で子どもの習い事を探してるなら、ぜひ見に来てくんない。"
+    "あいさつや礼儀作法も身につくし、基礎体力や運動神経も自然と育つんさ。本庄や近所で子どもの習い事を探してるなら、ぜひ見に来てくんない。"
   ],
   [
     "インストラクター紹介",
@@ -273,19 +273,19 @@ const rows = [
     "代表メッセージ",
     "Message from Head Instructor",
     "Mensagem do Professor",
-    "代表からひと言"
+    "代表からのメッセージなんさ"
   ],
   [
     "私はブラジリアン柔術を始める前までは特に目標や趣味もなく、仕事を終えた後は毎日だらだらと過ごしていました。しかし柔術と出会ってから人生が大きく変わりました。今では立派な生徒たちに囲まれながら柔術を指導しています。",
     "Before finding Brazilian Jiu-Jitsu, I had no real hobbies or clear goals—I simply spent my evenings idly after work. But discovering Jiu-Jitsu transformed my entire life. Today, I am proud to teach surrounded by wonderful students.",
     "Antes de começar no Jiu-Jitsu, eu não tinha objetivos claros nem um hobby favorito; passava as noites apenas descansando sem rumo após o trabalho. Descobrir a arte suave mudou totalmente a minha vida. Hoje tenho orgulho de liderar este dojo com alunos incríveis.",
-    "おれも柔術始める前は目標も趣味もなくて、仕事が終わったら毎日だらだら過ごしてたんさ。でも柔術に出会ってから人生ががらりと変わったんさね。いまは最高の仲間たちと楽しく柔術やってるよ。"
+    "おれも柔術始める前は目標も趣味もなくて、仕事が終わったら毎日だらだら過ごしてたんさ。でも柔術に出会ってから人生ががらりと変わったんさね。いまは最高の仲間たちと囲まれて楽しく柔術やってるよ。"
   ],
   [
     "柔術を始めてダイエットに成功したり、自信がついて日々の生活が前向きになったりします。格闘技は人生を豊かにすることができます。この素晴らしい体験を地域の皆さんにも共有したいです。",
     "Through Jiu-Jitsu, people get in shape, build unshakable confidence, and find new vitality in everyday life. Martial arts truly enrich human lives. I want to share this wonderful experience with everyone in our local community.",
     "Praticar Jiu-Jitsu melhora o condicionamento, aumenta a autoconfiança e renova o ânimo para o dia a dia. A arte marcial tem o poder real de enriquecer vidas. Quero compartilhar essa transformação com toda a nossa comunidade.",
-    "柔術で体が変わったり自信がついたり、前向きになれるんさ。格闘技って人生を本当に豊かにしてくれるよ。地元のみんなにもこの素晴らしい楽しさを知ってもらいてえんだいね。"
+    "柔術で体が変わったり自信がついたり、前向きになれるんさ。格闘技って人生をなっから豊かにしてくれるよ。地元のみんなにもこの素晴らしい楽しさを知ってもらいてぇんだいね。"
   ],
   [
     "準備・マット運動",
@@ -297,7 +297,7 @@ const rows = [
     "「受け身」「エビ」など怪我を予防し、寝技に直結する基本動作を練習。未経験でも無理なく身体のバランス感覚を養えます。",
     "Practice essential movements like breakfalls (Ukemi) and hip escapes (Shrimping) to prevent injuries. Even complete beginners easily develop balance and body awareness.",
     "Treine movimentos fundamentais como rolamentos (ukemi) e fuga de quadril (shrimping), que evitam lesões e preparam o corpo para a luta de solo com segurança.",
-    "「受け身」や「エビ」みてえな、怪我を防いで寝技に直結する基本の動きをやるんさ。初めての人でも無理なく体のバランス感覚が身につくよ。"
+    "「受け身」や「エビ」みてぇな、怪我を防いで寝技に直結する基本の動きをやるんさ。初めての人でも無理なく体のバランス感覚が身につくよ。"
   ],
   [
     "テクニック練習",
@@ -309,7 +309,7 @@ const rows = [
     "インストラクターの解説を見た後、2人1組で反復。先輩メンバーも優しくフォローするので初心者も安心して学べます。",
     "Watch detailed technique demonstrations by the instructor, then drill repeatedly in pairs. Senior members are always ready to guide you kindly.",
     "Aprenda cada detalhe demonstrado pelo professor e pratique em duplas. Os alunos mais graduados auxiliam com paciência para que você aprenda com tranquilidade.",
-    "先生のお手本をよく見たら、二人組で繰り返し練習するんさ。先輩たちも優しくフォローしてくれるから心配いらねえよ。"
+    "先生のお手本をよく見たら、二人一組で繰り返し練習するんさ。先輩たちも優しくフォローしてくれるから心配いらねぇ、世話ねぇよ。"
   ],
   [
     "実践スパーリング",
@@ -321,7 +321,7 @@ const rows = [
     "学んだ技を試す実践練習。力任せではなく技の駆け引きが楽しく、初心者のうちは相手が手加減して動きを合わせてくれます。",
     "Put your techniques to the test in live practice (rolling). The joy comes from strategy and timing rather than brute force. Partners carefully match your level.",
     "Coloque em prática o que aprendeu. A graça do rola está no raciocínio e no tempo das posições, não na força. Para iniciantes, o ritmo é suave e controlado.",
-    "覚えた技を相手と試してみる練習さ。力比べじゃなくて技の駆け引きが面白いんさね。初めのうちは相手がペースを合わせてくれるから安心しな。"
+    "覚えた技を相手と試してみる練習さ。力比べじゃなくて技の駆け引きがなっから面白いんさね。初めのうちは相手がペースを合わせてくれるから安心しな。"
   ],
   [
     "料金システム",
@@ -363,7 +363,7 @@ const rows = [
     "すべての設備が使い放題",
     "Full access to all academy facilities",
     "Uso livre de toda a infraestrutura da academia",
-    "すべての設備が使い放題"
+    "すべての設備が使い放題だいね"
   ],
   [
     "女性・中高生会員",
@@ -375,7 +375,7 @@ const rows = [
     "女性や学生も安心して通える環境",
     "A welcoming, clean, and safe environment for women & students",
     "Ambiente respeitoso, limpo e acolhedor para mulheres e estudantes",
-    "女性や学生さんも安心して通える環境"
+    "女性や学生さんも安心して通える環境だいね"
   ],
   [
     "キッズ会員",
@@ -435,7 +435,7 @@ const rows = [
     "出張や旅行中の練習に",
     "Perfect for travelers & martial artists visiting Honjo",
     "Ideal para quem está a negócios ou viajando por Honjo",
-    "出張や旅行の途中の練習にもってこい"
+    "出張や旅行の途中の練習にもってこいなんさ"
   ],
   [
     "当日お支払い",
@@ -579,7 +579,7 @@ const rows = [
     "JR高崎線「本庄」駅北口より徒歩6分",
     "6-min walk from North Exit of JR Honjo Station",
     "A 6 minutos a pé da saída norte da estação JR Honjo",
-    "JR高崎線「本庄駅」北口から歩いて6分なんさ"
+    "JR高崎線「本庄駅」北口からあるって6分なんさ"
   ],
   [
     "Google Mapsで開く",
@@ -597,7 +597,7 @@ const rows = [
     "始めてみませんか？",
     "Ready to get started?",
     "Que tal dar o primeiro passo?",
-    "始めてみねえかい？"
+    "始めてみねぇかい？"
   ],
   [
     "見学・体験ともに無料です。お気軽にお問い合わせください。",
@@ -639,13 +639,13 @@ const rows = [
     "初めての柔術。どのクラスに参加すればよいですか？",
     "I am new to Jiu-Jitsu. Which class should I join first?",
     "Nunca fiz Jiu-Jitsu. Por qual turma devo começar?",
-    "柔術は初めてなんだけど、どのクラスに行けばいいん？"
+    "柔術は初めてなんだけど、どのクラスにいげばいいん？"
   ],
   [
     "ビギナー柔術の枠があります。クラスでは準備・マット運動、テクニック練習、実践練習を行います。初回に参加するクラスや内容は、運動経験とあわせてフォームやLINEでご相談ください。打撃はありませんが、接触を伴うため怪我の可能性はあります。",
     "We recommend starting with our Beginner Jiu-Jitsu class. Each session includes warm-ups, technical drills, and controlled practice. Please reach out via LINE or our form so we can help choose the right class based on your fitness level. While there are no strikes, contact sports naturally carry some risk of injury.",
     "Recomendamos começar pelas turmas de Iniciantes. A aula inclui aquecimento, movimentos educativos, técnica em duplas e prática guiada. Entre em contato pelo LINE ou formulário para orientarmos a melhor turma para você. Não há socos nem chutes, mas esportes de contato requerem atenção para evitar lesões.",
-    "初心者向けの「ビギナー柔術」があるんさ。準備運動や技の練習、実践をゆっくりやるよ。運動経験に合わせておすすめのクラスを案内するから、フォームやLINEで気軽に聞いてくんない。パンチはないけど、怪我には気をつけてやってるよ。"
+    "初心者向けの「ビギナー柔術」があるんさ。準備運動や技の練習、実践をゆっくりやるよ。運動経験に合わせて案内するから、フォームやLINEで気軽に聞いてくんない。打撃はねぇけど、接触はあるから怪我には気をつけてやってるよ。"
   ],
   [
     "仕事帰りに通える時間はありますか？",
@@ -681,13 +681,13 @@ const rows = [
     "体験は動きやすい服装で参加できます。タオルと飲み物もご用意ください。道着の購入時期や選び方は入会時にご相談いただけます。",
     "No! You can participate in comfortable athletic wear (t-shirt and shorts/joggers). Just bring a towel and water. We will advise you on purchasing a Gi upon joining.",
     "Não precisa! Você pode fazer a aula com roupa de ginástica confortável (camiseta e bermuda/calça). Traga toalha e água. Orientamos sobre a compra do kimono após a matrícula.",
-    "道着は買わなくて大丈夫だいね！動きやすいジャージやTシャツで来て、タオルと飲み物だけ持ってきてくんない。道着は入会するときに一緒に相談できるよ。"
+    "道着は買わなくて大丈夫だいね！動きやすいジャージやTシャツで来て、タオルと飲み物だけ持ってきてくんない。道着は入会すっときに相談すりゃ世話ねぇよ。"
   ],
   [
     "女性が初めて参加するときは、どう相談できますか？",
     "How can female beginners consult before their first session?",
     "Como as mulheres iniciantes podem tirar dúvidas antes de começar?",
-    "女性が初めて行くとき、どう相談すればいいん？"
+    "女性が初めていぐとき、どう相談すればいいん？"
   ],
   [
     "フォームまたはLINEから、参加したいクラスや練習で気になることをお知らせください。女性・中高生向けの料金区分があります。練習相手や初回の参加内容についても事前にご相談ください。",
@@ -711,7 +711,7 @@ const rows = [
     "無料体験の持ち物は？日程が決まっていなくても相談できますか？",
     "What should I bring for the free trial? Can I consult without a fixed date?",
     "O que devo levar para a aula gratuita? Posso tirar dúvidas sem data marcada?",
-    "無料体験に何を持っていくん？日にちが決まってなくても相談できる？"
+    "無料体験に何を持っていくん？日にちが決まってなくても相談できるん？"
   ],
   [
     "動きやすい服装・タオル・飲み物をご用意ください。希望日は任意なので、日程未定でも無料体験や見学についてご相談いただけます。",
@@ -825,7 +825,7 @@ const rows = [
     "日程未定のままでもご相談いただけます。希望日の入力だけでは予約は確定しません。",
     "Feel free to consult without a fixed date. Submitting a preferred date does not finalize a booking.",
     "Você pode tirar dúvidas sem definir a data. Preencher a data aqui não confirma automaticamente o horário.",
-    "日にちが決まってなくても大丈夫だよ。希望日を入れただけじゃまだ予約にはならないんさ。"
+    "日にちが決まってなくても大丈夫だいね。希望日を入れただけじゃまだ予約にはならないんさ。"
   ],
   [
     "希望日（任意）",
@@ -921,7 +921,7 @@ const rows = [
     "希望する時間帯、運動経験、気になることなど。体験・見学は空欄でも進めます。",
     "Tell us your preferred hours, fitness background, or questions. You may leave this blank.",
     "Conte seu horário preferido, histórico esportivo ou dúvidas. Pode deixar em branco se preferir.",
-    "希望の時間帯や運動経験、不安なことなど。空欄のままでも全然いいよ。"
+    "希望の時間帯や運動経験、不安なことなど。空欄のままでも全然世話ねぇよ。"
   ],
   [
     "メールアドレスを正しい形式で入力してください。",
@@ -939,25 +939,25 @@ const rows = [
     "入力に誤りがあります。表示された項目をご確認ください。送信は行っていません。",
     "There are errors in the form. Please check highlighted fields. Nothing has been sent.",
     "Existem campos incompletos ou incorretos. Confira os destaques. Nada foi enviado.",
-    "入力に直すとこがあるみたいさ。印がついた項目を確かめてくんない。送信はしてねえよ。"
+    "入力に直すとこがあるみたいさ。印がついた項目を確かめてくんない。送信はしてねぇよ。"
   ],
   [
     "テスト：送信失敗時の表示です。入力はこの画面に残っています。実際の送信・予約は行っていません。",
     "Demo: Simulated failure response. Your input remains intact. No real booking occurred.",
     "Demonstração: Erro simulado com sucesso. Seus dados continuam na tela. Nenhum envio real.",
-    "お試し：送信失敗のときの表示なんさ。入力はこの画面に残ってるよ。送信や予約はしてねえよ。"
+    "お試し：送信失敗のときの表示なんさ。入力はこの画面に残ってるよ。送信や予約はしてねぇよ。"
   ],
   [
     "テスト：成功時の表示です。入力確認が完了しました。実際の送信・受信・予約は行っていません。",
     "Demo: Simulated success response! Validation passed. No real booking occurred.",
     "Demonstração: Sucesso simulado! Validação concluída. Nenhum envio ou agendamento real.",
-    "お試し：送信成功のときの表示なんさ！入力確認できたよ。実際の送信や予約はしてねえよ。"
+    "お試し：送信成功のときの表示なんさ！入力確認できたよ。実際の送信や予約はしてねぇよ。"
   ],
   [
     "JavaScriptが無効のためモック動作は利用できません。入力内容は送信されません。",
     "JavaScript is disabled. Interactive mock features are unavailable. No data is sent.",
     "JavaScript desativado. As funções de teste interativo não estão disponíveis. Nada será enviado.",
-    "JavaScriptが無効だからお試しは動かねえよ。入力内容は送られないんさ。"
+    "JavaScriptが無効だからお試しは動かねぇよ。入力内容は送られないんさ。"
   ],
   [
     "本庄市のブラジリアン柔術ジム｜Over Limit 本庄【テスト版】",
@@ -1053,19 +1053,19 @@ const rows = [
     "20代から50代まで何歳からでも始められる生涯スポーツ",
     "A lifelong sport enjoyable from 20s to 50s and beyond",
     "Esporte para todas as idades, dos 20 aos 50 anos ou mais",
-    "何歳からでも始められる柔術"
+    "何歳からでも始められる生涯スポーツなんさ"
   ],
   [
     "体を使ったチェスと呼ばれる知的な格闘技ブラジリアン柔術",
     "Brazilian Jiu-Jitsu, the intellectual martial art known as human chess",
     "Jiu-Jitsu Brasileiro, a arte suave estratégica conhecida como xadrez humano",
-    "頭も使うブラジリアン柔術"
+    "体を使ったチェスみてぇな知的な格闘技なんさ"
   ],
   [
     "女性の護身術・ダイエット・運動不足解消に最適な柔術",
     "Jiu-Jitsu for women: self-defense, fitness, and lifestyle wellness",
     "Jiu-Jitsu feminino: defesa pessoal, saúde e boa forma",
-    "女性も安心して楽しめる柔術"
+    "女性も安心して楽しめる柔術なんさ"
   ],
   [
     "礼儀作法と運動神経を養う本庄市のキッズ柔術クラス",

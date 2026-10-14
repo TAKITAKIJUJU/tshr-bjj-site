@@ -3,27 +3,27 @@
     {
       "path": "test/contact/index.html",
       "bytes": 22845,
-      "sha256": "920166b7f6dcd15f53de0374e36e81b1efc5d99b096b461a9912d97a457336b5"
+      "sha256": "e31d5b7a23afb267cf791fdfde102121fd52ceabbf12c3c9701a5eaf7c6c761b"
     },
     {
       "path": "test/english/contact/index.html",
       "bytes": 19187,
-      "sha256": "0e8d7ff74db3aeb75f301ab40216adde0e470d29b15e6121508a00230abe9809"
+      "sha256": "854047673211839d27ce5dc20f654a9b0b0f05e2b68c0b8294b41b1253b6d5de"
     },
     {
       "path": "test/english/index.html",
       "bytes": 48911,
-      "sha256": "725b52452b77b0efd685b34240337e4c615125824ebabc1527fd961843aa4efc"
+      "sha256": "dc858e90887da4cd9cefac104838ab16a2dcaf22fe6624d14b2d392c3f2e3eec"
     },
     {
       "path": "test/gunma/contact/index.html",
-      "bytes": 19557,
-      "sha256": "7d8132e81345fefccc859a5fe40fe965457f4b6416e5abd0e2984c625e4237ab"
+      "bytes": 19566,
+      "sha256": "af580d780e541b9123c20381eb874afe513da8ba484ec547e2e41030bff0d419"
     },
     {
       "path": "test/gunma/index.html",
-      "bytes": 49268,
-      "sha256": "e6cc0255df0fd3460a449c12db6d6fc3e39a675b7eb96e06d7fcef4efeb7346d"
+      "bytes": 49472,
+      "sha256": "1808e6fec763b23558874e4b2aa8548ef36749a6321f04f72b7e50a8156ac448"
     },
     {
       "path": "test/hero-poster.webp",
@@ -33,7 +33,7 @@
     {
       "path": "test/index.html",
       "bytes": 56126,
-      "sha256": "47c768ed88106b30fa6fcd8d2b81e9d26a3140311ae2ee567d5ec1c8634f8599"
+      "sha256": "efe0565cdd290d082a6e9e9da3bce35b03101701a8616ef0a6bb0e9925332515"
     },
     {
       "path": "test/kids-new-1200.webp",
@@ -68,12 +68,12 @@
     {
       "path": "test/portugues/contact/index.html",
       "bytes": 19542,
-      "sha256": "b72d7d203db9023493601f0233afa2916b90519aafce18454170cb708e74f41d"
+      "sha256": "84e3efa6d93fd46a77cd918e590a98bc79ee54818e4ec5053981765aa22ddad6"
     },
     {
       "path": "test/portugues/index.html",
       "bytes": 49940,
-      "sha256": "2dff29c0b6006a5b4b5320a1bd4d07b2613d82c9d73f4a067554723079188778"
+      "sha256": "00d26bde86fa03873c93ed9e6cb2534a1f97e84354299d93694e6b2edf038b1b"
     },
     {
       "path": "test/shared/flow1.webp",
@@ -181,9 +181,9 @@
       "sha256": "6c69d75f4e218d08bcb478446016da63c4272f8eabeb70201dee8adcc6673a65"
     },
     {
-      "path": "test/_astro/contact.astro_astro_type_script_index_0_lang.CiwVHgOu.js",
+      "path": "test/_astro/contact.astro_astro_type_script_index_0_lang.BrMzUH7c.js",
       "bytes": 1929,
-      "sha256": "50beb66428dede0dfb40fe358274ec0e12e6dc9c1d064dd23bd54a65c3ffd3c9"
+      "sha256": "3668d41d19f71673a40070b704156e29b45e9ec74731ead51e5c01be0e4142fe"
     },
     {
       "path": "test/_astro/contact@_@astro.34qkkl_F.css",
@@ -196,9 +196,9 @@
       "sha256": "790051483a7efad500b36aa9bc3045f191bd600c1831221f5a28e130d518203b"
     },
     {
-      "path": "test/_astro/Hero.astro_astro_type_script_index_0_lang.bF_y18ho.js",
+      "path": "test/_astro/Hero.astro_astro_type_script_index_0_lang.BEivGyDI.js",
       "bytes": 1157,
-      "sha256": "27f67032bcd0ce2be2e679224656773787548f9410b851b7df75609bea9ee9d1"
+      "sha256": "26887c6da396ad889ccffb5bd0a6abd2571fea06ea6723cb4ac907d01bb17847"
     },
     {
       "path": "test/_astro/index.astro_astro_type_script_index_0_lang.CNpaBx1B.js",
@@ -231,19 +231,19 @@
       "sha256": "6487bdec0a3c9bb4dd1217af5d0c7aaebaa992be1b952e9d876f4c352364b83d"
     },
     {
-      "path": "test/_astro/translations.DH0C2Iud.js",
-      "bytes": 47984,
-      "sha256": "a4ed3842cc041a2e590a1308f7ed0cafb6d87633f6b5d224aea1e3ffd78fdc20"
+      "path": "test/_astro/translations.Rn6AOxk6.js",
+      "bytes": 48188,
+      "sha256": "db0bb6045b0c74d01da6b4f76785529aff85c4b1f502614c9138faaacbc91740"
     }
   ],
   "bundles": [
     "Footer.ByErD40X.css",
     "index@_@astro.BO-OquJj.css",
-    "Hero.astro_astro_type_script_index_0_lang.bF_y18ho.js",
+    "Hero.astro_astro_type_script_index_0_lang.BEivGyDI.js",
     "index.astro_astro_type_script_index_0_lang.CNpaBx1B.js",
     "contact@_@astro.34qkkl_F.css",
-    "contact.astro_astro_type_script_index_0_lang.CiwVHgOu.js",
-    "translations.DH0C2Iud.js",
+    "contact.astro_astro_type_script_index_0_lang.BrMzUH7c.js",
+    "translations.Rn6AOxk6.js",
     "motion.DilPGETn.js",
     "index.DEuOKImm.js",
     "ScrollTrigger.COm6oySp.js",
