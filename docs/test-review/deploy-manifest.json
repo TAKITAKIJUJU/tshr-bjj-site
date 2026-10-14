@@ -12,8 +12,8 @@
     },
     {
       "path": "test/english/index.html",
-      "bytes": 57862,
-      "sha256": "fe68694dfa770a70ee19f02ad3452dc7cdf5c468836278f22afe95e64f1a445a"
+      "bytes": 55576,
+      "sha256": "039f1723c4828473833dcd5c181efa3a1acec2c7ab2216ff8012e6838cfdf6d7"
     },
     {
       "path": "test/gunma/contact/index.html",
@@ -22,8 +22,8 @@
     },
     {
       "path": "test/gunma/index.html",
-      "bytes": 58813,
-      "sha256": "3d536d73a97a98648444b3cf961c62a6da13fa128041b91d95096f71c22407a3"
+      "bytes": 56443,
+      "sha256": "c9c524b0aaf4d54cb29146fb61b0adba954c37492786be533de389d831eae0cd"
     },
     {
       "path": "test/hero-poster.webp",
@@ -32,8 +32,8 @@
     },
     {
       "path": "test/index.html",
-      "bytes": 65233,
-      "sha256": "e18bc2a7ef8db29acf7288fa929758de5cd468fe35eaf72300c50e27cc20525c"
+      "bytes": 62911,
+      "sha256": "aab5d48a0b7c844f042ebec3acfe365dd451538aeb35812ac4da315c02ab4188"
     },
     {
       "path": "test/kids-new-1200.webp",
@@ -72,8 +72,8 @@
     },
     {
       "path": "test/portugues/index.html",
-      "bytes": 58995,
-      "sha256": "d550d81eee8f2e9a2500d12538613cde5f3fc47254297f2b82029bfd7dcbc7f6"
+      "bytes": 56729,
+      "sha256": "abf4d64cf1039b13895548a02d14223d48db5ab8153cd5fbd7096ed4eac2c74f"
     },
     {
       "path": "test/shared/flow1.webp",
@@ -211,9 +211,9 @@
       "sha256": "c2cb5634c9569170678d4d6d823fa1564236e63246b4098fad2a563014927dc7"
     },
     {
-      "path": "test/_astro/index@_@astro.DTpOgnSN.css",
-      "bytes": 40094,
-      "sha256": "d50b8da785fec527a5d3b4c65db715247a25d8a3d5e919c8bbd9cefac1c90198"
+      "path": "test/_astro/index@_@astro.esloJcGC.css",
+      "bytes": 38685,
+      "sha256": "cbf2da25e9659b654ebad1111207f455541f5b67807f9bef3764bb48cd760ef2"
     },
     {
       "path": "test/_astro/lenis.CK_K_E8Z.js",
@@ -238,7 +238,7 @@
   ],
   "bundles": [
     "Footer.D0dJNdJk.css",
-    "index@_@astro.DTpOgnSN.css",
+    "index@_@astro.esloJcGC.css",
     "Hero.astro_astro_type_script_index_0_lang.Bx42GJmA.js",
     "index.astro_astro_type_script_index_0_lang.CNpaBx1B.js",
     "contact@_@astro.34qkkl_F.css",
