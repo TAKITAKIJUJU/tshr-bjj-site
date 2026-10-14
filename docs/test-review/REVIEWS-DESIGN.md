@@ -26,3 +26,9 @@ Version: `321d3258-0785-42b0-803e-d2bd277909f7`
 `preview.mjs`に出力ディレクトリとポートの指定を追加。確認時は `node docs/test-review/preview.mjs docs/test-review/deploy-assets 4326` を使用。
 
 比較画像: `reviews-before-desktop.jpg`、`reviews-after-desktop.jpg`、`reviews-after-mobile.jpg`。
+
+## 続きを読む（追加調整）
+
+Ichiro Matsumotoの口コミのみ、最初の段落を常時表示し、「代表のタシロ先生は〜」以降をネイティブのdetails/summaryで折りたたむ。「続きを読む」→「閉じる」の表示切替、Enterでの開閉、390px幅での表示、CSPによるJavaScript停止時の開閉を確認。口コミ本文は保持し、英語・ポルトガル語も既存の全文翻訳を段落ごとに再利用。型チェックはエラー0・警告0、隔離ビルドと配布用HTML検証が成功。
+
+公開Workerの追加更新: `e9d0386e-8fad-4ae1-9d8e-73ceeb9647c5`。公開URLを再読み込みして開閉を確認。完成画像: `reviews-read-more.jpg`。

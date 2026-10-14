@@ -1,7 +1,7 @@
 ---
 const reviews = [
   {
-    name: 'Ichiro Matsumoto', image: 'ichiro-matsumoto.png', date: '2年前・Googleマップ',
+    name: 'Ichiro Matsumoto', image: 'ichiro-matsumoto.png', date: '2年前・Googleマップ', collapsible: true,
     body: 'とても広いマットスペースがあり、更衣スペースも保護者や見学の方が座って過ごせるスペースも十分にある素敵なジムです。\n\n代表のタシロ先生はとても気さくでフレンドリーな性格で、初めての方も緊張せず話すことができて、楽しく柔術を始めることができると思います。\n会員さんは日系ブラジリアンの方が多い印象ですが、どなたでも障壁なく柔術が楽しめるいいジムだと思います。',
   },
   {
@@ -45,7 +45,15 @@ const reviews = [
           </div>
           <div class="card-stars" role="img" aria-label="星5つ">★★★★★</div>
           {review.translated && <p class="translation-note">※ポルトガル語からの翻訳</p>}
-          <p class="review-body">{review.body}</p>
+          {review.collapsible ? (
+            <>
+              <p class="review-body">{review.body.split('\n\n')[0]}</p>
+              <details class="review-more">
+                <summary><span class="read-more">続きを読む</span><span class="read-less">閉じる</span></summary>
+                <p class="review-body">{review.body.split('\n\n').slice(1).join('\n\n')}</p>
+              </details>
+            </>
+          ) : <p class="review-body">{review.body}</p>}
         </article>
       ))}
     </div>
@@ -100,6 +108,12 @@ const reviews = [
   .card-stars { color: #b77900; font-size: 14px; letter-spacing: 2px; line-height: 1; margin-bottom: 16px; }
   .translation-note { font-size: 11px; color: #61655e; margin: 0 0 8px; }
   .review-body { font-size: 14px; line-height: 1.95; color: #373b34; margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .review-more { margin-top: 8px; }
+  .review-more summary { width: fit-content; min-height: 44px; padding-block: 10px; cursor: pointer; font-size: 13px; line-height: 24px; color: #373b34; text-decoration: underline; text-underline-offset: 4px; }
+  .review-more summary:focus-visible { outline: 2px solid #141613; outline-offset: 4px; }
+  .read-less, .review-more[open] .read-more { display: none; }
+  .review-more[open] .read-less { display: inline; }
+  .review-more[open] .review-body { margin-top: 8px; }
   .reviews-controls { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; }
   .reviews-controls[hidden] { display: none; }
   .review-position { font-family: 'Oswald', sans-serif; font-size: 13px; letter-spacing: .12em; color: #61655e; font-variant-numeric: tabular-nums; }

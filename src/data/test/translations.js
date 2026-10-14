@@ -1489,4 +1489,16 @@ const rows = [
   ]
 ];
 
+// Reuse the existing full-review translations for its two disclosure paragraphs.
+const expandableReview = rows.find(([ja]) => ja.startsWith('とても広いマットスペース'));
+if (expandableReview) {
+  for (const part of [0, 1]) {
+    rows.push(expandableReview.map(text => text.split('\n\n')[part]));
+  }
+}
+rows.push(
+  ['続きを読む', 'Read more', 'Ler mais', '続きを読む'],
+  ['閉じる', 'Close', 'Fechar', '閉じる'],
+);
+
 export const translations = Object.fromEntries(rows.map(([ja, en, pt, gunma]) => [ja, { en, pt, gunma: gunma || ja }]));
