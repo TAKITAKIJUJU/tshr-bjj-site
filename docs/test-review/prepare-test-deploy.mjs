@@ -55,7 +55,11 @@ function localize(html, locale, contact) {
   }
   if(node.nodeName==='#text'&&!skip){
    const match=node.value.match(/^(\s*)([\s\S]*?)(\s*)$/);
-   if(match){const translated=translations[match[2]]?.[locale];if(translated)node.value=match[1]+translated+match[3];}
+   if(match){
+    const key=match[2].replace(/\r\n/g,'\n');
+    const translated=translations[key]?.[locale]||translations[match[2]]?.[locale];
+    if(translated)node.value=match[1]+translated+match[3];
+   }
   }
   const nextSkip=skip||['script','style','svg'].includes(tag)||hasClass(node,'language-picker');
   if(node.childNodes)node.childNodes=node.childNodes.filter(child=>!(child.tagName==='script'&&get(child,'type')==='application/ld+json'));

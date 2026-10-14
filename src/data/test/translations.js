@@ -1372,6 +1372,102 @@ const rows = [
     "STEP 03",
     "ETAPA 03",
     "STEP 03"
+  ],
+  [
+    "GOOGLE MAPS REVIEWS",
+    "GOOGLE MAPS REVIEWS",
+    "AVALIAÇÕES DO GOOGLE MAPS",
+    "GOOGLE MAPS REVIEWS"
+  ],
+  [
+    "Googleマップのクチコミ・評判",
+    "Google Maps Reviews & Ratings",
+    "Avaliações e Opiniões no Google Maps",
+    "Googleマップのクチコミ・評判なんさ"
+  ],
+  [
+    "出稽古や見学・体験に来られた方、道場に通われていた方からGoogleマップに寄せられたリアルな声です。",
+    "Authentic reviews on Google Maps from visitors, trial participants, guest practitioners, and former students.",
+    "Avaliações reais no Google Maps de visitantes, alunos de treino livre (intercâmbio) e ex-alunos da academia.",
+    "出稽古や見学・体験に来てくれた人や、道場に通ってたみんなからGoogleマップに寄せられたリアルな声だいね。"
+  ],
+  [
+    "Google 口コミ",
+    "Google Reviews",
+    "Avaliações Google",
+    "Googleのクチコミ"
+  ],
+  [
+    "全件をGoogleで見る ↗",
+    "View all on Google ↗",
+    "Ver todas no Google ↗",
+    "全部をGoogleで見る ↗"
+  ],
+  [
+    "Googleマップで見る ↗",
+    "View on Google Maps ↗",
+    "Ver no Google Maps ↗",
+    "Googleマップで見る ↗"
+  ],
+  [
+    "道場代表からの返信",
+    "Response from Head Instructor",
+    "Resposta do Professor",
+    "代表からの返信なんさ"
+  ],
+  [
+    "※ポルトガル語からの翻訳",
+    "*Translated from Portuguese",
+    "*Idioma original: Português",
+    "※ポルトガル語からの翻訳なんさ"
+  ],
+  [
+    "9か月前・Google マップ",
+    "9 months ago · Google Maps",
+    "há 9 meses · Google Maps",
+    "9か月前・Google マップ"
+  ],
+  [
+    "5年前・Google マップ",
+    "5 years ago · Google Maps",
+    "há 5 anos · Google Maps",
+    "5年前・Google マップ"
+  ],
+  [
+    "4年前・Google マップ",
+    "4 years ago · Google Maps",
+    "há 4 anos · Google Maps",
+    "4年前・Google マップ"
+  ],
+  [
+    "とても広いマットスペースがあり、更衣スペースも保護者や見学の方が座って過ごせるスペースも十分にある素敵なジムです。\n\n代表のタシロ先生はとても気さくでフレンドリーな性格で、初めての方も緊張せず話すことができて、楽しく柔術を始めることができると思います。\n会員さんは日系ブラジリアンの方が多い印象ですが、どなたでも障壁なく柔術が楽しめるいいジムだと思います。",
+    "A wonderful gym with very spacious mat area, plenty of changing space, and ample seating for parents and observers.\n\nHead Instructor Tashiro is very friendly and approachable, making beginners feel relaxed and welcome. A great academy where anyone can enjoy Jiu-Jitsu without barrier.",
+    "Uma academia incrível com tatame muito amplo, vestiários confortáveis e bastante espaço para pais e acompanhantes assistirem.\n\nO professor Tashiro é super simpático e atencioso, deixando os iniciantes à vontade. Um dojo excelente onde qualquer pessoa pode treinar sem barreiras.",
+    "なっから広いマットがあって、着替えも親御さんや見学の人が座れる場所も十分にあるいい道場なんさ。\n\n代表のタシロ先生はすごく気さくで話しやすいから、初めてでも緊張しねぇで楽しく柔術を始められると思うよ。誰でも壁なく柔術を楽しめるいいジムだいね。"
+  ],
+  [
+    "松本先生、ありがとうございます‼️ また一緒に練習やりましょう‼️",
+    "Thank you so much, Professor Matsumoto!! Let's train together again soon!!",
+    "Muito obrigado pelo feedback, Professor Matsumoto!! Vamos treinar juntos novamente!!",
+    "松本先生、ありがとうございます‼️ また一緒に練習やるべぇ‼️"
+  ],
+  [
+    "上里町から本庄駅前に引っ越したばかりで白を基調にしたとてもキレイな柔術道場。先生はとても細かく丁寧に教えてくれます。\nスパーリングも自由参加、筋トレとか辛い指導はありません。",
+    "A beautifully clean Jiu-Jitsu dojo based on white interior, freshly relocated to near Honjo Station. The instructor teaches every technique with great detail and patience. Sparring is optional and there is no harsh or forced physical training.",
+    "Uma academia de Jiu-Jitsu linda e limpa, recém-mudada para perto da estação de Honjo. O professor ensina com muito detalhe e paciência. O sparring é livre e não há treinos físicos puxados forçados.",
+    "本庄駅前に引っ越したばかりで、白を基調にしたなっから綺麗な柔術道場なんさ。先生が手取り足取り丁寧に教えてくれるよ。スパーリングも自由参加だし、辛い筋トレの押しつけもねぇよ。"
+  ],
+  [
+    "最高です、本当におすすめです！柔術について素晴らしい指導が受けられますし、クラスの構成も非常にしっかりしていて、先生から直接指導を受けられます。",
+    "Top quality, highly recommended! You get excellent guidance on Jiu-Jitsu, classes are very well structured, and you receive direct instruction from the professor.",
+    "Top, recomendo vc vai ter uma super orientação sobre o jiu-jítsu e as aulas são muito bem elaboradas com a orientação direta do professor",
+    "最高なんさ、なっからおすすめだいね！柔術について素晴らしい指導を受けられるし、クラスの組み立てもしっかりしてて、先生から直接教えてもらえるんさ。"
+  ],
+  [
+    "フィードバックありがとう、ペレイラ。ビッグハグ、ブラザー！",
+    "Thanks for the feedback, Pereira. Big hug, brother!",
+    "Arigato pelo feedback Pereira. Abração irmão",
+    "フィードバックありがとな、ペレイラ！ビッグハグ、ブラザー！"
   ]
 ];
 

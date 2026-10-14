@@ -91,8 +91,9 @@ function traverseAndReplace(node, lang, isInsideHero = false) {
   if (node.nodeName === '#text') {
     const raw = node.value;
     const trimmed = raw.trim();
-    if (trimmed && translations[trimmed] && translations[trimmed][lang]) {
-      const translated = translations[trimmed][lang];
+    const key = trimmed.replace(/\r\n/g, '\n');
+    const translated = translations[key]?.[lang] || translations[trimmed]?.[lang];
+    if (trimmed && translated) {
       // Preserve leading and trailing whitespace/newlines
       const leading = raw.match(/^\s*/)[0];
       const trailing = raw.match(/\s*$/)[0];
