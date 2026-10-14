@@ -158,15 +158,15 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* === Motion States === */
-.js-motion .motion-up {
+.test-motion-pending .motion-up:not(#hero *) {
   opacity: 0;
-  transform: translate3d(0, 20px, 0);
-  filter: blur(0px);
+  transform: translate3d(0, 48px, 0);
+  filter: blur(6px);
   will-change: transform, opacity, filter;
   backface-visibility: hidden;
 }
 
-.js-motion .motion-fade {
+.test-motion-pending .motion-fade:not(#hero *) {
   opacity: 0;
   transform: translate3d(0, 0, 0);
   filter: blur(0px);
@@ -174,26 +174,26 @@ img { max-width: 100%; height: auto; display: block; }
   backface-visibility: hidden;
 }
 
-.js-motion .motion-left {
+.test-motion-pending .motion-left:not(#hero *) {
   opacity: 0;
-  transform: translate3d(-24px, 0, 0);
-  filter: blur(0px);
+  transform: translate3d(-48px, 0, 0);
+  filter: blur(6px);
   will-change: transform, opacity, filter;
   backface-visibility: hidden;
 }
 
-.js-motion .motion-right {
+.test-motion-pending .motion-right:not(#hero *) {
   opacity: 0;
-  transform: translate3d(24px, 0, 0);
-  filter: blur(0px);
+  transform: translate3d(48px, 0, 0);
+  filter: blur(6px);
   will-change: transform, opacity, filter;
   backface-visibility: hidden;
 }
 
-.js-motion .motion-scale {
+.test-motion-pending .motion-scale:not(#hero *) {
   opacity: 0;
-  transform: translate3d(0, 20px, 0) scale(0.99);
-  filter: blur(0px);
+  transform: translate3d(0, 24px, 0) scale(0.975);
+  filter: blur(4px);
   will-change: transform, opacity, filter;
   transform-origin: 50% 60%;
   backface-visibility: hidden;
@@ -338,11 +338,11 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .js-motion .motion-up,
-  .js-motion .motion-fade,
-  .js-motion .motion-left,
-  .js-motion .motion-right,
-  .js-motion .motion-scale {
+  .test-motion-pending .motion-up:not(#hero *),
+  .test-motion-pending .motion-fade:not(#hero *),
+  .test-motion-pending .motion-left:not(#hero *),
+  .test-motion-pending .motion-right:not(#hero *),
+  .test-motion-pending .motion-scale:not(#hero *) {
     opacity: 1;
     transform: none;
     filter: none;

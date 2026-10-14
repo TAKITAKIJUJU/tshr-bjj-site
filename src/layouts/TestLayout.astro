@@ -24,6 +24,13 @@ const schema = { '@context': 'https://schema.org', '@graph': [
   <meta http-equiv="Content-Security-Policy" content="form-action 'none'; connect-src 'self' ws://127.0.0.1:* ws://localhost:*" />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="format-detection" content="telephone=no" />
+  <script is:inline>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('test-motion-pending');
+      // If the animation module cannot load, restore the page without hiding it indefinitely.
+      window.setTimeout(() => document.documentElement.classList.remove('test-motion-pending'), 4000);
+    }
+  </script>
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
