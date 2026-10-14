@@ -22,7 +22,7 @@ const languageSuffix = Astro.url.pathname.includes('/contact') ? 'contact/' : ''
     </nav>
     <div class="header__actions">
       <details class="language-picker">
-        <summary class="language-trigger" aria-label="言語を選択"><span class="language-current">日本語</span><span aria-hidden="true">⌄</span></summary>
+        <summary class="language-trigger" aria-label="言語を選択"><span class="language-current">日本語</span><svg class="language-chevron" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></summary>
         <nav class="language-options" aria-label="言語">
           <a data-language="ja" href={`/test/${languageSuffix}`} lang="ja" aria-current="page">日本語</a>
           <a data-language="en" href={`/test/english/${languageSuffix}`} lang="en">English</a>
@@ -45,7 +45,7 @@ const languageSuffix = Astro.url.pathname.includes('/contact') ? 'contact/' : ''
       <img class="logo-wordmark" src="/LOGO2.webp" width="424" height="104" alt="" />
     </a>
     <details class="language-picker language-picker--menu">
-      <summary class="language-trigger" aria-label="言語を選択"><span class="language-current">日本語</span><span aria-hidden="true">⌄</span></summary>
+      <summary class="language-trigger" aria-label="言語を選択"><span class="language-current">日本語</span><svg class="language-chevron" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></summary>
       <nav class="language-options" aria-label="言語">
         <a data-language="ja" href={`/test/${languageSuffix}`} lang="ja" aria-current="page">日本語</a>
         <a data-language="en" href={`/test/english/${languageSuffix}`} lang="en">English</a>
@@ -132,18 +132,19 @@ const languageSuffix = Astro.url.pathname.includes('/contact') ? 'contact/' : ''
   .header__nav a:hover { opacity:.7; text-decoration:underline; text-decoration-color:#ff6b00; text-decoration-thickness:2px; text-underline-offset:8px; }
   .header__actions { display:flex; align-items:center; gap:20px; flex-shrink:0; }
   .language-picker { position:relative; flex-shrink:0; }
-  .language-trigger { display:flex; align-items:center; gap:6px; min-height:38px; padding:0 14px; background:#fff; color:#141613; border:1px solid #ffffff80; border-radius:999px; box-shadow:0 3px 12px #0000001f; font:700 12px 'Noto Sans JP',sans-serif; cursor:pointer; white-space:nowrap; list-style:none; }
+  .language-trigger { display:flex; align-items:center; justify-content:center; gap:5px; min-height:40px; padding:0 10px; background:#fff; color:#141613; border:1px solid #dedfd9; border-radius:3px; box-shadow:none; font:700 12px 'Noto Sans JP',sans-serif; cursor:pointer; white-space:nowrap; list-style:none; }
   .language-trigger::-webkit-details-marker { display:none; }
-  .language-options { position:absolute; top:calc(100% + 5px); right:0; z-index:3; min-width:154px; padding:6px; background:#fff; color:#141613; border:1px solid #14161333; border-radius:10px; box-shadow:0 10px 30px #0003; }
-  .language-options a { display:flex; align-items:center; width:100%; min-height:40px; padding:8px 10px; border-radius:6px; color:inherit; text-decoration:none; font:700 13px 'Noto Sans JP',sans-serif; }
+  .language-chevron { flex-shrink:0; }
+  .language-options { position:absolute; top:calc(100% + 5px); right:0; z-index:3; min-width:154px; padding:6px; background:#fff; color:#141613; border:1px solid #dedfd9; border-radius:3px; box-shadow:0 4px 12px #0000001f; }
+  .language-options a { display:flex; align-items:center; width:100%; min-height:40px; padding:8px 10px; border-radius:2px; color:inherit; text-decoration:none; font:700 13px 'Noto Sans JP',sans-serif; }
   .language-options a:hover,.language-options a[aria-current="page"] { background:#ff6b00; }
-  .reservation { display:flex; align-items:center; height:46px; padding:0 24px; background:#ff6b00; color:#141613; border-radius:4px 18px 4px 18px; font-size:13px; font-weight:800; letter-spacing:.05em; text-decoration:none; white-space:nowrap; }
+  .reservation { display:flex; align-items:center; height:46px; padding:0 24px; background:#ff6b00; color:#141613; border-radius:999px; font-size:13px; font-weight:800; letter-spacing:.05em; text-decoration:none; white-space:nowrap; }
   .reservation:hover,.menu-reservation:hover { background:#fff; color:#141613; }
   .menu-toggle,.menu-close { width:46px; height:46px; border:2px solid #fff; background:#fff; border-radius:50%; color:#141613; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; cursor:pointer; padding:0; flex-shrink:0; }
   .menu-toggle { border-color:transparent; background:transparent; color:#fff; }
   .menu-toggle { display:none; }
   .menu-toggle[hidden] { display:none; }
-  .menu-toggle span { width:18px; height:1.5px; background:currentColor; }
+  .menu-toggle span { width:20px; height:3px; background:currentColor; border-radius:999px; }
   .site-menu { position:fixed; inset:0; margin:0; width:100%; max-width:none; height:100dvh; max-height:none; padding:68px 20px 28px; border:0; background:#ff6b00; color:#141613; overflow-y:auto; overscroll-behavior:contain; font-family:'Noto Sans JP',sans-serif; }
   .site-menu:not([open]) { display:none; }
   .site-menu::backdrop { background:#ff6b00; }
@@ -171,7 +172,7 @@ const languageSuffix = Astro.url.pathname.includes('/contact') ? 'contact/' : ''
   .fallback-nav { display:flex; flex-wrap:wrap; gap:16px; padding:90px 20px 20px; background:white; }
   .fallback-nav a { color:#1b1a18; min-height:44px; display:flex; align-items:center; }
   @keyframes menu-in { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:none; } }
-  @media (max-width:1199px) { .header__nav,.reservation { display:none; } .header__actions { margin-left:auto; gap:14px; } .menu-toggle:not([hidden]) { display:flex; } }
+  @media (max-width:1199px) { .header__nav,.reservation { display:none; } .header__actions { margin-left:auto; gap:14px; } .language-trigger { min-height:44px; } .menu-toggle:not([hidden]) { display:flex; } }
   @media (min-width:1200px) and (max-width:1499px) {
     :global(html:lang(en)) .header__nav, :global(html:lang(pt)) .header__nav,
     :global(html:lang(en)) .reservation, :global(html:lang(pt)) .reservation { display:none; }

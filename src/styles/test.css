@@ -352,6 +352,10 @@ img { max-width: 100%; height: auto; display: block; }
 
 
 /* Test-only usability; production CSS is unchanged. */
+#main-content.home-page > .section { padding-block:80px; }
+@media (max-width:860px) {
+ #main-content.home-page > .section { padding-block:52px; }
+}
 :focus-visible { outline:3px solid #0753a1; outline-offset:4px; }
 [hidden] { display:none!important; }
 section[id] { scroll-margin-top:80px; }
