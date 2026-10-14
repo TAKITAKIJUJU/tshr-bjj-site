@@ -22,3 +22,14 @@
 Worker version: `6edffaf7-d088-4644-8783-1931a19c0592`
 
 比較画像: `spacing-header-before.jpg`、`spacing-header-after.jpg`、`header-hero-mobile.jpg`。
+
+## 追加調整（2026-10-15）
+
+- 日本語の縦書きヒーローコピー全体を、文字サイズと字間を含む1文字送り分だけ下へ移動。既存の14文字を個別の`.hero__char`として扱うGSAPアニメーション（0.08秒間隔）は維持。
+- スクロール後のヘッダー背景を黒の84%不透明度へ変更し、映像上でもナビゲーションが読みやすい濃さに調整。
+- 下部固定CTAは黒50%の単純な透過にし、`backdrop-filter`と影を削除。
+- 390px幅の公開表示で、ヒーロー移動量50px、ヘッダー背景`rgba(20, 22, 19, 0.84)`、固定CTA背景`rgba(0, 0, 0, 0.5)`、固定CTAのぼかし・影が`none`であることを確認。
+
+公開Worker version: `4759b122-055f-4d91-bea0-293d5ccb61e2`
+
+確認画像: `hero-header-footer-final.jpg`。
