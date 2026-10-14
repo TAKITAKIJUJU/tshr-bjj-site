@@ -24,4 +24,6 @@ pnpm-debug.log*
 .idea/
 public/hero.mp4
 Treino Academia TSHR.MP4
+*.bak
+fuckfuck.html
 local-assets/
