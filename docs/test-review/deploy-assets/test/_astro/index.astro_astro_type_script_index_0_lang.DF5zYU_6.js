@@ -1,1 +1,0 @@
-import{a as o}from"./motion.gavrckah.js";o();const e=document.querySelector(".bottom-fixed-cta");if(e){const t=new ResizeObserver(()=>document.body.style.setProperty("--test-cta-height",e.getBoundingClientRect().height+"px"));t.observe(e),window.addEventListener("pagehide",()=>t.disconnect(),{once:!0})}

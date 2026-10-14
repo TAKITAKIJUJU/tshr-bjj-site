@@ -195,7 +195,7 @@
       "status": 200
     },
     {
-      "path": "test/_astro/contact.astro_astro_type_script_index_0_lang.BObT8gjV.js",
+      "path": "test/_astro/contact.astro_astro_type_script_index_0_lang.s6KEEjQh.js",
       "status": 200
     },
     {
@@ -203,7 +203,7 @@
       "status": 200
     },
     {
-      "path": "test/_astro/Footer.O4w3MWxD.css",
+      "path": "test/_astro/Footer.NZmAIZFN.css",
       "status": 200
     },
     {
@@ -211,7 +211,7 @@
       "status": 200
     },
     {
-      "path": "test/_astro/index.astro_astro_type_script_index_0_lang.DF5zYU_6.js",
+      "path": "test/_astro/index.astro_astro_type_script_index_0_lang.Cr1kTbUk.js",
       "status": 200
     },
     {
@@ -227,7 +227,7 @@
       "status": 200
     },
     {
-      "path": "test/_astro/motion.gavrckah.js",
+      "path": "test/_astro/motion.CuYz2uPV.js",
       "status": 200
     },
     {
@@ -241,12 +241,12 @@
   ],
   "scriptSources": [
     "/test/_astro/Hero.astro_astro_type_script_index_0_lang.DisckP-n.js",
-    "/test/_astro/index.astro_astro_type_script_index_0_lang.DF5zYU_6.js",
-    "/test/_astro/contact.astro_astro_type_script_index_0_lang.BObT8gjV.js"
+    "/test/_astro/index.astro_astro_type_script_index_0_lang.Cr1kTbUk.js",
+    "/test/_astro/contact.astro_astro_type_script_index_0_lang.s6KEEjQh.js"
   ],
   "barePath": {
     "status": 308,
     "location": "https://tshr-bjj.com/test/"
   },
-  "checkedAt": "2026-10-14T17:46:59.360Z"
+  "checkedAt": "2026-10-14T17:55:24.160Z"
 }

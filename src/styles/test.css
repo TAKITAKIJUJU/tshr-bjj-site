@@ -160,8 +160,8 @@ img { max-width: 100%; height: auto; display: block; }
 /* === Motion States === */
 .js-motion .motion-up {
   opacity: 0;
-  transform: translate3d(0, 48px, 0);
-  filter: blur(6px);
+  transform: translate3d(0, 20px, 0);
+  filter: blur(0px);
   will-change: transform, opacity, filter;
   backface-visibility: hidden;
 }
@@ -176,24 +176,24 @@ img { max-width: 100%; height: auto; display: block; }
 
 .js-motion .motion-left {
   opacity: 0;
-  transform: translate3d(-48px, 0, 0);
-  filter: blur(6px);
+  transform: translate3d(-24px, 0, 0);
+  filter: blur(0px);
   will-change: transform, opacity, filter;
   backface-visibility: hidden;
 }
 
 .js-motion .motion-right {
   opacity: 0;
-  transform: translate3d(48px, 0, 0);
-  filter: blur(6px);
+  transform: translate3d(24px, 0, 0);
+  filter: blur(0px);
   will-change: transform, opacity, filter;
   backface-visibility: hidden;
 }
 
 .js-motion .motion-scale {
   opacity: 0;
-  transform: translate3d(0, 24px, 0) scale(0.975);
-  filter: blur(4px);
+  transform: translate3d(0, 20px, 0) scale(0.99);
+  filter: blur(0px);
   will-change: transform, opacity, filter;
   transform-origin: 50% 60%;
   backface-visibility: hidden;
