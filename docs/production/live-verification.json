@@ -21,11 +21,37 @@
       "contactLinks": 8
     }
   ],
-  "assets": 69,
+  "assets": 118,
   "contactPublished": true,
   "formMatchesPackage": true,
   "sitemapPublished": true,
   "testContactRetained": true,
   "privacyPublished": true,
-  "thanksPublished": true
+  "thanksPublished": true,
+  "footerRepresentativeRemoved": [
+    "/",
+    "/english/",
+    "/portugues/",
+    "/gunma/",
+    "/contact/",
+    "/privacy/",
+    "/thanks/"
+  ],
+  "videoDelivery": [
+    {
+      "url": "/site/media/hero-desktop-ba04b95a5b49.webm",
+      "range": true,
+      "immutable": true
+    },
+    {
+      "url": "/site/media/hero-mobile-41817fbacd47.webm",
+      "range": true,
+      "immutable": true
+    },
+    {
+      "url": "/site/media/hero-fallback-19c18b9ca432.mp4",
+      "range": true,
+      "immutable": true
+    }
+  ]
 }

@@ -1,5 +1,7 @@
 ---
 // Facility.astro - Redesigned based on fuckfuck.html with Orange theme & Lightbox
+import ResponsiveImage from '../ResponsiveImage.astro';
+const sizes='(max-width:860px) calc((100vw - 44px) / 2), 300px';
 ---
 
 <section class="section facility" id="facility">
@@ -14,28 +16,28 @@
 
     <div class="gallery">
       <button type="button" aria-label="道場マットスペースの写真を拡大" class="motion-scale" data-motion-delay="0.0">
-        <img width="600" height="444" decoding="async" src="/processed-16A4994D-E073-48E0-A49C-89AF5897EAE1.webp" alt="Over Limit 本庄の清潔で広々とした柔術専用マットスペース" loading="lazy" />
+        <ResponsiveImage name="processed-16A4994D-E073-48E0-A49C-89AF5897EAE1" width={600} height={444} sizes={sizes} fullSize alt="Over Limit 本庄の清潔で広々とした柔術専用マットスペース" />
       </button>
       <button type="button" aria-label="道場練習環境の写真を拡大" class="motion-scale" data-motion-delay="0.08">
-        <img width="600" height="444" decoding="async" src="/processed-3BFA741D-A026-4EB4-B9BF-1992C5195C35.webp" alt="本庄市の道場内 衝撃吸収に優れた安全な練習用フロアマット" loading="lazy" />
+        <ResponsiveImage name="processed-3BFA741D-A026-4EB4-B9BF-1992C5195C35" width={600} height={444} sizes={sizes} fullSize alt="本庄市の道場内 衝撃吸収に優れた安全な練習用フロアマット" />
       </button>
       <button type="button" aria-label="施設設備の写真を拡大" class="motion-scale" data-motion-delay="0.16">
-        <img width="600" height="444" decoding="async" src="/processed-8E9EA17C-03F5-4922-8835-CA5BCC9157A0.webp" alt="更衣室・待機スペースを備えた本庄市の柔術ジム設備" loading="lazy" />
+        <ResponsiveImage name="processed-8E9EA17C-03F5-4922-8835-CA5BCC9157A0" width={600} height={444} sizes={sizes} fullSize alt="更衣室・待機スペースを備えた本庄市の柔術ジム設備" />
       </button>
       <button type="button" aria-label="道場内観の写真を拡大" class="motion-scale" data-motion-delay="0.24">
-        <img width="600" height="444" decoding="async" src="/processed-99EE1602-384F-4E8E-967D-BECE71CB9431.webp" alt="明るく快適に通いやすい道場内の練習環境" loading="lazy" />
+        <ResponsiveImage name="processed-99EE1602-384F-4E8E-967D-BECE71CB9431" width={600} height={444} sizes={sizes} fullSize alt="明るく快適に通いやすい道場内の練習環境" />
       </button>
       <button type="button" aria-label="マットフロアの写真を拡大" class="motion-scale" data-motion-delay="0.08">
-        <img width="600" height="444" decoding="async" src="/processed-9EB7D774-131B-4FB1-8FCC-D00036F7257A.webp" alt="初心者やキッズも安心して運動できる柔術マット" loading="lazy" />
+        <ResponsiveImage name="processed-9EB7D774-131B-4FB1-8FCC-D00036F7257A" width={600} height={444} sizes={sizes} fullSize alt="初心者やキッズも安心して運動できる柔術マット" />
       </button>
       <button type="button" aria-label="道場内設備の写真を拡大" class="motion-scale" data-motion-delay="0.16">
-        <img width="600" height="444" decoding="async" src="/processed-AA442933-C10A-41AE-81AB-B86057D3678A.webp" alt="道場内の充実したトレーニング設備と清潔な空間" loading="lazy" />
+        <ResponsiveImage name="processed-AA442933-C10A-41AE-81AB-B86057D3678A" width={600} height={444} sizes={sizes} fullSize alt="道場内の充実したトレーニング設備と清潔な空間" />
       </button>
       <button type="button" aria-label="壁面安全マットの写真を拡大" class="motion-scale" data-motion-delay="0.24">
-        <img width="600" height="444" decoding="async" src="/processed-C46A2648-B6DD-4D42-9573-D11E32E9083D.webp" alt="怪我予防に配慮された壁面クッション・セーフティガード" loading="lazy" />
+        <ResponsiveImage name="processed-C46A2648-B6DD-4D42-9573-D11E32E9083D" width={600} height={444} sizes={sizes} fullSize alt="怪我予防に配慮された壁面クッション・セーフティガード" />
       </button>
       <button type="button" aria-label="道場全体風景の写真を拡大" class="motion-scale" data-motion-delay="0.32">
-        <img width="600" height="444" decoding="async" src="/processed-E1AC7486-1624-4F7D-ACF8-536A9FC6F0DA.webp" alt="本庄駅徒歩6分 Over Limit 本庄 道場内の全体風景" loading="lazy" />
+        <ResponsiveImage name="processed-E1AC7486-1624-4F7D-ACF8-536A9FC6F0DA" width={600} height={444} sizes={sizes} fullSize alt="本庄駅徒歩6分 Over Limit 本庄 道場内の全体風景" />
       </button>
     </div>
   </div>
@@ -61,12 +63,12 @@
       if (!image || !lightbox || !lightboxImage) return;
 
       if (typeof lightbox.showModal !== "function") {
-        window.open(image.src, "_blank", "noopener");
+        window.open(image.dataset.fullSrc || image.src, "_blank", "noopener");
         return;
       }
 
       lastGalleryButton = button;
-      lightboxImage.src = image.currentSrc || image.src;
+      lightboxImage.src = image.dataset.fullSrc || image.currentSrc || image.src;
       lightboxImage.alt = image.alt;
       lightbox.showModal();
       document.body.classList.add("lightbox-open");

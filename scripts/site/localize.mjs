@@ -37,6 +37,11 @@ export function localizeSiteHtml(html, locale) {
     return typeof value==='string'?convert(value):value;
   }
   for(const node of walk(doc)) {
+    if(node.tagName==='button'&&get(node,'class')?.split(/\s+/).includes('video-toggle')) {
+      for(const [attribute,label] of [['data-play-label','映像を再生'],['data-pause-label','映像を停止']]) {
+        set(node,attribute,locale==='ja'?label:translations[label]?.[locale]??label);
+      }
+    }
     if(node.tagName==='title')node.childNodes=[{nodeName:'#text',value:titles[locale],parentNode:node}];
     if(node.tagName==='meta') {
       const name=get(node,'name'), property=get(node,'property');
@@ -61,9 +66,12 @@ export function localizeSiteHtml(html, locale) {
           entity.name=titles[locale];
           entity.description=descriptions[locale];
           entity.url=canonical;
-          entity.inLanguage=locale==='pt'?'pt-BR':locale;
+          entity.inLanguage=locale==='pt'?'pt-BR':locale==='gunma'?'ja':locale;
         }
-        if(entity['@type']==='WebSite')entity.name=locale==='en'||locale==='pt'?'Over Limit Honjo':'Over Limit 本庄';
+        if(entity['@type']==='WebSite') {
+          entity.name=locale==='en'||locale==='pt'?'Over Limit Honjo':'Over Limit 本庄';
+          entity.inLanguage=locale==='pt'?'pt-BR':locale==='gunma'?'ja':locale;
+        }
         if(entity['@type']==='SportsActivityLocation') {
           if(locale==='en'||locale==='pt') {
             entity.name='Over Limit Honjo';

@@ -1,0 +1,146 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "textHash": "9205cd7ef96750e45f2924dee367d4749a4f95c13a9302afe8062b7b4a8a6139",
+      "fonts": [
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap"
+      ]
+    },
+    {
+      "route": "/english/",
+      "textHash": "67fc6a2260d552ecc866c157f48a36cb3f437da3842cb7ec93a3c8807e56c60a",
+      "fonts": [
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap"
+      ]
+    },
+    {
+      "route": "/portugues/",
+      "textHash": "a817973947e18a600b7384f0293fa9b9a598bcaf11de955ac43c49820423df7e",
+      "fonts": [
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap"
+      ]
+    },
+    {
+      "route": "/gunma/",
+      "textHash": "1c3162452eed28045ecc81827a20d4996a7dce72c11e4cce6904373b902b608f",
+      "fonts": [
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap"
+      ]
+    }
+  ],
+  "unchanged": [
+    {
+      "route": "/test/",
+      "hash": "60f79ff9c4395d44b16db457257dc71207cd7d5ae3fc4374bc3e9024e5047387"
+    },
+    {
+      "route": "/test/english/",
+      "hash": "c8e01c45275603fb25cd1444dba7c0e303d9db373e3a4a0acb4354ab00ea7bfc"
+    },
+    {
+      "route": "/test/portugues/",
+      "hash": "1992b2db748aa5d2fa5169ea00b07e30572d1f9fb41c754e17c4ccdb4291c06d"
+    },
+    {
+      "route": "/test/gunma/",
+      "hash": "0abf4033d544a32ecc5771b9eed0feee09b5fbc2976b3daf79ffc3c8207f12c6"
+    },
+    {
+      "route": "/test/contact/",
+      "hash": "cb392df593bbfcb2a6b433e8446091e5d40aa665f78a1225469d4e2b4651e485"
+    },
+    {
+      "route": "/test/english/contact/",
+      "hash": "8ab9e9e449f5169e7ceec5b8c7dd8d1654225a075f316e55a21c1620ba84b06c"
+    },
+    {
+      "route": "/test/portugues/contact/",
+      "hash": "729459a2a33fa83de8d035c5d6d39bd0827d962a4e1ca5ea1f437f1569a9bc7e"
+    },
+    {
+      "route": "/test/gunma/contact/",
+      "hash": "81e560dd8fe8f0ca47c9a38916b4d4cd0e1374ebacc8394fa232fc52b4c03bdb"
+    },
+    {
+      "route": "/contact/",
+      "hash": "988baadcb49ce1d51a82b67c9c53db2216af391321ad9fe0b6ef343bc9ece29e"
+    },
+    {
+      "route": "/privacy/",
+      "hash": "ec044048d6f197ea524a69bad418a4f60e61d790b89fc830d1d51d32b57a4619"
+    },
+    {
+      "route": "/thanks/",
+      "hash": "caa65e91ea17131af86d364cfb08b6a93a6cbd17c9dcdfb21b9bdff070cc24f1"
+    },
+    {
+      "route": "/demo/",
+      "hash": "74befe184222ab95b0992b25e07b9812c8b79fda3fa0268623948b9b83356b99"
+    },
+    {
+      "route": "/robots.txt",
+      "hash": "68a800ebecf157e3e5b24fd75e64498a86b284f9f173d55bb400bc711cb59846"
+    },
+    {
+      "route": "/sitemap.xml",
+      "hash": "d3ad835ed701db4e7c4daee6b5751c78258cbb9e3a6a607399f7d8238a2ed251"
+    }
+  ],
+  "javascript": {
+    "files": [
+      {
+        "url": "#inline-0",
+        "bytes": 350,
+        "gzipBytes": 225
+      },
+      {
+        "url": "#inline-1",
+        "bytes": 1411,
+        "gzipBytes": 631
+      },
+      {
+        "url": "#inline-2",
+        "bytes": 311,
+        "gzipBytes": 210
+      },
+      {
+        "url": "#inline-3",
+        "bytes": 1244,
+        "gzipBytes": 599
+      },
+      {
+        "url": "#inline-4",
+        "bytes": 803,
+        "gzipBytes": 417
+      },
+      {
+        "url": "https://tshr-bjj.com/site/_astro/Hero.astro_astro_type_script_index_0_lang.BXLe86z1.js",
+        "bytes": 58601,
+        "gzipBytes": 21295
+      },
+      {
+        "url": "https://tshr-bjj.com/site/_astro/index.astro_astro_type_script_index_0_lang.DtzljrTM.js",
+        "bytes": 4157,
+        "gzipBytes": 1592
+      },
+      {
+        "url": "https://tshr-bjj.com/site/_astro/index.DDlvirwQ.js",
+        "bytes": 69893,
+        "gzipBytes": 27480
+      },
+      {
+        "url": "https://tshr-bjj.com/site/_astro/ScrollTrigger.CB6UHAJl.js",
+        "bytes": 43193,
+        "gzipBytes": 17997
+      },
+      {
+        "url": "https://tshr-bjj.com/site/_astro/lenis.CBlNbkdS.js",
+        "bytes": 17682,
+        "gzipBytes": 5045
+      }
+    ],
+    "bytes": 197645,
+    "gzipBytes": 75491
+  }
+}

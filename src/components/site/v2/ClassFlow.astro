@@ -1,4 +1,5 @@
 ---
+import ResponsiveImage from '../ResponsiveImage.astro';
 // ClassFlow.astro - Redesigned based on fuckfuck.html with Orange theme
 ---
 
@@ -15,7 +16,7 @@
     <div class="flow-grid">
       <article class="flow-card motion-up" data-motion-delay="0.0">
         <div class="flow-image">
-          <img width="1200" height="800" decoding="async" src="/flow1.webp" alt="柔術クラスの流れ STEP1 準備体操・受身・マット運動" loading="lazy" />
+          <ResponsiveImage name="flow1" width={1200} height={800} sizes="(max-width:860px) calc(100vw - 74px), 360px" alt="柔術クラスの流れ STEP1 準備体操・受身・マット運動" />
           <span class="flow-step">STEP 01</span>
         </div>
         <h3>準備・マット運動</h3>
@@ -24,7 +25,7 @@
 
       <article class="flow-card motion-up" data-motion-delay="0.15">
         <div class="flow-image">
-          <img width="1200" height="800" decoding="async" src="/flow2.webp" alt="柔術クラスの流れ STEP2 テクニック解説とペアでの反復練習" loading="lazy" />
+          <ResponsiveImage name="flow2" width={1200} height={800} sizes="(max-width:860px) calc(100vw - 74px), 360px" alt="柔術クラスの流れ STEP2 テクニック解説とペアでの反復練習" />
           <span class="flow-step">STEP 02</span>
         </div>
         <h3>テクニック練習</h3>
@@ -33,7 +34,7 @@
 
       <article class="flow-card motion-up" data-motion-delay="0.3">
         <div class="flow-image">
-          <img width="1200" height="800" decoding="async" src="/flow3.webp" alt="柔術クラスの流れ STEP3 初心者も安心の実践スパーリング練習" loading="lazy" />
+          <ResponsiveImage name="flow3" width={1200} height={800} sizes="(max-width:860px) calc(100vw - 74px), 360px" alt="柔術クラスの流れ STEP3 初心者も安心の実践スパーリング練習" />
           <span class="flow-step">STEP 03</span>
         </div>
         <h3>実践スパーリング</h3>

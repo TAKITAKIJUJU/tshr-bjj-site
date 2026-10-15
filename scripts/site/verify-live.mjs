@@ -60,5 +60,24 @@ for(const locale of locales){
  const html=await response.text();assert.ok(html.includes('noindex, nofollow'));assert.ok(html.includes('method="dialog"'));assert.ok(!html.includes('formsubmit.co'));
 }
 report.testContactRetained=true;
+report.footerRepresentativeRemoved=[];
+for(const route of ['/','/english/','/portugues/','/gunma/','/contact/','/privacy/','/thanks/']) {
+ const response=await fetch('https://tshr-bjj.com'+route);
+ const footer=walk(parse5.parse(await response.text())).find(n=>n.tagName==='footer');
+ assert.ok(footer,route);
+ assert.ok(!parse5.serialize(footer).includes('代表：田代 セイイチ'),route);
+ report.footerRepresentativeRemoved.push(route);
+}
+const media=JSON.parse(fs.readFileSync('src/data/site/media.json','utf8'));
+report.videoDelivery=[];
+for(const url of Object.values(media.video)) {
+ const response=await fetch('https://tshr-bjj.com'+url,{headers:{Range:'bytes=0-1023'}});
+ assert.equal(response.status,206,url);
+ const expected=fs.readFileSync(path.join(root,url));
+ assert.equal(response.headers.get('content-range'),`bytes 0-1023/${expected.length}`);
+ assert.ok(response.headers.get('cache-control').includes('max-age=31536000, immutable'));
+ assert.deepEqual(Buffer.from(await response.arrayBuffer()),expected.subarray(0,1024));
+ report.videoDelivery.push({url,range:true,immutable:true});
+}
 fs.writeFileSync('docs/production/live-verification.json',JSON.stringify(report,null,2));
 console.log(report);

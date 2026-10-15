@@ -1,4 +1,6 @@
 // Worker handling routing, HTTP->HTTPS, www canonicalization, caching, security headers, and custom 404.
+import {videoRangeResponse} from './video-range.js';
+import videoAssets from './video-assets.json';
 
 const NOT_FOUND_HTML = `<!doctype html>
 <html lang="ja">
@@ -161,7 +163,7 @@ export default {
     }
 
     // Cache policy
-    if (url.pathname.startsWith("/site/_astro/")) {
+    if (url.pathname.startsWith("/site/_astro/") || /^\/site\/media\/[\w-]+-[a-f0-9]{12}\.(?:webp|mp4|webm)$/.test(url.pathname)) {
       newHeaders.set("cache-control", "public, max-age=31536000, immutable");
     } else if (url.pathname.startsWith("/site/shared/") || /\.(webp|png|jpe?g|mp4|svg|woff2?)$/i.test(url.pathname)) {
       newHeaders.set("cache-control", "public, max-age=86400, stale-while-revalidate=604800");
@@ -169,10 +171,12 @@ export default {
       newHeaders.set("cache-control", "public, max-age=0, must-revalidate");
     }
 
-    return new Response(response.body, {
+    const result = new Response(response.body, {
       status: response.status,
       statusText: response.statusText,
       headers: newHeaders
     });
+    return Object.hasOwn(videoAssets,url.pathname)
+      ? videoRangeResponse(request,result,videoAssets[url.pathname]) : result;
   }
 };

@@ -1,0 +1,114 @@
+{
+  "video": {
+    "desktop": "/site/media/hero-desktop-ba04b95a5b49.webm",
+    "mobile": "/site/media/hero-mobile-41817fbacd47.webm",
+    "fallback": "/site/media/hero-fallback-19c18b9ca432.mp4"
+  },
+  "images": {
+    "what1": {
+      "width": 1200,
+      "height": 800,
+      "src": "/site/media/what1-800-13fae0de8e0f.webp",
+      "srcset": "/site/media/what1-400-47cb03bc33d3.webp 400w, /site/media/what1-800-13fae0de8e0f.webp 800w, /site/media/what1-1200-6c65ee851874.webp 1200w",
+      "full": "/site/media/what1-1200-6c65ee851874.webp"
+    },
+    "what2": {
+      "width": 1200,
+      "height": 800,
+      "src": "/site/media/what2-800-94e1b1adb3b9.webp",
+      "srcset": "/site/media/what2-400-a253d6dce758.webp 400w, /site/media/what2-800-94e1b1adb3b9.webp 800w, /site/media/what2-1200-909020a2f7e6.webp 1200w",
+      "full": "/site/media/what2-1200-909020a2f7e6.webp"
+    },
+    "what3": {
+      "width": 1200,
+      "height": 800,
+      "src": "/site/media/what3-800-53e233d1fd4a.webp",
+      "srcset": "/site/media/what3-400-9136d04bd8dc.webp 400w, /site/media/what3-800-53e233d1fd4a.webp 800w, /site/media/what3-1200-6c69d75f4e21.webp 1200w",
+      "full": "/site/media/what3-1200-6c69d75f4e21.webp"
+    },
+    "flow1": {
+      "width": 1200,
+      "height": 800,
+      "src": "/site/media/flow1-800-bec33fdf35e3.webp",
+      "srcset": "/site/media/flow1-400-d33882029f04.webp 400w, /site/media/flow1-800-bec33fdf35e3.webp 800w, /site/media/flow1-1200-5c3964198892.webp 1200w",
+      "full": "/site/media/flow1-1200-5c3964198892.webp"
+    },
+    "flow2": {
+      "width": 1200,
+      "height": 800,
+      "src": "/site/media/flow2-800-29e35acc4de0.webp",
+      "srcset": "/site/media/flow2-400-2f4d23b743ba.webp 400w, /site/media/flow2-800-29e35acc4de0.webp 800w, /site/media/flow2-1200-24f6c7be2c04.webp 1200w",
+      "full": "/site/media/flow2-1200-24f6c7be2c04.webp"
+    },
+    "flow3": {
+      "width": 1200,
+      "height": 800,
+      "src": "/site/media/flow3-800-3adc6c26255d.webp",
+      "srcset": "/site/media/flow3-400-726c7710b3a6.webp 400w, /site/media/flow3-800-3adc6c26255d.webp 800w, /site/media/flow3-1200-f699466816e9.webp 1200w",
+      "full": "/site/media/flow3-1200-f699466816e9.webp"
+    },
+    "new-ins": {
+      "width": 848,
+      "height": 1272,
+      "src": "/site/media/new-ins-800-2f621bace4f9.webp",
+      "srcset": "/site/media/new-ins-400-86af3709a15e.webp 400w, /site/media/new-ins-800-2f621bace4f9.webp 800w, /site/media/new-ins-848-84815b75ad7e.webp 848w",
+      "full": "/site/media/new-ins-848-84815b75ad7e.webp"
+    },
+    "processed-16A4994D-E073-48E0-A49C-89AF5897EAE1": {
+      "width": 1600,
+      "height": 1600,
+      "src": "/site/media/processed-16A4994D-E073-48E0-A49C-89AF5897EAE1-800-06ffd15900d2.webp",
+      "srcset": "/site/media/processed-16A4994D-E073-48E0-A49C-89AF5897EAE1-400-3e44c7d5543f.webp 400w, /site/media/processed-16A4994D-E073-48E0-A49C-89AF5897EAE1-800-06ffd15900d2.webp 800w, /site/media/processed-16A4994D-E073-48E0-A49C-89AF5897EAE1-1600-415330f45c5e.webp 1600w",
+      "full": "/site/media/processed-16A4994D-E073-48E0-A49C-89AF5897EAE1-1600-415330f45c5e.webp"
+    },
+    "processed-3BFA741D-A026-4EB4-B9BF-1992C5195C35": {
+      "width": 1600,
+      "height": 1600,
+      "src": "/site/media/processed-3BFA741D-A026-4EB4-B9BF-1992C5195C35-800-c76bded259c3.webp",
+      "srcset": "/site/media/processed-3BFA741D-A026-4EB4-B9BF-1992C5195C35-400-8a20d8f05c91.webp 400w, /site/media/processed-3BFA741D-A026-4EB4-B9BF-1992C5195C35-800-c76bded259c3.webp 800w, /site/media/processed-3BFA741D-A026-4EB4-B9BF-1992C5195C35-1600-e2080dcd64bc.webp 1600w",
+      "full": "/site/media/processed-3BFA741D-A026-4EB4-B9BF-1992C5195C35-1600-e2080dcd64bc.webp"
+    },
+    "processed-8E9EA17C-03F5-4922-8835-CA5BCC9157A0": {
+      "width": 1600,
+      "height": 1600,
+      "src": "/site/media/processed-8E9EA17C-03F5-4922-8835-CA5BCC9157A0-800-57829856774d.webp",
+      "srcset": "/site/media/processed-8E9EA17C-03F5-4922-8835-CA5BCC9157A0-400-d750dcae3da7.webp 400w, /site/media/processed-8E9EA17C-03F5-4922-8835-CA5BCC9157A0-800-57829856774d.webp 800w, /site/media/processed-8E9EA17C-03F5-4922-8835-CA5BCC9157A0-1600-84ba162a4ca7.webp 1600w",
+      "full": "/site/media/processed-8E9EA17C-03F5-4922-8835-CA5BCC9157A0-1600-84ba162a4ca7.webp"
+    },
+    "processed-99EE1602-384F-4E8E-967D-BECE71CB9431": {
+      "width": 1600,
+      "height": 1600,
+      "src": "/site/media/processed-99EE1602-384F-4E8E-967D-BECE71CB9431-800-c2c50e9cbb7a.webp",
+      "srcset": "/site/media/processed-99EE1602-384F-4E8E-967D-BECE71CB9431-400-12cc80bb2788.webp 400w, /site/media/processed-99EE1602-384F-4E8E-967D-BECE71CB9431-800-c2c50e9cbb7a.webp 800w, /site/media/processed-99EE1602-384F-4E8E-967D-BECE71CB9431-1600-e7189f9721cb.webp 1600w",
+      "full": "/site/media/processed-99EE1602-384F-4E8E-967D-BECE71CB9431-1600-e7189f9721cb.webp"
+    },
+    "processed-9EB7D774-131B-4FB1-8FCC-D00036F7257A": {
+      "width": 1600,
+      "height": 1272,
+      "src": "/site/media/processed-9EB7D774-131B-4FB1-8FCC-D00036F7257A-800-b2d0c26de9e9.webp",
+      "srcset": "/site/media/processed-9EB7D774-131B-4FB1-8FCC-D00036F7257A-400-8a7c348f3d1d.webp 400w, /site/media/processed-9EB7D774-131B-4FB1-8FCC-D00036F7257A-800-b2d0c26de9e9.webp 800w, /site/media/processed-9EB7D774-131B-4FB1-8FCC-D00036F7257A-1600-728f1ff8f00f.webp 1600w",
+      "full": "/site/media/processed-9EB7D774-131B-4FB1-8FCC-D00036F7257A-1600-728f1ff8f00f.webp"
+    },
+    "processed-AA442933-C10A-41AE-81AB-B86057D3678A": {
+      "width": 1600,
+      "height": 1600,
+      "src": "/site/media/processed-AA442933-C10A-41AE-81AB-B86057D3678A-800-2c9752d30a6d.webp",
+      "srcset": "/site/media/processed-AA442933-C10A-41AE-81AB-B86057D3678A-400-e4296ef99971.webp 400w, /site/media/processed-AA442933-C10A-41AE-81AB-B86057D3678A-800-2c9752d30a6d.webp 800w, /site/media/processed-AA442933-C10A-41AE-81AB-B86057D3678A-1600-ae785b2a8cfd.webp 1600w",
+      "full": "/site/media/processed-AA442933-C10A-41AE-81AB-B86057D3678A-1600-ae785b2a8cfd.webp"
+    },
+    "processed-C46A2648-B6DD-4D42-9573-D11E32E9083D": {
+      "width": 1600,
+      "height": 1600,
+      "src": "/site/media/processed-C46A2648-B6DD-4D42-9573-D11E32E9083D-800-3cfd0f4b12bc.webp",
+      "srcset": "/site/media/processed-C46A2648-B6DD-4D42-9573-D11E32E9083D-400-6100df69b9e6.webp 400w, /site/media/processed-C46A2648-B6DD-4D42-9573-D11E32E9083D-800-3cfd0f4b12bc.webp 800w, /site/media/processed-C46A2648-B6DD-4D42-9573-D11E32E9083D-1600-f9b9f5096b20.webp 1600w",
+      "full": "/site/media/processed-C46A2648-B6DD-4D42-9573-D11E32E9083D-1600-f9b9f5096b20.webp"
+    },
+    "processed-E1AC7486-1624-4F7D-ACF8-536A9FC6F0DA": {
+      "width": 1600,
+      "height": 1600,
+      "src": "/site/media/processed-E1AC7486-1624-4F7D-ACF8-536A9FC6F0DA-800-96bba2eefdfc.webp",
+      "srcset": "/site/media/processed-E1AC7486-1624-4F7D-ACF8-536A9FC6F0DA-400-7fa3993025d0.webp 400w, /site/media/processed-E1AC7486-1624-4F7D-ACF8-536A9FC6F0DA-800-96bba2eefdfc.webp 800w, /site/media/processed-E1AC7486-1624-4F7D-ACF8-536A9FC6F0DA-1600-1152996e7ecb.webp 1600w",
+      "full": "/site/media/processed-E1AC7486-1624-4F7D-ACF8-536A9FC6F0DA-1600-1152996e7ecb.webp"
+    }
+  }
+}

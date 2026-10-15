@@ -1,5 +1,6 @@
 ---
 // Concept.astro - Redesigned based on fuckfuck.html with Orange theme
+import ResponsiveImage from '../ResponsiveImage.astro';
 ---
 
 <section class="section concept" id="concept">
@@ -19,7 +20,7 @@
     <div class="concept-grid">
       <article class="concept-card motion-up" data-motion-delay="0.05">
         <div class="concept-image">
-          <img width="1200" height="800" decoding="async" src="/what1.webp" alt="本庄市のブラジリアン柔術 組み技を学ぶ練習風景" loading="lazy" />
+          <ResponsiveImage name="what1" width={1200} height={800} sizes="(max-width:860px) calc(100vw - 32px), 400px" alt="本庄市のブラジリアン柔術 組み技を学ぶ練習風景" />
         </div>
         <div class="concept-body">
           <span class="card-number">01 / SAFETY</span>
@@ -30,7 +31,7 @@
 
       <article class="concept-card motion-up" data-motion-delay="0.15">
         <div class="concept-image">
-          <img width="1200" height="800" decoding="async" src="/what2.webp" alt="20代から50代まで何歳からでも始められる生涯スポーツ" loading="lazy" />
+          <ResponsiveImage name="what2" width={1200} height={800} sizes="(max-width:860px) calc(100vw - 32px), 400px" alt="20代から50代まで何歳からでも始められる生涯スポーツ" />
         </div>
         <div class="concept-body">
           <span class="card-number">02 / LIFELONG</span>
@@ -41,7 +42,7 @@
 
       <article class="concept-card motion-up" data-motion-delay="0.25">
         <div class="concept-image">
-          <img width="1200" height="800" decoding="async" src="/what3.webp" alt="体を使ったチェスと呼ばれる知的な格闘技ブラジリアン柔術" loading="lazy" />
+          <ResponsiveImage name="what3" width={1200} height={800} sizes="(max-width:860px) calc(100vw - 32px), 400px" alt="体を使ったチェスと呼ばれる知的な格闘技ブラジリアン柔術" />
         </div>
         <div class="concept-body">
           <span class="card-number">03 / WORLDWIDE</span>

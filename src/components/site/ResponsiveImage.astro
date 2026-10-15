@@ -1,0 +1,9 @@
+---
+import media from '../../data/site/media.json';
+import type {HTMLAttributes} from 'astro/types';
+interface Props extends HTMLAttributes<'img'> { name: keyof typeof media.images; sizes: string; alt: string; width: number; height: number; fullSize?: boolean; }
+const {name,sizes,alt,width,height,fullSize=false,...attributes}=Astro.props;
+const image=media.images[name];
+---
+<img {...attributes} src={image.src} srcset={image.srcset} sizes={sizes} width={width} height={height}
+  alt={alt} loading="lazy" decoding="async" data-full-src={fullSize?image.full:undefined} />

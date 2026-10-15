@@ -1,5 +1,6 @@
 ---
 // Hero.astro - Luxury Minimalist Dark Style
+import media from '../../data/site/media.json';
 ---
 
 <script is:inline>
@@ -21,7 +22,9 @@
         loop
         muted
         playsinline>
-        <source src="/hero_video.mp4" type="video/mp4">
+        <source src={media.video.mobile} media="(max-width: 767px)" type='video/webm; codecs="vp9"'>
+        <source src={media.video.desktop} type='video/webm; codecs="vp9"'>
+        <source src={media.video.fallback} type="video/mp4">
       </video>
     </div>
   </div>
@@ -43,7 +46,7 @@
       </div>
     </div>
   </div>
-<button type="button" class="video-toggle" aria-label="映像を再生" title="映像を再生" data-playing="false" hidden>
+<button type="button" class="video-toggle" aria-label="映像を再生" title="映像を再生" data-play-label="映像を再生" data-pause-label="映像を停止" data-playing="false" hidden>
   <svg class="video-toggle__play" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
   <svg class="video-toggle__pause" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z" /></svg>
 </button>
@@ -234,9 +237,6 @@
 
 
 <script>
- import { translations } from '../../data/site/translations.js';
- const locale = location.pathname.startsWith('/english/') ? 'en' : location.pathname.startsWith('/portugues/') ? 'pt' : location.pathname.startsWith('/gunma/') ? 'gunma' : 'ja';
- const t = (value: string) => (translations as Record<string, Record<string, string>>)[value]?.[locale] ?? value;
  const video = document.querySelector<HTMLVideoElement>('.hero__video');
  const toggle = document.querySelector<HTMLButtonElement>('.video-toggle');
  if (video && toggle) {
@@ -244,7 +244,7 @@
   let requestedPlay = !preference.matches;
   let inView = true;
   const renderState = () => {
-   const label = t(video.paused ? '映像を再生' : '映像を停止');
+   const label = video.paused ? (toggle.dataset.playLabel ?? '映像を再生') : (toggle.dataset.pauseLabel ?? '映像を停止');
    toggle.dataset.playing = String(!video.paused);
    toggle.setAttribute('aria-label', label);
    toggle.title = label;

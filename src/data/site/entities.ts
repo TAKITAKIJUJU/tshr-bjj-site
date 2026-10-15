@@ -4,7 +4,10 @@ export const entities = [
     "@type": "SportsActivityLocation",
     "@id": "https://tshr-bjj.com/#sportsactivitylocation",
     "name": "Over Limit 本庄",
+    "alternateName": "Over Limit Honjo",
     "url": "https://tshr-bjj.com/",
+    "mainEntityOfPage": {"@id":"https://tshr-bjj.com/#webpage"},
+    "logo": "https://tshr-bjj.com/LOGO.png",
     "image": [
       "https://tshr-bjj.com/LOGO.png",
       "https://tshr-bjj.com/new-ins.webp",

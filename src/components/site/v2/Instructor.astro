@@ -1,4 +1,5 @@
 ---
+import ResponsiveImage from '../ResponsiveImage.astro';
 // Instructor.astro - Redesigned based on fuckfuck.html with Orange theme & 3-stripe Black Belt
 ---
 
@@ -14,7 +15,7 @@
 
     <div class="instructor-layout">
       <figure class="instructor-portrait motion-left">
-        <img width="848" height="1272" decoding="async" src="/new-ins.webp" alt="Over Limit 本庄 代表インストラクター 田代セイイチ（ブラジリアン柔術黒帯3段・世界大会王者）" loading="lazy" />
+        <ResponsiveImage name="new-ins" width={848} height={1272} sizes="(max-width:700px) min(460px, calc(100vw - 48px)), (max-width:860px) calc(100vw - 48px), 560px" alt="Over Limit 本庄 代表インストラクター 田代セイイチ（ブラジリアン柔術黒帯3段・世界大会王者）" />
         <figcaption class="belt">
           <span>黒帯3段/3rd Degree Black Belt</span>
           <div class="belt-graphic" role="img" aria-label="3段黒帯 (3本のストライプ)">

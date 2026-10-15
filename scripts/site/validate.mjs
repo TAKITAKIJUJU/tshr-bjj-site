@@ -32,15 +32,28 @@ for(const locale of locales){
    if(href?.includes('contact')){assert.equal(href,'/contact/');contacts++;}
    if(href?.startsWith('/#')&&locale!=='ja')assert.fail('Nonlocalized home anchor '+href);
   }
-  for(const a of n.attrs??[])if(['src','href','poster'].includes(a.name)){
+  for(const a of n.attrs??[])if(['src','href','poster','data-full-src'].includes(a.name)){
    assert.ok(!a.value.startsWith('/test/'),'Production must not link into /test');
    if(a.value.startsWith('/site/'))assert.ok(fs.existsSync(path.join(root,a.value)),a.value);
+  }
+  if(n.tagName==='img'&&get(n,'srcset'))for(const candidate of get(n,'srcset').split(',')) {
+    const url=candidate.trim().split(/\s+/)[0];
+    if(url.startsWith('/site/'))assert.ok(fs.existsSync(path.join(root,url)),url);
   }
  }
  assert.ok(contacts>=5);
  const graph=JSON.parse(text(select('script','type','application/ld+json')))['@graph'];
  assert.equal(graph.find(n=>n['@type']==='WebSite').name,['en','pt'].includes(locale)?'Over Limit Honjo':'Over Limit 本庄');
  assert.equal(graph.find(n=>n['@type']==='WebPage').url,'https://tshr-bjj.com'+base);
+ assert.equal(graph.find(n=>n['@type']==='WebPage').inLanguage,locale==='pt'?'pt-BR':locale==='gunma'?'ja':locale);
+ assert.equal(graph.find(n=>n['@type']==='WebPage').mainEntity['@id'],'https://tshr-bjj.com/#sportsactivitylocation');
+ const video=all.find(n=>n.tagName==='video');
+ for(const attr of ['autoplay','muted','playsinline','loop'])assert.notEqual(get(video,attr),undefined);
+ const sources=walk(video).filter(n=>n.tagName==='source');
+ assert.equal(sources.length,3);
+ assert.equal(get(sources[0],'media'),'(max-width: 767px)');
+ assert.equal(get(sources[2],'type'),'video/mp4');
+ assert.ok(get(all.find(n=>cls(n,'video-toggle')),'data-pause-label'));
  assert.deepEqual(graph.find(n=>n['@type']==='FAQPage').mainEntity.map(q=>({question:q.name,answer:q.acceptedAnswer.text})),faqByLocale[locale]);
  assert.ok(!JSON.stringify(graph).includes('/test/'));
  assert.equal(all.filter(n=>cls(n,'faq-item')).length,7);
