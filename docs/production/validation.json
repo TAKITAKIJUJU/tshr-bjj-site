@@ -22,5 +22,11 @@
     "contacts": 8,
     "faq": 7,
     "title": "本庄の柔術道場｜Over Limit 本庄"
+  },
+  {
+    "path": "/contact/",
+    "header": "modern",
+    "form": "POST",
+    "sitemap": true
   }
 ]

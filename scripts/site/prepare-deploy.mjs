@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {locales,siteBase,localizeSiteHtml} from './localize.mjs';
 const build=path.resolve(process.argv[2] || 'dist/client');
-const output=path.resolve(process.argv[3] || 'local-assets/production-deploy');
+const output=path.resolve(process.argv[3] || 'local-assets/production-release');
 fs.mkdirSync(output,{recursive:true});
 function sharedAsset(url) {
   if(!url.startsWith('/')||url.startsWith('/site/'))return url;
@@ -13,10 +13,12 @@ function sharedAsset(url) {
   return '/site/shared'+url;
 }
 fs.cpSync(path.join(build,'site'),path.join(output,'site'),{recursive:true});
-const original=fs.readFileSync(path.join(build,'index.html'),'utf8');
-const source=original.replaceAll('/_astro/','/site/_astro/').replace(/(\b(?:src|href|poster)=")([^"\s]+)(")/g,(_,a,url,b)=>a+sharedAsset(url)+b);
-// Copy just the transitive bundle graph used by the approved home.
-const queued=new Set([...original.matchAll(/\/_astro\/([^"\s<>]+)/g)].map(m=>m[1]));
+const home=fs.readFileSync(path.join(build,'index.html'),'utf8');
+const contact=fs.readFileSync(path.join(build,'contact/index.html'),'utf8');
+const rewrite=html=>html.replaceAll('/_astro/','/site/_astro/').replace(/(\b(?:src|href|poster)=")([^"\s]+)(")/g,(_,a,url,b)=>a+sharedAsset(url)+b);
+const source=rewrite(home);
+// Share the complete transitive bundle graph for home and contact under /site/.
+const queued=new Set([home,contact].flatMap(html=>[...html.matchAll(/\/_astro\/([^"\s<>]+)/g)].map(m=>m[1])));
 fs.mkdirSync(path.join(output,'site/_astro'),{recursive:true});
 for(const name of queued){
   let content=fs.readFileSync(path.join(build,'_astro',name),'utf8');
@@ -30,5 +32,7 @@ for(const locale of locales) {
   fs.mkdirSync(path.dirname(target),{recursive:true});
   fs.writeFileSync(target,localizeSiteHtml(source,locale));
 }
-if(fs.existsSync(path.join(output,'contact')))throw Error('Contact must not be deployed by the home Worker.');
-console.log('Prepared four home pages; existing /contact/ and /test/ routes remain independent.');
+fs.mkdirSync(path.join(output,'contact'),{recursive:true});
+fs.writeFileSync(path.join(output,'contact/index.html'),rewrite(contact));
+fs.copyFileSync(path.join(build,'sitemap.xml'),path.join(output,'sitemap.xml'));
+console.log('Prepared four home pages, contact and sitemap; /test/ remains independent.');

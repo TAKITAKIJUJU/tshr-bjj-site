@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import * as parse5 from 'parse5';
 import {locales,siteBase} from './localize.mjs';
 import {faqByLocale} from '../../src/data/site/faq-content.js';
-const root=path.resolve(process.argv[2]||'local-assets/production-deploy');
+const root=path.resolve(process.argv[2]||'local-assets/production-release');
 const get=(n,k)=>n.attrs?.find(a=>a.name===k)?.value;
 const walk=n=>[n,...(n.childNodes??[]).flatMap(walk)];
 const text=n=>n.nodeName==='#text'?n.value:(n.childNodes??[]).map(text).join('');
@@ -48,6 +48,20 @@ for(const locale of locales){
  assert.ok(all.filter(n=>cls(n,'strip-item')).every(n=>!cls(n,'motion-up')));
  report.push({path:base,contacts,faq:7,title:text(all.find(n=>n.tagName==='title'))});
 }
+const contact=walk(parse5.parse(fs.readFileSync(path.join(root,'contact/index.html'),'utf8')));
+assert.equal(contact.filter(n=>n.tagName==='title').length,1);
+assert.equal(get(contact.find(n=>n.tagName==='link'&&get(n,'rel')==='canonical'),'href'),'https://tshr-bjj.com/contact/');
+assert.ok(contact.some(n=>n.tagName==='dialog'&&get(n,'id')==='mobile-menu'));
+const form=contact.find(n=>n.tagName==='form');
+assert.equal(get(form,'action'),'https://formsubmit.co/tashas.natura@hotmail.com');
+assert.equal(get(form,'method'),'POST');
+assert.deepEqual(walk(form).filter(n=>['input','select','textarea'].includes(n.tagName)).map(n=>get(n,'name')),['name','email','tel','type','message']);
+for(const node of contact)for(const attr of node.attrs??[]){
+ if(['src','href','poster'].includes(attr.name)&&attr.value.startsWith('/site/'))assert.ok(fs.existsSync(path.join(root,attr.value)),attr.value);
+}
+const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
+assert.deepEqual([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]),['/','/english/','/portugues/','/contact/'].map(url=>'https://tshr-bjj.com'+url));
+report.push({path:'/contact/',header:'modern',form:'POST',sitemap:true});
 fs.mkdirSync('docs/production',{recursive:true});
 fs.writeFileSync('docs/production/validation.json',JSON.stringify(report,null,2));
 console.log(report);

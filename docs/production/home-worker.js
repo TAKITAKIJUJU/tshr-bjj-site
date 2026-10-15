@@ -1,4 +1,4 @@
-// Home and locale routes only. The existing production Worker continues serving /contact/.
+// Published home pages, contact and sitemap share their versioned static assets.
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);

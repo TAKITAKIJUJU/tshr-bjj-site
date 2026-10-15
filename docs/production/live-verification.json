@@ -21,7 +21,9 @@
       "contactLinks": 8
     }
   ],
-  "assets": 41,
-  "contactUnchanged": true,
+  "assets": 45,
+  "contactPublished": true,
+  "formMatchesPackage": true,
+  "sitemapPublished": true,
   "testContactRetained": true
 }

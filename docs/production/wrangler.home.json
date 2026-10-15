@@ -12,10 +12,13 @@
     {"pattern":"tshr-bjj.com/portugues/*","zone_name":"tshr-bjj.com"},
     {"pattern":"tshr-bjj.com/gunma","zone_name":"tshr-bjj.com"},
     {"pattern":"tshr-bjj.com/gunma/*","zone_name":"tshr-bjj.com"},
+    {"pattern":"tshr-bjj.com/contact","zone_name":"tshr-bjj.com"},
+    {"pattern":"tshr-bjj.com/contact/*","zone_name":"tshr-bjj.com"},
+    {"pattern":"tshr-bjj.com/sitemap.xml","zone_name":"tshr-bjj.com"},
     {"pattern":"tshr-bjj.com/site/*","zone_name":"tshr-bjj.com"}
   ],
   "assets": {
-    "directory": "../../local-assets/production-deploy",
+    "directory": "../../local-assets/production-release",
     "binding": "ASSETS",
     "run_worker_first": true,
     "html_handling": "force-trailing-slash",

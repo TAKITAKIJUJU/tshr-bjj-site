@@ -1,12 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
-import crypto from 'node:crypto';
 import * as parse5 from 'parse5';
 import {locales,siteBase} from './localize.mjs';
 const walk=n=>[n,...(n.childNodes??[]).flatMap(walk)];
 const get=(n,k)=>n.attrs?.find(a=>a.name===k)?.value;
-const report={pages:[],assets:0,contactUnchanged:false,testContactRetained:false};
+const report={pages:[],assets:0,contactPublished:false,formMatchesPackage:false,sitemapPublished:false,testContactRetained:false};
 for(const locale of locales){
  const base=siteBase(locale),response=await fetch('https://tshr-bjj.com'+base);
  assert.equal(response.status,200);assert.ok(!response.headers.get('x-robots-tag')?.includes('noindex'));
@@ -25,19 +24,28 @@ for(const locale of locales){
  }
 }
 const files=p=>fs.readdirSync(p,{withFileTypes:true}).flatMap(e=>e.isDirectory()?files(path.join(p,e.name)):[path.join(p,e.name)]);
-const root=path.resolve('local-assets/production-deploy');
+const root=path.resolve('local-assets/production-release');
 await Promise.all(files(root).map(async file=>{
  const relative=path.relative(root,file).replaceAll('\\','/');
  const response=await fetch('https://tshr-bjj.com/'+relative,{method:'HEAD'});
  assert.equal(response.status,200,relative);report.assets++;
 }));
-const baseline=JSON.parse(fs.readFileSync('local-assets/production-contact-before.json','utf8'));
-for(const [url,expected] of Object.entries(baseline)){
- if(!url.startsWith('https://'))continue;
- const response=await fetch(url);assert.equal(response.status,200);
- assert.equal(crypto.createHash('sha256').update(Buffer.from(await response.arrayBuffer())).digest('hex'),expected,url);
-}
-report.contactUnchanged=true;
+const contactResponse=await fetch('https://tshr-bjj.com/contact/');
+assert.equal(contactResponse.status,200);
+const contact=walk(parse5.parse(await contactResponse.text()));
+const packaged=walk(parse5.parse(fs.readFileSync(path.join(root,'contact/index.html'),'utf8')));
+assert.equal(contact.filter(n=>n.tagName==='title').length,1);
+assert.equal(get(contact.find(n=>n.tagName==='link'&&get(n,'rel')==='canonical'),'href'),'https://tshr-bjj.com/contact/');
+assert.ok(contact.some(n=>n.tagName==='dialog'&&get(n,'id')==='mobile-menu'));
+const form=contact.find(n=>n.tagName==='form');
+assert.equal(get(form,'action'),'https://formsubmit.co/tashas.natura@hotmail.com');
+assert.equal(get(form,'method'),'POST');
+assert.equal(parse5.serialize(form),parse5.serialize(packaged.find(n=>n.tagName==='form')));
+report.contactPublished=true;report.formMatchesPackage=true;
+const sitemapResponse=await fetch('https://tshr-bjj.com/sitemap.xml');
+assert.equal(sitemapResponse.status,200);
+assert.equal(await sitemapResponse.text(),fs.readFileSync(path.join(root,'sitemap.xml'),'utf8'));
+report.sitemapPublished=true;
 for(const locale of locales){
  const base='/test'+siteBase(locale);
  const response=await fetch('https://tshr-bjj.com'+base+'contact/');
