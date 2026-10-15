@@ -69,7 +69,10 @@ function initMotion(home: boolean) {
           .from('.hero__action',{opacity:0,y:48,duration:.9,immediateRender:false},actionStart);
         document.documentElement.classList.remove('hero-reveal-pending');
         gsap.fromTo('.hero__image-wrapper',{clipPath:'inset(0% 0% 0% 0% round 0px)'},{clipPath:'inset(7% 3% 9% 3% round 36px)',ease:'none',scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:1.25}});
-        for (const {selector,y} of [{selector:'.hero__bg',y:9},{selector:'.flow-image img',y:6},{selector:'.map',y:5}]) {
+        // Anchor the background at the top; a centered parallax range can expose
+        // the hero's black base even when the page has not been scrolled.
+        gsap.fromTo('.hero__bg',{yPercent:0},{yPercent:9,ease:'none',scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:1.2}});
+        for (const {selector,y} of [{selector:'.flow-image img',y:6},{selector:'.map',y:5}]) {
           gsap.utils.toArray<HTMLElement>(selector).forEach(el=>gsap.fromTo(el,{yPercent:-y},{yPercent:y,ease:'none',scrollTrigger:{trigger:el,start:'top bottom',end:'bottom top',scrub:1.2}}));
         }
         gsap.utils.toArray<HTMLElement>('.section-index').forEach(el=>gsap.fromTo(el,{y:-15,opacity:.6},{y:15,opacity:1,ease:'none',scrollTrigger:{trigger:el,start:'top bottom',end:'bottom top',scrub:1}}));
