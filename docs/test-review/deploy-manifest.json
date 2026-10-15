@@ -13,7 +13,7 @@
     {
       "path": "test/english/index.html",
       "bytes": 64636,
-      "sha256": "53823b64740029f0722bbd746570f875f8fd32c899372bf13013c52aad4d6af4"
+      "sha256": "14e68311ba373b6d87248f7e09522dc1ee0c5ea40bc4047fa04b9164be38bf83"
     },
     {
       "path": "test/gunma/contact/index.html",
@@ -23,7 +23,7 @@
     {
       "path": "test/gunma/index.html",
       "bytes": 65919,
-      "sha256": "013f09527efc0652c1d0934f49e1520046c3231f3823131ae53f7da5e6fdf3c5"
+      "sha256": "58a40aa961a0e71d1e32faffef141a3258e1a93964d57ebdf292cba3bc8fcf91"
     },
     {
       "path": "test/hero-poster.webp",
@@ -33,7 +33,7 @@
     {
       "path": "test/index.html",
       "bytes": 65728,
-      "sha256": "6d9e1d619b45c50eda597868fded866c4f29dfd33b5d81063e6c937f9841998d"
+      "sha256": "0348a81f9259c990ff806cc86197ef34cfc1e4a29e895fc739e05a033dab381c"
     },
     {
       "path": "test/kids-new-1200.webp",
@@ -73,7 +73,7 @@
     {
       "path": "test/portugues/index.html",
       "bytes": 66552,
-      "sha256": "710d0e217db1b652e67245078c9eba903ef59bd5af8d826bae4366d9f37ef7f3"
+      "sha256": "5c0b2b66103fb5d1256f6c89839216a6a724171130fba2654bce1963ab7cecf4"
     },
     {
       "path": "test/reviews/100-mendou.png",
@@ -226,9 +226,9 @@
       "sha256": "acd41da38c0790cfe5d385e19a835c71d0ab9df841b4934adebd97ed17dd2542"
     },
     {
-      "path": "test/_astro/index@_@astro.DPKtKOxv.css",
-      "bytes": 38166,
-      "sha256": "9052c7ea4453f068ae8583178b4391110dfd8736091dfdd802fe3e8ea88f9f78"
+      "path": "test/_astro/index@_@astro.Drxw88Ci.css",
+      "bytes": 38191,
+      "sha256": "7e79796041f7ba931c8526f07a426f3d8cddb891fe62c60fb493638dd1de6ed8"
     },
     {
       "path": "test/_astro/lenis.CBlNbkdS.js",
@@ -253,7 +253,7 @@
   ],
   "bundles": [
     "Footer.DE121JaH.css",
-    "index@_@astro.DPKtKOxv.css",
+    "index@_@astro.Drxw88Ci.css",
     "Hero.astro_astro_type_script_index_0_lang.DaywRZAj.js",
     "index.astro_astro_type_script_index_0_lang.CzYl3jA0.js",
     "contact@_@astro.BGZbrqDE.css",
