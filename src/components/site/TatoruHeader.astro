@@ -8,7 +8,9 @@ const primary = [
   { label: '道場について', href: '/#concept' },
   { label: 'お問い合わせ', href: '/contact/' },
 ];
-const languageSuffix = Astro.url.pathname.includes('/contact') ? 'contact/' : '';
+interface Props { languageHomeOnly?: boolean; }
+const { languageHomeOnly = false } = Astro.props;
+const languageSuffix = !languageHomeOnly && Astro.url.pathname.includes('/contact') ? 'contact/' : '';
 ---
 
 <header class="header" id="header">
@@ -22,9 +24,9 @@ const languageSuffix = Astro.url.pathname.includes('/contact') ? 'contact/' : ''
     </nav>
     <div class="header__actions">
       <details class="language-picker">
-        <summary class="language-trigger" aria-label="言語を選択"><span class="language-current">日本語</span><svg class="language-chevron" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></summary>
+        <summary class="language-trigger" aria-label={languageHomeOnly ? '言語を選択（各言語のトップへ）' : '言語を選択'}><span class="language-current">日本語</span><svg class="language-chevron" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></summary>
         <nav class="language-options" aria-label="言語">
-          <a data-language="ja" href={`/${languageSuffix}`} lang="ja" aria-current="page">日本語</a>
+          <a data-language="ja" href={`/${languageSuffix}`} lang="ja" aria-current={languageHomeOnly ? undefined : 'page'}>日本語</a>
           <a data-language="en" href={`/english/${languageSuffix}`} lang="en">English</a>
           <a data-language="pt" href={`/portugues/${languageSuffix}`} lang="pt">Português</a>
           <a data-language="gunma" href={`/gunma/${languageSuffix}`} lang="ja">群馬弁</a>
@@ -45,9 +47,9 @@ const languageSuffix = Astro.url.pathname.includes('/contact') ? 'contact/' : ''
       <img class="logo-wordmark" src="/LOGO2.webp" width="424" height="104" alt="" />
     </a>
     <details class="language-picker language-picker--menu">
-      <summary class="language-trigger" aria-label="言語を選択"><span class="language-current">日本語</span><svg class="language-chevron" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></summary>
+      <summary class="language-trigger" aria-label={languageHomeOnly ? '言語を選択（各言語のトップへ）' : '言語を選択'}><span class="language-current">日本語</span><svg class="language-chevron" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></summary>
       <nav class="language-options" aria-label="言語">
-        <a data-language="ja" href={`/${languageSuffix}`} lang="ja" aria-current="page">日本語</a>
+        <a data-language="ja" href={`/${languageSuffix}`} lang="ja" aria-current={languageHomeOnly ? undefined : 'page'}>日本語</a>
         <a data-language="en" href={`/english/${languageSuffix}`} lang="en">English</a>
         <a data-language="pt" href={`/portugues/${languageSuffix}`} lang="pt">Português</a>
         <a data-language="gunma" href={`/gunma/${languageSuffix}`} lang="ja">群馬弁</a>

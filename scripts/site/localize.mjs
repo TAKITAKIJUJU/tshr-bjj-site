@@ -28,9 +28,9 @@ export function localizeSiteHtml(html, locale) {
     if(node.tagName==='title')node.childNodes=[{nodeName:'#text',value:titles[locale],parentNode:node}];
     if(node.tagName==='meta') {
       const name=get(node,'name'), property=get(node,'property');
-      if(name==='robots')set(node,'content','index, follow');
+      if(name==='robots')set(node,'content',locale==='gunma'?'noindex, follow':'index, follow');
       if(name==='twitter:title'||property==='og:title')set(node,'content',titles[locale]);
-      if(property==='og:site_name')set(node,'content','Over Limit Honjo');
+      if(property==='og:site_name')set(node,'content',locale==='en'||locale==='pt'?'Over Limit Honjo':'Over Limit 本庄');
       if(property==='og:url')set(node,'content',canonical);
     }
     if(node.tagName==='link'&&get(node,'rel')==='canonical')set(node,'href',canonical);
@@ -44,7 +44,7 @@ export function localizeSiteHtml(html, locale) {
       const graph=schema(JSON.parse(node.childNodes.map(n=>n.value??'').join('')));
       for(const entity of graph['@graph']??[]) {
         if(entity['@type']==='WebPage') {entity.name=titles[locale];entity.url=canonical;}
-        if(entity['@type']==='WebSite')entity.name='Over Limit Honjo';
+        if(entity['@type']==='WebSite')entity.name=locale==='en'||locale==='pt'?'Over Limit Honjo':'Over Limit 本庄';
         if(entity['@type']==='BreadcrumbList')for(const item of entity.itemListElement)item.name=locale==='en'?'Home':locale==='pt'?'Início':'ホーム';
       }
       node.childNodes=[{nodeName:'#text',value:JSON.stringify(graph).replace(/</g,'\\u003c'),parentNode:node}];
@@ -52,7 +52,11 @@ export function localizeSiteHtml(html, locale) {
   }
   const head=walk(doc).find(n=>n.tagName==='head');
   head.childNodes=head.childNodes.filter(n=>!(n.tagName==='link'&&get(n,'rel')==='alternate'&&get(n,'hreflang')));
-  for(const language of locales)head.childNodes.push({nodeName:'link',tagName:'link',namespaceURI:'http://www.w3.org/1999/xhtml',attrs:[{name:'rel',value:'alternate'},{name:'hreflang',value:language==='pt'?'pt-BR':language==='gunma'?'ja-JP-x-gunma':language},{name:'href',value:'https://tshr-bjj.com'+siteBase(language)}],childNodes:[],parentNode:head});
+  if(locale!=='gunma') {
+    for(const [language,code] of [['ja','ja'],['en','en'],['pt','pt-BR'],['ja','x-default']]) {
+      head.childNodes.push({nodeName:'link',tagName:'link',namespaceURI:'http://www.w3.org/1999/xhtml',attrs:[{name:'rel',value:'alternate'},{name:'hreflang',value:code},{name:'href',value:'https://tshr-bjj.com'+siteBase(language)}],childNodes:[],parentNode:head});
+    }
+  }
   return parse5.serialize(doc);
 }
 export function generateSiteTranslations(buildRoot) {

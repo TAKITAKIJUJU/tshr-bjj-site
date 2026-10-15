@@ -15,9 +15,13 @@ for(const locale of locales){
  const select=(tag,key,value)=>all.find(n=>n.tagName===tag&&get(n,key)===value);
  assert.equal(all.filter(n=>n.tagName==='title').length,1);
  assert.ok(!/テスト版|Test Edition|Test Site|Versão Demonstração|Versão de Teste/.test(text(all.find(n=>n.tagName==='head'))));
- assert.equal(get(select('meta','name','robots'),'content'),'index, follow');
+ assert.equal(get(select('meta','name','robots'),'content'),locale==='gunma'?'noindex, follow':'index, follow');
+ const alternates=all.filter(n=>n.tagName==='link'&&get(n,'rel')==='alternate'&&get(n,'hreflang'));
+ assert.deepEqual(alternates.map(n=>get(n,'hreflang')),locale==='gunma'?[]:['ja','en','pt-BR','x-default']);
+ assert.deepEqual(alternates.map(n=>get(n,'href')),locale==='gunma'?[]:['/','/english/','/portugues/','/'].map(url=>'https://tshr-bjj.com'+url));
  assert.equal(select('meta','http-equiv','Content-Security-Policy'),undefined);
  assert.equal(get(select('link','rel','canonical'),'href'),'https://tshr-bjj.com'+base);
+ assert.equal(get(select('meta','property','og:site_name'),'content'),['en','pt'].includes(locale)?'Over Limit Honjo':'Over Limit 本庄');
  assert.equal(get(select('meta','property','og:url'),'content'),'https://tshr-bjj.com'+base);
  assert.equal(all.filter(n=>n.tagName==='form').length,0);
  let contacts=0;
@@ -35,6 +39,7 @@ for(const locale of locales){
  }
  assert.ok(contacts>=5);
  const graph=JSON.parse(text(select('script','type','application/ld+json')))['@graph'];
+ assert.equal(graph.find(n=>n['@type']==='WebSite').name,['en','pt'].includes(locale)?'Over Limit Honjo':'Over Limit 本庄');
  assert.equal(graph.find(n=>n['@type']==='WebPage').url,'https://tshr-bjj.com'+base);
  assert.deepEqual(graph.find(n=>n['@type']==='FAQPage').mainEntity.map(q=>({question:q.name,answer:q.acceptedAnswer.text})),faqByLocale[locale]);
  assert.ok(!JSON.stringify(graph).includes('/test/'));

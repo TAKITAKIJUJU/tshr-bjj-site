@@ -11,7 +11,9 @@ for(const locale of locales){
  const base=siteBase(locale),response=await fetch('https://tshr-bjj.com'+base);
  assert.equal(response.status,200);assert.ok(!response.headers.get('x-robots-tag')?.includes('noindex'));
  const html=await response.text(),all=walk(parse5.parse(html));
- assert.equal(get(all.find(n=>n.tagName==='meta'&&get(n,'name')==='robots'),'content'),'index, follow');
+ assert.equal(get(all.find(n=>n.tagName==='meta'&&get(n,'name')==='robots'),'content'),locale==='gunma'?'noindex, follow':'index, follow');
+ const alternates=all.filter(n=>n.tagName==='link'&&get(n,'rel')==='alternate'&&get(n,'hreflang'));
+ assert.deepEqual(alternates.map(n=>get(n,'hreflang')),locale==='gunma'?[]:['ja','en','pt-BR','x-default']);
  assert.equal(get(all.find(n=>n.tagName==='link'&&get(n,'rel')==='canonical'),'href'),'https://tshr-bjj.com'+base);
  assert.equal(all.filter(n=>n.tagName==='title').length,1);
  const contacts=all.filter(n=>n.tagName==='a'&&get(n,'href')?.includes('contact'));
