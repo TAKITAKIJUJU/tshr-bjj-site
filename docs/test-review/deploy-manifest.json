@@ -3,27 +3,27 @@
     {
       "path": "test/contact/index.html",
       "bytes": 23996,
-      "sha256": "3bdb416717d5a794a955b311e9942131930951208e468c9f664d878a5ec2976b"
+      "sha256": "bab66a08fe54cf0c228de453df3c5b20be30c8cb461df0523e3fd27c2d800a4a"
     },
     {
       "path": "test/english/contact/index.html",
       "bytes": 23510,
-      "sha256": "57905da2b8e1276cac60f6e302f71c1f32c54429e4f762110b167f542c0ca233"
+      "sha256": "d496826ddb14800e897096718686b87884008f86c784e896ce7438e2e07a017b"
     },
     {
       "path": "test/english/index.html",
-      "bytes": 64636,
-      "sha256": "14e68311ba373b6d87248f7e09522dc1ee0c5ea40bc4047fa04b9164be38bf83"
+      "bytes": 64243,
+      "sha256": "05313d115d2fd01bf6c97088f7e1d9e22f558963dfe0e91a70411f7520b8dd4e"
     },
     {
       "path": "test/gunma/contact/index.html",
       "bytes": 24214,
-      "sha256": "61f754ee91a346f9eba6fde23fb753c4243e06182699377fe5fcb6d28870bde8"
+      "sha256": "542b6113aefc45455a65c7423fa91ab42af41dce0af5972da63efd18077498d3"
     },
     {
       "path": "test/gunma/index.html",
-      "bytes": 65919,
-      "sha256": "58a40aa961a0e71d1e32faffef141a3258e1a93964d57ebdf292cba3bc8fcf91"
+      "bytes": 65493,
+      "sha256": "29ac0a5ee214d5501537bff7d2aff32efbea1033c61dd39578b278ea99d553b6"
     },
     {
       "path": "test/hero-poster.webp",
@@ -32,8 +32,8 @@
     },
     {
       "path": "test/index.html",
-      "bytes": 65728,
-      "sha256": "0348a81f9259c990ff806cc86197ef34cfc1e4a29e895fc739e05a033dab381c"
+      "bytes": 65287,
+      "sha256": "71d34b809087ad49e41f83a76e45a4e11cf986201e88018fb2fe5ada96db3202"
     },
     {
       "path": "test/kids-new-1200.webp",
@@ -68,12 +68,12 @@
     {
       "path": "test/portugues/contact/index.html",
       "bytes": 24015,
-      "sha256": "0099a7a1606b9e9e8eb2480f3c2567134f9977159243993620fddd9e36f463f8"
+      "sha256": "9464085596401cc184fcfc55852069a4472bcd443d5c41c1f2a7b74f539dfc62"
     },
     {
       "path": "test/portugues/index.html",
-      "bytes": 66552,
-      "sha256": "5c0b2b66103fb5d1256f6c89839216a6a724171130fba2654bce1963ab7cecf4"
+      "bytes": 66145,
+      "sha256": "3ff756ecd1274a8668de98292fbb9272bfe059a4f250105a3b6326954e2bc6ab"
     },
     {
       "path": "test/reviews/100-mendou.png",
@@ -196,9 +196,9 @@
       "sha256": "6c69d75f4e218d08bcb478446016da63c4272f8eabeb70201dee8adcc6673a65"
     },
     {
-      "path": "test/_astro/contact.astro_astro_type_script_index_0_lang.BkFo10JG.js",
+      "path": "test/_astro/contact.astro_astro_type_script_index_0_lang.H0HZJgJQ.js",
       "bytes": 1877,
-      "sha256": "bf2b438ec04e43a672918276b4c1c564b6372e78ba87dac66cbd117c0dd6fd73"
+      "sha256": "c20d86116513b84120032ae53c90ad60d6d3501a5731c446d363d3f773b8e366"
     },
     {
       "path": "test/_astro/contact@_@astro.BGZbrqDE.css",
@@ -211,9 +211,9 @@
       "sha256": "cb8b3b3ede9bfd3ce744d7dc4f219d162da640517da63108901e3a646d250c72"
     },
     {
-      "path": "test/_astro/Hero.astro_astro_type_script_index_0_lang.DaywRZAj.js",
+      "path": "test/_astro/Hero.astro_astro_type_script_index_0_lang.D51iVf9K.js",
       "bytes": 1105,
-      "sha256": "ccba28835769bd645074db960d40fba29d3531baeef70e5f7c6ba379d0bdf5c7"
+      "sha256": "24752dc1520a7d0f8b26a0d155212a5e4c6e8841fa42e475152fd0d8c360e432"
     },
     {
       "path": "test/_astro/index.astro_astro_type_script_index_0_lang.CzYl3jA0.js",
@@ -226,9 +226,9 @@
       "sha256": "acd41da38c0790cfe5d385e19a835c71d0ab9df841b4934adebd97ed17dd2542"
     },
     {
-      "path": "test/_astro/index@_@astro.Drxw88Ci.css",
-      "bytes": 38191,
-      "sha256": "7e79796041f7ba931c8526f07a426f3d8cddb891fe62c60fb493638dd1de6ed8"
+      "path": "test/_astro/index@_@astro.BhI9l1XB.css",
+      "bytes": 37788,
+      "sha256": "cf3142e56eeedb781fb2e034adda8c5b5b5f5ee0c633781fe199a7d8a8af0890"
     },
     {
       "path": "test/_astro/lenis.CBlNbkdS.js",
@@ -246,19 +246,19 @@
       "sha256": "971443a37de5c1a75b49f19f2df0c4d67ebfe3215bc438fbd52cfc0dc9f13df3"
     },
     {
-      "path": "test/_astro/translations.Ska4MsAX.js",
-      "bytes": 57137,
-      "sha256": "795ff4a4e68327cb1cb6742d16d1f7cadc569c4d86f65ddaa1e3ddcc026569eb"
+      "path": "test/_astro/translations.6ZcjHNx_.js",
+      "bytes": 56398,
+      "sha256": "7e90f097237651e065290552d556ac68f14d182dee459697208eb55d1b2a55fd"
     }
   ],
   "bundles": [
     "Footer.DE121JaH.css",
-    "index@_@astro.Drxw88Ci.css",
-    "Hero.astro_astro_type_script_index_0_lang.DaywRZAj.js",
+    "index@_@astro.BhI9l1XB.css",
+    "Hero.astro_astro_type_script_index_0_lang.D51iVf9K.js",
     "index.astro_astro_type_script_index_0_lang.CzYl3jA0.js",
     "contact@_@astro.BGZbrqDE.css",
-    "contact.astro_astro_type_script_index_0_lang.BkFo10JG.js",
-    "translations.Ska4MsAX.js",
+    "contact.astro_astro_type_script_index_0_lang.H0HZJgJQ.js",
+    "translations.6ZcjHNx_.js",
     "motion.DtQb8oqi.js",
     "index.DDlvirwQ.js",
     "ScrollTrigger.CB6UHAJl.js",
