@@ -62,14 +62,14 @@ const rows = [
     'うん、無料駐車場を用意してるよ。本庄市内はもちろん、上里町、児玉町、神川町、美里町、深谷市、群馬県伊勢崎市なんかの近くの地域からも通いやすい場所なんさ。'
   ],
   [
-    '見学や無料体験は、本当に手ぶらで行っても平気ですか？',
-    'はい、見学・無料体験ともにお気軽にお越しください。無料体験の方は、動きやすいTシャツや短パン、タオル、飲み物をお持ちいただければ安心です。',
-    'Can I really come empty-handed for a visit or free trial?',
-    'Yes, please feel free to come for a visit or free trial. For a free trial, bringing a comfortable T-shirt and shorts, a towel, and a drink will help you be prepared.',
-    'Posso mesmo ir de mãos vazias para uma visita ou aula experimental gratuita?',
-    'Sim, fique à vontade para vir conhecer o dojo ou fazer uma aula experimental gratuita. Para a aula experimental, é bom trazer camiseta e shorts confortáveis, uma toalha e uma bebida.',
-    '見学や無料体験は、本当に手ぶらで行っても平気かい？',
-    'うん、見学も無料体験も気軽に来てくんない。無料体験の人は、動きやすいTシャツや短パン、タオル、飲み物を持ってくれば安心だいね。'
+    '見学や無料体験には何を持っていけばいいですか？手ぶらでも大丈夫ですか？',
+    '見学は手ぶらでお気軽にお越しいただけます。無料体験に参加される方は、動きやすいTシャツや短パン、タオル、飲み物（水分補給用）をお持ちいただければ安心です。道着をお持ちでなくても問題ありません。',
+    'What should I bring for a visit or free trial? Can I come empty-handed?',
+    'You are welcome to come empty-handed just for a visit. If you participate in a free trial, please bring a comfortable T-shirt and shorts, a towel, and a drink. A gi is not required.',
+    'O que preciso levar para uma visita ou aula experimental? Posso ir de mãos vazias?',
+    'Para apenas assistir a uma aula, você pode vir tranquilamente de mãos vazias. Caso vá participar da aula experimental gratuita, traga camiseta e shorts confortáveis, uma toalha e uma bebida. Não é necessário kimono.',
+    '見学や無料体験には何を持ってけばいいかい？手ぶらでも平気かね？',
+    '見学だけなら手ぶらで気軽に来てくれて大丈夫なんさ。無料体験をやる人は、動きやすいTシャツや短パン、タオル、飲み物を持ってきてくんない。道着はなくても平気だいね。'
   ]
 ];
 export const faqByLocale = Object.fromEntries(['ja','en','pt','gunma'].map((locale,index)=>[

@@ -42,6 +42,13 @@ assert.equal(get(form,'action'),'https://formsubmit.co/tashas.natura@hotmail.com
 assert.equal(get(form,'method'),'POST');
 assert.equal(parse5.serialize(form),parse5.serialize(packaged.find(n=>n.tagName==='form')));
 report.contactPublished=true;report.formMatchesPackage=true;
+const privacyResponse=await fetch('https://tshr-bjj.com/privacy/');
+assert.equal(privacyResponse.status,200);
+assert.ok(privacyResponse.headers.get('strict-transport-security'));
+report.privacyPublished=true;
+const thanksResponse=await fetch('https://tshr-bjj.com/thanks/');
+assert.equal(thanksResponse.status,200);
+report.thanksPublished=true;
 const sitemapResponse=await fetch('https://tshr-bjj.com/sitemap.xml');
 assert.equal(sitemapResponse.status,200);
 assert.equal(await sitemapResponse.text(),fs.readFileSync(path.join(root,'sitemap.xml'),'utf8'));

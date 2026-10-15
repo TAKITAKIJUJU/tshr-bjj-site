@@ -1,0 +1,155 @@
+---
+import Layout from '../layouts/SiteLayout.astro';
+import Footer from '../components/site/Footer.astro';
+
+const title = "送信完了｜Over Limit 本庄（埼玉県本庄市）";
+const description = "お問い合わせ・無料体験予約の送信が完了しました。Over Limit 本庄より折り返しご連絡いたします。";
+---
+
+<Layout title={title} description={description} canonicalPath="/thanks/">
+  <main id="main-content" class="thanks-page">
+    <div class="thanks-container">
+      <div class="thanks-card">
+        <div class="check-icon" aria-hidden="true">✓</div>
+        <span class="thanks-eyebrow">Thank You</span>
+        <h1 class="thanks-title">お問い合わせを受け付けました</h1>
+        <p class="thanks-desc">
+          無料体験・見学のご予約、またはお問い合わせいただき誠にありがとうございます。<br />
+          内容を確認の上、担当者より通常24時間以内にご連絡させていただきます。
+        </p>
+
+        <div class="thanks-notice">
+          <p>
+            ※ 数日経っても返信が届かない場合は、迷惑メールフォルダをご確認いただくか、お手数ですが公式LINEより直接お問い合わせください。
+          </p>
+        </div>
+
+        <div class="thanks-actions">
+          <a href="https://line.me/ti/p/edZnSmCFIj" target="_blank" rel="noopener" class="btn-line">
+            <span>公式LINEで相談する</span>
+          </a>
+          <a href="/" class="btn-home">
+            <span>トップページへ戻る</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .thanks-page {
+    background: #f4f4ee;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 140px 20px 80px;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .thanks-container {
+    width: min(640px, 100%);
+    margin: 0 auto;
+  }
+
+  .thanks-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: clamp(32px, 6vw, 56px);
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .check-icon {
+    width: 64px;
+    height: 64px;
+    background: #10b981;
+    color: white;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 64px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+  }
+
+  .thanks-eyebrow {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #ff6b00;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .thanks-title {
+    font-size: clamp(22px, 3.5vw, 28px);
+    font-weight: 900;
+    color: #141613;
+    margin: 0 0 16px;
+    line-height: 1.35;
+  }
+
+  .thanks-desc {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #4b5563;
+    margin: 0 0 28px;
+  }
+
+  .thanks-notice {
+    background: #f9fafb;
+    border-left: 3px solid #ff6b00;
+    padding: 14px 16px;
+    text-align: left;
+    margin-bottom: 32px;
+    border-radius: 4px;
+  }
+
+  .thanks-notice p {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #6b7280;
+    margin: 0;
+  }
+
+  .thanks-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-line {
+    background: #06C755;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .btn-line:hover {
+    opacity: 0.9;
+  }
+
+  .btn-home {
+    background: #141613;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .btn-home:hover {
+    background: #ff6b00;
+  }
+</style>

@@ -27,6 +27,7 @@
     "path": "/contact/",
     "header": "modern",
     "form": "POST",
-    "sitemap": true
+    "sitemap": true,
+    "privacy": true
   }
 ]

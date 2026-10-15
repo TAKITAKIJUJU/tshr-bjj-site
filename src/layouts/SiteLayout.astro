@@ -3,17 +3,23 @@ import Header from '../components/site/TatoruHeader.astro';
 import { entities } from '../data/site/entities';
 import { faq } from '../data/site/faq';
 import '../styles/site.css';
-interface Props { title?: string; description?: string; }
-const { title = '本庄市のブラジリアン柔術ジム｜Over Limit 本庄', description = '本庄市の柔術道場 Over Limit 本庄。クラス・料金・週間スケジュールをご案内。体験には動きやすい服装・タオル・飲み物をご用意ください。日程未定でも相談できます。' } = Astro.props;
-const home = Astro.url.pathname.replace(/\/$/, '') === '';
-const canonical = new URL(home ? '/' : '/contact/', Astro.site).href;
-const base = new URL('/', Astro.site).href;
-const webpage = { '@type': home ? 'WebPage' : 'ContactPage', '@id': canonical + '#webpage', url: canonical, name: title, description, inLanguage: 'ja', isPartOf: { '@id': base + '#website' }, about: { '@id': 'https://tshr-bjj.com/#sportsactivitylocation' } };
+interface Props { title?: string; description?: string; canonicalPath?: string; }
+const {
+  title = '本庄市のブラジリアン柔術ジム｜Over Limit 本庄',
+  description = '本庄駅徒歩6分・無料駐車場完備のブラジリアン柔術ジム「Over Limit 本庄」。世界大会王者が直接指導。未経験・初心者・女性・キッズ大歓迎！クラス・料金・見学無料体験をご案内。',
+  canonicalPath
+} = Astro.props;
+const currentPath = canonicalPath ?? (Astro.url.pathname.replace(/\/$/, '') === '' ? '/' : Astro.url.pathname.endsWith('/') ? Astro.url.pathname : Astro.url.pathname + '/');
+const home = currentPath === '/';
+const canonical = new URL(currentPath, 'https://tshr-bjj.com').href;
+const base = 'https://tshr-bjj.com/';
+const pageType = home ? 'WebPage' : currentPath.includes('contact') ? 'ContactPage' : 'WebPage';
+const webpage = { '@type': pageType, '@id': canonical + '#webpage', url: canonical, name: title, description, inLanguage: 'ja', isPartOf: { '@id': base + '#website' }, about: { '@id': 'https://tshr-bjj.com/#sportsactivitylocation' } };
 const schema = { '@context': 'https://schema.org', '@graph': [
  { '@type': 'WebSite', '@id': base + '#website', name: 'Over Limit 本庄', url: base },
  ...entities.filter(e => home || ['SportsActivityLocation', 'Person'].includes(e['@type'])), webpage,
  ...(home ? [{ '@type': 'FAQPage', '@id': canonical + '#faq', mainEntity: faq.map(item=>({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) }] : []),
- { '@type': 'BreadcrumbList', itemListElement: [{ '@type':'ListItem', position:1, name:'ホーム', item:base }, ...(!home ? [{ '@type':'ListItem', position:2, name:'無料体験・お問い合わせ', item:canonical }] : [])] }
+ { '@type': 'BreadcrumbList', itemListElement: [{ '@type':'ListItem', position:1, name:'ホーム', item:base }, ...(!home ? [{ '@type':'ListItem', position:2, name:title, item:canonical }] : [])] }
 ] };
 ---
 <!doctype html>

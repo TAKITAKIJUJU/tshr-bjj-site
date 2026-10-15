@@ -27,6 +27,11 @@ const description = "埼玉県本庄市のブラジリアン柔術道場「Over 
           <!-- Form Side -->
           <div class="form-wrapper motion-up" data-motion-delay="0.2">
             <form action="https://formsubmit.co/tashas.natura@hotmail.com" method="POST" class="form">
+              <!-- Spam protection & redirect configuration -->
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+              <input type="hidden" name="_next" value="https://tshr-bjj.com/thanks/" />
+              <input type="hidden" name="_subject" value="【Over Limit 本庄】無料体験・お問い合わせ" />
+
               <div class="form__group">
                 <label for="name" class="form__label">お名前 <span class="form__required">必須</span></label>
                 <input type="text" id="name" name="name" class="form__input" placeholder="例：山田 太郎" required />
@@ -54,8 +59,8 @@ const description = "埼玉県本庄市のブラジリアン柔術道場「Over 
               </div>
 
               <div class="form__group">
-                <label for="message" class="form__label">メッセージ <span class="form__required">必須</span></label>
-                <textarea id="message" name="message" class="form__textarea" rows="6" placeholder="お問い合わせ内容をご記入ください" required></textarea>
+                <label for="message" class="form__label">メッセージ <span style="font-size:0.75rem; color:#888; margin-left:6px;">任意</span></label>
+                <textarea id="message" name="message" class="form__textarea" rows="6" placeholder="ご希望の日程やご質問等があればご記入ください"></textarea>
               </div>
 
               <div class="form__footer">
@@ -66,7 +71,7 @@ const description = "埼玉県本庄市のブラジリアン柔術道場「Over 
                   </svg>
                 </button>
                 <p class="form__privacy">
-                  ※送信いただいた内容はプライバシーポリシーに基づき適切に管理いたします。
+                  ※送信いただいた内容は<a href="/privacy/" target="_blank" rel="noopener" style="color: #FF6A00; text-decoration: underline;">プライバシーポリシー</a>に基づき適切に管理いたします。
                 </p>
               </div>
             </form>

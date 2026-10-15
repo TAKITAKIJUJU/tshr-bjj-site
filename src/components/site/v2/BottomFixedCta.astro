@@ -6,9 +6,15 @@
   <div class="bottom-fixed-cta__inner">
     <a class="cta-btn cta-btn--line" href="https://line.me/ti/p/edZnSmCFIj" target="_blank" rel="noopener">
       <span>LINE相談はこちら</span>
+      <svg class="cta-arrow" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M7 17L17 7M7 7h10v10" />
+      </svg>
     </a>
     <a class="cta-btn cta-btn--trial" href="/contact/">
       <span>無料体験はこちら</span>
+      <svg class="cta-arrow" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12h14M13 5l7 7-7 7" />
+      </svg>
     </a>
   </div>
 </aside>
@@ -74,6 +80,19 @@
     background: #ad4400;
     border-color: #ad4400;
     transform: translateY(-1px);
+  }
+
+  .cta-arrow {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .cta-btn--trial:hover .cta-arrow {
+    transform: translateX(3px);
+  }
+
+  .cta-btn--line:hover .cta-arrow {
+    transform: translate(2px, -2px);
   }
 
   .bottom-fixed-cta .cta-btn:is(:hover, :focus, :focus-visible, :active) { color: #ffffff; }

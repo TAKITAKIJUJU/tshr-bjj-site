@@ -12,7 +12,34 @@ export const entities = [
     ],
     "description": "本庄駅徒歩6分・無料駐車場完備。本庄市のブラジリアン柔術道場「Over Limit 本庄」。初心者・女性・キッズ大歓迎。世界大会王者（黒帯3段）が直接指導。見学・無料体験受付中。",
     "sport": "Brazilian Jiu-Jitsu",
-    "priceRange": "¥5,000 - ¥9,800",
+    "telephone": "090-6516-3248",
+    "priceRange": "¥2,200 - ¥9,800",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Wednesday"],
+        "opens": "10:00",
+        "closes": "11:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Wednesday"],
+        "opens": "19:00",
+        "closes": "22:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Thursday"],
+        "opens": "18:00",
+        "closes": "22:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday", "Saturday"],
+        "opens": "19:00",
+        "closes": "22:00"
+      }
+    ],
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": 36.2323399,

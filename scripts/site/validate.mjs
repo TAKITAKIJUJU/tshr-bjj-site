@@ -55,13 +55,15 @@ assert.ok(contact.some(n=>n.tagName==='dialog'&&get(n,'id')==='mobile-menu'));
 const form=contact.find(n=>n.tagName==='form');
 assert.equal(get(form,'action'),'https://formsubmit.co/tashas.natura@hotmail.com');
 assert.equal(get(form,'method'),'POST');
-assert.deepEqual(walk(form).filter(n=>['input','select','textarea'].includes(n.tagName)).map(n=>get(n,'name')),['name','email','tel','type','message']);
+assert.deepEqual(walk(form).filter(n=>['input','select','textarea'].includes(n.tagName)).map(n=>get(n,'name')),['_honey','_next','_subject','name','email','tel','type','message']);
 for(const node of contact)for(const attr of node.attrs??[]){
  if(['src','href','poster'].includes(attr.name)&&attr.value.startsWith('/site/'))assert.ok(fs.existsSync(path.join(root,attr.value)),attr.value);
 }
+assert.ok(fs.existsSync(path.join(root,'privacy/index.html')),'Missing privacy page');
+assert.ok(fs.existsSync(path.join(root,'thanks/index.html')),'Missing thanks page');
 const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
-assert.deepEqual([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]),['/','/english/','/portugues/','/contact/'].map(url=>'https://tshr-bjj.com'+url));
-report.push({path:'/contact/',header:'modern',form:'POST',sitemap:true});
+assert.deepEqual([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]),['/','/english/','/portugues/','/contact/','/privacy/'].map(url=>'https://tshr-bjj.com'+url));
+report.push({path:'/contact/',header:'modern',form:'POST',sitemap:true,privacy:true});
 fs.mkdirSync('docs/production',{recursive:true});
 fs.writeFileSync('docs/production/validation.json',JSON.stringify(report,null,2));
 console.log(report);

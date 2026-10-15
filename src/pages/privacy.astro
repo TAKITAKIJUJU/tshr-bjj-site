@@ -1,0 +1,226 @@
+---
+import Layout from '../layouts/SiteLayout.astro';
+import Footer from '../components/site/Footer.astro';
+
+const title = "プライバシーポリシー｜Over Limit 本庄（埼玉県本庄市）";
+const description = "Over Limit 本庄（埼玉県本庄市）の個人情報保護方針・プライバシーポリシーです。体験予約・お問い合わせにおいてお預かりする個人情報の適切な保護と管理について定めています。";
+---
+
+<Layout title={title} description={description} canonicalPath="/privacy/">
+  <main id="main-content" class="legal-page">
+    <header class="legal-hero">
+      <div class="legal-container">
+        <span class="legal-eyebrow">Privacy Policy</span>
+        <h1 class="legal-title">プライバシーポリシー</h1>
+        <p class="legal-lead">Over Limit 本庄（以下「当道場」）は、お客様の個人情報を適切に保護・管理するため、以下のとおりプライバシーポリシーを定めます。</p>
+      </div>
+    </header>
+
+    <div class="legal-container legal-body">
+      <section class="legal-section">
+        <h2>1. 事業者情報</h2>
+        <dl class="legal-meta">
+          <div><dt>道場名</dt><dd>Over Limit 本庄（オーバーリミットほんじょう）</dd></div>
+          <div><dt>代表者</dt><dd>田代 セイイチ</dd></div>
+          <div><dt>所在地</dt><dd>〒367-0042 埼玉県本庄市けや木1丁目1-16</dd></div>
+          <div><dt>連絡先</dt><dd><a href="/contact/">お問い合わせフォーム</a> または <a href="https://line.me/ti/p/edZnSmCFIj" target="_blank" rel="noopener">公式LINE</a></dd></div>
+        </dl>
+      </section>
+
+      <section class="legal-section">
+        <h2>2. 取得する個人情報</h2>
+        <p>当道場は、見学・体験のご予約、入会相談、その他各種お問い合わせの際に、以下の個人情報を取得することがあります。</p>
+        <ul>
+          <li>お名前（フリガナを含む）</li>
+          <li>メールアドレス</li>
+          <li>お電話番号</li>
+          <li>お問い合わせ項目およびご相談内容</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2>3. 個人情報の利用目的</h2>
+        <p>当道場がお預かりした個人情報は、以下の目的のために利用いたします。</p>
+        <ul>
+          <li>見学・無料体験予約の受付、日程調整、事前のご案内</li>
+          <li>入会に関するお問い合わせ・ご相談への回答</li>
+          <li>悪天候や緊急時などにおける道場運営上の連絡</li>
+          <li>当道場のサービス向上および運営管理</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2>4. 個人情報の第三者提供について</h2>
+        <p>当道場は、お客様の事前の同意を得ることなく、個人情報を第三者に提供・開示することはありません。ただし、法令に基づく場合や人の生命・身体の保護のために必要がある場合を除きます。</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>5. 個人情報の安全管理措置</h2>
+        <p>当道場は、個人情報の漏えい、滅失、き損の防止その他の安全管理のために、適切な組織的・技術的措置を講じます。また、個人情報を取り扱う通信においてはSSL/TLSによる暗号化を実施しています。</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>6. 個人情報の開示・訂正・削除</h2>
+        <p>お客様ご本人から個人情報の開示、訂正、追加、削除、利用停止のご請求があった場合は、ご本人であることを確認の上、速やかに対応いたします。</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>7. 本ポリシーの改定</h2>
+        <p>当道場は、法令の改正や事業環境の変化に対応するため、本プライバシーポリシーの内容を適宜見直し、改定することがあります。改定後の内容は本ウェブサイト上に掲載した時点より効力を生じるものとします。</p>
+      </section>
+
+      <div class="legal-back">
+        <a href="/" class="btn-back">← トップページへ戻る</a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .legal-page {
+    background: #f4f4ee;
+    color: #141613;
+    font-family: 'Noto Sans JP', sans-serif;
+    min-height: 80vh;
+    padding-bottom: 96px;
+  }
+
+  .legal-container {
+    width: min(840px, calc(100% - 40px));
+    margin-inline: auto;
+  }
+
+  .legal-hero {
+    background: #141613;
+    color: #f4f4ee;
+    padding-top: 130px;
+    padding-bottom: 64px;
+    margin-bottom: 48px;
+  }
+
+  .legal-eyebrow {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #ff6b00;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .legal-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    margin: 0 0 16px;
+  }
+
+  .legal-lead {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #d1d5db;
+    margin: 0;
+  }
+
+  .legal-body {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: clamp(28px, 5vw, 48px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  }
+
+  .legal-section {
+    margin-bottom: 36px;
+  }
+
+  .legal-section:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .legal-section h2 {
+    font-size: 18px;
+    font-weight: 800;
+    border-left: 4px solid #ff6b00;
+    padding-left: 12px;
+    margin: 0 0 14px;
+    color: #141613;
+  }
+
+  .legal-section p, .legal-section li {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #4b5563;
+  }
+
+  .legal-section ul {
+    margin: 8px 0 0;
+    padding-left: 20px;
+  }
+
+  .legal-section li {
+    margin-bottom: 6px;
+  }
+
+  .legal-section a {
+    color: #ff6b00;
+    text-decoration: underline;
+  }
+
+  .legal-meta {
+    margin: 0;
+    display: grid;
+    gap: 8px;
+    font-size: 14px;
+    background: #f9fafb;
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .legal-meta div {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+  }
+
+  .legal-meta dt {
+    font-weight: 700;
+    color: #141613;
+  }
+
+  .legal-meta dd {
+    margin: 0;
+    color: #4b5563;
+  }
+
+  .legal-back {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+  }
+
+  .btn-back {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #141613;
+    color: #f4f4ee;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: background 0.2s ease;
+  }
+
+  .btn-back:hover {
+    background: #ff6b00;
+  }
+
+  @media (max-width: 600px) {
+    .legal-meta div {
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+  }
+</style>

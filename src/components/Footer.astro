@@ -6,10 +6,15 @@
   <div class="footer__inner">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/LOGO.webp" alt="OVER LIMIT ロゴ1" class="footer__img-logo">
-        <img src="/LOGO2.webp" alt="OVER LIMIT ロゴ2" class="footer__img-logo2">
+        <img width="1200" height="1200" decoding="async" src="/LOGO.webp" alt="Over Limit 本庄" class="footer__img-logo">
+        <img width="424" height="104" decoding="async" src="/LOGO2.webp" alt="" class="footer__img-logo2">
+      </div>
+      <div class="footer__info">
+        <p class="footer__nap">〒367-0042 埼玉県本庄市けや木1丁目1-16（JR本庄駅北口徒歩6分・無料駐車場完備）</p>
+        <p class="footer__rep">代表：田代 セイイチ（黒帯3段） / TEL：<a href="tel:09065163248" style="color:inherit; text-decoration:underline;">090-6516-3248</a></p>
       </div>
       <div class="footer__links">
+        <a href="/privacy/">プライバシーポリシー</a>
         <a href="https://www.instagram.com/tshr_jiujitsu/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.facebook.com/groups/304416070927536" target="_blank" rel="noopener">Facebook</a>
       </div>
@@ -58,9 +63,21 @@
     object-fit: contain;
   }
 
+  .footer__info {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .footer__nap, .footer__rep {
+    margin: 0;
+  }
+
   .footer__links {
     display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 18px;
   }
 
   .footer__links a {
