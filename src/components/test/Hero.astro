@@ -17,6 +17,7 @@
       <video 
         class="hero__video img-luxury" aria-label="道場での練習映像"
         preload="metadata" poster="/test/hero-poster.webp" 
+        autoplay
         loop 
         muted 
         playsinline>
@@ -240,8 +241,7 @@
  const toggle = document.querySelector<HTMLButtonElement>('.video-toggle');
  if (video && toggle) {
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
-  const isMobileOrSaveData = window.innerWidth <= 768 || (navigator as any).connection?.saveData === true;
-  let requestedPlay = !preference.matches && !isMobileOrSaveData;
+  let requestedPlay = !preference.matches;
   let inView = true;
   const renderState = () => {
    const label = t(video.paused ? '映像を再生' : '映像を停止');

@@ -20,7 +20,7 @@
         "FAQPage",
         "BreadcrumbList"
       ],
-      "bytes": 66246
+      "bytes": 66161
     },
     {
       "path": "/test/contact/",
@@ -58,7 +58,7 @@
         "FAQPage",
         "BreadcrumbList"
       ],
-      "bytes": 65678
+      "bytes": 65594
     },
     {
       "path": "/test/english/contact/",
@@ -96,7 +96,7 @@
         "FAQPage",
         "BreadcrumbList"
       ],
-      "bytes": 67642
+      "bytes": 67558
     },
     {
       "path": "/test/portugues/contact/",
@@ -134,7 +134,7 @@
         "FAQPage",
         "BreadcrumbList"
       ],
-      "bytes": 66503
+      "bytes": 66418
     },
     {
       "path": "/test/gunma/contact/",
@@ -323,7 +323,7 @@
       "status": 200
     },
     {
-      "path": "test/_astro/Hero.astro_astro_type_script_index_0_lang.NAXujy0T.js",
+      "path": "test/_astro/Hero.astro_astro_type_script_index_0_lang.NyEamguJ.js",
       "status": 200
     },
     {
@@ -335,7 +335,7 @@
       "status": 200
     },
     {
-      "path": "test/_astro/index@_@astro.rcEto518.css",
+      "path": "test/_astro/index@_@astro.Bzy-IHtK.css",
       "status": 200
     },
     {
@@ -356,16 +356,16 @@
     }
   ],
   "scriptSources": [
-    "/test/_astro/Hero.astro_astro_type_script_index_0_lang.NAXujy0T.js",
+    "/test/_astro/Hero.astro_astro_type_script_index_0_lang.NyEamguJ.js",
     "/test/_astro/index.astro_astro_type_script_index_0_lang.CzYl3jA0.js",
     "/test/_astro/contact.astro_astro_type_script_index_0_lang.CcmDePwi.js",
-    "/test/_astro/Hero.astro_astro_type_script_index_0_lang.NAXujy0T.js",
+    "/test/_astro/Hero.astro_astro_type_script_index_0_lang.NyEamguJ.js",
     "/test/_astro/index.astro_astro_type_script_index_0_lang.CzYl3jA0.js",
     "/test/_astro/contact.astro_astro_type_script_index_0_lang.CcmDePwi.js",
-    "/test/_astro/Hero.astro_astro_type_script_index_0_lang.NAXujy0T.js",
+    "/test/_astro/Hero.astro_astro_type_script_index_0_lang.NyEamguJ.js",
     "/test/_astro/index.astro_astro_type_script_index_0_lang.CzYl3jA0.js",
     "/test/_astro/contact.astro_astro_type_script_index_0_lang.CcmDePwi.js",
-    "/test/_astro/Hero.astro_astro_type_script_index_0_lang.NAXujy0T.js",
+    "/test/_astro/Hero.astro_astro_type_script_index_0_lang.NyEamguJ.js",
     "/test/_astro/index.astro_astro_type_script_index_0_lang.CzYl3jA0.js",
     "/test/_astro/contact.astro_astro_type_script_index_0_lang.CcmDePwi.js"
   ],
@@ -373,5 +373,5 @@
     "status": 308,
     "location": "https://tshr-bjj.com/test/"
   },
-  "checkedAt": "2026-10-15T12:17:08.647Z"
+  "checkedAt": "2026-10-15T12:23:37.164Z"
 }
