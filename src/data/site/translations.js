@@ -1385,6 +1385,60 @@ const rows = [
     "Excellent guidance in jiu-jitsu",
     "uma super orientação sobre o jiu-jítsu",
     "柔術について素晴らしい指導が受けられます"
+  ],
+  [
+    "月・水 10:00〜11:30 / 19:00〜22:00",
+    "Mon & Wed 10:00–11:30 / 19:00–22:00",
+    "Seg e Qua 10:00–11:30 / 19:00–22:00",
+    "月・水 10:00〜11:30 / 19:00〜22:00"
+  ],
+  [
+    "木・土 19:00〜22:00",
+    "Thu & Sat 19:00–22:00",
+    "Qui e Sáb 19:00–22:00",
+    "木・土 19:00〜22:00"
+  ],
+  [
+    "金 18:00〜22:30",
+    "Fri 18:00–22:30",
+    "Sex 18:00–22:30",
+    "金 18:00〜22:30"
+  ],
+  [
+    "※ 休館日：火曜・日曜（祝日・試合等により変動あり）",
+    "* Closed: Tuesdays & Sundays (subject to change on holidays/tournaments)",
+    "* Fechado: terças e domingos (sujeito a alterações em feriados/torneios)",
+    "※ 休館日：火曜・日曜（祝日や試合などで変わることもあるんさ）"
+  ],
+  [
+    "※ 指導中等で出られない場合があります。体験予約はWEBフォームやLINEもご利用いただけます。",
+    "* We may not be able to answer during class instruction. Booking is also available via web form and LINE.",
+    "* Podemos não atender durante as aulas. Você também pode agendar pelo formulário online ou LINE.",
+    "※ 指導中などで出られねぇ時があるんさ。体験予約はWEBフォームやLINEも使ってくんないね。"
+  ],
+  [
+    "※お電話・LINE・フォームからお気軽にどうぞ",
+    "* Inquiries welcome via phone, LINE, or web form",
+    "* Fale conosco por telefone, LINE ou formulário",
+    "※お電話・LINE・フォームから気軽に連絡してくんない"
+  ],
+  [
+    "〒367-0042 埼玉県本庄市けや木1丁目1-16（JR本庄駅北口徒歩6分・無料駐車場完備）",
+    "1-1-16 Keyaki, Honjo, Saitama 367-0042 (6-min walk from JR Honjo Stn North Exit / Free parking)",
+    "1-1-16 Keyaki, Honjo, Saitama 367-0042 (A 6 min a pé da saída norte da estação JR Honjo / Estacionamento gratuito)",
+    "〒367-0042 埼玉県本庄市けや木1丁目1-16（JR本庄駅北口から歩いて6分・無料駐車場あるで）"
+  ],
+  [
+    "プライバシーポリシー",
+    "Privacy Policy",
+    "Política de Privacidade",
+    "プライバシーポリシー"
+  ],
+  [
+    "言語を選択（各言語のトップへ）",
+    "Select language (to top page)",
+    "Selecionar idioma (página inicial)",
+    "言葉を選ぶ（各言語のトップへ）"
   ]
 ];
 

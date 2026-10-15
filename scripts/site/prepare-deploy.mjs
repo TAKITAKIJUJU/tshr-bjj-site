@@ -4,13 +4,21 @@ import {locales,siteBase,localizeSiteHtml} from './localize.mjs';
 const build=path.resolve(process.argv[2] || 'dist/client');
 const output=path.resolve(process.argv[3] || 'local-assets/production-release');
 fs.mkdirSync(output,{recursive:true});
+function shouldCopy(src, dst) {
+  if (!fs.existsSync(dst)) return true;
+  if (fs.statSync(src).size !== fs.statSync(dst).size) return true;
+  return !fs.readFileSync(src).equals(fs.readFileSync(dst));
+}
+
 function sharedAsset(url) {
   if(!url.startsWith('/')||url.startsWith('/site/'))return url;
   const pathname=url.split(/[?#]/)[0],input=path.resolve(build,'.'+pathname);
   if(!input.startsWith(build+path.sep)||!fs.existsSync(input)||!fs.statSync(input).isFile()||! /\.(webp|png|jpe?g|mp4|svg|woff2?)$/i.test(input))return url;
   const target=path.join(output,'site/shared',pathname);
   fs.mkdirSync(path.dirname(target),{recursive:true});
-  if(!fs.existsSync(target)||fs.statSync(target).size!==fs.statSync(input).size){try{fs.copyFileSync(input,target);}catch{}}
+  if(shouldCopy(input, target)){
+    fs.copyFileSync(input, target);
+  }
   return '/site/shared'+url;
 }
 fs.cpSync(path.join(build,'site'),path.join(output,'site'),{recursive:true});
@@ -41,7 +49,7 @@ for(const name of queued){
 
 for(const name of queued){
   let content=fs.readFileSync(path.join(build,'_astro',name),'utf8');
-  for(const match of content.matchAll(/(?:from|import)\s*["']\.\/([^"']+)["']/g)) {
+  for(const match of content.matchAll(/(?:from|import)\s*\(?\s*["']\.\/([^"']+)["']\)?/g)) {
     queued.add(match[1]);
     if (match[1].includes('@')) renamedMap.set(match[1], match[1].replace(/@/g, '_'));
   }
@@ -81,6 +89,11 @@ if (privacyHtml) {
 if (thanksHtml) {
   fs.mkdirSync(path.join(output,'thanks'),{recursive:true});
   fs.writeFileSync(path.join(output,'thanks/index.html'),thanksHtml);
+}
+if (notFoundHtml) {
+  fs.writeFileSync(path.join(output,'404.html'),notFoundHtml);
+  fs.mkdirSync(path.join(output,'404'),{recursive:true});
+  fs.writeFileSync(path.join(output,'404/index.html'),notFoundHtml);
 }
 
 try { fs.copyFileSync(path.join(build,'sitemap.xml'),path.join(output,'sitemap.xml')); } catch {}

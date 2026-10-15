@@ -1,4 +1,4 @@
-// Snapshot of current local business information; Friday opening hours await confirmation.
+// Local business entities and official schedule.
 export const entities = [
   {
     "@type": "SportsActivityLocation",
@@ -33,12 +33,18 @@ export const entities = [
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Thursday"],
-        "opens": "18:00",
+        "opens": "19:00",
         "closes": "22:00"
       },
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Friday", "Saturday"],
+        "dayOfWeek": ["Friday"],
+        "opens": "18:00",
+        "closes": "22:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday"],
         "opens": "19:00",
         "closes": "22:00"
       }
