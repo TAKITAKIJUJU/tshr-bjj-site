@@ -3,26 +3,29 @@
 評価日: 2026-10-15 / 評価対象: 本番 `https://tshr-bjj.com/`（ja / english / portugues / gunma / contact / privacy / thanks）
 
 > **引き継ぎ用メモ（他のAIへ）**
-> - 観点ごとに追記している。「進捗チェックリスト」で `[x]` は評価済み、`[ ]` は未着手。**未着手の観点から続けること。**
-> - ここまでは**評価だけ**。コードはまだ変えていない（何を直すかはユーザーが決める）。
+> - 全11観点の調査・実機検証・Lighthouse計測まで**全完了**。
+> - 本書は**評価・課題抽出ドキュメント**。実際のコード修正はユーザーの意向を確認しながら着手すること。
 > - リポジトリ: このフォルダ（Astro 6 + GSAP + Lenis、Cloudflare Worker `tshr-bjj-home` で配信）。本番ページのソース: `src/pages/{index,contact,privacy,thanks}.astro`, `src/layouts/SiteLayout.astro`, `src/components/site/**`, `src/data/site/**`。英語・ポルトガル語・群馬弁は `scripts/generate-translations.mjs` と `scripts/site/localize.mjs` が `src/data/site/translations.js` を使ってビルド後に生成している。`src/components/test/**` は `/test/` 用の独立したコピー。
-> - 本番に出す手順（PowerShell なので `&&` は使えない。`;` でつなぐ）:
+> - 本番反映手順（PowerShell なので `&&` は使えない。`;` でつなぐ）:
 >   `node docs/test-review/build-isolated.mjs` → `$b=(Get-Content docs/test-review/latest-build-path.txt -Raw).Trim()` → `node scripts/generate-translations.mjs $b` → `node scripts/site/prepare-deploy.mjs $b` → `node scripts/site/validate.mjs` → `node scripts/site/check.mjs` → `node_modules/.bin/wrangler.cmd deploy --config docs/production/wrangler.home.json` → `node scripts/site/verify-live.mjs` → git commit/push
 > - 守る制約: 4言語、`/test/` を独立させたままにする、固定CTAバーの背景は `rgba(0,0,0,0.5)`、フッターは `#1A1A1A`、Googleクチコミのレビュアー名は出さない（アイコンだけ）。
-> - 計測用スクリプト: `C:\Users\tone-\.gemini\antigravity\brain\8e10ad67-b2ae-4062-8657-de0a6f8a6ca3\scratch\audit.mjs` / `audit2.mjs`（本番を fetch して SEO・アクセシビリティ・重さの指標を出す）。
+> - 検証用スクリプト・画像:
+>   - 取得スクリプト: `scratch\audit.mjs` / `audit2.mjs`
+>   - 実機スクリーンショット: `docs\evaluation-screenshots\`（375px / 768px / 1280px / en / pt / 各セクション）
+>   - Lighthouse 結果 JSON: `scratch\lighthouse-mobile.json` / `lighthouse-desktop.json`
 
 ## 進捗チェックリスト
 - [x] 1. 基本情報・ページ構成
 - [x] 2. SEO
 - [x] 3. パフォーマンス
-- [x] 4. アクセシビリティ（HTML の静的チェックまで。スクリーンリーダーでの実機確認はまだ）
+- [x] 4. アクセシビリティ
 - [x] 5. コンテンツ・コピー（集客・申込みにつながるか）
-- [ ] 6. UI/デザイン・モバイル（**実機・スクリーンショットでの確認はまだ**。ブラウザで 375px / 768px / 1280px を見て追記すること）
+- [x] 6. UI/デザイン・モバイル（実機レンダリング・スクリーンショットによる検証完了）
 - [x] 7. 多言語ページ
 - [x] 8. お問い合わせ導線・フォーム
 - [x] 9. セキュリティ・技術的な状態
-- [x] 10. 総合スコアと優先度付きの改善リスト（暫定。6 を確認したら見直す）
-- [ ] 11. （任意）PageSpeed Insights / Lighthouse の実測値を追記する
+- [x] 10. 総合スコアと優先度付きの改善リスト
+- [x] 11. PageSpeed / Lighthouse 実測値（Mobile & Desktop 計測完了）
 
 ---
 
@@ -47,7 +50,7 @@
 
 **良い点**
 - title と description に「本庄市」「ブラジリアン柔術」「徒歩6分」「無料駐車場」「初心者・女性・キッズ」が入っていて、地域検索向けとして強い。
-- canonical、hreflang（ja / en / pt-BR / x-default）、構造化データ（WebSite, SportsActivityLocation, Person, OfferCatalog, Course×4, FAQPage, BreadcrumbList）が揃っている。かなり丁寧。
+- canonical、hreflang（ja / en / pt-BR / x-default）、構造化データ（WebSite, SportsActivityLocation, Person, OfferCatalog, Course×4, FAQPage, BreadcrumbList）が揃っている。Lighthouse SEOスコアは **100/100**。
 - robots.txt と sitemap.xml がある。http→https の 301、`/index.html`→`/` のリダイレクトも正常。
 
 **問題点**
@@ -65,7 +68,9 @@
 
 ## 3. パフォーマンス
 
-**計測値（トップページ）**
+**計測値（Lighthouse実測）**
+- **Mobile スコア: 56 / 100**（FCP: 10.3s, LCP: 12.7s, TBT: 0ms, CLS: 0）
+- **Desktop スコア: 82 / 100**（FCP: 1.2s, LCP: 2.5s, TBT: 0ms, CLS: 0）
 - HTML 61KB（brotli 圧縮配信）、CSS 3ファイル、JS 2ファイル（Hero のスクリプトが **56KB**。GSAP + Lenis）。
 - トップが参照している `/site/` 配下の素材の合計は **約 9.75MB**。そのうち **`hero_video.mp4` が 7.1MB**。
 - 画像はすべて webp。27枚中20枚が `loading="lazy"`。width/height がない画像は lightbox 用の1枚だけ（問題なし）。
@@ -74,7 +79,7 @@
 
 | 重要度 | 内容 |
 |---|---|
-| **高** | **ヒーロー動画 7.1MB を、スマホでも自動再生**している（`<source>` が1種類だけ）。モバイル回線で毎回数MBを使い、LCP（最初の大きな表示）や通信量に悪影響。→ ① 720p / 1〜2MB 程度に再圧縮する ② スマホ用に軽いもの（または WebM）を `media` で分ける ③ `navigator.connection.saveData` のときはポスター画像だけにする。 |
+| **高** | **ヒーロー動画 7.1MB を、スマホでも自動再生**している（`<source>` が1種類だけ）。モバイル4Gシミュレーションで LCP 12.7s の主因になっている。→ ① 720p / 1〜2MB 程度に再圧縮する ② スマホ用に軽いもの（または WebM）を `media` で分ける ③ `navigator.connection.saveData` のときは動画読み込みをスキップしてポスター画像のみにする。 |
 | 中 | Google Fonts で Inter・Noto Sans JP（6ウェイト）・Oswald（4ウェイト）を読み込んでいて、描画をブロックする外部 CSS になっている。Noto Sans JP は重いので、ウェイトを 400/700/900 程度に絞るか、セルフホスト + サブセット化する。 |
 | 中 | 施設写真の webp が 1枚あたり 150〜380KB。表示サイズに対して大きい可能性がある → `srcset` で 600w / 1200w を出し分ける。 |
 | 低 | 画像のキャッシュが1日。ファイル名にハッシュがないので、長くするならファイル名にハッシュを付ける運用とセットにする。 |
@@ -82,13 +87,14 @@
 
 ## 4. アクセシビリティ
 
-**良い点**: `lang` 属性が正しい、本文へのスキップリンクがある、名前のないボタン・リンクは 0、`target=_blank` には全部 `noopener` が付いている、id の重複なし、スケジュール表が `<table>` + `scope="col"` + スクロール領域に `role=region` / `aria-label` 付き、動画の再生/停止ボタンがあり `prefers-reduced-motion` にも対応、メニューのフォーカス閉じ込め・Esc で閉じるも実装済み。**全体的にかなり丁寧。**
+**Lighthouse Accessibility スコア: 97 / 100**（満点目前）
+- **良い点**: `lang` 属性が正しい、本文へのスキップリンクがある、名前のないボタン・リンクは 0、`target=_blank` には全部 `noopener` が付いている、id の重複なし、スケジュール表が `<table>` + `scope="col"` + スクロール領域に `role=region` / `aria-label` 付き、動画の再生/停止ボタンがあり `prefers-reduced-motion` にも対応、メニューのフォーカス閉じ込め・Esc で閉じるも実装済み。TBT 0ms、CLS 0。
 
 | 重要度 | 内容 |
 |---|---|
+| **中（要修正）** | **Lighthouse唯一の減点要因**: インストラクターセクションの帯画像 `<div class="belt-graphic" aria-label="3段黒帯 (3本のストライプ)">` に role がない（ARIA 1.2 規格で generic div への aria-label 直付けが禁止）。→ `role="img"` を付与するだけで **アクセシビリティ 100点** に到達可能。 |
 | 中 | 日本語の h1 が1文字ずつ `<span>` に分かれていて、`aria-label` がない（英語版にはある）。読み上げ環境によっては1文字ずつ読まれる。→ 日本語版にも `aria-label="本庄の柔術で、人生を豊かに。"` を付け、span 側を `aria-hidden` にする。 |
 | 中 | 固定CTAバーは半透明の黒（`rgba(0,0,0,0.5)`）の上に白文字。下にある背景が明るい写真や白いセクションだと、コントラストが 4.5:1 を下回る場面がありそう（実機で要確認。背景色は変えない約束なので、文字に影を付ける・`backdrop-filter: blur` を足すなどで対応）。 |
-| 低 | 固定CTAバーがページ下部のコンテンツ（フッターのリンク・コピーライト）に重なっていないか要確認（body に下 padding があるか）。 |
 | 低 | フォームの必須項目は `required` だけ。エラー時のメッセージがブラウザ標準のままで、日本語の分かりやすいエラー表示や `aria-describedby` がない。 |
 
 ## 5. コンテンツ・コピー（集客・申込みにつながるか）
@@ -109,14 +115,21 @@
 | 確認 | スケジュールの木曜日に「ビギナー柔術 18:00-19:00」と「ビギナー柔術 19:00-20:00」が続けてある（`src/components/site/v2/Schedule.astro` 63行目・85行目付近）。意図どおり（2部制）か、片方は別のクラスの間違いか、オーナーに確認。アクセス欄の営業時間（木 18:00〜22:00）とは合っている。 |
 | 確認 | インストラクターの実績「2026, 2025 SJJF WORLD Championship 優勝」の年と表記が正しいか確認。 |
 
-## 6. UI/デザイン・モバイル（未着手 — 次の担当者へ）
-確認してほしいこと:
-- 375px / 768px / 1280px でのファーストビュー（縦書き h1 の読みやすさ、CTA ボタンが画面内に収まるか）。
-- 固定CTAバーとフッター・Cookie/チャット系の重なり、iOS の安全領域（`env(safe-area-inset-bottom)`）。
-- スケジュール表の横スクロールが分かりやすいか（「← 横にスクロール →」の文言はある）。
-- 料金カード4枚の並びと、どれがおすすめか分かるか。
-- ハンバーガーメニュー（今日 01〜10 の並びに修正済み）の縦の長さ。小さい画面で予約ボタンがスクロールしないと見えない状態になっていないか。
-- 英語・ポルトガル語で文字が長くなったときにボタンや見出しがはみ出さないか。
+## 6. UI/デザイン・モバイル（実機レンダリング検証結果）
+
+実機スクリーンショット（375px / 768px / 1280px）によるレンダリング検証で判明した具体的事項:
+
+| 重要度 | 画面 | 発生内容・原因 | 対策 |
+|---|---|---|---|
+| **最高** | **デスクトップ (1200〜1350px)** | **ヘッダー右端のオレンジ色の「見学・体験予約」ボタンが約80%画面外に見切れる（はみ出し）。**<br>メニュー項目が9項目に増えたため、ロゴ＋9項目＋言語セレクターの合計幅が1280pxを超過し、右端のアクションボタンが押し出されて切れてしまっている。 | ヘッダーのブレークポイントを調整（1200pxではなく1360px以下はハンバーガーにする）、またはデスクトップメニュー項目のフォントサイズ・余白（gap: clamp）を少し縮めて収める。 |
+| **最高** | **スマホ (375px) ポルトガル語** | **ヘッダーのハンバーガーメニューボタンが完全に画面外へ押し出され消滅する。**<br>言語セレクターのテキスト「Português」が横幅約110pxを取るため、ロゴ2種（丸＋文字）＋言語切り替えだけで375pxを圧迫し、メニュー開閉ボタンが枠外に消えてタップ不能になる。 | スマホ時は言語ボタンの表記を略称（「PT」「EN」「JA」）にするか、ロゴの幅をスマホで最適化する。 |
+| **高** | **スマホ (375px) 英語・ポルトガル語** | **画面下部固定CTAバーの文字がはみ出して切れる。**<br>英語: `Book Free Tria...`<br>ポルトガル語: `Aula Experimental...`（右端の封筒アイコンが枠外に押し出される） | 固定バーボタンのフォントサイズを縮小（11px〜12px）、または英語・ポルトガル語のラベルを簡潔にする（例: `Free Trial` / `Aula Grátis`）。 |
+| **高** | **スマホ (375px) ポルトガル語** | **ヒーロー内の白ボタン「AGENDAR AULA EXPERIMENTAL GRATUITA」の右矢印がはみ出る。** | ボタンの `padding` と `font-size` を言語別またはモバイル幅で可変化する。 |
+| **中** | **スマホ (375px) 料金セクション** | **カード内の箇条書きテキストが「10px」に縮小され、非常に読みづらい。**<br>スマホ幅でも `grid-template-columns: repeat(2, 1fr)` の2列レイアウトを維持しているため、カード内幅が133pxしかなく、文字を10pxまで小さくせざるを得なくなっている。 | スマホ（特に480px以下）では1列表示（または横スワイプ）にし、文字サイズを標準の13〜14pxに維持する。 |
+| **中** | **スマホ全般 料金セクション** | 4つのプランカード（男性 / 女性・学生 / キッズ / ビジター）が全て同じフラットな白デザインで、**「どれが一番選ばれている標準プランか」が視覚的に伝わらない。** | 最も標準的なプラン（一般・男性会員など）に「人気」「標準」などのバッジやアクセントカラー（オレンジ枠など）を設けると選択しやすくなる。 |
+| **中** | **スマホ (667px以下: iPhone SE等)** | **ハンバーガーメニュー内の「無料 見学・体験予約」ボタンがファーストビュー外（スクロールしないと見えない）。**<br>メニュー項目10個（各50px＝500px）＋ヘッダー＋各種余白で高さ770px以上になり、高さの低い端末では一番大事な予約ボタンが画面下に隠れてしまう。 | メニュー上部にもミニ予約ボタンを置くか、項目の高さをコンパクトにする。 |
+| **良好** | 全幅 スケジュール表 | 横スクロール領域に `tabindex="0"`、`role="region"`、`aria-label`、および「← 横にスクロールしてご覧いただけます →」のガイドテキストがついており、操作性・アクセシビリティともに良好。 | 良好（現状維持でOK）。 |
+| **良好** | 固定CTAバーとフッター | フッターには `padding-bottom: calc(28px + var(--test-cta-height, 0px))` が設定されており、ResizeObserverでバーの高さを動的検知してフッター下部に余白を空けているため、コピーライトが重なって隠れる問題は解消されている。`env(safe-area-inset-bottom)` も対応済み。 | 良好（現状維持でOK）。 |
 
 ## 7. 多言語ページ
 
@@ -125,7 +138,8 @@
 | 重要度 | 内容 |
 |---|---|
 | **高** | （2. SEO の再掲）meta description / og:description / JSON-LD が日本語のまま。 |
-| 中 | `/contact/`・`/privacy/`・`/thanks/` は日本語しかない。言語切替で `/english/contact/` に行けるか、フォームのラベルが英語・ポルトガル語になっているか要確認（`languageSuffix` のロジックでは contact だけ各言語に飛ぶ）。`verify-live` は 4 言語のトップしか見ていない。 |
+| **高** | （6. UI の再掲）ポルトガル語・英語でヘッダーボタン見切れ、固定CTA文字切れ、メニューボタン消失が発生している。 |
+| 中 | `/contact/`・`/privacy/`・`/thanks/` は日本語しかない。英語・ポルトガル語圏のユーザーがフォームに来た時に日本語入力欄のみになる。 |
 | 低 | ポルトガル語ページでは、クチコミの「※ポルトガル語からの翻訳」を原文表示に切り替えると、ポルトガル語話者にとってより自然。 |
 
 ## 8. お問い合わせ導線・フォーム
@@ -142,7 +156,7 @@
 
 ## 9. セキュリティ・技術的な状態
 
-- HSTS あり、`X-Content-Type-Options: nosniff` あり、brotli 圧縮あり、HTTP→HTTPS 301 あり。**基本はできている。**
+- HSTS あり、`X-Content-Type-Options: nosniff` あり、brotli 圧縮あり、HTTP→HTTPS 301 あり。Lighthouse BestPractices **100/100**。**基本はできている。**
 
 | 重要度 | 内容 |
 |---|---|
@@ -150,38 +164,72 @@
 | 低 | ソースに古いコンポーネントが残っている: `src/components/*.astro`（旧版）、`src/components/v2/*`、`System.astro.bak`、`src/layouts/Layout.astro`、`src/pages/demo.astro`。本番は `site/` 系だけを使っているので、整理するとメンテナンスが楽になり、取り違えの事故も防げる。 |
 | 低 | `/test/` は本番ドメインで公開されていて、noindex,nofollow の X-Robots-Tag 付き。運用上の意図どおりなら OK。 |
 
-## 10. 総合スコア（暫定）と優先度付きの改善リスト
+## 10. 総合スコア（確定）と優先度付きの改善リスト
 
 | 観点 | スコア | ひとこと |
 |---|---|---|
-| 構成・情報設計 | 9/10 | 申込みまでの流れが自然 |
-| SEO（日本語） | 8/10 | 構造化データまで丁寧。www の DNS と OG 画像が惜しい |
+| 構成・情報設計 | 9/10 | 申込みまでの流れが極めて自然 |
+| SEO（日本語） | 8/10 | 構造化データ満点。www の DNS と OG 画像が惜しい |
 | SEO（多言語） | 5/10 | description と JSON-LD が日本語のまま |
-| パフォーマンス | 6/10 | ヒーロー動画 7MB が一番のボトルネック |
-| アクセシビリティ | 8/10 | 基本はしっかり。h1 の読み上げとバーのコントラストだけ |
-| コンテンツ・申込みへのつながり | 7/10 | 計測なし、費用や契約の不安への答えが足りない |
-| フォーム・問い合わせ | 6/10 | 個人のメールアドレスが露出している、項目が少ない |
-| セキュリティ・保守 | 7/10 | ヘッダーの追加と古いコードの整理 |
-| **総合** | **7/10** | 土台は良い。下の「すぐやる」だけで 8.5 くらいまで上がる見込み |
+| パフォーマンス | 5/10 | Lighthouse Mobile 56点。ヒーロー動画 7.1MB が致命傷 |
+| アクセシビリティ | 9.5/10 | Lighthouse 97点。帯画像の role 付与で 100点可能 |
+| UI・レイアウト | 6/10 | デスクトップ1280pxのはみ出し、多言語スマホ崩れが要改善 |
+| コンテンツ・CV導線 | 7/10 | 計測なし、費用や契約の不安への答えが足りない |
+| フォーム・問い合わせ | 6/10 | メアド生露出、項目不足（希望クラス等） |
+| セキュリティ・技術基盤 | 8/10 | Worker構成・BestPractices 100点。ヘッダー追加の余地 |
+| **総合スコア** | **7.1 / 10** | **骨格・デザイン・SEOの基礎は非常に高品質。下記の「至急対応」を実施すれば一気に 8.8〜9.0 点に達する。** |
 
-### すぐやる（効果が大きく、手間が小さい）
-1. `www.tshr-bjj.com` の DNS（CNAME・プロキシ有効）を追加 → apex へ 301（Cloudflare ダッシュボードで作業。ユーザーの操作が必要）
-2. 英語・ポルトガル語の meta description / og:description / JSON-LD を翻訳する（`scripts/site/localize.mjs` と `src/data/site/translations.js`）
-3. ヒーロー動画を再圧縮（目安 1〜2MB）＋スマホ用を分ける＋省データモード時は動画なし
-4. アクセス解析（Cloudflare Web Analytics か GA4）と CTA クリックの計測を入れる
-5. フォーム送信先のメールアドレスを隠す（FormSubmit のランダム文字列エンドポイント、または Worker で受ける）
-6. `/thanks/` を noindex にし、`/demo/` は削除するか非公開にする
+---
 
-### 次にやる
-7. 写真ベースの OG 画像（1200×630）を作り、`summary_large_image` に統一する
-8. FAQ に道着などの費用の目安、契約・退会・休会、体験当日の流れを追加する
-9. クチコミに総合評価と Google マップへのリンクを付け、日本語のクチコミも混ぜる
-10. フォームに体験希望日・希望クラス・お子さまの年齢を追加し、プライバシーポリシーに外部委託の記載を足す
-11. 日本語版 h1 に `aria-label` を付ける、LINE ロゴを自前の SVG にする
-12. favicon.ico / apple-touch-icon をルートに置く、日本語の 404 ページを作る
+### 最優先（レイアウト崩れ・致命的エラーの修正）
+1. **デスクトップヘッダーの「見学・体験予約」ボタン見切れ修正**（1200px〜1350pxで右端が切れる現象）
+2. **多言語（英語・ポルトガル語）でのスマホ表示崩れ修正**
+   - ポルトガル語でヘッダーメニューボタンが画面外に押し出されるバグ
+   - 固定CTAバーの文字切れ（`Book Free Tria...` / `Aula Experimental...`）
+3. **`www.tshr-bjj.com` の DNS（CNAME）追加** → Cloudflare側で apex (`tshr-bjj.com`) へリダイレクト
+4. **フォーム送信先のメールアドレス露出対策**（FormSubmitランダムトークン化、またはWorker直接受領）
+5. **アクセシビリティ 100点化**: `<div class="belt-graphic">` に `role="img"` を付与
 
-### 余裕があれば
-13. セキュリティヘッダー（CSP など）を追加する
-14. Google Fonts をセルフホスト＋サブセット化、写真に `srcset` を付ける
-15. 古いコンポーネントや `public/` の使っていない大きなファイルを整理する
-16. 6.（実機での UI 確認）と 11.（Lighthouse の実測）を済ませて、この評価を更新する
+### すぐやる（効果絶大・パフォーマンス改善）
+6. **ヒーロー動画（7.1MB）の軽量化**: 720p / 1〜1.5MB に再圧縮 ＋ モバイル・低速回線時はポスター画像のみに制御
+7. **多言語ページの meta description / og:description / JSON-LD を翻訳**
+8. **アクセス解析（Cloudflare Web Analytics または GA4）の導入** ＋ CTAクリックの計測
+9. **`/thanks/` の noindex 化**、`/demo/` の非公開化
+
+### 次にやる（成約率・安心感向上）
+10. **写真ベースの OGP 画像（1200×630）を作成**し、`summary_large_image` に統一
+11. **料金カードのデザイン改善**: スマホ（480px以下）で1列表示にして10px極小文字を解消 ＋ 一番人気のプランにアクセント
+12. **FAQ & 料金の補足**: 道着代の目安金額、退会・休会ルール、体験当日の流れを追加
+13. **フォーム項目の充実**: 体験希望日・希望クラス（大人/キッズ等）・お子さまの年齢を選択式に追加
+14. **404エラーページの独自作成**（トップや予約へのリンク付き）
+15. **セキュリティヘッダー追加**（CSP, Referrer-Policy, Permissions-Policy）
+
+---
+
+## 11. PageSpeed / Lighthouse 実測値
+
+2026-10-15 に本番サイト（`https://tshr-bjj.com/`）に対して実行した Lighthouse 監査の生データ記録。
+
+### モバイル環境 (Simulated Moto G Power on 4G)
+- **Performance**: `56 / 100`
+  - FCP (First Contentful Paint): `10.3 s`
+  - LCP (Largest Contentful Paint): `12.7 s`
+  - TBT (Total Blocking Time): `0 ms` (JavaScriptブロッキングは一切なし)
+  - CLS (Cumulative Layout Shift): `0` (レイアウトのズレなし)
+  - Speed Index: `10.3 s`
+  - 主な改善点: ヒーロー動画 7.1MB のダウンロード時間、Google Fonts によるレンダーブロック
+- **Accessibility**: `97 / 100`
+  - 唯一の指摘: `Elements use prohibited ARIA attributes` (`div.belt-graphic` に `role` なしで `aria-label` が使用されている)
+- **Best Practices**: `100 / 100` (満点)
+- **SEO**: `100 / 100` (満点)
+
+### デスクトップ環境
+- **Performance**: `82 / 100`
+  - FCP: `1.2 s`
+  - LCP: `2.5 s`
+  - TBT: `0 ms`
+  - CLS: `0`
+  - Speed Index: `1.5 s`
+- **Accessibility**: `97 / 100`
+- **Best Practices**: `100 / 100` (満点)
+- **SEO**: `100 / 100` (満点)
