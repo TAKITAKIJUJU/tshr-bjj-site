@@ -57,7 +57,7 @@ for(const locale of locales){
  assert.deepEqual(graph.find(n=>n['@type']==='FAQPage').mainEntity.map(q=>({question:q.name,answer:q.acceptedAnswer.text})),faqByLocale[locale]);
  assert.ok(!JSON.stringify(graph).includes('/test/'));
  assert.equal(all.filter(n=>cls(n,'faq-item')).length,7);
- assert.equal(all.filter(n=>cls(n,'avatar-img')).length,3);
+ assert.equal(all.filter(n=>cls(n,'avatar-img')).length,0);
  assert.ok(all.filter(n=>cls(n,'strip-item')).every(n=>!cls(n,'motion-up')));
  report.push({path:base,contacts,faq:7,title:text(all.find(n=>n.tagName==='title'))});
 }
