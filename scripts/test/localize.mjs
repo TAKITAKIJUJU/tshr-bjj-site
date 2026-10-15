@@ -16,10 +16,10 @@ const text = (value, parentNode) => ({nodeName:'#text', value, parentNode});
 
 // Shared by the normal build and the test-only asset packager.
 // Only DOM text and supported metadata are translated; executable scripts/styles are opaque.
-export function localizeTestHtml(html, locale, {contact = false} = {}) {
+export function localizeTestHtml(html, locale, {contact = false, dictionary = translations, faqData = faqByLocale} = {}) {
   if (!locales.includes(locale)) throw new Error('Unknown test locale: ' + locale);
   const doc = parse5.parse(html, {scriptingEnabled:false});
-  const t = value => locale === 'ja' ? value : translations[value]?.[locale] ?? value;
+  const t = value => locale === 'ja' ? value : dictionary[value]?.[locale] ?? value;
   const base = localeBase(locale);
   const canonical = 'https://tshr-bjj.com' + base + (contact ? 'contact/' : '');
   const pageHref = href => {
@@ -43,7 +43,7 @@ export function localizeTestHtml(html, locale, {contact = false} = {}) {
       }
       if (entity['@type'] === 'FAQPage') {
         entity['@id'] = canonical + '#faq'; entity.inLanguage = htmlLang[locale];
-        entity.mainEntity = faqByLocale[locale].map(item => ({'@type':'Question', name:item.question,
+        entity.mainEntity = faqData[locale].map(item => ({'@type':'Question', name:item.question,
           acceptedAnswer:{'@type':'Answer', text:item.answer}}));
       }
       if (entity['@type'] === 'BreadcrumbList') {

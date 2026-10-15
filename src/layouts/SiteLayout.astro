@@ -1,0 +1,66 @@
+---
+import Header from '../components/site/TatoruHeader.astro';
+import { entities } from '../data/site/entities';
+import { faq } from '../data/site/faq';
+import '../styles/site.css';
+interface Props { title?: string; description?: string; }
+const { title = '本庄市のブラジリアン柔術ジム｜Over Limit 本庄', description = '本庄市の柔術道場 Over Limit 本庄。クラス・料金・週間スケジュールをご案内。体験には動きやすい服装・タオル・飲み物をご用意ください。日程未定でも相談できます。' } = Astro.props;
+const home = Astro.url.pathname.replace(/\/$/, '') === '';
+const canonical = new URL(home ? '/' : '/contact/', Astro.site).href;
+const base = new URL('/', Astro.site).href;
+const webpage = { '@type': home ? 'WebPage' : 'ContactPage', '@id': canonical + '#webpage', url: canonical, name: title, description, inLanguage: 'ja', isPartOf: { '@id': base + '#website' }, about: { '@id': 'https://tshr-bjj.com/#sportsactivitylocation' } };
+const schema = { '@context': 'https://schema.org', '@graph': [
+ { '@type': 'WebSite', '@id': base + '#website', name: 'Over Limit 本庄', url: base },
+ ...entities.filter(e => home || ['SportsActivityLocation', 'Person'].includes(e['@type'])), webpage,
+ ...(home ? [{ '@type': 'FAQPage', '@id': canonical + '#faq', mainEntity: faq.map(item=>({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) }] : []),
+ { '@type': 'BreadcrumbList', itemListElement: [{ '@type':'ListItem', position:1, name:'ホーム', item:base }, ...(!home ? [{ '@type':'ListItem', position:2, name:'無料体験・お問い合わせ', item:canonical }] : [])] }
+] };
+---
+<!doctype html>
+<html lang="ja">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="format-detection" content="telephone=no" />
+  <script is:inline>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('test-motion-pending');
+      // If the animation module cannot load, restore the page without hiding it indefinitely.
+      window.setTimeout(() => document.documentElement.classList.remove('test-motion-pending'), 4000);
+    }
+  </script>
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" type="image/png" href="/LOGO.png" />
+  <meta property="og:site_name" content="Over Limit 本庄" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content="https://tshr-bjj.com/LOGO.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Over Limit 本庄 ロゴ" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content="https://tshr-bjj.com/LOGO.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Noto+Sans+JP:wght@400;500;600;700;800;900&amp;family=Oswald:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  {home && <link rel="preload" as="image" href="/site/hero-poster.webp" />}
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\u003c')} />
+ </head>
+ <body>
+  <a class="skip-link" href="#main-content">本文へ移動</a>
+  <Header />
+  <slot />
+ </body>
+</html>
+<style>
+ .skip-link { position:fixed; top:8px; left:8px; z-index:1005; padding:12px; background:white; color:#141613; transform:translateY(-160%); }
+ .skip-link:focus { transform:none; }
+</style>

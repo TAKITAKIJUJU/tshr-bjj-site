@@ -1,0 +1,82 @@
+---
+// Test-only fixed LINE and trial links.
+---
+
+<aside class="bottom-fixed-cta" aria-label="予約・お問い合わせ固定バー">
+  <div class="bottom-fixed-cta__inner">
+    <a class="cta-btn cta-btn--line" href="https://line.me/ti/p/edZnSmCFIj" target="_blank" rel="noopener">
+      <span>LINE相談はこちら</span>
+    </a>
+    <a class="cta-btn cta-btn--trial" href="/contact/">
+      <span>無料体験はこちら</span>
+    </a>
+  </div>
+</aside>
+
+<style>
+  .bottom-fixed-cta {
+    position: fixed;
+    z-index: 990;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+    background: rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .bottom-fixed-cta__inner {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 8px;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 48px;
+    padding: 10px 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+    overflow-wrap: anywhere;
+    border-radius: 4px;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .cta-btn--line {
+    background: #008638;
+    color: #ffffff;
+    border: 1.5px solid #008638;
+  }
+
+  .cta-btn--line:hover {
+    background: #007530;
+    border-color: #007530;
+    color: #ffffff;
+  }
+
+  .cta-btn--trial {
+    background: #c44e00;
+    color: #ffffff;
+    border: 1.5px solid #c44e00;
+  }
+
+  .cta-btn--trial:hover {
+    background: #ad4400;
+    border-color: #ad4400;
+    transform: translateY(-1px);
+  }
+
+  .bottom-fixed-cta .cta-btn:is(:hover, :focus, :focus-visible, :active) { color: #ffffff; }
+  .bottom-fixed-cta .cta-btn:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px; }
+
+</style>

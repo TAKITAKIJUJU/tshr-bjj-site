@@ -1,0 +1,193 @@
+---
+const primary = [
+  { label: 'クラススケジュール', href: '/#schedule' },
+  { label: '料金', href: '/#system' },
+  { label: 'アクセス', href: '/#access' },
+  { label: '道場・施設', href: '/#facility' },
+  { label: 'インストラクター', href: '/#instructor' },
+  { label: '道場について', href: '/#concept' },
+  { label: 'お問い合わせ', href: '/contact/' },
+];
+const languageSuffix = Astro.url.pathname.includes('/contact') ? 'contact/' : '';
+---
+
+<header class="header" id="header">
+  <div class="header__inner">
+    <a class="header__logo" href="/" aria-label="Over Limit 本庄 トップへ">
+      <img class="logo-round" src="/LOGO.webp" width="1200" height="1200" alt="" />
+      <img class="logo-wordmark" src="/LOGO2.webp" width="424" height="104" alt="" />
+    </a>
+    <nav class="header__nav" aria-label="メインメニュー">
+      <ul>{primary.map(item => <li><a href={item.href}>{item.label}</a></li>)}</ul>
+    </nav>
+    <div class="header__actions">
+      <details class="language-picker">
+        <summary class="language-trigger" aria-label="言語を選択"><span class="language-current">日本語</span><svg class="language-chevron" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></summary>
+        <nav class="language-options" aria-label="言語">
+          <a data-language="ja" href={`/${languageSuffix}`} lang="ja" aria-current="page">日本語</a>
+          <a data-language="en" href={`/english/${languageSuffix}`} lang="en">English</a>
+          <a data-language="pt" href={`/portugues/${languageSuffix}`} lang="pt">Português</a>
+          <a data-language="gunma" href={`/gunma/${languageSuffix}`} lang="ja">群馬弁</a>
+        </nav>
+      </details>
+      <a class="reservation" href="/contact/">見学・体験予約</a>
+      <button class="menu-toggle" id="burger-btn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu" hidden>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<dialog class="site-menu" id="mobile-menu" aria-label="サイトメニュー" data-lenis-prevent>
+  <div class="menu-head">
+    <a class="header__logo" href="/" aria-label="Over Limit 本庄 トップへ">
+      <img class="logo-round" src="/LOGO.webp" width="1200" height="1200" alt="" />
+      <img class="logo-wordmark" src="/LOGO2.webp" width="424" height="104" alt="" />
+    </a>
+    <details class="language-picker language-picker--menu">
+      <summary class="language-trigger" aria-label="言語を選択"><span class="language-current">日本語</span><svg class="language-chevron" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.2" /></svg></summary>
+      <nav class="language-options" aria-label="言語">
+        <a data-language="ja" href={`/${languageSuffix}`} lang="ja" aria-current="page">日本語</a>
+        <a data-language="en" href={`/english/${languageSuffix}`} lang="en">English</a>
+        <a data-language="pt" href={`/portugues/${languageSuffix}`} lang="pt">Português</a>
+        <a data-language="gunma" href={`/gunma/${languageSuffix}`} lang="ja">群馬弁</a>
+      </nav>
+    </details>
+    <button class="menu-close" type="button" aria-label="メニューを閉じる" autofocus><span></span><span></span></button>
+  </div>
+  <nav class="menu-primary" aria-label="サイト内案内">
+    <a href="/">TOP</a>
+    {primary.slice(0, 6).map(item => <a href={item.href}>{item.label}</a>)}
+  </nav>
+  <nav class="menu-secondary" aria-label="その他の案内">
+    <a href="/#classflow">クラスの流れ</a>
+    <a href="/#faq">よくある質問</a>
+    <a href="/#concept">柔術とは？</a>
+    <a href="/contact/">お問い合わせ</a>
+  </nav>
+  <a class="menu-reservation" href="/contact/">無料 見学・体験予約<span aria-hidden="true">›</span></a>
+  <div class="menu-social">
+    <a href="https://www.instagram.com/tshr_jiujitsu/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="https://www.facebook.com/groups/304416070927536" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 21v-8h3l.5-4H14V7c0-1 .3-1.5 1.7-1.5H18V2.2c-.5-.1-1.8-.2-3-.2-3 0-5 1.8-5 5v2H7v4h3v8z"/></svg>
+    </a>
+  </div>
+  <p class="menu-copyright">© Over Limit 本庄</p>
+</dialog>
+<noscript><nav class="fallback-nav" aria-label="サイト内案内">{primary.map(item => <a href={item.href}>{item.label}</a>)}</nav></noscript>
+
+<script>
+  const header = document.querySelector<HTMLElement>('#header');
+  const toggle = document.querySelector<HTMLButtonElement>('#burger-btn');
+  const menu = document.querySelector<HTMLDialogElement>('#mobile-menu');
+  if (toggle && menu) {
+    toggle.hidden = false;
+    let previousOverflow = '';
+    const close = () => { if (menu.open) menu.close(); };
+    toggle.addEventListener('click', () => {
+      previousOverflow = document.body.style.overflow;
+      menu.showModal();
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      window.dispatchEvent(new CustomEvent('test-menu-state', { detail: true }));
+      menu.querySelector<HTMLButtonElement>('.menu-close')?.focus();
+    });
+    menu.querySelector('.menu-close')?.addEventListener('click', close);
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
+    menu.addEventListener('cancel', event => { event.preventDefault(); close(); });
+    menu.addEventListener('close', () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = previousOverflow;
+      window.dispatchEvent(new CustomEvent('test-menu-state', { detail: false }));
+      toggle.focus({ preventScroll: true });
+    });
+    menu.addEventListener('keydown', event => {
+      if (event.key !== 'Tab') return;
+      const controls = Array.from(menu.querySelectorAll<HTMLElement>('a[href], button'));
+      const first = controls[0], last = controls[controls.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    });
+    const wideLanguage = /^\/(?:english|portugues)(?:\/|$)/.test(location.pathname);
+    window.matchMedia(wideLanguage ? '(min-width: 1500px)' : '(min-width: 1200px)').addEventListener('change', event => { if (event.matches) close(); });
+  }
+  const updateHeader = () => header?.classList.toggle('scrolled', window.scrollY > 24);
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+</script>
+
+<style>
+  .header { position:fixed; inset:0 0 auto; z-index:1000; color:#fff; background:transparent; box-shadow:none; transition:background .25s, color .25s, box-shadow .25s; font-family:'Noto Sans JP',sans-serif; }
+  .header.scrolled { color:#fff; background:rgb(20 22 19 / .84); box-shadow:0 3px 12px #14161344; backdrop-filter:blur(8px); }
+  .header__inner { height:76px; padding-inline:clamp(20px,4vw,56px); max-width:1600px; margin:auto; display:flex; align-items:center; gap:24px; }
+  .header__logo { display:flex; align-items:center; gap:8px; flex-shrink:0; color:inherit; text-decoration:none; }
+  .header__logo img { object-fit:contain; }
+  .header__logo .logo-round { width:48px; height:48px; }
+  .header__logo .logo-wordmark { width:auto; height:34px; }
+  .header__nav { margin-left:auto; }
+  .header__nav ul { display:flex; align-items:center; gap:clamp(14px,1.55vw,26px); margin:0; padding:0; list-style:none; }
+  .header__nav a { font-size:13px; font-weight:800; letter-spacing:.06em; white-space:nowrap; color:inherit; text-decoration:none; padding-block:16px; }
+  .header__nav a:hover { opacity:.7; text-decoration:underline; text-decoration-color:#ff6b00; text-decoration-thickness:2px; text-underline-offset:8px; }
+  .header__actions { display:flex; align-items:center; gap:20px; flex-shrink:0; }
+  .language-picker { position:relative; flex-shrink:0; }
+  .language-trigger { display:flex; align-items:center; justify-content:center; gap:5px; min-height:40px; padding:0 10px; background:#fff; color:#141613; border:1px solid #dedfd9; border-radius:3px; box-shadow:none; font:700 12px 'Noto Sans JP',sans-serif; cursor:pointer; white-space:nowrap; list-style:none; }
+  .language-trigger::-webkit-details-marker { display:none; }
+  .language-chevron { flex-shrink:0; }
+  .language-options { position:absolute; top:calc(100% + 5px); right:0; z-index:3; min-width:154px; padding:6px; background:#fff; color:#141613; border:1px solid #dedfd9; border-radius:3px; box-shadow:0 4px 12px #0000001f; }
+  .language-options a { display:flex; align-items:center; width:100%; min-height:40px; padding:8px 10px; border-radius:2px; color:inherit; text-decoration:none; font:700 13px 'Noto Sans JP',sans-serif; }
+  .language-options a:hover,.language-options a[aria-current="page"] { background:#ff6b00; }
+  .reservation { display:flex; align-items:center; height:46px; padding:0 24px; background:#ff6b00; color:#141613; border-radius:999px; font-size:13px; font-weight:800; letter-spacing:.05em; text-decoration:none; white-space:nowrap; }
+  .reservation:hover,.menu-reservation:hover { background:#fff; color:#141613; }
+  .menu-toggle,.menu-close { width:46px; height:46px; border:2px solid #fff; background:#fff; border-radius:50%; color:#141613; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; cursor:pointer; padding:0; flex-shrink:0; }
+  .menu-toggle { border-color:transparent; background:transparent; color:#fff; }
+  .menu-toggle { display:none; }
+  .menu-toggle[hidden] { display:none; }
+  .menu-toggle span { width:20px; height:3px; background:currentColor; border-radius:999px; }
+  .site-menu { position:fixed; inset:0; margin:0; width:100%; max-width:none; height:100dvh; max-height:none; padding:68px 20px 28px; border:0; background:#ff6b00; color:#141613; overflow-y:auto; overscroll-behavior:contain; font-family:'Noto Sans JP',sans-serif; }
+  .site-menu:not([open]) { display:none; }
+  .site-menu::backdrop { background:#ff6b00; }
+  .site-menu[open] { animation:menu-in .22s ease-out; }
+  .menu-head { position:fixed; inset:0 0 auto; height:64px; padding-inline:20px; background:#ff6b00; display:flex; align-items:center; gap:14px; z-index:1; }
+  .menu-head .header__logo { margin-right:auto; }
+  .language-picker--menu { color:#141613; }
+  .language-picker--menu .language-trigger { box-shadow:none; border-color:#14161333; }
+  .menu-close { position:relative; }
+  .menu-close span { position:absolute; width:20px; height:1.5px; background:currentColor; transform:rotate(45deg); }
+  .menu-close span:last-child { transform:rotate(-45deg); }
+  .menu-primary { border-top:2px solid #141613; counter-reset:menu-link; }
+  .menu-primary a { display:flex; align-items:center; gap:18px; min-height:59px; border-bottom:1px solid #14161366; color:inherit; font-size:16px; font-weight:800; letter-spacing:.06em; text-decoration:none; }
+  .menu-primary a::before { counter-increment:menu-link; content:'0' counter(menu-link); font-family:'Oswald',sans-serif; font-size:13px; font-weight:700; letter-spacing:.08em; }
+  .menu-secondary { display:grid; grid-template-columns:1fr 1fr; gap:0 18px; padding-block:14px; }
+  .menu-secondary a { min-height:44px; display:flex; align-items:center; font-size:13px; font-weight:700; color:inherit; text-decoration:none; }
+  .menu-reservation { display:flex; justify-content:space-between; align-items:center; min-height:54px; padding:0 30px; background:#141613; color:#fff; border-radius:4px 18px 4px 18px; font-size:14px; font-weight:800; letter-spacing:.04em; text-decoration:none; margin-top:6px; }
+  .menu-reservation span { font-size:25px; font-weight:400; }
+  .menu-social { display:flex; justify-content:center; gap:14px; padding:20px 0; }
+  .menu-social a { width:52px; height:52px; display:grid; place-items:center; color:#141613; border:1px solid #141613; border-radius:4px 16px 4px 16px; }
+  .menu-social svg { width:24px; height:24px; }
+  .menu-copyright { text-align:center; font-size:10px; color:#141613; letter-spacing:.02em; margin:16px 0 0; }
+  a:focus-visible,button:focus-visible { outline:3px solid currentColor; outline-offset:4px; }
+  .menu-primary a:hover,.menu-secondary a:hover { opacity:.6; }
+  .fallback-nav { display:flex; flex-wrap:wrap; gap:16px; padding:90px 20px 20px; background:white; }
+  .fallback-nav a { color:#1b1a18; min-height:44px; display:flex; align-items:center; }
+  @keyframes menu-in { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:none; } }
+  @media (max-width:1199px) { .header__nav,.reservation { display:none; } .header__actions { margin-left:auto; gap:14px; } .language-trigger { min-height:44px; } .menu-toggle:not([hidden]) { display:flex; } }
+  @media (min-width:1200px) and (max-width:1499px) {
+    :global(html:lang(en)) .header__nav, :global(html:lang(pt)) .header__nav,
+    :global(html:lang(en)) .reservation, :global(html:lang(pt)) .reservation { display:none; }
+    :global(html:lang(en)) .header__actions, :global(html:lang(pt)) .header__actions { margin-left:auto; gap:14px; }
+    :global(html:lang(en)) .menu-toggle:not([hidden]), :global(html:lang(pt)) .menu-toggle:not([hidden]) { display:flex; }
+  }
+  @media (max-width:767px) { .header__inner { height:64px; padding-inline:20px; gap:12px; } .header__logo .logo-round { width:40px; height:40px; } .header__logo .logo-wordmark { height:29px; } .language-trigger { font-size:11px; } }
+  @media (max-width:359px) { .header__inner,.menu-head { padding-inline:14px; } .header__actions,.menu-head { gap:10px; } .header__logo .logo-wordmark { height:25px; } .language-trigger { font-size:10px; } }
+  @media (max-width:400px) {
+    .header__inner,.menu-head { padding-inline:14px; gap:8px; }
+    .header__actions { gap:8px; }
+    .header__logo { gap:6px; }
+    .header__logo .logo-round { width:36px; height:36px; }
+    .header__logo .logo-wordmark { height:25px; }
+    .language-trigger { font-size:11px; padding-inline:8px; }
+  }
+  @media (prefers-reduced-motion:reduce) { .header { transition:none; } .site-menu[open] { animation:none; } }
+</style>

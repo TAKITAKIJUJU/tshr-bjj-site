@@ -1,0 +1,26 @@
+[
+  {
+    "path": "/",
+    "contacts": 8,
+    "faq": 7,
+    "title": "本庄市のブラジリアン柔術ジム｜Over Limit 本庄"
+  },
+  {
+    "path": "/english/",
+    "contacts": 8,
+    "faq": 7,
+    "title": "Brazilian Jiu-Jitsu in Honjo | Over Limit Honjo"
+  },
+  {
+    "path": "/portugues/",
+    "contacts": 8,
+    "faq": 7,
+    "title": "Jiu-Jitsu Brasileiro em Honjo | Over Limit Honjo"
+  },
+  {
+    "path": "/gunma/",
+    "contacts": 8,
+    "faq": 7,
+    "title": "本庄の柔術道場｜Over Limit 本庄"
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "contactLinks": 8
+    },
+    {
+      "path": "/english/",
+      "status": 200,
+      "contactLinks": 8
+    },
+    {
+      "path": "/portugues/",
+      "status": 200,
+      "contactLinks": 8
+    },
+    {
+      "path": "/gunma/",
+      "status": 200,
+      "contactLinks": 8
+    }
+  ],
+  "assets": 40,
+  "contactUnchanged": true,
+  "testContactRetained": true
+}

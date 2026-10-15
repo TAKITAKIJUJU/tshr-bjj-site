@@ -1,0 +1,300 @@
+---
+// System.astro - Redesigned based on fuckfuck.html with Orange theme
+---
+
+<section class="section price-section" id="system">
+  <div class="wrap">
+    <div class="section-head motion-up">
+      <div>
+        <p class="eyebrow">04 / Price</p>
+        <h2>料金システム</h2>
+        <p class="section-copy">柔術を始めたい方へ通いやすいプランをご用意しています。</p>
+      </div>
+      <span class="section-index" aria-hidden="true">04</span>
+    </div>
+
+    <div class="price-grid">
+      <article class="price-card motion-up" data-motion-delay="0.0">
+        <span class="plan-en">MEN</span>
+        <h3>男性会員</h3>
+        <p class="price-value">¥9,800</p>
+        <span class="price-unit">/月 (税込)</span>
+        <ul>
+          <li>通い放題（全クラス参加可能）</li>
+          <li>スパーリング・フリースパー参加可</li>
+          <li>すべての設備が使い放題</li>
+        </ul>
+      </article>
+
+      <article class="price-card motion-up" data-motion-delay="0.1">
+        <span class="plan-en">WOMEN / STUDENTS</span>
+        <h3>女性・中高生会員</h3>
+        <p class="price-value">¥7,800</p>
+        <span class="price-unit">/月 (税込)</span>
+        <ul>
+          <li>通い放題（全クラス参加可能）</li>
+          <li>女性や学生も安心して通える環境</li>
+          <li>すべての設備が使い放題</li>
+        </ul>
+      </article>
+
+      <article class="price-card motion-up" data-motion-delay="0.2">
+        <span class="plan-en">KIDS</span>
+        <h3>キッズ会員<small>(小学1〜6年生)</small></h3>
+        <p class="price-value">¥5,000</p>
+        <span class="price-unit">/月 (税込)</span>
+        <ul>
+          <li>キッズクラス参加可能</li>
+          <li>礼儀作法や基礎体力の向上</li>
+          <li>楽しく安全に柔術を学べます</li>
+        </ul>
+      </article>
+
+      <article class="price-card motion-up" data-motion-delay="0.3">
+        <span class="plan-en">VISITOR</span>
+        <h3>ビジター<small>(1回利用)</small></h3>
+        <p class="price-value">¥2,200</p>
+        <span class="price-unit">/回 (税込)</span>
+        <ul>
+          <li>1回のみのスポット利用</li>
+          <li>出張や旅行中の練習に</li>
+          <li>当日お支払い</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="price-footer motion-fade" data-motion-delay="0.2">
+      <p class="price-admission">入会金無料</p>
+      <a class="text-link" href="/contact/">
+        無料体験を予約する <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .price-section {
+    background: #f4f4ee;
+    padding-block: 108px;
+    color: #141613;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .wrap {
+    width: min(1220px, calc(100% - 48px));
+    margin-inline: auto;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #ff6b00;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    background: currentColor;
+    flex-shrink: 0;
+  }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 44px;
+    border-bottom: 2px solid #141613;
+    padding-bottom: 20px;
+  }
+
+  .section-head h2 {
+    margin: 8px 0 0;
+    font-size: clamp(28px, 3.8vw, 44px);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1.25;
+  }
+
+  .section-copy {
+    max-width: 710px;
+    margin-top: 14px;
+    color: #666a61;
+    font-size: 14px;
+  }
+
+  .section-index {
+    color: #a2a799;
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: clamp(48px, 6vw, 76px);
+    font-weight: 700;
+    line-height: 0.85;
+  }
+
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+
+  .price-card {
+    background: #ffffff;
+    padding: 28px 24px;
+    border: 1px solid #dbded3;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .price-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(20, 22, 19, 0.08);
+  }
+
+  .plan-en {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: #666a61;
+    line-height: 1;
+  }
+
+  .price-card h3 {
+    font-size: 17px;
+    font-weight: 800;
+    margin: 18px 0 26px;
+    min-height: 54px;
+  }
+
+  .price-card h3 small {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    margin-top: 3px;
+    opacity: 0.85;
+  }
+
+  .price-value {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: clamp(40px, 4vw, 56px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.035em;
+    white-space: nowrap;
+    margin: 0;
+  }
+
+  .price-unit {
+    display: block;
+    font-size: 11px;
+    margin-top: 10px;
+    color: #666a61;
+  }
+
+
+  .price-card ul {
+    border-top: 1px solid rgba(133, 138, 121, 0.3);
+    padding-top: 23px;
+    margin-top: 27px;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .price-card li {
+    position: relative;
+    padding-left: 18px;
+    margin-top: 10px;
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  .price-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #ff6b00;
+    font-weight: bold;
+  }
+
+  .price-footer {
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .price-admission {
+    font-size: 15px;
+    font-weight: 800;
+    color: #141613;
+  }
+
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 4px;
+    border-bottom: 1.5px solid currentColor;
+    font-size: 13px;
+    font-weight: 700;
+    transition: color 0.2s, border-color 0.2s;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .text-link:hover {
+    color: #ff6b00;
+    border-color: #ff6b00;
+  }
+
+  @media (max-width: 960px) {
+    .price-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .price-card h3 {
+      min-height: auto;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .price-section {
+      padding-block: 72px;
+    }
+    .wrap {
+      width: calc(100% - 32px);
+    }
+    .price-card {
+      padding: 23px 16px;
+    }
+    .price-grid {
+      gap: 12px;
+    }
+    .price-card h3 {
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+    .price-value {
+      font-size: clamp(33px, 9vw, 48px);
+    }
+    .price-card li {
+      font-size: 10px;
+    }
+    .price-footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+  }
+</style>
