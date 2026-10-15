@@ -1,11 +1,26 @@
 ---
 const primary = [
-  { label: 'クラススケジュール', href: '/test/#schedule' },
-  { label: '料金', href: '/test/#system' },
-  { label: 'アクセス', href: '/test/#access' },
-  { label: '道場・施設', href: '/test/#facility' },
-  { label: 'インストラクター', href: '/test/#instructor' },
   { label: '道場について', href: '/test/#concept' },
+  { label: 'インストラクター', href: '/test/#instructor' },
+  { label: 'クラスの流れ', href: '/test/#classflow' },
+  { label: '料金', href: '/test/#system' },
+  { label: 'クラススケジュール', href: '/test/#schedule' },
+  { label: '道場・施設', href: '/test/#facility' },
+  { label: 'アクセス', href: '/test/#access' },
+  { label: 'よくある質問', href: '/test/#faq' },
+  { label: 'お問い合わせ', href: '/test/contact/' },
+];
+
+const mobileMenuItems = [
+  { label: 'TOP', href: '/test/' },
+  { label: '道場について', href: '/test/#concept' },
+  { label: 'インストラクター', href: '/test/#instructor' },
+  { label: 'クラスの流れ', href: '/test/#classflow' },
+  { label: '料金', href: '/test/#system' },
+  { label: 'クラススケジュール', href: '/test/#schedule' },
+  { label: '道場・施設', href: '/test/#facility' },
+  { label: 'アクセス', href: '/test/#access' },
+  { label: 'よくある質問', href: '/test/#faq' },
   { label: 'お問い合わせ', href: '/test/contact/' },
 ];
 const languageSuffix = Astro.url.pathname.includes('/contact') ? 'contact/' : '';
@@ -56,14 +71,7 @@ const languageSuffix = Astro.url.pathname.includes('/contact') ? 'contact/' : ''
     <button class="menu-close" type="button" aria-label="メニューを閉じる" autofocus><span></span><span></span></button>
   </div>
   <nav class="menu-primary" aria-label="サイト内案内">
-    <a href="/test/">TOP</a>
-    {primary.slice(0, 6).map(item => <a href={item.href}>{item.label}</a>)}
-  </nav>
-  <nav class="menu-secondary" aria-label="その他の案内">
-    <a href="/test/#classflow">クラスの流れ</a>
-    <a href="/test/#faq">よくある質問</a>
-    <a href="/test/#concept">柔術とは？</a>
-    <a href="/test/contact/">お問い合わせ</a>
+    {mobileMenuItems.map(item => <a href={item.href}>{item.label}</a>)}
   </nav>
   <a class="menu-reservation" href="/test/contact/">無料 見学・体験予約<span aria-hidden="true">›</span></a>
   <div class="menu-social">
@@ -156,11 +164,9 @@ const languageSuffix = Astro.url.pathname.includes('/contact') ? 'contact/' : ''
   .menu-close { position:relative; }
   .menu-close span { position:absolute; width:20px; height:1.5px; background:currentColor; transform:rotate(45deg); }
   .menu-close span:last-child { transform:rotate(-45deg); }
-  .menu-primary { border-top:1px solid #14161366; counter-reset:menu-link; }
-  .menu-primary a { display:flex; align-items:center; gap:18px; min-height:59px; border-bottom:1px solid #14161366; color:inherit; font-size:16px; font-weight:800; letter-spacing:.06em; text-decoration:none; }
-  .menu-primary a::before { counter-increment:menu-link; content:'0' counter(menu-link); font-family:'Oswald',sans-serif; font-size:13px; font-weight:700; letter-spacing:.08em; }
-  .menu-secondary { display:grid; grid-template-columns:1fr 1fr; gap:0 18px; padding-block:14px; }
-  .menu-secondary a { min-height:44px; display:flex; align-items:center; font-size:13px; font-weight:700; color:inherit; text-decoration:none; }
+  .menu-primary { border-top:1px solid #14161366; counter-reset:menu-link; margin-bottom:14px; }
+  .menu-primary a { display:flex; align-items:center; gap:18px; min-height:50px; border-bottom:1px solid #14161366; color:inherit; font-size:15px; font-weight:800; letter-spacing:.06em; text-decoration:none; }
+  .menu-primary a::before { counter-increment:menu-link; content:counter(menu-link, decimal-leading-zero); font-family:'Oswald',sans-serif; font-size:13px; font-weight:700; letter-spacing:.08em; }
   .menu-reservation { display:flex; justify-content:space-between; align-items:center; min-height:54px; padding:0 30px; background:#141613; color:#fff; border-radius:8px; font-size:14px; font-weight:800; letter-spacing:.04em; text-decoration:none; margin-top:6px; }
   .menu-reservation span { font-size:25px; font-weight:400; }
   .menu-social { display:flex; justify-content:center; gap:14px; padding:20px 0; }
