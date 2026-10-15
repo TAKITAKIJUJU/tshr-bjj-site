@@ -1369,12 +1369,6 @@ const rows = [
     "Google マップ"
   ],
   [
-    "Googleマップですべてのクチコミを見る",
-    "See all reviews on Google Maps",
-    "Ver todas as avaliações no Google Maps",
-    "Googleマップでクチコミを全部見る"
-  ],
-  [
     "どなたでも障壁なく柔術が楽しめるいいジム",
     "A great gym where anyone can enjoy jiu-jitsu without barriers",
     "Uma ótima academia onde qualquer pessoa pode curtir o jiu-jitsu sem barreiras",
@@ -1418,11 +1412,6 @@ const additions = [
    'Over Limit Honjo, a jiu-jitsu dojo in Honjo. Explore classes, fees and the weekly schedule. Bring comfortable clothing, a towel and a drink for a trial. You can enquire without a fixed date.',
    'Over Limit Honjo, dojo de jiu-jitsu em Honjo. Conheça as aulas, mensalidades e horários. Para a aula experimental, traga roupa confortável, toalha e uma bebida. Consulte mesmo sem data definida.',
    '本庄市の柔術道場 Over Limit 本庄。クラスや料金、週間スケジュールを案内してるんさ。体験には動きやすい服、タオル、飲み物を用意してくんない。日にちが決まってなくても相談できるよ。'],
-  ['Googleマップですべてのクチコミを見る','See all reviews on Google Maps','Ver todas as avaliações no Google Maps','Googleマップでクチコミを全部見る'],
-  ['掲載している3件は個別のクチコミです。道場全体の平均評価ではありません。',
-   'These three entries are individual reviews, not the overall rating of the dojo.',
-   'Estas três avaliações são individuais e não representam a nota média do dojo.',
-   '載せてる3件はそれぞれのクチコミで、道場全体の平均評価じゃねぇよ。'],
   ['テスト版ホーム','Test Site Home','Início do Site de Teste','テスト版ホーム'],
   ['無料体験・お問い合わせ','Free Trial & Enquiries','Aula Experimental e Contato','無料体験・お問い合わせ']
 ];
