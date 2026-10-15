@@ -56,8 +56,18 @@ const description = "埼玉県本庄市のブラジリアン柔術道場「Over 
                 <legend>体験・見学のご希望（任意）</legend>
                 <p class="form-help">日程未定のままでもご相談いただけます。希望日の入力だけでは予約は確定しません。</p>
                 <div class="form__group">
-                  <label for="preferred-date" class="form__label">希望日（任意）</label>
+                  <label for="preferred-date" class="form__label">体験希望日（任意）</label>
                   <input type="date" id="preferred-date" name="preferred-date" class="form__input" />
+                </div>
+                <div class="form__group">
+                  <label for="preferred-class" class="form__label">希望クラス（任意）</label>
+                  <select id="preferred-class" name="preferred-class" class="form__select">
+                    <option value="">未定・相談したい</option>
+                    <option value="beginner">大人ビギナー</option>
+                    <option value="all-levels">オールレベル</option>
+                    <option value="kids">キッズ</option>
+                    <option value="women">女性向け</option>
+                  </select>
                 </div>
                 <div class="form__group">
                   <label for="participant" class="form__label">参加区分（任意）</label>
@@ -92,6 +102,13 @@ const description = "埼玉県本庄市のブラジリアン柔術道場「Over 
                 LINEリンクは実際の相談先につながります。テスト確認中はメッセージを送らないでください。
               </p>
               <a href="https://line.me/ti/p/edZnSmCFIj" target="_blank" rel="noopener" class="line-btn">
+                <svg viewBox="50 50 220 205" width="22" height="22" aria-hidden="true" style="flex-shrink: 0;">
+                  <path fill="#ffffff" d="M266.66,144.92c0-47.74-47.86-86.58-106.69-86.58S53.28,97.18,53.28,144.92c0,42.8,38,78.65,89.22,85.42,3.48.75,8.21,2.29,9.4,5.26,1.08,2.7.71,6.93.35,9.65,0,0-1.25,7.53-1.52,9.13-.47,2.7-2.15,10.55,9.24,5.76s61.44-36.18,83.82-61.95h0C259.25,181.24,266.66,164,266.66,144.92Z"/>
+                  <path fill="#06c755" d="M231.16,172.49h-30a2,2,0,0,1-2-2v0h0V123.94h0v0a2,2,0,0,1,2-2h30a2,2,0,0,1,2,2v7.57a2,2,0,0,1-2,2H210.79v7.85h20.37a2,2,0,0,1,2,2V151a2,2,0,0,1-2,2H210.79v7.86h20.37a2,2,0,0,1,2,2v7.56A2,2,0,0,1,231.16,172.49Z"/>
+                  <path fill="#06c755" d="M120.29,172.49a2,2,0,0,0,2-2v-7.56a2,2,0,0,0-2-2H99.92v-37a2,2,0,0,0-2-2H90.32a2,2,0,0,0-2,2v46.53h0v0a2,2,0,0,0,2,2h30Z"/>
+                  <rect fill="#06c755" x="128.73" y="121.85" width="11.64" height="50.64" rx="2.04"/>
+                  <path fill="#06c755" d="M189.84,121.85h-7.56a2,2,0,0,0-2,2v27.66l-21.3-28.77a1.2,1.2,0,0,0-.17-.21v0l-.12-.12,0,0-.11-.09-.06,0-.11-.08-.06,0-.11-.06-.07,0-.11,0-.07,0-.12,0-.08,0-.12,0h-.08l-.11,0h-7.71a2,2,0,0,0-2,2v46.56a2,2,0,0,0,2,2h7.57a2,2,0,0,0,2-2V142.81l21.33,28.8a2,2,0,0,0,.52.52h0l.12.08.06,0,.1.05.1,0,.07,0,.14,0h0a2.42,2.42,0,0,0,.54.07h7.52a2,2,0,0,0,2-2V123.89A2,2,0,0,0,189.84,121.85Z"/>
+                </svg>
                 <span>LINEで相談する</span>
               </a>
             </div>

@@ -100,7 +100,7 @@ export function localizeTestHtml(html, locale, {contact = false, dictionary = tr
         set(node,'class',(get(node,'class') ?? '').split(/\s+/).filter(c=>c !== 'hero__translated').concat('hero__translated').join(' '));
         set(node,'aria-label',lines.join(' '));
         node.childNodes = lines.flatMap((line,index) => [...line].map(char => {
-          const span = {nodeName:'span', tagName:'span', attrs:[{name:'class',value:'hero__char'}], namespaceURI:'http://www.w3.org/1999/xhtml', childNodes:[],parentNode:node};
+          const span = {nodeName:'span', tagName:'span', attrs:[{name:'class',value:'hero__char'},{name:'aria-hidden',value:'true'}], namespaceURI:'http://www.w3.org/1999/xhtml', childNodes:[],parentNode:node};
           if (char === ' ') span.attrs.push({name:'style', value:'white-space:pre-wrap'});
           span.childNodes = [text(char,span)]; return span;
         }).concat(index === 0 ? [{nodeName:'br',tagName:'br',attrs:[],namespaceURI:'http://www.w3.org/1999/xhtml',childNodes:[],parentNode:node}] : []));

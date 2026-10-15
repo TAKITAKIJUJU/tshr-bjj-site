@@ -20,7 +20,7 @@
         "FAQPage",
         "BreadcrumbList"
       ],
-      "bytes": 65728
+      "bytes": 66246
     },
     {
       "path": "/test/contact/",
@@ -36,7 +36,7 @@
         "ContactPage",
         "BreadcrumbList"
       ],
-      "bytes": 23996
+      "bytes": 26326
     },
     {
       "path": "/test/english/",
@@ -58,7 +58,7 @@
         "FAQPage",
         "BreadcrumbList"
       ],
-      "bytes": 64636
+      "bytes": 65678
     },
     {
       "path": "/test/english/contact/",
@@ -74,7 +74,7 @@
         "ContactPage",
         "BreadcrumbList"
       ],
-      "bytes": 23510
+      "bytes": 25796
     },
     {
       "path": "/test/portugues/",
@@ -96,7 +96,7 @@
         "FAQPage",
         "BreadcrumbList"
       ],
-      "bytes": 66552
+      "bytes": 67642
     },
     {
       "path": "/test/portugues/contact/",
@@ -112,7 +112,7 @@
         "ContactPage",
         "BreadcrumbList"
       ],
-      "bytes": 24015
+      "bytes": 26379
     },
     {
       "path": "/test/gunma/",
@@ -134,7 +134,7 @@
         "FAQPage",
         "BreadcrumbList"
       ],
-      "bytes": 65919
+      "bytes": 66503
     },
     {
       "path": "/test/gunma/contact/",
@@ -150,7 +150,7 @@
         "ContactPage",
         "BreadcrumbList"
       ],
-      "bytes": 24214
+      "bytes": 26559
     }
   ],
   "assets": [
@@ -311,7 +311,7 @@
       "status": 200
     },
     {
-      "path": "test/_astro/contact.astro_astro_type_script_index_0_lang.BkFo10JG.js",
+      "path": "test/_astro/contact.astro_astro_type_script_index_0_lang.CcmDePwi.js",
       "status": 200
     },
     {
@@ -319,11 +319,11 @@
       "status": 200
     },
     {
-      "path": "test/_astro/Footer.DE121JaH.css",
+      "path": "test/_astro/Footer.6iqpbCdV.css",
       "status": 200
     },
     {
-      "path": "test/_astro/Hero.astro_astro_type_script_index_0_lang.DaywRZAj.js",
+      "path": "test/_astro/Hero.astro_astro_type_script_index_0_lang.NAXujy0T.js",
       "status": 200
     },
     {
@@ -335,7 +335,7 @@
       "status": 200
     },
     {
-      "path": "test/_astro/index@_@astro.Drxw88Ci.css",
+      "path": "test/_astro/index@_@astro.rcEto518.css",
       "status": 200
     },
     {
@@ -351,27 +351,27 @@
       "status": 200
     },
     {
-      "path": "test/_astro/translations.Ska4MsAX.js",
+      "path": "test/_astro/translations.Buoqa5tI.js",
       "status": 200
     }
   ],
   "scriptSources": [
-    "/test/_astro/Hero.astro_astro_type_script_index_0_lang.DaywRZAj.js",
+    "/test/_astro/Hero.astro_astro_type_script_index_0_lang.NAXujy0T.js",
     "/test/_astro/index.astro_astro_type_script_index_0_lang.CzYl3jA0.js",
-    "/test/_astro/contact.astro_astro_type_script_index_0_lang.BkFo10JG.js",
-    "/test/_astro/Hero.astro_astro_type_script_index_0_lang.DaywRZAj.js",
+    "/test/_astro/contact.astro_astro_type_script_index_0_lang.CcmDePwi.js",
+    "/test/_astro/Hero.astro_astro_type_script_index_0_lang.NAXujy0T.js",
     "/test/_astro/index.astro_astro_type_script_index_0_lang.CzYl3jA0.js",
-    "/test/_astro/contact.astro_astro_type_script_index_0_lang.BkFo10JG.js",
-    "/test/_astro/Hero.astro_astro_type_script_index_0_lang.DaywRZAj.js",
+    "/test/_astro/contact.astro_astro_type_script_index_0_lang.CcmDePwi.js",
+    "/test/_astro/Hero.astro_astro_type_script_index_0_lang.NAXujy0T.js",
     "/test/_astro/index.astro_astro_type_script_index_0_lang.CzYl3jA0.js",
-    "/test/_astro/contact.astro_astro_type_script_index_0_lang.BkFo10JG.js",
-    "/test/_astro/Hero.astro_astro_type_script_index_0_lang.DaywRZAj.js",
+    "/test/_astro/contact.astro_astro_type_script_index_0_lang.CcmDePwi.js",
+    "/test/_astro/Hero.astro_astro_type_script_index_0_lang.NAXujy0T.js",
     "/test/_astro/index.astro_astro_type_script_index_0_lang.CzYl3jA0.js",
-    "/test/_astro/contact.astro_astro_type_script_index_0_lang.BkFo10JG.js"
+    "/test/_astro/contact.astro_astro_type_script_index_0_lang.CcmDePwi.js"
   ],
   "barePath": {
     "status": 308,
     "location": "https://tshr-bjj.com/test/"
   },
-  "checkedAt": "2026-10-15T08:51:36.059Z"
+  "checkedAt": "2026-10-15T12:17:08.647Z"
 }

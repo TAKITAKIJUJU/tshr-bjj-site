@@ -632,8 +632,8 @@ const rows = [
   ],
   [
     "無料体験はこちら",
-    "Book Free Trial",
-    "Aula Experimental Grátis",
+    "Free Trial",
+    "Aula Grátis",
     "無料体験はこちら"
   ],
   [
@@ -1413,6 +1413,13 @@ const additions = [
    'Over Limit Honjo, dojo de jiu-jitsu em Honjo. Conheça as aulas, mensalidades e horários. Para a aula experimental, traga roupa confortável, toalha e uma bebida. Consulte mesmo sem data definida.',
    '本庄市の柔術道場 Over Limit 本庄。クラスや料金、週間スケジュールを案内してるんさ。体験には動きやすい服、タオル、飲み物を用意してくんない。日にちが決まってなくても相談できるよ。'],
   ['テスト版ホーム','Test Site Home','Início do Site de Teste','テスト版ホーム'],
-  ['無料体験・お問い合わせ','Free Trial & Enquiries','Aula Experimental e Contato','無料体験・お問い合わせ']
+  ['無料体験・お問い合わせ','Free Trial & Enquiries','Aula Experimental e Contato','無料体験・お問い合わせ'],
+  ['おすすめ','Recommended','Recomendado','おすすめ'],
+  ['体験希望日（任意）','Preferred Trial Date (Optional)','Data Preferida para Aula (Opcional)','体験希望日（任意）'],
+  ['希望クラス（任意）','Preferred Class (Optional)','Aula Desejada (Opcional)','希望クラス（任意）'],
+  ['大人ビギナー','Adult Beginner','Adulto Iniciante','大人ビギナー'],
+  ['オールレベル','All Levels','Todos os Níveis','オールレベル'],
+  ['キッズ','Kids','Infantil / Kids','キッズ'],
+  ['女性向け','Women','Feminino','女性向け']
 ];
 for (const [ja,en,pt,gunma] of additions) translations[ja]={en,pt,gunma};

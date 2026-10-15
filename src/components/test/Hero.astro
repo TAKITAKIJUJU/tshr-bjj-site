@@ -27,8 +27,8 @@
 
 
   <div class="hero__content container">
-    <h1 class="hero__vert-text text-vertical" data-motion-delay="0.2">
-      <span class="hero__char">本</span><span class="hero__char">庄</span><span class="hero__char">の</span><span class="hero__char">柔</span><span class="hero__char">術</span><span class="hero__char">で</span><span class="hero__char">、</span><br><span class="hero__char">人</span><span class="hero__char">生</span><span class="hero__char">を</span><span class="hero__char">豊</span><span class="hero__char">か</span><span class="hero__char">に</span><span class="hero__char">。</span>
+    <h1 class="hero__vert-text text-vertical" data-motion-delay="0.2" aria-label="本庄の柔術で、人生を豊かに。">
+      <span class="hero__char" aria-hidden="true">本</span><span class="hero__char" aria-hidden="true">庄</span><span class="hero__char" aria-hidden="true">の</span><span class="hero__char" aria-hidden="true">柔</span><span class="hero__char" aria-hidden="true">術</span><span class="hero__char" aria-hidden="true">で</span><span class="hero__char" aria-hidden="true">、</span><br><span class="hero__char" aria-hidden="true">人</span><span class="hero__char" aria-hidden="true">生</span><span class="hero__char" aria-hidden="true">を</span><span class="hero__char" aria-hidden="true">豊</span><span class="hero__char" aria-hidden="true">か</span><span class="hero__char" aria-hidden="true">に</span><span class="hero__char" aria-hidden="true">。</span>
     </h1>
 
     <!-- Subtitle and Call to Action moved to the right side -->
@@ -183,6 +183,18 @@
     border-radius: 4px;
   }
 
+  .hero__action .btn--white {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
+    padding: clamp(12px, 2vw, 16px) clamp(16px, 2.5vw, 32px);
+    font-size: clamp(0.72rem, 1.8vw, 0.85rem);
+  }
+  .hero__action .btn__arrow {
+    flex-shrink: 0;
+  }
+
   @media (max-width: 992px) {
     .hero {
       align-items: flex-end;
@@ -228,7 +240,8 @@
  const toggle = document.querySelector<HTMLButtonElement>('.video-toggle');
  if (video && toggle) {
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
-  let requestedPlay = !preference.matches;
+  const isMobileOrSaveData = window.innerWidth <= 768 || (navigator as any).connection?.saveData === true;
+  let requestedPlay = !preference.matches && !isMobileOrSaveData;
   let inView = true;
   const renderState = () => {
    const label = t(video.paused ? '映像を再生' : '映像を停止');
