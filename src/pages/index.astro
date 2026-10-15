@@ -36,9 +36,12 @@ import BottomFixedCta from '../components/site/v2/BottomFixedCta.astro';
 </Layout>
 
 <style>
+  :global(html) {
+    background-color: #1a1a1a !important;
+  }
   :global(body) {
-    padding-bottom: var(--test-cta-height, calc(76px + env(safe-area-inset-bottom, 0px)));
-    background-color: #1a1a1a;
+    --test-cta-height: calc(76px + env(safe-area-inset-bottom, 0px));
+    background-color: #1a1a1a !important;
   }
 </style>
 
