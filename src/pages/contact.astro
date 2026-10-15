@@ -26,7 +26,7 @@ const description = "埼玉県本庄市のブラジリアン柔術道場「Over 
         <div class="contact-grid">
           <!-- Form Side -->
           <div class="form-wrapper motion-up" data-motion-delay="0.2">
-            <form action="https://formsubmit.co/tashas.natura@hotmail.com" method="POST" class="form">
+            <form action="/contact/" method="POST" class="form">
               <!-- Spam protection & redirect configuration -->
               <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
               <input type="hidden" name="_next" value="https://tshr-bjj.com/thanks/" />
@@ -59,8 +59,10 @@ const description = "埼玉県本庄市のブラジリアン柔術道場「Over 
               </div>
 
               <div class="form__group">
-                <label for="trial_date" class="form__label">体験・見学希望日 <span style="font-size:0.75rem; color:#888; margin-left:6px;">任意（体験・見学の方）</span></label>
-                <input type="date" id="trial_date" name="trial_date" class="form__input" />
+                <label for="trial_date" class="form__label">体験・見学希望日 <span class="form__closed-days">休館日：火曜・日曜</span> <span style="display:inline-block; white-space:nowrap; font-size:0.75rem; color:#888; margin-left:6px;">任意（体験・見学の方）</span></label>
+                <input type="date" id="trial_date" name="trial_date" class="form__input" aria-describedby="trial-date-help trial-date-error" />
+                <p id="trial-date-help" class="form__hint">希望日未定の場合は空欄で送信できます。過去の日付は指定できません。</p>
+                <p id="trial-date-error" class="form__error" aria-live="polite" hidden></p>
               </div>
 
               <div class="form__group">
@@ -68,9 +70,10 @@ const description = "埼玉県本庄市のブラジリアン柔術道場「Over 
                 <select id="class_preference" name="class_preference" class="form__select">
                   <option value="" selected>選択してください</option>
                   <option value="adult_general">一般クラス（大人・初心者歓迎）</option>
-                  <option value="kids">キッズクラス（4歳〜中学生）</option>
+                  <option value="beginner">ビギナークラス（初心者向け）</option>
+                  <option value="kids">キッズクラス（小学1〜6年生）</option>
                   <option value="women">女性・フィットネス・健康維持</option>
-                  <option value="morning_weekend">平日夜・土日祝</option>
+                  <option value="morning_weekend">平日夜・土曜（火曜・日曜を除く）</option>
                   <option value="undecided">相談して決めたい</option>
                 </select>
               </div>
@@ -217,6 +220,16 @@ const description = "埼玉県本庄市のブラジリアン柔術道場「Over 
     resize: vertical;
   }
 
+  .form__hint, .form__error {
+    margin: 8px 0 0;
+    font-size: 0.8rem;
+    line-height: 1.7;
+  }
+  .form__hint { color: #555; }
+  .form__closed-days { display: inline-block; margin-left: 6px; font-size: 0.75rem; color: #9a3b00; white-space: nowrap; }
+  .form__error { color: #b42318; }
+  .form__input[aria-invalid="true"] { border-color: #b42318; }
+
   .form__footer {
     margin-top: 40px;
     text-align: center;
@@ -324,10 +337,36 @@ const description = "埼玉県本庄市のブラジリアン柔術道場「Over 
 </style>
 
 <script>
+  import {bookingDateError, todayInJapan} from '../lib/booking-date.js';
   import { gsap } from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
   gsap.registerPlugin(ScrollTrigger);
+
+  const dateInput = document.querySelector<HTMLInputElement>('#trial_date');
+  const dateError = document.querySelector<HTMLElement>('#trial-date-error');
+  if (dateInput && dateError) {
+    const validateDate = () => {
+      dateInput.min = todayInJapan();
+      const error = bookingDateError(dateInput.value);
+      dateInput.setCustomValidity(error);
+      dateInput.setAttribute('aria-invalid', String(Boolean(error)));
+      dateError.textContent = error;
+      dateError.hidden = !error;
+      return !error;
+    };
+    validateDate();
+    dateInput.addEventListener('input', validateDate);
+    dateInput.addEventListener('change', validateDate);
+    dateInput.addEventListener('focus', validateDate);
+    window.addEventListener('pageshow', validateDate);
+    dateInput.form?.addEventListener('submit', event => {
+      if (!validateDate()) {
+        event.preventDefault();
+        dateInput.reportValidity();
+      }
+    });
+  }
 
   const MOTION_SELECTORS = '.motion-up';
   

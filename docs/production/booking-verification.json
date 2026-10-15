@@ -1,0 +1,28 @@
+{
+  "todayInJapan": "2026-10-15",
+  "beginnerAdded": true,
+  "kidsElementaryOnly": true,
+  "dateChecks": [
+    {
+      "date": "2026-10-18",
+      "status": 422
+    },
+    {
+      "date": "2026-10-20",
+      "status": 422
+    },
+    {
+      "date": "2026-10-14",
+      "status": 422
+    },
+    {
+      "date": "2026-10-17",
+      "status": 307
+    },
+    {
+      "date": "",
+      "status": 307
+    }
+  ],
+  "emailSent": false
+}

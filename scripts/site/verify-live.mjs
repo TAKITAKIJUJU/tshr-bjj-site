@@ -38,7 +38,7 @@ assert.equal(contact.filter(n=>n.tagName==='title').length,1);
 assert.equal(get(contact.find(n=>n.tagName==='link'&&get(n,'rel')==='canonical'),'href'),'https://tshr-bjj.com/contact/');
 assert.ok(contact.some(n=>n.tagName==='dialog'&&get(n,'id')==='mobile-menu'));
 const form=contact.find(n=>n.tagName==='form');
-assert.equal(get(form,'action'),'https://formsubmit.co/tashas.natura@hotmail.com');
+assert.equal(get(form,'action'),'/contact/');
 assert.equal(get(form,'method'),'POST');
 assert.equal(parse5.serialize(form),parse5.serialize(packaged.find(n=>n.tagName==='form')));
 report.contactPublished=true;report.formMatchesPackage=true;

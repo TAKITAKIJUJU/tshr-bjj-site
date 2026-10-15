@@ -1,6 +1,7 @@
 // Worker handling routing, HTTP->HTTPS, www canonicalization, caching, security headers, and custom 404.
 import {videoRangeResponse} from './video-range.js';
 import videoAssets from './video-assets.json';
+import {handleBookingForm} from './booking-form.js';
 
 const NOT_FOUND_HTML = `<!doctype html>
 <html lang="ja">
@@ -116,6 +117,11 @@ export default {
     if (/^\/(english|portugues|gunma)$/.test(url.pathname)) {
       url.pathname += '/';
       return Response.redirect(url, 308);
+    }
+
+    // Validate booking dates before the browser continues to the email service.
+    if (request.method === 'POST' && /^\/contact\/?$/.test(url.pathname)) {
+      return handleBookingForm(request);
     }
 
     // 5. Fetch asset from KV/Assets binding

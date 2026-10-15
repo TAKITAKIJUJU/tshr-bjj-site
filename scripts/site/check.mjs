@@ -5,7 +5,7 @@ import {AstroCheck} from '../../docs/test-review/tooling/node_modules/@astrojs/l
 const require=createRequire(new URL('../../docs/test-review/tooling/node_modules/@astrojs/check/package.json',import.meta.url));
 const checker=new AstroCheck(process.cwd(),require.resolve('typescript'),path.resolve('docs/production/tsconfig.site.json'));
 const walk=p=>fs.readdirSync(p,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(p,e.name)):[path.join(p,e.name)]);
-const files=['src/pages/index.astro','src/layouts/SiteLayout.astro',...walk('src/components/site'),...walk('src/scripts/site'),...walk('src/data/site')].map(p=>path.resolve(p));
+const files=['src/pages/index.astro','src/pages/contact.astro','src/layouts/SiteLayout.astro',...walk('src/components/site'),...walk('src/scripts/site'),...walk('src/data/site')].map(p=>path.resolve(p));
 const result=await checker.lint({fileNames:files,logErrors:{level:'warning'}});
 const report={checked:result.fileChecked,errors:result.errors,warnings:result.warnings};
 fs.writeFileSync('docs/production/typecheck.json',JSON.stringify(report,null,2));
