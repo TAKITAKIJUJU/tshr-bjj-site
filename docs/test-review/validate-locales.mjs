@@ -86,7 +86,8 @@ for(const locale of locales)for(const contact of [false,true]){
     assert.deepEqual(pairs(all),faqByLocale[locale]);assert.equal(faq.mainEntity.length,7);
     assert.deepEqual(faq.mainEntity.map(q=>({question:q.name,answer:q.acceptedAnswer.text})),pairs(all));
     assert.equal(all.filter(n=>cls(n,'review-card')).length,3);assert.equal(all.filter(n=>cls(n,'review-date')).length,0);
-    assert.deepEqual(all.filter(n=>cls(n,'avatar-initials')).map(content),['IM','M','EP']);
+    assert.deepEqual(all.filter(n=>cls(n,'avatar-img')).map(n=>get(n,'src')),['/test/reviews/ichiro-matsumoto.png','/test/reviews/100-mendou.png','/test/reviews/eduardo-pereira.png']);
+    assert.ok(all.filter(n=>cls(n,'strip-item')).every(n=>!cls(n,'motion-up')&&!get(n,'data-motion-delay')),'Info strip must remain static.');
     if(locale==='gunma'){
       const ja=nodes(fs.readFileSync(path.join(stageRoot,'test/index.html'),'utf8'));
       assert.deepEqual(all.filter(n=>cls(n,'review-body')).map(content),ja.filter(n=>cls(n,'review-body')).map(content),'Third-party reviews must not be dialectized.');

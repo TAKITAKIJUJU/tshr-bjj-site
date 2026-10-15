@@ -1,15 +1,15 @@
 ---
 const reviews = [
   {
-    name: 'Ichiro Matsumoto', initials: 'IM', collapsible: true,
+    name: 'Ichiro Matsumoto', image: 'ichiro-matsumoto.png', collapsible: true,
     body: 'とても広いマットスペースがあり、更衣スペースも保護者や見学の方が座って過ごせるスペースも十分にある素敵なジムです。\n\n代表のタシロ先生はとても気さくでフレンドリーな性格で、初めての方も緊張せず話すことができて、楽しく柔術を始めることができると思います。\n会員さんは日系ブラジリアンの方が多い印象ですが、どなたでも障壁なく柔術が楽しめるいいジムだと思います。',
   },
   {
-    name: '100 mendou', initials: 'M',
+    name: '100 mendou', image: '100-mendou.png',
     body: '上里町から本庄駅前に引っ越したばかりで白を基調にしたとてもキレイな柔術道場。先生はとても細かく丁寧に教えてくれます。\nスパーリングも自由参加、筋トレとか辛い指導はありません。',
   },
   {
-    name: 'Eduardo Pereira', initials: 'EP', translated: true,
+    name: 'Eduardo Pereira', image: 'eduardo-pereira.png', translated: true,
     body: '最高です、本当におすすめです！柔術について素晴らしい指導が受けられますし、クラスの構成も非常にしっかりしていて、先生から直接指導を受けられます。',
   },
 ];
@@ -37,7 +37,7 @@ const reviews = [
       {reviews.map(review => (
         <article class="review-card">
           <div class="card-header">
-            <span class="avatar-initials" aria-hidden="true">{review.initials}</span>
+            <img src={'/test/reviews/' + review.image} alt="" width="40" height="40" class="avatar-img" loading="lazy" decoding="async" />
             <div class="user-meta">
               <h3 class="user-name">{review.name}</h3>
             </div>
@@ -104,7 +104,7 @@ const reviews = [
   .review-card:last-child { padding-right: 0; }
   .review-card + .review-card { border-left: 1px solid #dedfd9; }
   .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
-  .avatar-initials { display:grid; place-items:center; width:40px; height:40px; flex-shrink:0; border-radius:50%; background:#e9ece3; color:#373b34; font:700 14px 'Inter',sans-serif; }
+  .avatar-img { width:40px; height:40px; flex-shrink:0; object-fit:contain; }
   .user-meta { min-width: 0; }
   .user-name { margin: 0; font-size: 14px; font-weight: 700; line-height: 1.5; overflow-wrap: anywhere; }
   .reviews-footer { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px 24px; margin-top:20px; font-size:12px; color:#61655e; }

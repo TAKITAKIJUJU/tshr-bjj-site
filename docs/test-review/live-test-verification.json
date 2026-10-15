@@ -20,7 +20,7 @@
         "FAQPage",
         "BreadcrumbList"
       ],
-      "bytes": 65629
+      "bytes": 65728
     },
     {
       "path": "/test/contact/",
@@ -58,7 +58,7 @@
         "FAQPage",
         "BreadcrumbList"
       ],
-      "bytes": 64537
+      "bytes": 64636
     },
     {
       "path": "/test/english/contact/",
@@ -96,7 +96,7 @@
         "FAQPage",
         "BreadcrumbList"
       ],
-      "bytes": 66453
+      "bytes": 66552
     },
     {
       "path": "/test/portugues/contact/",
@@ -134,7 +134,7 @@
         "FAQPage",
         "BreadcrumbList"
       ],
-      "bytes": 65820
+      "bytes": 65919
     },
     {
       "path": "/test/gunma/contact/",
@@ -335,7 +335,7 @@
       "status": 200
     },
     {
-      "path": "test/_astro/index@_@astro.C3VU8Xcf.css",
+      "path": "test/_astro/index@_@astro.DPKtKOxv.css",
       "status": 200
     },
     {
@@ -373,5 +373,5 @@
     "status": 308,
     "location": "https://tshr-bjj.com/test/"
   },
-  "checkedAt": "2026-10-15T08:31:15.860Z"
+  "checkedAt": "2026-10-15T08:46:53.941Z"
 }
