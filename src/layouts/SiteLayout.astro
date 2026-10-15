@@ -3,11 +3,12 @@ import Header from '../components/site/TatoruHeader.astro';
 import { entities } from '../data/site/entities';
 import { faq } from '../data/site/faq';
 import '../styles/site.css';
-interface Props { title?: string; description?: string; canonicalPath?: string; }
+interface Props { title?: string; description?: string; canonicalPath?: string; robots?: string; }
 const {
   title = '本庄市のブラジリアン柔術ジム｜Over Limit 本庄',
   description = '本庄駅徒歩6分・無料駐車場完備のブラジリアン柔術ジム「Over Limit 本庄」。世界大会王者が直接指導。未経験・初心者・女性・キッズ大歓迎！クラス・料金・見学無料体験をご案内。',
-  canonicalPath
+  canonicalPath,
+  robots = 'index, follow'
 } = Astro.props;
 const currentPath = canonicalPath ?? (Astro.url.pathname.replace(/\/$/, '') === '' ? '/' : Astro.url.pathname.endsWith('/') ? Astro.url.pathname : Astro.url.pathname + '/');
 const home = currentPath === '/';
@@ -27,7 +28,7 @@ const schema = { '@context': 'https://schema.org', '@graph': [
  <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content={robots} />
   <meta name="format-detection" content="telephone=no" />
   <script is:inline>
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -40,6 +41,7 @@ const schema = { '@context': 'https://schema.org', '@graph': [
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
   <link rel="icon" type="image/png" href="/LOGO.png" />
+  <link rel="apple-touch-icon" href="/LOGO.png" />
   <meta property="og:site_name" content="Over Limit 本庄" />
   <meta property="og:locale" content="ja_JP" />
   <meta property="og:type" content="website" />

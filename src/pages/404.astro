@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/SiteLayout.astro';
+import Footer from '../components/site/Footer.astro';
+
+const title = "ページが見つかりません（404 Not Found）｜Over Limit 本庄";
+const description = "お探しのページは見つかりませんでした。Over Limit 本庄のトップページまたはお問い合わせをご利用ください。";
+---
+
+<Layout title={title} description={description} canonicalPath="/404/" robots="noindex, follow">
+  <main id="main-content" class="error-page">
+    <div class="error-container">
+      <div class="error-card">
+        <img src="/LOGO.png" alt="Over Limit 本庄" class="error-logo" width="80" height="80" />
+        <span class="error-code">404 NOT FOUND</span>
+        <h1 class="error-title">お探しのページが見つかりません</h1>
+        <p class="error-desc">
+          アクセスしようとしたページは削除されたか、URLが変更された可能性があります。<br />
+          トップページから再度ご覧いただくか、見学・無料体験予約をご利用ください。
+        </p>
+
+        <div class="error-actions">
+          <a href="/contact/" class="btn-primary">
+            <span>無料体験予約・お問い合わせ</span>
+          </a>
+          <a href="/" class="btn-secondary">
+            <span>トップページへ戻る</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .error-page {
+    background: #f4f4ee;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 140px 20px 80px;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .error-container {
+    width: min(600px, 100%);
+    margin: 0 auto;
+  }
+
+  .error-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: clamp(32px, 6vw, 56px);
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .error-logo {
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 12px;
+    object-fit: contain;
+  }
+
+  .error-code {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #ff6b00;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .error-title {
+    font-size: clamp(20px, 3.5vw, 26px);
+    font-weight: 900;
+    color: #141613;
+    margin: 0 0 16px;
+    line-height: 1.35;
+  }
+
+  .error-desc {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #4b5563;
+    margin: 0 0 32px;
+  }
+
+  .error-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff6b00;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 16px 24px;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 14px rgba(255, 107, 0, 0.35);
+  }
+
+  .btn-primary:hover {
+    background: #ea580c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.45);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #141613;
+    color: #f4f4ee;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 14px 24px;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background: #2b2e28;
+    transform: translateY(-1px);
+  }
+</style>

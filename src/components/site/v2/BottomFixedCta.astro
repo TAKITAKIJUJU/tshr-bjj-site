@@ -38,7 +38,7 @@
 
   .bottom-fixed-cta__inner {
     display: grid;
-    grid-template-columns: 1fr 1.35fr;
+    grid-template-columns: 1fr 1.25fr;
     gap: 8px;
     max-width: 540px;
     margin: 0 auto;
@@ -50,15 +50,15 @@
     justify-content: center;
     gap: 6px;
     min-height: 48px;
-    padding: 10px 8px;
+    padding: 10px 6px;
     font-family: 'Noto Sans JP', sans-serif;
-    font-size: 13px;
+    font-size: clamp(11.5px, 3.2vw, 13px);
     font-weight: 800;
     letter-spacing: 0.02em;
     text-decoration: none;
     color: #ffffff;
     text-align: center;
-    overflow-wrap: anywhere;
+    white-space: nowrap;
     border-radius: 4px;
     transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
   }
@@ -98,6 +98,13 @@
 
   .cta-btn--line:hover .cta-icon {
     transform: scale(1.1);
+  }
+
+  :global(html:lang(en)) .cta-btn,
+  :global(html:lang(pt)) .cta-btn {
+    font-size: 11px;
+    padding: 10px 4px;
+    gap: 4px;
   }
 
   .bottom-fixed-cta .cta-btn:is(:hover, :focus, :focus-visible, :active) { color: #ffffff; }

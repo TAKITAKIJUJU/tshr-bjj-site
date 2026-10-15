@@ -18,16 +18,18 @@ const home=fs.readFileSync(path.join(build,'index.html'),'utf8');
 const contact=fs.readFileSync(path.join(build,'contact/index.html'),'utf8');
 const privacy=fs.existsSync(path.join(build,'privacy/index.html')) ? fs.readFileSync(path.join(build,'privacy/index.html'),'utf8') : '';
 const thanks=fs.existsSync(path.join(build,'thanks/index.html')) ? fs.readFileSync(path.join(build,'thanks/index.html'),'utf8') : '';
+const notFound=fs.existsSync(path.join(build,'404/index.html')) ? fs.readFileSync(path.join(build,'404/index.html'),'utf8') : fs.existsSync(path.join(build,'404.html')) ? fs.readFileSync(path.join(build,'404.html'),'utf8') : '';
 
-const rewrite=html=>html.replaceAll('/_astro/','/site/_astro/').replace(/(\b(?:src|href|poster)=")([^"\s]+)(")/g,(_,a,url,b)=>a+sharedAsset(url)+b);
+const rewrite=html=>html ? html.replaceAll('/_astro/','/site/_astro/').replace(/(\b(?:src|href|poster)=")([^"\s]+)(")/g,(_,a,url,b)=>a+sharedAsset(url)+b) : '';
 
 let source=rewrite(home);
 let contactHtml=rewrite(contact);
 let privacyHtml=privacy ? rewrite(privacy) : '';
 let thanksHtml=thanks ? rewrite(thanks) : '';
+let notFoundHtml=notFound ? rewrite(notFound) : '';
 
-// Share the complete transitive bundle graph for home, contact, privacy, thanks under /site/.
-const queued=new Set([home,contact,privacy,thanks].flatMap(html=>[...html.matchAll(/\/_astro\/([^"\s<>]+)/g)].map(m=>m[1])));
+// Share the complete transitive bundle graph for home, contact, privacy, thanks, 404 under /site/.
+const queued=new Set([home,contact,privacy,thanks,notFound].filter(Boolean).flatMap(html=>[...html.matchAll(/\/_astro\/([^"\s<>]+)/g)].map(m=>m[1])));
 fs.mkdirSync(path.join(output,'site/_astro'),{recursive:true});
 
 const renamedMap = new Map();
@@ -61,6 +63,7 @@ for (const [orig, clean] of renamedMap) {
   contactHtml = contactHtml.replaceAll(orig, clean);
   if (privacyHtml) privacyHtml = privacyHtml.replaceAll(orig, clean);
   if (thanksHtml) thanksHtml = thanksHtml.replaceAll(orig, clean);
+  if (notFoundHtml) notFoundHtml = notFoundHtml.replaceAll(orig, clean);
 }
 
 for(const locale of locales) {
@@ -81,4 +84,18 @@ if (thanksHtml) {
 }
 
 try { fs.copyFileSync(path.join(build,'sitemap.xml'),path.join(output,'sitemap.xml')); } catch {}
-console.log('Prepared four home pages, contact, privacy, thanks and sitemap; /test/ remains independent.');
+
+// Ensure favicon, apple-touch-icon, and root logo are present to avoid 404
+const logoSrc = [
+  path.join(build, 'LOGO.png'),
+  path.resolve('public/LOGO.png')
+].find(p => fs.existsSync(p));
+
+if (logoSrc) {
+  fs.copyFileSync(logoSrc, path.join(output, 'LOGO.png'));
+  fs.copyFileSync(logoSrc, path.join(output, 'favicon.ico'));
+  fs.copyFileSync(logoSrc, path.join(output, 'apple-touch-icon.png'));
+  fs.copyFileSync(logoSrc, path.join(output, 'apple-touch-icon-precomposed.png'));
+}
+
+console.log('Prepared four home pages, contact, privacy, thanks, 404, icons and sitemap; /test/ remains independent.');

@@ -632,8 +632,8 @@ const rows = [
   ],
   [
     "無料体験はこちら",
-    "Book Free Trial",
-    "Aula Experimental Grátis",
+    "Free Trial",
+    "Aula Grátis",
     "無料体験はこちら"
   ],
   [
@@ -1408,6 +1408,10 @@ for (const [index, item] of faqByLocale.ja.entries()) {
   );
 }
 const additions = [
+  ['本庄駅徒歩6分・無料駐車場完備のブラジリアン柔術ジム「Over Limit 本庄」。世界大会王者が直接指導。未経験・初心者・女性・キッズ大歓迎！クラス・料金・見学無料体験をご案内。',
+   'Over Limit Honjo is a Brazilian Jiu-Jitsu academy in Honjo, Saitama (6 min walk from Honjo Station, free parking). Led by a world champion black belt. Beginners, women, and kids welcome! Free trial available.',
+   'Over Limit Honjo: academia de Jiu-Jitsu Brasileiro em Honjo, Saitama (a 6 min da estação de Honjo, estacionamento gratuito). Sob a liderança de um campeão mundial faixa-preta. Iniciantes, mulheres e crianças são bem-vindos! Aula experimental gratuita.',
+   '本庄駅徒歩6分・無料駐車場完備のブラジリアン柔術道場「Over Limit 本庄」。世界王者が直々に教えるで！初心者も子どもも大歓迎。まずは無料体験してみるんべ！'],
   ['本庄市の柔術道場 Over Limit 本庄。クラス・料金・週間スケジュールをご案内。体験には動きやすい服装・タオル・飲み物をご用意ください。日程未定でも相談できます。',
    'Over Limit Honjo, a jiu-jitsu dojo in Honjo. Explore classes, fees and the weekly schedule. Bring comfortable clothing, a towel and a drink for a trial. You can enquire without a fixed date.',
    'Over Limit Honjo, dojo de jiu-jitsu em Honjo. Conheça as aulas, mensalidades e horários. Para a aula experimental, traga roupa confortável, toalha e uma bebida. Consulte mesmo sem data definida.',

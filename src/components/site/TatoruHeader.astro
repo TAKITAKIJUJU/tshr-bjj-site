@@ -138,16 +138,16 @@ const languageSuffix = !languageHomeOnly && Astro.url.pathname.includes('/contac
 <style>
   .header { position:fixed; inset:0 0 auto; z-index:1000; color:#fff; background:transparent; box-shadow:none; transition:background .25s, color .25s, box-shadow .25s; font-family:'Noto Sans JP',sans-serif; }
   .header.scrolled { color:#fff; background:rgb(20 22 19 / .84); box-shadow:0 3px 12px #14161344; backdrop-filter:blur(8px); }
-  .header__inner { height:76px; padding-inline:clamp(20px,4vw,56px); max-width:1600px; margin:auto; display:flex; align-items:center; gap:24px; }
-  .header__logo { display:flex; align-items:center; gap:8px; flex-shrink:0; color:inherit; text-decoration:none; }
+  .header__inner { height:76px; padding-inline:clamp(14px,2.5vw,40px); max-width:1600px; margin:auto; display:flex; align-items:center; gap:clamp(12px,1.8vw,24px); }
+  .header__logo { display:flex; align-items:center; gap:8px; flex-shrink:1; min-width:0; color:inherit; text-decoration:none; }
   .header__logo img { object-fit:contain; }
-  .header__logo .logo-round { width:48px; height:48px; }
-  .header__logo .logo-wordmark { width:auto; height:34px; }
+  .header__logo .logo-round { width:48px; height:48px; flex-shrink:0; }
+  .header__logo .logo-wordmark { width:auto; height:34px; max-width:100%; }
   .header__nav { margin-left:auto; }
-  .header__nav ul { display:flex; align-items:center; gap:clamp(14px,1.55vw,26px); margin:0; padding:0; list-style:none; }
-  .header__nav a { font-size:13px; font-weight:800; letter-spacing:.06em; white-space:nowrap; color:inherit; text-decoration:none; padding-block:16px; }
+  .header__nav ul { display:flex; align-items:center; gap:clamp(10px,1.25vw,22px); margin:0; padding:0; list-style:none; }
+  .header__nav a { font-size:13px; font-weight:800; letter-spacing:.04em; white-space:nowrap; color:inherit; text-decoration:none; padding-block:16px; }
   .header__nav a:hover { opacity:.7; text-decoration:underline; text-decoration-color:#ff6b00; text-decoration-thickness:2px; text-underline-offset:8px; }
-  .header__actions { display:flex; align-items:center; gap:20px; flex-shrink:0; }
+  .header__actions { display:flex; align-items:center; gap:clamp(10px,1.2vw,20px); flex-shrink:0; }
   .language-picker { position:relative; flex-shrink:0; }
   .language-trigger { display:flex; align-items:center; justify-content:center; gap:5px; min-height:40px; padding:0 10px; background:#fff; color:#141613; border:1px solid #dedfd9; border-radius:3px; box-shadow:none; font:700 12px 'Noto Sans JP',sans-serif; cursor:pointer; white-space:nowrap; list-style:none; }
   .language-trigger::-webkit-details-marker { display:none; }
@@ -155,7 +155,7 @@ const languageSuffix = !languageHomeOnly && Astro.url.pathname.includes('/contac
   .language-options { position:absolute; top:calc(100% + 5px); right:0; z-index:3; min-width:154px; padding:6px; background:#fff; color:#141613; border:1px solid #dedfd9; border-radius:3px; box-shadow:0 4px 12px #0000001f; }
   .language-options a { display:flex; align-items:center; width:100%; min-height:40px; padding:8px 10px; border-radius:2px; color:inherit; text-decoration:none; font:700 13px 'Noto Sans JP',sans-serif; }
   .language-options a:hover,.language-options a[aria-current="page"] { background:#ff6b00; }
-  .reservation { display:flex; align-items:center; height:46px; padding:0 24px; background:#ff6b00; color:#141613; border-radius:999px; font-size:13px; font-weight:800; letter-spacing:.05em; text-decoration:none; white-space:nowrap; }
+  .reservation { display:flex; align-items:center; height:46px; padding:0 24px; background:#ff6b00; color:#141613; border-radius:999px; font-size:13px; font-weight:800; letter-spacing:.05em; text-decoration:none; white-space:nowrap; flex-shrink:0; }
   .reservation:hover,.menu-reservation:hover { background:#fff; color:#141613; }
   .menu-toggle,.menu-close { width:46px; height:46px; border:2px solid #fff; background:#fff; border-radius:50%; color:#141613; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; cursor:pointer; padding:0; flex-shrink:0; }
   .menu-toggle { border-color:transparent; background:transparent; color:#fff; }
@@ -191,21 +191,44 @@ const languageSuffix = !languageHomeOnly && Astro.url.pathname.includes('/contac
   .fallback-nav a { color:#1b1a18; min-height:44px; display:flex; align-items:center; }
   @keyframes menu-in { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:none; } }
   @media (max-width:1199px) { .header__nav,.reservation { display:none; } .header__actions { margin-left:auto; gap:14px; } .language-trigger { min-height:44px; } .menu-toggle:not([hidden]) { display:flex; } }
+  @media (min-width:1200px) and (max-width:1380px) {
+    .header__nav ul { gap:clamp(8px,1vw,14px); }
+    .header__nav a { font-size:12px; letter-spacing:.02em; padding-block:12px; }
+    .header__actions { gap:10px; }
+    .reservation { padding:0 16px; font-size:12px; height:42px; }
+    .language-trigger { font-size:11px; padding:0 8px; min-height:38px; }
+    .header__logo .logo-round { width:42px; height:42px; }
+    .header__logo .logo-wordmark { height:28px; }
+  }
   @media (min-width:1200px) and (max-width:1499px) {
     :global(html:lang(en)) .header__nav, :global(html:lang(pt)) .header__nav,
     :global(html:lang(en)) .reservation, :global(html:lang(pt)) .reservation { display:none; }
     :global(html:lang(en)) .header__actions, :global(html:lang(pt)) .header__actions { margin-left:auto; gap:14px; }
     :global(html:lang(en)) .menu-toggle:not([hidden]), :global(html:lang(pt)) .menu-toggle:not([hidden]) { display:flex; }
   }
-  @media (max-width:767px) { .header__inner { height:64px; padding-inline:20px; gap:12px; } .header__logo .logo-round { width:40px; height:40px; } .header__logo .logo-wordmark { height:29px; } .language-trigger { font-size:11px; } }
-  @media (max-width:359px) { .header__inner,.menu-head { padding-inline:14px; } .header__actions,.menu-head { gap:10px; } .header__logo .logo-wordmark { height:25px; } .language-trigger { font-size:10px; } }
+  @media (max-width:767px) {
+    .header__inner { height:64px; padding-inline:clamp(12px,3.5vw,20px); gap:8px; }
+    .header__actions { margin-left:auto; gap:8px; flex-shrink:0; }
+    .menu-toggle { width:42px; height:42px; flex-shrink:0; }
+    .header__logo .logo-round { width:36px; height:36px; flex-shrink:0; }
+    .header__logo .logo-wordmark { height:26px; width:auto; max-width:min(110px, 28vw); object-fit:contain; }
+    .language-trigger { font-size:11px; padding:0 8px; min-height:38px; max-width:115px; }
+  }
   @media (max-width:400px) {
-    .header__inner,.menu-head { padding-inline:14px; gap:8px; }
-    .header__actions { gap:8px; }
-    .header__logo { gap:6px; }
-    .header__logo .logo-round { width:36px; height:36px; }
-    .header__logo .logo-wordmark { height:25px; }
-    .language-trigger { font-size:11px; padding-inline:8px; }
+    .header__inner,.menu-head { padding-inline:10px; gap:6px; }
+    .header__actions { gap:6px; }
+    .header__logo { gap:5px; }
+    .header__logo .logo-round { width:32px; height:32px; }
+    .header__logo .logo-wordmark { height:22px; max-width:85px; }
+    .language-trigger { font-size:10px; padding:0 6px; min-height:34px; max-width:100px; }
+    .menu-toggle { width:38px; height:38px; }
+  }
+  @media (max-width:359px) {
+    .header__inner,.menu-head { padding-inline:8px; gap:4px; }
+    .header__actions,.menu-head { gap:6px; }
+    .header__logo .logo-wordmark { height:20px; max-width:75px; }
+    .language-trigger { font-size:9.5px; padding:0 4px; }
+    .menu-toggle { width:36px; height:36px; }
   }
   @media (prefers-reduced-motion:reduce) { .header { transition:none; } .site-menu[open] { animation:none; } }
 </style>

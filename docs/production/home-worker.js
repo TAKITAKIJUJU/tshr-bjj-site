@@ -74,6 +74,7 @@ const NOT_FOUND_HTML = `<!doctype html>
 </head>
 <body>
   <div class="card">
+    <img src="/LOGO.png" alt="Over Limit 本庄" style="width: 72px; height: 72px; object-fit: contain; margin-bottom: 20px; border-radius: 12px;" />
     <div class="code">404</div>
     <h1>お探しのページが見つかりません</h1>
     <p>アクセスしようとしたページは削除されたか、URLが変更された可能性があります。トップページから再度お探しいただくか、体験予約・お問い合わせをご利用ください。</p>
@@ -118,6 +119,18 @@ export default {
     // 5. Fetch asset from KV/Assets binding
     let response = await env.ASSETS.fetch(request);
 
+    // Favicon & Webclip icon fallback if missing
+    if (response.status === 404 && (url.pathname === '/favicon.ico' || url.pathname === '/apple-touch-icon.png')) {
+      const logoUrl = new URL('/LOGO.png', request.url);
+      const logoRes = await env.ASSETS.fetch(new Request(logoUrl, request));
+      if (logoRes.status === 200) {
+        const h = new Headers(logoRes.headers);
+        h.set("content-type", url.pathname.endsWith('.ico') ? "image/x-icon" : "image/png");
+        h.set("cache-control", "public, max-age=86400");
+        return new Response(logoRes.body, { status: 200, headers: h });
+      }
+    }
+
     // 6. Custom 404 response
     if (response.status === 404) {
       return new Response(NOT_FOUND_HTML, {
@@ -128,6 +141,7 @@ export default {
           "x-content-type-options": "nosniff",
           "x-frame-options": "SAMEORIGIN",
           "referrer-policy": "strict-origin-when-cross-origin",
+          "permissions-policy": "camera=(), microphone=(), geolocation=()",
           "strict-transport-security": "max-age=31536000; includeSubDomains; preload"
         }
       });
@@ -138,6 +152,7 @@ export default {
     newHeaders.set("x-content-type-options", "nosniff");
     newHeaders.set("x-frame-options", "SAMEORIGIN");
     newHeaders.set("referrer-policy", "strict-origin-when-cross-origin");
+    newHeaders.set("permissions-policy", "camera=(), microphone=(), geolocation=()");
     newHeaders.set("strict-transport-security", "max-age=31536000; includeSubDomains; preload");
 
     const contentType = newHeaders.get("content-type") || "";
