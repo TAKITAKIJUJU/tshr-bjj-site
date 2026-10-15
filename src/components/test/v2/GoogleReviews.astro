@@ -38,9 +38,6 @@ const reviews = [
         <article class="review-card">
           <div class="card-header">
             <img src={'/test/reviews/' + review.image} alt="" width="40" height="40" class="avatar-img" loading="lazy" decoding="async" />
-            <div class="user-meta">
-              <h3 class="user-name">{review.name}</h3>
-            </div>
           </div>
           <div class="card-stars" role="img" aria-label="星5つ">★★★★★</div>
           <p class="translation-note" data-review-source={review.translated ? 'pt' : 'ja'} hidden={!review.translated}>※ポルトガル語からの翻訳</p>

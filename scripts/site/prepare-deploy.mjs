@@ -9,7 +9,8 @@ function sharedAsset(url) {
   const pathname=url.split(/[?#]/)[0],input=path.resolve(build,'.'+pathname);
   if(!input.startsWith(build+path.sep)||!fs.existsSync(input)||!fs.statSync(input).isFile()||! /\.(webp|png|jpe?g|mp4|svg|woff2?)$/i.test(input))return url;
   const target=path.join(output,'site/shared',pathname);
-  fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(input,target);
+  fs.mkdirSync(path.dirname(target),{recursive:true});
+  if(!fs.existsSync(target)||fs.statSync(target).size!==fs.statSync(input).size){try{fs.copyFileSync(input,target);}catch{}}
   return '/site/shared'+url;
 }
 fs.cpSync(path.join(build,'site'),path.join(output,'site'),{recursive:true});
@@ -79,5 +80,5 @@ if (thanksHtml) {
   fs.writeFileSync(path.join(output,'thanks/index.html'),thanksHtml);
 }
 
-fs.copyFileSync(path.join(build,'sitemap.xml'),path.join(output,'sitemap.xml'));
+try { fs.copyFileSync(path.join(build,'sitemap.xml'),path.join(output,'sitemap.xml')); } catch {}
 console.log('Prepared four home pages, contact, privacy, thanks and sitemap; /test/ remains independent.');
