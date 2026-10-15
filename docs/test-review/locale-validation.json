@@ -1,0 +1,55 @@
+{
+  "checks": [
+    {
+      "page": "test/index.html",
+      "title": "本庄市のブラジリアン柔術ジム｜Over Limit 本庄【テスト版】",
+      "faqCount": 7,
+      "generationPathsMatch": true
+    },
+    {
+      "page": "test/contact/index.html",
+      "title": "無料体験・見学の相談｜Over Limit 本庄【テスト版】",
+      "faqCount": 0,
+      "generationPathsMatch": true
+    },
+    {
+      "page": "test/english/index.html",
+      "title": "Brazilian Jiu-Jitsu in Honjo | Over Limit Honjo (Test Edition)",
+      "faqCount": 7,
+      "generationPathsMatch": true
+    },
+    {
+      "page": "test/english/contact/index.html",
+      "title": "Free Trial & Visit Enquiries | Over Limit Honjo (Test Edition)",
+      "faqCount": 0,
+      "generationPathsMatch": true
+    },
+    {
+      "page": "test/portugues/index.html",
+      "title": "Jiu-Jitsu Brasileiro em Honjo | Over Limit Honjo (Versão Demonstração)",
+      "faqCount": 7,
+      "generationPathsMatch": true
+    },
+    {
+      "page": "test/portugues/contact/index.html",
+      "title": "Consulta sobre Aula Experimental / Contato | Over Limit Honjo (Versão de Teste)",
+      "faqCount": 0,
+      "generationPathsMatch": true
+    },
+    {
+      "page": "test/gunma/index.html",
+      "title": "本庄の柔術道場｜Over Limit 本庄【テスト版】",
+      "faqCount": 7,
+      "generationPathsMatch": true
+    },
+    {
+      "page": "test/gunma/contact/index.html",
+      "title": "無料体験・見学の相談｜Over Limit 本庄【テスト版】",
+      "faqCount": 0,
+      "generationPathsMatch": true
+    }
+  ],
+  "faqReferenceMatches": true,
+  "scriptAndStylePreserved": true,
+  "missingTranslations": []
+}

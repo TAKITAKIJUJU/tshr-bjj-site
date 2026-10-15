@@ -1,5 +1,5 @@
 ---
-// BottomFixedCta.astro - fuckfuck.html bottom fixed bar with LINE & Trial buttons in Orange theme
+// Test-only fixed LINE and trial links.
 ---
 
 <aside class="bottom-fixed-cta" aria-label="予約・お問い合わせ固定バー">
@@ -45,32 +45,38 @@
     font-weight: 800;
     letter-spacing: 0.02em;
     text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+    overflow-wrap: anywhere;
     border-radius: 4px;
     transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
   }
 
   .cta-btn--line {
-    background: #06c755;
+    background: #008638;
     color: #ffffff;
-    border: 1.5px solid #06c755;
+    border: 1.5px solid #008638;
   }
 
   .cta-btn--line:hover {
-    background: #05b34c;
-    border-color: #05b34c;
+    background: #007530;
+    border-color: #007530;
     color: #ffffff;
   }
 
   .cta-btn--trial {
-    background: #ff6b00; /* ORANGE THEME */
-    color: #141613;
-    border: 1.5px solid #ff6b00;
+    background: #c44e00;
+    color: #ffffff;
+    border: 1.5px solid #c44e00;
   }
 
   .cta-btn--trial:hover {
-    background: #ff8533;
-    border-color: #ff8533;
+    background: #ad4400;
+    border-color: #ad4400;
     transform: translateY(-1px);
   }
+
+  .bottom-fixed-cta .cta-btn:is(:hover, :focus, :focus-visible, :active) { color: #ffffff; }
+  .bottom-fixed-cta .cta-btn:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px; }
 
 </style>

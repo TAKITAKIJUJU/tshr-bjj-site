@@ -23,11 +23,12 @@ for(const page of ['test/index.html','test/contact/index.html']){
  assert.deepEqual(broken,[]);
  if(home){
   const faqs=graph.find(x=>x['@type']==='FAQPage').mainEntity;
+  assert.equal(faqs.length,7);
   for(const faq of faqs){assert.ok(html.includes(faq.name));assert.ok(html.includes(faq.acceptedAnswer.text));}
  }else{
   assert.match(html,/method="dialog"/);assert.match(html,/id="mock-submit" type="button"/);assert.match(html,/id="mock-submit"[^>]*disabled/);
  }
- checks.push({page,title:title[0][1],faqCount:home?8:0,brokenLocalReferences:broken});
+ checks.push({page,title:title[0][1],faqCount:graph.find(x=>x['@type']==='FAQPage')?.mainEntity.length??0,brokenLocalReferences:broken});
 }
 const files=['src/pages/test/index.astro','src/pages/test/contact.astro','src/layouts/TestLayout.astro'];
 for(const file of files){const s=fs.readFileSync(file,'utf8');assert.ok(!/from ['"][^'"]*(?:components\/(?!test)|\/Layout\.astro|global\.css)/.test(s));}
